@@ -9,7 +9,7 @@ const Styles = styled.div`
 
   table {
     border-spacing: 0;
-    border: 1px solid black;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     width: 100%;
     tr {
       :last-child {
@@ -19,8 +19,8 @@ const Styles = styled.div`
       }
       :hover {
         td {
-          background: rgba(0,0,0,0.1);
-          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+          background: rgba(0,0,0,0.02);
+          box-shadow:  0 1px 0 rgba(0,0,0,0.24);
           border-right: none;
         }
       }
