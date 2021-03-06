@@ -14,7 +14,14 @@ const Styles = styled.div`
     tr {
       :last-child {
         td {
-          border-bottom: 0;
+          border-bottom: 1;
+        }
+      }
+      :hover {
+        td {
+          background: rgba(0,0,0,0.1);
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+          border-right: none;
         }
       }
     }
@@ -23,9 +30,9 @@ const Styles = styled.div`
     td {
       margin: 0;
       padding: 0.5rem;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
-
+      border-bottom: 1px solid #e5e5e5;
+      border-right: 1px solid #e5e5e5;
+      cursor: pointer;
       :last-child {
         border-right: 0;
       }
@@ -88,7 +95,8 @@ function App() {
           {
             Header: 'Sector',
             accessor: 'sector',
-          }]
+          }
+          ]
       },
           {
             Header: 'Fundamentals',
@@ -101,6 +109,10 @@ function App() {
               {
                 Header: 'PB ratio',
                 accessor: 'pbRatio'
+              },
+              {
+                Header: 'Market Cap',
+                accessor: 'marketCap'
               }
             ]
           },
