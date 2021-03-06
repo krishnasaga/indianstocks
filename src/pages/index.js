@@ -11,7 +11,7 @@ const Explorer = ({children}) => {
 };
 
 export default () => <Box p={20}>
-  <Grid columns={[4,4,4,4]} >
+  <Grid columns={[1,1,2,4]} >
     <Explorer>
       <a href={"/companies-by-sector"}>Explore Companies by Sector</a>
     </Explorer>
