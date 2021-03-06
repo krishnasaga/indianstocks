@@ -1,1 +1,3 @@
-export default () => "Hello";
+export default () => <div>
+  <a href={"/companies-by-sector"}>Explore Companies by Sector</a>
+</div>;
