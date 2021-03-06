@@ -10,7 +10,7 @@ const Styles = styled.div`
   table {
     border-spacing: 0;
     border: 1px solid black;
-
+    width: 100%;
     tr {
       :last-child {
         td {
@@ -78,19 +78,33 @@ function App() {
   const columns = React.useMemo(
     () => [
       {
-        Header: 'Name',
+        Header: 'Basic Info',
+        accessor: 'name',
         columns: [
           {
             Header: 'Company Name',
-            accessor: 'firstName',
+            accessor: 'companyName',
           },
           {
             Header: 'Sector',
-            accessor: 'lastName',
+            accessor: 'sector',
+          }]
+      },
+          {
+            Header: 'Fundamentals',
+            accessor: 'fundamentals',
+            columns: [
+              {
+                Header: 'PE ratio',
+                accessor: 'peRatio'
+              },
+              {
+                Header: 'PB ratio',
+                accessor: 'pbRatio'
+              }
+            ]
           },
         ],
-      }
-    ],
     []
   )
 

@@ -1,17 +1,19 @@
 import React from 'react';
-import { Box } from 'theme-ui';
+import { Box,Grid } from 'theme-ui';
 
 
-const Explorer = () => {
-  return <Box sx={{
-    boxShadow: ' box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);'
+const Explorer = ({children}) => {
+  return <Box h={[200]} p={20} sx={{
+    boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);'
   }} >
-
+    {children}
   </Box>
 };
 
-export default () => <div>
-  <Explorer>
-    <a href={"/companies-by-sector"}>Explore Companies by Sector</a>
-  </Explorer>
-</div>;
+export default () => <Box p={20}>
+  <Grid columns={[4,4,4,4]} >
+    <Explorer>
+      <a href={"/companies-by-sector"}>Explore Companies by Sector</a>
+    </Explorer>
+  </Grid>
+</Box>;
