@@ -5,46 +5,40 @@ import { useTable } from 'react-table';
 import makeData from '../somethings/makeData';
 import Sticky from 'react-stickynode';
 
-export default ({ pageContext: { name,intro} }) =>
+export default ({ pageContext: { name,intro,insights} }) =>
 
   <Box w={'100%'}>
-
-    <header
-      sx={{
-        variant: 'styles.header',
-      }}>
-      <Box
-        sx={{
-          maxWidth: 1920,
-          mx: 'auto',
-          px: 3,
-          display: 'flex',
-          alignItems: 'baseline',
-        }}>
-        <Link to='/'
-              sx={{
-                variant: 'styles.navlink',
-                fontSize: 5,
-                py: 2,
-              }}>
-          {name.toUpperCase()}
-        </Link>
-        <Box sx={{ mx: 'auto' }} />
-
-      </Box>
-    </header>
-    <Box sx={{width: '100%', height: '400px'}} bg={'black'}>
+    <Box sx={{width: '100%', height: '400px'}} bg={'background'}>
       <Grid columns={[1,2]}>
         <Box px={20} py={40}>
-          <Text as={'h2'}>
+          <Text color={'primary'}  sx={{
+            fontSize: 40
+          }}>
+            {name.toUpperCase()}
+          </Text>
+          <Text as={'h2'} color={'secondary'} sx={{
+            fontSize: 25
+          }}>
             {intro}
           </Text>
+          <Grid columns={4} py={40}>
+            {insights.map((insight)=>{
+              return <Box sx={{
+                textAlign: 'center'
+              }}>
+                <Text color={'primary'} sx={{ fontSize: 20 }}>{insight.name}</Text>
+                <Text color={'secondary'}  sx={{ fontSize: 25 }} >{insight.number}</Text>
+              </Box>;
+            })}
+          </Grid>
         </Box>
+
       </Grid>
+
     </Box>
     <Grid p={20} columns={[1, 2, 2, 2]}>
       <Box>
-        <Text as={'h2'}> Disruptions </Text>
+        <Text as={'h2'}  color={'primary'}  > Disruptions </Text>
         <Box w={'100%'}>
           <ProductItem name={'DNA Sequencing'} />
           <ProductItem name={'DNA Sequencing'} />
@@ -56,13 +50,14 @@ export default ({ pageContext: { name,intro} }) =>
         </Box>
       </Box>
       <Box sx={{}}>
-        <Text as={'h2'}> Performance </Text>
-        <Text py={20} as={'h3'}> Current Market size </Text>
-        <Text py={20} sx={{
+        <Text as={'h2'}  color={'primary'}  > Performance </Text>
+        <Text py={20} as={'h3'}  color={'primary'}  > Current Market size </Text>
+        <Text  color={'secondary'}   py={20} sx={{
           fontSize: '2rem',
         }}>$1 Trillion</Text>
-        <Text py={20} as={'h3'}> Expected market size by 2025 </Text>
+        <Text py={20} as={'h3'}  color={'primary'}  > Expected market size by 2025 </Text>
         <Text
+          color={'secondary'}
           py={20}
           sx={{
             fontSize: '2rem',
@@ -214,7 +209,7 @@ function ProductItem({name}) {
   }}
   >
     <Box py={2} >
-      <Text>{name}</Text>
+      <Text  color={'secondary'}   >{name}</Text>
     </Box>
   </Grid>;
 };

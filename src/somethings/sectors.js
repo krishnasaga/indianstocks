@@ -14,6 +14,25 @@ module.exports = [
       },
       {
         name: 'Pharmaceutical Products'
+      },
+
+    ],
+    insights: [
+      {
+        name: 'startups',
+        number: 25
+      },
+      {
+        name: 'listed companies',
+        number: 25
+      },
+      {
+        name: 'Private Companies',
+        number: 25
+      },
+      {
+        name: 'CAGR',
+        number: '25%'
       }
     ]
   },
