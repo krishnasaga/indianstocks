@@ -5,8 +5,10 @@ import { useTable } from 'react-table';
 import makeData from '../somethings/makeData';
 import Sticky from 'react-stickynode';
 
-export default ({ pageContext: { name } }) =>
+export default ({ pageContext: { name,intro} }) =>
+
   <Box w={'100%'}>
+
     <header
       sx={{
         variant: 'styles.header',
@@ -31,7 +33,15 @@ export default ({ pageContext: { name } }) =>
 
       </Box>
     </header>
-
+    <Box sx={{width: '100%', height: '400px'}} bg={'black'}>
+      <Grid columns={[1,2]}>
+        <Box px={20} py={40}>
+          <Text as={'h2'}>
+            {intro}
+          </Text>
+        </Box>
+      </Grid>
+    </Box>
     <Grid p={20} columns={[1, 2, 2, 2]}>
       <Box>
         <Text as={'h2'}> Disruptions </Text>
