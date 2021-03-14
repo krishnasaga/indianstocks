@@ -8,26 +8,26 @@ import Sticky from 'react-stickynode';
 export default ({ pageContext: { name,intro,insights} }) =>
 
   <Box w={'100%'}>
-    <Box sx={{width: '100%', height: '400px'}} bg={'background'}>
-      <Grid columns={[1,2]}>
-        <Box px={20} py={40}>
-          <Text color={'primary'}  sx={{
+    <Box sx={{width: '100%', height: '400px'}} bg={'black'}>
+      <Grid columns={[1,1]}>
+        <Box px={20} py={70}>
+          <Text color={'text2'}  sx={{
             fontSize: 40
           }}>
             {name.toUpperCase()}
           </Text>
-          <Text as={'h2'} color={'secondary'} sx={{
+          <Text as={'h2'} color={'text3'} sx={{
             fontSize: 25
           }}>
             {intro}
           </Text>
-          <Grid columns={4} py={40}>
+          <Grid columns={4} py={70}>
             {insights.map((insight)=>{
               return <Box sx={{
                 textAlign: 'center'
               }}>
-                <Text color={'primary'} sx={{ fontSize: 20 }}>{insight.name}</Text>
-                <Text color={'secondary'}  sx={{ fontSize: 25 }} >{insight.number}</Text>
+                <Text color={'text3'} sx={{ fontSize: 20 }}>{insight.name}</Text>
+                <Text color={'text2'}  sx={{ fontSize: 25 }} >{insight.number}</Text>
               </Box>;
             })}
           </Grid>
@@ -36,35 +36,7 @@ export default ({ pageContext: { name,intro,insights} }) =>
       </Grid>
 
     </Box>
-    <Grid p={20} columns={[1, 2, 2, 2]}>
-      <Box>
-        <Text as={'h2'}  color={'primary'}  > Disruptions </Text>
-        <Box w={'100%'}>
-          <ProductItem name={'DNA Sequencing'} />
-          <ProductItem name={'DNA Sequencing'} />
-          <ProductItem name={'DNA Sequencing'} />
-          <ProductItem name={'DNA Sequencing'} />
-          <ProductItem name={'DNA Sequencing'} />
-          <ProductItem name={'DNA Sequencing'} />
-          <ProductItem name={'DNA Sequencing'} />
-        </Box>
-      </Box>
-      <Box sx={{}}>
-        <Text as={'h2'}  color={'primary'}  > Performance </Text>
-        <Text py={20} as={'h3'}  color={'primary'}  > Current Market size </Text>
-        <Text  color={'secondary'}   py={20} sx={{
-          fontSize: '2rem',
-        }}>$1 Trillion</Text>
-        <Text py={20} as={'h3'}  color={'primary'}  > Expected market size by 2025 </Text>
-        <Text
-          color={'secondary'}
-          py={20}
-          sx={{
-            fontSize: '2rem',
-          }}>$5 Trillion</Text>
-      </Box>
-
-    </Grid>
+    <SectorFinancials/>
     <Box py={20}>
       <CompaniesList />
     </Box>
@@ -213,3 +185,40 @@ function ProductItem({name}) {
     </Box>
   </Grid>;
 };
+
+const SectorFinancials = ({visible = false }) => {
+
+  if(!visible) return null;
+
+  return <Grid p={20} columns={[1, 1, 2, 2]} sx={{
+    alignItems: "center"
+  }} >
+    <Box>
+      <Text as={'h2'}  color={'primary'}  > Disruptions </Text>
+      <Box w={'100%'}>
+        <ProductItem name={'DNA Sequencing'} />
+        <ProductItem name={'DNA Sequencing'} />
+        <ProductItem name={'DNA Sequencing'} />
+        <ProductItem name={'DNA Sequencing'} />
+        <ProductItem name={'DNA Sequencing'} />
+        <ProductItem name={'DNA Sequencing'} />
+        <ProductItem name={'DNA Sequencing'} />
+      </Box>
+    </Box>
+    <Box sx={{}}>
+      <Text as={'h2'}  color={'primary'}  > Performance </Text>
+      <Text py={20} as={'h3'}  color={'primary'}  > Current Market size </Text>
+      <Text  color={'secondary'}   py={20} sx={{
+        fontSize: '2rem',
+      }}>$1 Trillion</Text>
+      <Text py={20} as={'h3'}  color={'primary'}  > Expected market size by 2025 </Text>
+      <Text
+        color={'secondary'}
+        py={20}
+        sx={{
+          fontSize: '2rem',
+        }}>$5 Trillion</Text>
+    </Box>
+
+  </Grid>;
+}

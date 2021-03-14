@@ -37,7 +37,13 @@ export default {
   },
   "colors": {
     "text": "#202124",
+    "text2": "#ffffff",
+    "text3": "#c8c4c4",
+    "text4": "#b3b3b3",
     "background": "#fff",
+    "background2": "#b3b3b3",
+    "background3": "#b3b3b3",
+    "background4": "#b3b3b3",
     "primary": "#1a73e8",
     "secondary": "#9c27b0",
     "muted": "#f1f3f4"
