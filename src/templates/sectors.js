@@ -7,35 +7,8 @@ import Sticky from 'react-stickynode';
 
 export default ({ pageContext: { name,intro,insights} }) =>
 
-  <Box w={'100%'}>
-    <Box sx={{width: '100%', height: '400px'}} bg={'black'}>
-      <Grid columns={[1,1]}>
-        <Box px={20} py={70}>
-          <Text color={'text2'}  sx={{
-            fontSize: 40
-          }}>
-            {name.toUpperCase()}
-          </Text>
-          <Text as={'h2'} color={'text3'} sx={{
-            fontSize: 25
-          }}>
-            {intro}
-          </Text>
-          <Grid columns={4} py={70}>
-            {insights.map((insight)=>{
-              return <Box sx={{
-                textAlign: 'center'
-              }}>
-                <Text color={'text3'} sx={{ fontSize: 20 }}>{insight.name}</Text>
-                <Text color={'text2'}  sx={{ fontSize: 25 }} >{insight.number}</Text>
-              </Box>;
-            })}
-          </Grid>
-        </Box>
-
-      </Grid>
-
-    </Box>
+  <Box>
+    <SectorBanner name={name} intro={intro} insights={insights}/>
     <SectorFinancials/>
     <Box m={40} sx={{
       borderRadius: 5,
@@ -225,4 +198,36 @@ const SectorFinancials = ({visible = false }) => {
     </Box>
 
   </Grid>;
+}
+
+
+const SectorBanner = ({ name,intro,insights} ) => {
+  return <Box sx={{width: '100%', height: ['550px','400px']}} bg={'black'}>
+    <Grid columns={[1,1]}>
+      <Box px={20} py={70}>
+        <Text color={'text2'}  sx={{
+          fontSize: 40
+        }}>
+          {name.toUpperCase()}
+        </Text>
+        <Text as={'h2'} color={'text3'} sx={{
+          fontSize: 25
+        }}>
+          {intro}
+        </Text>
+        <Grid columns={[2,4]} py={70}>
+          {insights.map((insight)=>{
+            return <Box sx={{
+              textAlign: 'center'
+            }}>
+              <Text color={'text3'} sx={{ fontSize: 20 }}>{insight.name}</Text>
+              <Text color={'text2'}  sx={{ fontSize: 25 }} >{insight.number}</Text>
+            </Box>;
+          })}
+        </Grid>
+      </Box>
+
+    </Grid>
+
+  </Box>;
 }

@@ -19,11 +19,11 @@ module.exports = [
     ],
     insights: [
       {
-        name: 'startups',
+        name: 'Startups',
         number: 25
       },
       {
-        name: 'listed companies',
+        name: 'Listed companies',
         number: 25
       },
       {
