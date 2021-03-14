@@ -37,14 +37,18 @@ export default ({ pageContext: { name,intro,insights} }) =>
 
     </Box>
     <SectorFinancials/>
-    <Box py={20}>
+    <Box m={40} sx={{
+      borderRadius: 5,
+      boxShadow: '0 3px 20px 0 rgb(0 77 165 / 7%)',
+      overflow: 'scroll',
+    }}>
       <CompaniesList />
     </Box>
   </Box>;
 
 
 const Styles = styled(Box)`
-  padding: 1rem;
+  padding: 0;
 
   table {
     border-spacing: 0;
