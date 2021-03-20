@@ -36,10 +36,10 @@ export default {
     "heading": 1.125
   },
   "colors": {
-    "text": "#202124",
+    "text": "#b5b8cf",
     "text2": "#ffffff",
-    "text3": "#c8c4c4",
-    "text4": "#b3b3b3",
+    "text3": "#d20e0e",
+    "text4": "#b72828",
     "background": "#fff",
     "background2": "#b3b3b3",
     "background3": "#b3b3b3",

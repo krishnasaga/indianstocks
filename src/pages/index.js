@@ -1,7 +1,6 @@
 import React from 'react';
-import { Box,Grid } from 'theme-ui';
+import { Box,Grid,Text,Link,Container} from 'theme-ui';
 import {TopNav} from "../components/TopNav";
-
 
 const Explorer = ({children}) => {
   return <Box p={20} >
@@ -14,9 +13,31 @@ const Explorer = ({children}) => {
 
 export default () => <Box>
   <TopNav/>
+  <Introbanner/>
   <Grid py={100} columns={[1,1,2,4]} >
     <Explorer>
       <a href={"/sectors"}>Explore Companies by Sector</a>
     </Explorer>
   </Grid>
 </Box>;
+
+function Introbanner(){
+  return <Box bg={'black'} sx={{ height: '100vh' }}>
+    <Container>
+    <Grid>
+      <Box >
+        <Box sx={{
+          height: '250px'
+        }}>
+        </Box>
+        <Box my={10}>
+          <Text color={'text2'} sx={{ fontSize: '2.5rem'}}> Invest on Big Disruptions</Text>
+        </Box>
+        <Box my={10}>
+          <Text color={'text1'} sx={{ fontSize: '1.5rem'}}> With convergence of financial and technological expertise</Text>
+        </Box>
+      </Box>
+    </Grid>
+    </Container>
+  </Box>
+}
