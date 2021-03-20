@@ -114,7 +114,7 @@ function AnalyticsDropdown(){
       </Box>
       <Box>
         <Text> Bioinformatics usage </Text>
-        <Text> Chemical production  </Text>
+        <Text> Telemedicine penetration </Text>
       </Box>
     </Grid>
   </Box>

@@ -52,7 +52,9 @@ export default ({pageContext: { sectors }}) =>
                   sx={{
                     fontSize: '1.2rem',
                     color: 'black',
-                    fontFamily: "'Open Sans'"
+                    fontFamily: "'Open Sans'",
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis'
                   }}
 
           >
