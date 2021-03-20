@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box,Grid,Text,Link,Container} from 'theme-ui';
+import { Box,Grid,Text,Link,Container,Button} from 'theme-ui';
 import {TopNav} from "../components/TopNav";
+import introImage  from "./introglobe.png";
 
 const Explorer = ({children}) => {
   return <Box p={20} >
@@ -23,7 +24,9 @@ export default () => <Box>
 
 function Introbanner(){
   return <Box bg={'black'} sx={{ height: '100vh' }}>
-    <Container>
+    <Container sx={{
+      backgroundImage: `url(${introImage})`,
+    }} >
     <Grid>
       <Box >
         <Box sx={{
@@ -36,6 +39,15 @@ function Introbanner(){
         <Box my={10}>
           <Text color={'text1'} sx={{ fontSize: '1.5rem'}}> With convergence of financial and technological expertise</Text>
         </Box>
+        <Button my={40} sx={{
+          borderRadius: 0,
+          cursor: 'pointer'
+        }}>
+          Explore
+        </Button>
+      </Box>
+      <Box>
+
       </Box>
     </Grid>
     </Container>
