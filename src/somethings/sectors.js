@@ -1,6 +1,7 @@
 module.exports = [
   {
     name: 'healthcare',
+    displayName: 'Health Care',
     intro: 'Healthcare industry in India is projected to reach $372 billion by 2022',
     focus: [
       {
@@ -38,6 +39,7 @@ module.exports = [
   },
   {
     name: 'energy',
+    displayName: 'Energy',
     focus: [
       {
         name: 'Renewable Energy'
@@ -49,6 +51,7 @@ module.exports = [
   },
   {
     name: 'aerospace',
+    displayName: 'Aerospace',
     focus: [
       {
         name: 'Satellite Networks'
@@ -65,15 +68,20 @@ module.exports = [
     ]
   },
   {
-    name: 'transportation'
+    name: 'transportation',
+    displayName: 'Transportation',
   },
   {
-    name: 'telecommunications'
+    name: 'telecommunications',
+    displayName: 'Telecommunications',
   },
   {
-    name: 'information-technology'
+    name: 'information-technology',
+    displayName: 'Information Technology',
+
   },
   {
-    name: 'materials'
+    name: 'materials',
+    displayName: 'Materials',
   }
 ];

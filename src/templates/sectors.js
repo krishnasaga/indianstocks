@@ -4,10 +4,11 @@ import styled from 'styled-components';
 import { useTable } from 'react-table';
 import makeData from '../somethings/makeData';
 import Sticky from 'react-stickynode';
+import {TopNav} from "../components/TopNav";
 
 export default ({ pageContext: { name,intro,insights} }) =>
-
   <Box>
+    <TopNav/>
     <SectorBanner name={name} intro={intro} insights={insights}/>
     <SectorFinancials/>
     <Box m={40} sx={{
@@ -43,7 +44,7 @@ const Styles = styled(Box)`
     }
    th {
     background: ${({ bg }) => bg}
-    color: ${({ headerColor }) => headerColor}
+    color:  red;
    }
     th,
     td {
@@ -79,7 +80,9 @@ function Table({ columns, data }) {
       {headerGroups.map(headerGroup => (
         <tr {...headerGroup.getHeaderGroupProps()}>
           {headerGroup.headers.map(column => (
-            <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+            <th {...column.getHeaderProps()}>
+              <Text variant={"smallLight"}>{column.render('Header')}</Text>
+            </th>
           ))}
         </tr>
       ))}
@@ -90,7 +93,10 @@ function Table({ columns, data }) {
         return (
           <tr {...row.getRowProps()}>
             {row.cells.map(cell => {
-              return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
+             const { number } = cell.getCellProps();
+              return <td {...cell.getCellProps()} >
+                <Text  variant={ number ? 'smallPositiveNumber' : ''} >{cell.render('Cell')}</Text>
+              </td>;
             })}
           </tr>
         );
@@ -104,36 +110,26 @@ function CompaniesList() {
   const columns = React.useMemo(
     () => [
       {
-        Header: 'Basic Info',
-        accessor: 'name',
-        columns: [
-          {
-            Header: 'Company Name',
-            accessor: 'companyName',
-          },
-          {
-            Header: 'Sector',
-            accessor: 'sector',
-          },
-        ],
+        Header: 'Company Name',
+        accessor: 'companyName',
       },
       {
-        Header: 'Fundamentals',
-        accessor: 'fundamentals',
-        columns: [
-          {
-            Header: 'PE ratio',
-            accessor: 'peRatio',
-          },
-          {
-            Header: 'PB ratio',
-            accessor: 'pbRatio',
-          },
-          {
-            Header: 'Market Cap',
-            accessor: 'marketCap',
-          },
-        ],
+        Header: 'Sector',
+        accessor: 'sector',
+
+      },
+      {
+        Header: 'PE ratio',
+        accessor: 'peRatio',
+        number: true
+      },
+      {
+        Header: 'PB ratio',
+        accessor: 'pbRatio',
+      },
+      {
+        Header: 'Market Cap',
+        accessor: 'marketCap',
       },
     ],
     [],

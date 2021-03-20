@@ -70,9 +70,9 @@ export default {
     },
     "h3": {
       "color": "text",
-      "fontFamily": "heading",
+      "fontFamily": "'Open Sans', sans-serif",
       "lineHeight": "heading",
-      "fontWeight": "heading",
+      "fontWeight": "nromal",
       "fontSize": 3
     },
     "h4": {
@@ -133,7 +133,24 @@ export default {
       "maxWidth": "100%"
     }
   },
+  sizes: {
+    container: ['1000px','1283px']
+  },
   text: {
-
+    smallLight: {
+      color: '#948484',
+      fontWeight: 'normal',
+      fontSize: '1rem'
+    },
+    smallPositiveNumber: {
+      color: 'green',
+      fontWeight: 'normal',
+      fontSize: '1rem'
+    },
+    smallLightNumberNegitive: {
+     color: 'green',
+     fontWeight: 'normal',
+     fontSize: '1rem'
+    }
   }
 }
