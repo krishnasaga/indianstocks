@@ -85,7 +85,8 @@ function Dropdown({component}){
       position: 'fixed',
       left: '0',
       top: '74px',
-      width: '90%'
+      width: '90%',
+      boxShadow: '4px 4px 10px -5px rgb(0 0 0 / 10%)'
     }}>
       <Component/>
     </Box></Portal>;
@@ -113,7 +114,7 @@ function AnalyticsDropdown(){
       </Box>
       <Box>
         <Text> Bioinformatics usage </Text>
-        <Text> Bioinformatics usage  </Text>
+        <Text> Chemical production  </Text>
       </Box>
     </Grid>
   </Box>
