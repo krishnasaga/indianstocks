@@ -124,7 +124,27 @@ function DisruptionsDropdown(){
   return <Box  sx={{
     height: '200px'
   }} >
-    Disruptions
+    <Text py={20}>Disruptions</Text>
+    <Grid columns={[4]}>
+      <Box sx={{ borderRight: '1px solid grey'}}>
+        <Text> Electric Transport </Text>
+        <Text> Genomics </Text>
+        <Text> Battery ecosystems </Text>
+        <Text> Materials </Text>
+      </Box>
+      <Box>
+        <Text> Space Exploration </Text>
+        <Text> Next IT </Text>
+      </Box>
+      <Box>
+        <Text> Information Technology </Text>
+        <Text> Internet of things </Text>
+      </Box>
+      <Box>
+        <Text> Bioinformatics  </Text>
+        <Text> Telemedicine  </Text>
+      </Box>
+    </Grid>
   </Box>
 }
 
