@@ -78,7 +78,10 @@ const dropdownComponents = {
 function Dropdown({component}){
   const Component = dropdownComponents[component];
   return <Portal>
-    <Box bg={'pink'} p={20} bg={'white'}  sx={{
+    <Box onClick={(event)=>{
+      event.stopPropagation();
+    }
+    } bg={'pink'} p={20} bg={'white'}  sx={{
       position: 'fixed',
       left: '0',
       top: '74px',
@@ -92,7 +95,27 @@ function AnalyticsDropdown(){
   return <Box  sx={{
     height: '200px'
   }} >
-    Analytics
+    <Text py={10}>Analytics</Text>
+    <Grid columns={[4]}>
+      <Box sx={{ borderRight: '1px solid grey'}}>
+        <Text> Electric two wheeler penetration </Text>
+        <Text> Electric Cars penetration </Text>
+        <Text> Battery ecosystems </Text>
+        <Text> Materials </Text>
+      </Box>
+      <Box>
+        <Text> Telecom performance </Text>
+        <Text> 5G ready </Text>
+      </Box>
+      <Box>
+        <Text> Information Technology </Text>
+        <Text> Internet of things </Text>
+      </Box>
+      <Box>
+        <Text> Bioinformatics usage </Text>
+        <Text> Bioinformatics usage  </Text>
+      </Box>
+    </Grid>
   </Box>
 }
 
