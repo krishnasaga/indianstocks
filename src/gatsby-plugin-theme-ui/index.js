@@ -143,14 +143,16 @@ export default {
       fontSize: '1rem'
     },
     smallPositiveNumber: {
-      color: 'green',
+      color: '#0CAF82',
       fontWeight: 'normal',
-      fontSize: '1rem'
+      fontSize: '1rem',
+      textAlign: 'right'
     },
     smallLightNumberNegitive: {
-     color: 'green',
-     fontWeight: 'normal',
-     fontSize: '1rem'
+      color: '#0CAF82',
+      fontWeight: 'normal',
+      fontSize: '1rem',
+      textAlign: 'right'
     }
   }
 }

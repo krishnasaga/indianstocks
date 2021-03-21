@@ -95,7 +95,11 @@ function Table({ columns, data }) {
             {row.cells.map(cell => {
              const { number } = cell.getCellProps();
               return <td {...cell.getCellProps()} >
-                <Text  variant={ number ? 'smallPositiveNumber' : ''} >{cell.render('Cell')}</Text>
+                <Text  variant={ cell.value > 0
+                  ? 'smallPositiveNumber'
+                  : ''} >
+                  {cell.render('Cell')}
+                </Text>
               </td>;
             })}
           </tr>

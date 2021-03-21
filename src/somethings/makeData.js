@@ -14,8 +14,10 @@ const newPerson = () => {
     companyName: namor.generate({ words: 1, numbers: 0 }),
     sector: namor.generate({ words: 1, numbers: 0 }),
     peRatio: Math.floor(Math.random() * 30),
-    visits: Math.floor(Math.random() * 100),
-    progress: Math.floor(Math.random() * 100),
+    pbRatio: Math.floor(Math.random() * 100),
+    cagr: Math.floor(Math.random() * 100),
+    beta: Math.floor(Math.random() * 100),
+    incorporation: 'Public Limited',
     status:
       statusChance > 0.66
         ? 'relationship'
