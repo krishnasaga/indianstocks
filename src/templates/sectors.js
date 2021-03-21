@@ -36,9 +36,7 @@ const Styles = styled(Box)`
       }
       :hover {
         td {
-          background: rgba(0,0,0,0.02);
-          box-shadow:  0 1px 0 rgba(0,0,0,0.24);
-          border-right: none;
+          background: #ECF3FD;
         }
       }
     }
@@ -51,7 +49,6 @@ const Styles = styled(Box)`
       margin: 0;
       padding: 0.5rem;
       border-bottom: 1px solid #e5e5e5;
-      border-right: 1px solid #e5e5e5;
       cursor: pointer;
       :last-child {
         border-right: 0;
@@ -59,6 +56,13 @@ const Styles = styled(Box)`
     }
   }
 `;
+
+const mapCellFormat = (value) => {
+  if(typeof value === 'string') return '';
+  if(value > 0) return 'smallPositiveNumber';
+  return 'smallNegativeNumber';
+};
+
 
 function Table({ columns, data }) {
   // Use the state and functions returned from useTable to build your UI
@@ -95,9 +99,7 @@ function Table({ columns, data }) {
             {row.cells.map(cell => {
              const { number } = cell.getCellProps();
               return <td {...cell.getCellProps()} >
-                <Text  variant={ cell.value > 0
-                  ? 'smallPositiveNumber'
-                  : ''} >
+                <Text  variant={ mapCellFormat(cell.value)} >
                   {cell.render('Cell')}
                 </Text>
               </td>;
@@ -124,8 +126,7 @@ function CompaniesList() {
       },
       {
         Header: 'PE ratio',
-        accessor: 'peRatio',
-        number: true
+        accessor: 'peRatio'
       },
       {
         Header: 'PB ratio',
@@ -134,6 +135,10 @@ function CompaniesList() {
       {
         Header: 'Market Cap',
         accessor: 'marketCap',
+      },
+      {
+        Header: 'Revenue',
+        accessor: 'revenue',
       },
     ],
     [],

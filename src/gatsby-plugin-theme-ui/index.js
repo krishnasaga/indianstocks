@@ -148,8 +148,8 @@ export default {
       fontSize: '1rem',
       textAlign: 'right'
     },
-    smallLightNumberNegitive: {
-      color: '#0CAF82',
+    smallNegativeNumber: {
+      color: '#ff0101',
       fontWeight: 'normal',
       fontSize: '1rem',
       textAlign: 'right'

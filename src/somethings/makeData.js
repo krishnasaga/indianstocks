@@ -8,7 +8,7 @@ const range = len => {
   return arr
 }
 
-const newPerson = () => {
+const newCompany = () => {
   const statusChance = Math.random()
   return {
     companyName: namor.generate({ words: 1, numbers: 0 }),
@@ -17,6 +17,7 @@ const newPerson = () => {
     pbRatio: Math.floor(Math.random() * 100),
     cagr: Math.floor(Math.random() * 100),
     beta: Math.floor(Math.random() * 100),
+    revenue: Math.floor(Math.random() * 100) - 10,
     incorporation: 'Public Limited',
     status:
       statusChance > 0.66
@@ -32,7 +33,7 @@ export default function makeData(...lens) {
     const len = lens[depth]
     return range(len).map(d => {
       return {
-        ...newPerson(),
+        ...newCompany(),
         subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined,
       }
     })
