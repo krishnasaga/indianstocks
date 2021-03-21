@@ -34,15 +34,17 @@ function Introbanner(){
         }}>
         </Box>
         <Box my={10}>
-          <Text color={'text2'} sx={{ fontSize: '2.5rem'}}> Invest on Big Disruptions</Text>
+          <Text color={'text2'} sx={{ fontSize: '2.5rem'}}>
+            Invest on Big Disruptions
+          </Text>
         </Box>
         <Box my={10}>
-          <Text color={'text1'} sx={{ fontSize: '1.5rem'}}> With convergence of financial and technological expertise</Text>
+          <Text color={'text1'}
+                sx={{ fontSize: '1.5rem'}}>
+            With convergence of financial and technological expertise
+          </Text>
         </Box>
-        <Button my={40} sx={{
-          borderRadius: 0,
-          cursor: 'pointer'
-        }}>
+        <Button my={40} varient={'primary'}>
           Explore
         </Button>
       </Box>

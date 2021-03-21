@@ -1,3 +1,9 @@
+
+const buttonStyles = {
+  borderRadius: 0,
+  cursor: 'pointer'
+};
+
 export default {
   "space": [
     0,
@@ -46,7 +52,12 @@ export default {
     "background4": "#b3b3b3",
     "primary": "#1a73e8",
     "secondary": "#9c27b0",
-    "muted": "#f1f3f4"
+    "muted": "#f1f3f4",
+    "color1": "#2B7FCA",
+    "color2": "#F3F5F5",
+    "color3": "#6CA5D4",
+    "color4": "#6F7899",
+    "color5": "#1F315D"
   },
   "styles": {
     "root": {
@@ -134,7 +145,17 @@ export default {
     }
   },
   sizes: {
-    container: ['1000px','1283px']
+    container: ['500px','1283px']
+  },
+  buttons: {
+    primary: {
+      ...buttonStyles,
+      bg: "color1"
+    },
+    secondary: {
+      ...buttonStyles,
+      bg: "color2"
+    }
   },
   text: {
     smallLight: {

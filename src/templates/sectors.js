@@ -148,9 +148,7 @@ function CompaniesList() {
 
   return (
     <Styles bg={'color.background'} headerColor={'primary'}>
-      <Sticky enabled={true} top={0} bottomBoundary={0}>
         <Table columns={columns} data={data} />
-      </Sticky>
     </Styles>
   );
 }
