@@ -1,10 +1,11 @@
 import React from 'react';
-import { Box, Grid, Link, Text } from 'theme-ui';
+import { Box, Grid, Link,Image, Text } from 'theme-ui';
 import styled from 'styled-components';
 import { useTable } from 'react-table';
 import makeData from '../somethings/makeData';
 import Sticky from 'react-stickynode';
 import {TopNav} from "../components/TopNav";
+import healthCareImage from '../images/health-insurance.png';
 
 export default ({ pageContext: { name,intro,insights} }) =>
   <Box>
@@ -205,9 +206,9 @@ const SectorFinancials = ({visible = false }) => {
 
 
 const SectorBanner = ({ name,intro,insights} ) => {
-  return <Box sx={{width: '100%', height: ['550px','400px']}} bg={'black'}>
-    <Grid columns={[1,1]}>
-      <Box px={20} py={70}>
+  return <Box sx={{width: '100%', height: ['550px']}} bg={'black'}>
+    <Grid columns={[1,2]}>
+      <Box my={20}  px={20} py={70}>
         <Text color={'text2'}  sx={{
           fontSize: 40
         }}>
@@ -218,7 +219,7 @@ const SectorBanner = ({ name,intro,insights} ) => {
         }}>
           {intro}
         </Text>
-        <Grid columns={[2,4]} py={70}>
+        <Grid columns={[2,2]} py={70}>
           {insights.map((insight)=>{
             return <Box sx={{
               textAlign: 'center'
@@ -229,7 +230,12 @@ const SectorBanner = ({ name,intro,insights} ) => {
           })}
         </Grid>
       </Box>
+      <Box sx={{ textAlign: 'center' }}>
+        <Image src={healthCareImage} sx={{
+          filter: 'invert() hue-rotate(180deg)',
 
+        }}/>
+      </Box>
     </Grid>
 
   </Box>;
