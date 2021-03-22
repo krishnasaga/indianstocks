@@ -240,3 +240,4 @@ const SectorBanner = ({ name,intro,insights} ) => {
 
   </Box>;
 }
+

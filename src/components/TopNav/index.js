@@ -15,7 +15,7 @@ export const TopNav = () => {
     event.stopPropagation();
   };
 
-  return <Box bg={'grey'} sx={{
+  return <Box bg={'color2'} sx={{
     position: 'fixed',
     top: '0',
     zIndex: '99',
@@ -56,7 +56,7 @@ function NavButton({children,...remainingProps}){
 export const Menu = ({children,...remainingProps}) => {
   return  <Box {...remainingProps} >
     <Box
-      p={20} color={'text2'} sx={{
+      p={20} color={'color5'} sx={{
       textAlign: 'center',
       gridAlignSelf: 'end',
       cursor: 'pointer'

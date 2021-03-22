@@ -158,6 +158,10 @@ export default {
     }
   },
   text: {
+    default: {
+      color: 'color4',
+      fontSize: 3,
+    },
     smallLight: {
       color: '#948484',
       fontWeight: 'normal',
