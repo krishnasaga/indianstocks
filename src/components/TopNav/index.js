@@ -41,7 +41,7 @@ export const TopNav = () => {
 
 
 function NavButton({children,...remainingProps}){
-  return  <Box {...remainingProps} p={25}  bg={'primary'} sx={{
+  return  <Box {...remainingProps} p={25}  color={'color2'} bg={'primary'} sx={{
     width: '100%',
     textAlign: 'center',
     gridAlignSelf: 'end',
@@ -81,7 +81,7 @@ function Dropdown({component}){
     <Box onClick={(event)=>{
       event.stopPropagation();
     }
-    } bg={'pink'} p={20} bg={'white'}  sx={{
+    } p={20} bg={'color4'} color={'color2'} sx={{
       position: 'fixed',
       left: '0',
       top: '74px',
@@ -99,22 +99,22 @@ function AnalyticsDropdown(){
     <Text py={10}>Analytics</Text>
     <Grid columns={[4]}>
       <Box sx={{ borderRight: '1px solid grey'}}>
-        <Text> Electric two wheeler penetration </Text>
-        <Text> Electric Cars penetration </Text>
-        <Text> Battery ecosystems </Text>
-        <Text> Materials </Text>
+        <Text color={'color2'} > Electric two wheeler penetration </Text>
+        <Text color={'color2'} > Electric Cars penetration </Text>
+        <Text color={'color2'} > Battery ecosystems </Text>
+        <Text color={'color2'} > Materials </Text>
       </Box>
       <Box>
-        <Text> Telecom performance </Text>
-        <Text> 5G ready </Text>
+        <Text color={'color2'} >  Telecom performance </Text>
+        <Text color={'color2'} >  5G ready </Text>
       </Box>
       <Box>
-        <Text> Information Technology </Text>
-        <Text> Internet of things </Text>
+        <Text color={'color2'} >  Information Technology </Text>
+        <Text color={'color2'} >  Internet of things </Text>
       </Box>
       <Box>
-        <Text> Bioinformatics usage </Text>
-        <Text> Telemedicine penetration </Text>
+        <Text color={'color2'} >  Bioinformatics usage </Text>
+        <Text color={'color2'} >  Telemedicine penetration </Text>
       </Box>
     </Grid>
   </Box>
@@ -127,22 +127,22 @@ function DisruptionsDropdown(){
     <Text py={20}>Disruptions</Text>
     <Grid columns={[4]}>
       <Box sx={{ borderRight: '1px solid grey'}}>
-        <Text> Electric Transport </Text>
-        <Text> Genomics </Text>
-        <Text> Battery ecosystems </Text>
-        <Text> Materials </Text>
+        <Text color={'color2'} >  Electric Transport </Text>
+        <Text color={'color2'} >  Genomics </Text>
+        <Text color={'color2'} >  Battery ecosystems </Text>
+        <Text color={'color2'} >  Materials </Text>
       </Box>
       <Box>
-        <Text> Space Exploration </Text>
-        <Text> Next IT </Text>
+        <Text color={'color2'} >  Space Exploration </Text>
+        <Text color={'color2'} >  Next IT </Text>
       </Box>
       <Box>
-        <Text> Information Technology </Text>
-        <Text> Internet of things </Text>
+        <Text color={'color2'} >  Information Technology </Text>
+        <Text color={'color2'} >  Internet of things </Text>
       </Box>
       <Box>
-        <Text> Bioinformatics  </Text>
-        <Text> Telemedicine  </Text>
+        <Text color={'color2'} >  Bioinformatics  </Text>
+        <Text color={'color2'} >  Telemedicine  </Text>
       </Box>
     </Grid>
   </Box>

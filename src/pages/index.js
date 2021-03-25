@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box,Grid,Text,Link,Container,Button} from 'theme-ui';
 import {TopNav} from "../components/TopNav";
-import introImage  from "./introglobe.png";
+import introImage  from "./background.jpg";
 
 const Explorer = ({children}) => {
   return <Box p={20} >
@@ -23,10 +23,15 @@ export default () => <Box>
 </Box>;
 
 function Introbanner(){
-  return <Box bg={'black'} sx={{ height: '100vh' }}>
-    <Container sx={{
-      backgroundImage: `url(${introImage})`,
-    }} >
+  return <Box bg={'black'} sx={{
+    height: '100vh',
+    background: `black url(${introImage}) fixed center`,
+    position: 'relative',
+    filter: 'light(1)',
+    zIndex: 0
+  }} >
+
+    <Container >
     <Grid>
       <Box >
         <Box sx={{
@@ -53,5 +58,13 @@ function Introbanner(){
       </Box>
     </Grid>
     </Container>
+    <Box  bg={'black'} sx={{
+      position: 'absolute',
+      width: '100%',
+      height: '100%',
+      opacity: 0.9,
+      zIndex: -1,
+      top: 0
+    }}/>
   </Box>
 }
