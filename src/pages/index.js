@@ -3,23 +3,38 @@ import { Box,Grid,Text,Link,Container,Button} from 'theme-ui';
 import {TopNav} from "../components/TopNav";
 import introImage  from "./background.jpg";
 
-const Explorer = ({children}) => {
-  return <Box p={20} >
-    <Box h={[200]} p={20} sx={{
+const Explorer = ({children,...remainingProps}) => {
+  return <Container>
+    <Box {...remainingProps} py={20} >
+    <Box  bg={'color2'} h={[200]} p={20} sx={{
     boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);'
   }} >
     {children}
-  </Box></Box>;
+  </Box></Box>
+  </Container>;
 };
 
 export default () => <Box>
   <TopNav/>
   <Introbanner/>
-  <Grid py={100} columns={[1,1,2,4]} >
+  <Box  bg={'color5'}  >
+    <Container>
+  <Grid py={100} columns={[1,1,2,4]}>
+    <Explorer>
+      <a href={"/sectors"}>Explore Companies by Sector</a>
+    </Explorer>
+    <Explorer>
+      <a href={"/sectors"}>Explore Companies by Sector</a>
+    </Explorer>
+    <Explorer>
+      <a href={"/sectors"}>Explore Companies by Sector</a>
+    </Explorer>
     <Explorer>
       <a href={"/sectors"}>Explore Companies by Sector</a>
     </Explorer>
   </Grid>
+    </Container>
+  </Box>
 </Box>;
 
 function Introbanner(){
@@ -49,7 +64,7 @@ function Introbanner(){
             With convergence of financial and technological expertise
           </Text>
         </Box>
-        <Button my={40} varient={'primary'}>
+        <Button my={40}  varient={'primary'}>
           Explore
         </Button>
       </Box>

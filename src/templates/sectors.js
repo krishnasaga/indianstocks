@@ -5,12 +5,13 @@ import { useTable } from 'react-table';
 import makeData from '../somethings/makeData';
 import Sticky from 'react-stickynode';
 import {TopNav} from "../components/TopNav";
+import { SectorBanner, Subpages } from "../components/Sector";
 import healthCareImage from '../images/health-insurance.png';
-
 export default ({ pageContext: { name,intro,insights} }) =>
   <Box>
     <TopNav/>
     <SectorBanner name={name} intro={intro} insights={insights}/>
+    <Subpages name={name}/>
     <SectorFinancials/>
     <Box m={40} sx={{
       borderRadius: 5,
@@ -203,41 +204,3 @@ const SectorFinancials = ({visible = false }) => {
 
   </Grid>;
 }
-
-
-const SectorBanner = ({ name,intro,insights} ) => {
-  return <Box sx={{width: '100%', height: ['550px']}} bg={'black'}>
-    <Grid columns={[1,2]}>
-      <Box my={20}  px={20} py={70}>
-        <Text color={'text2'}  sx={{
-          fontSize: 40
-        }}>
-          {name.toUpperCase()}
-        </Text>
-        <Text as={'h2'} color={'text3'} sx={{
-          fontSize: 25
-        }}>
-          {intro}
-        </Text>
-        <Grid columns={[2,2]} py={70}>
-          {insights.map((insight)=>{
-            return <Box sx={{
-              textAlign: 'center'
-            }}>
-              <Text color={'text3'} sx={{ fontSize: 20 }}>{insight.name}</Text>
-              <Text color={'text2'}  sx={{ fontSize: 25 }} >{insight.number}</Text>
-            </Box>;
-          })}
-        </Grid>
-      </Box>
-      <Box sx={{ textAlign: 'center' }}>
-        <Image src={healthCareImage} sx={{
-          filter: 'invert() hue-rotate(180deg)',
-
-        }}/>
-      </Box>
-    </Grid>
-
-  </Box>;
-}
-
