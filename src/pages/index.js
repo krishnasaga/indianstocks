@@ -39,13 +39,13 @@ function Introbanner(){
         }}>
         </Box>
         <Box my={10}>
-          <Text color={'text2'} sx={{ fontSize: '2.5rem'}}>
+          <Text color={'text2'} sx={{ fontSize: '2.8rem'}}>
             Invest on Big Disruptions
           </Text>
         </Box>
         <Box my={10}>
           <Text color={'text1'}
-                sx={{ fontSize: '1.5rem'}}>
+                sx={{ fontSize: '1.8rem'}}>
             With convergence of financial and technological expertise
           </Text>
         </Box>
@@ -62,7 +62,7 @@ function Introbanner(){
       position: 'absolute',
       width: '100%',
       height: '100%',
-      opacity: 0.9,
+      opacity: 0.7,
       zIndex: -1,
       top: 0
     }}/>
