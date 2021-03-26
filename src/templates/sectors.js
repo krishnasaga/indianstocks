@@ -1,27 +1,37 @@
-import React from 'react';
-import { Box, Grid, Link,Image, Text } from 'theme-ui';
-import styled from 'styled-components';
-import { useTable } from 'react-table';
-import makeData from '../somethings/makeData';
-import Sticky from 'react-stickynode';
-import {TopNav} from "../components/TopNav";
+import React from "react";
+import { Box, Grid, Link, Image, Text } from "theme-ui";
+import styled from "styled-components";
+import { useTable } from "react-table";
+import makeData from "../somethings/makeData";
+import Sticky from "react-stickynode";
+import { TopNav } from "../components/TopNav";
 import { SectorBanner, Subpages } from "../components/Sector";
-import healthCareImage from '../images/health-insurance.png';
-export default ({ pageContext: { name,intro,insights} }) =>
+import healthCareImage from "../images/health-insurance.png";
+export default ({
+  pageContext: { name, intro, insights, backgroundImage },
+}) => (
   <Box>
-    <TopNav/>
-    <SectorBanner name={name} intro={intro} insights={insights}/>
-    <Subpages name={name}/>
-    <SectorFinancials/>
-    <Box m={40} sx={{
-      borderRadius: 5,
-      boxShadow: '0 3px 20px 0 rgb(0 77 165 / 7%)',
-      overflow: 'scroll',
-    }}>
+    <TopNav />
+    <SectorBanner
+      name={name}
+      intro={intro}
+      insights={insights}
+      backgroundImage={backgroundImage}
+    />
+    <Subpages name={name} />
+    <SectorFinancials />
+    <Box
+      m={40}
+      sx={{
+        borderRadius: 5,
+        boxShadow: "0 3px 20px 0 rgb(0 77 165 / 7%)",
+        overflow: "scroll",
+      }}
+    >
       <CompaniesList />
     </Box>
-  </Box>;
-
+  </Box>
+);
 
 const Styles = styled(Box)`
   padding: 0;
@@ -60,11 +70,10 @@ const Styles = styled(Box)`
 `;
 
 const mapCellFormat = (value) => {
-  if(typeof value === 'string') return '';
-  if(value > 0) return 'smallPositiveNumber';
-  return 'smallNegativeNumber';
+  if (typeof value === "string") return "";
+  if (value > 0) return "smallPositiveNumber";
+  return "smallNegativeNumber";
 };
-
 
 function Table({ columns, data }) {
   // Use the state and functions returned from useTable to build your UI
@@ -83,32 +92,34 @@ function Table({ columns, data }) {
   return (
     <table {...getTableProps()}>
       <thead>
-      {headerGroups.map(headerGroup => (
-        <tr {...headerGroup.getHeaderGroupProps()}>
-          {headerGroup.headers.map(column => (
-            <th {...column.getHeaderProps()}>
-              <Text variant={"smallLight"}>{column.render('Header')}</Text>
-            </th>
-          ))}
-        </tr>
-      ))}
+        {headerGroups.map((headerGroup) => (
+          <tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map((column) => (
+              <th {...column.getHeaderProps()}>
+                <Text variant={"smallLight"}>{column.render("Header")}</Text>
+              </th>
+            ))}
+          </tr>
+        ))}
       </thead>
       <tbody {...getTableBodyProps()}>
-      {rows.map((row, i) => {
-        prepareRow(row);
-        return (
-          <tr {...row.getRowProps()}>
-            {row.cells.map(cell => {
-             const { number } = cell.getCellProps();
-              return <td {...cell.getCellProps()} >
-                <Text  variant={ mapCellFormat(cell.value)} >
-                  {cell.render('Cell')}
-                </Text>
-              </td>;
-            })}
-          </tr>
-        );
-      })}
+        {rows.map((row, i) => {
+          prepareRow(row);
+          return (
+            <tr {...row.getRowProps()}>
+              {row.cells.map((cell) => {
+                const { number } = cell.getCellProps();
+                return (
+                  <td {...cell.getCellProps()}>
+                    <Text variant={mapCellFormat(cell.value)}>
+                      {cell.render("Cell")}
+                    </Text>
+                  </td>
+                );
+              })}
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
@@ -118,89 +129,117 @@ function CompaniesList() {
   const columns = React.useMemo(
     () => [
       {
-        Header: 'Company Name',
-        accessor: 'companyName',
+        Header: "Company Name",
+        accessor: "companyName",
       },
       {
-        Header: 'Sector',
-        accessor: 'sector',
-
+        Header: "Sector",
+        accessor: "sector",
       },
       {
-        Header: 'PE ratio',
-        accessor: 'peRatio'
+        Header: "PE ratio",
+        accessor: "peRatio",
       },
       {
-        Header: 'PB ratio',
-        accessor: 'pbRatio',
+        Header: "PB ratio",
+        accessor: "pbRatio",
       },
       {
-        Header: 'Market Cap',
-        accessor: 'marketCap',
+        Header: "Market Cap",
+        accessor: "marketCap",
       },
       {
-        Header: 'Revenue',
-        accessor: 'revenue',
+        Header: "Revenue",
+        accessor: "revenue",
       },
     ],
-    [],
+    []
   );
 
   const data = React.useMemo(() => makeData(20), []);
 
   return (
-    <Styles bg={'color.background'} headerColor={'primary'}>
-        <Table columns={columns} data={data} />
+    <Styles bg={"color.background"} headerColor={"primary"}>
+      <Table columns={columns} data={data} />
     </Styles>
   );
 }
 
-function ProductItem({name}) {
-  return <Grid columns={[2]} sx={{
-    '::hover': {
-      color: 'red'
-    }
-  }}
-  >
-    <Box py={2} >
-      <Text  color={'secondary'}   >{name}</Text>
-    </Box>
-  </Grid>;
-};
-
-const SectorFinancials = ({visible = false }) => {
-
-  if(!visible) return null;
-
-  return <Grid p={20} columns={[1, 1, 2, 2]} sx={{
-    alignItems: "center"
-  }} >
-    <Box>
-      <Text as={'h2'}  color={'primary'}  > Disruptions </Text>
-      <Box w={'100%'}>
-        <ProductItem name={'DNA Sequencing'} />
-        <ProductItem name={'DNA Sequencing'} />
-        <ProductItem name={'DNA Sequencing'} />
-        <ProductItem name={'DNA Sequencing'} />
-        <ProductItem name={'DNA Sequencing'} />
-        <ProductItem name={'DNA Sequencing'} />
-        <ProductItem name={'DNA Sequencing'} />
+function ProductItem({ name }) {
+  return (
+    <Grid
+      columns={[2]}
+      sx={{
+        "::hover": {
+          color: "red",
+        },
+      }}
+    >
+      <Box py={2}>
+        <Text color={"secondary"}>{name}</Text>
       </Box>
-    </Box>
-    <Box sx={{}}>
-      <Text as={'h2'}  color={'primary'}  > Performance </Text>
-      <Text py={20} as={'h3'}  color={'primary'}  > Current Market size </Text>
-      <Text  color={'secondary'}   py={20} sx={{
-        fontSize: '2rem',
-      }}>$1 Trillion</Text>
-      <Text py={20} as={'h3'}  color={'primary'}  > Expected market size by 2025 </Text>
-      <Text
-        color={'secondary'}
-        py={20}
-        sx={{
-          fontSize: '2rem',
-        }}>$5 Trillion</Text>
-    </Box>
-
-  </Grid>;
+    </Grid>
+  );
 }
+
+const SectorFinancials = ({ visible = false }) => {
+  if (!visible) return null;
+
+  return (
+    <Grid
+      p={20}
+      columns={[1, 1, 2, 2]}
+      sx={{
+        alignItems: "center",
+      }}
+    >
+      <Box>
+        <Text as={"h2"} color={"primary"}>
+          {" "}
+          Disruptions{" "}
+        </Text>
+        <Box w={"100%"}>
+          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"} />
+        </Box>
+      </Box>
+      <Box sx={{}}>
+        <Text as={"h2"} color={"primary"}>
+          {" "}
+          Performance{" "}
+        </Text>
+        <Text py={20} as={"h3"} color={"primary"}>
+          {" "}
+          Current Market size{" "}
+        </Text>
+        <Text
+          color={"secondary"}
+          py={20}
+          sx={{
+            fontSize: "2rem",
+          }}
+        >
+          $1 Trillion
+        </Text>
+        <Text py={20} as={"h3"} color={"primary"}>
+          {" "}
+          Expected market size by 2025{" "}
+        </Text>
+        <Text
+          color={"secondary"}
+          py={20}
+          sx={{
+            fontSize: "2rem",
+          }}
+        >
+          $5 Trillion
+        </Text>
+      </Box>
+    </Grid>
+  );
+};
