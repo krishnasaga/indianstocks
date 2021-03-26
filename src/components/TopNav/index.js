@@ -10,18 +10,27 @@ export const TopNav = () => {
   const [open, setOpen] = useState(false);
   const [dropdownComponent, setDropdownComponent] = useState('');
 
+  const props = useSpring({
+    config:{duration:800},
+    from: {
+      position: 'fixed',
+      top: '0',
+      left: "-100%",
+      zIndex: '99',
+      width: '90%'
+    },
+    to: {
+      left: "0"
+    }
+  })
+
   const menuHandler = (event, componentName) => {
     setOpen(!open);
     setDropdownComponent(componentName)
     event.stopPropagation();
   };
 
-  return <Box bg={'color2'} sx={{
-    position: 'fixed',
-    top: '0',
-    zIndex: '99',
-    width: '90%'
-  }}>
+  return <AnimatedBox bg={'color2'} style={props}>
     <Grid columns={['1fr 1fr 1fr 1fr 1fr 1fr 1fr']}>
       <Box p={25} sx={{
         gridAlignSelf: 'start'
@@ -37,7 +46,7 @@ export const TopNav = () => {
     <OutsideClickHandler useCapture={true} onOutsideClick={() => {
       setOpen(false);
     }}/>
-  </Box>;
+  </AnimatedBox>;
 };
 
 
