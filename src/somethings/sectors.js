@@ -4,7 +4,7 @@ module.exports = [
     displayName: "Health Care",
     intro:
       "Healthcare industry in India is projected to reach $372 billion by 2022",
-    backgroundImage: "/health-insurance.png",
+    backgroundImage: "/h2.jpg",
     focus: [
       {
         name: "DNA Sequencing",
