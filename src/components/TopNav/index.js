@@ -20,7 +20,7 @@ export const TopNav = () => {
     position: 'fixed',
     top: '0',
     zIndex: '99',
-    width: '90%'
+    width: '85%'
   }}>
     <Grid columns={['1fr 1fr 1fr 1fr 1fr 1fr 1fr']}>
       <Box p={25} sx={{
