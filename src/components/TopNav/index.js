@@ -20,7 +20,7 @@ export const TopNav = () => {
     position: 'fixed',
     top: '0',
     zIndex: '99',
-    width: '90%'
+    width: '85%'
   }}>
     <Grid columns={['1fr 1fr 1fr 1fr 1fr 1fr 1fr']}>
       <Box p={25} sx={{
@@ -90,7 +90,7 @@ function Dropdown({component}) {
       position: 'fixed',
       left: '0',
       top: '74px',
-      width: '90%',
+      width: '85%',
       boxShadow: '4px 4px 10px -5px rgb(0 0 0 / 10%)',
 
     }}

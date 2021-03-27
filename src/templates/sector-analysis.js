@@ -3,10 +3,14 @@ import { Box, Grid, Link,Image, Text } from 'theme-ui';
 import {TopNav} from "../components/TopNav";
 import { SectorBanner, Subpages } from "../components/Sector";
 
-export default ({ pageContext: { name,intro,insights} }) =>
+export default ({ pageContext: { name,intro,insights,backgroundImage} }) =>
   <Box>
     <TopNav/>
-    <SectorBanner name={name} intro={intro} insights={insights}/>
+    <SectorBanner
+          name={name}
+          intro={intro}
+          insights={insights}
+          backgroundImage={backgroundImage}/>
     <Subpages name={name} />
     <Box>
       <Grid>
