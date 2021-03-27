@@ -3,6 +3,7 @@ import {Box, Grid, Text,Slider,Button} from "theme-ui";
 import {useTable} from "react-table";
 import React, {useState} from "react";
 import makeData from "../../somethings/makeData";
+import { Filters } from './Filters';
 
 const Styles = styled(Box)`
   padding: 0;
@@ -96,7 +97,7 @@ function Table({columns, data}) {
   );
 }
 
-export function CompaniesList() {
+export function CompaniesList({name}) {
   const columns = React.useMemo(
     () => [
       {
@@ -132,15 +133,9 @@ export function CompaniesList() {
   return (
     <Styles bg={"color.background"} headerColor={"primary"}>
       <Box>
-        <Grid columns={['1fr 4fr']} gap={0}>
+        <Grid columns={['2fr 7fr']} gap={0}>
           <Box>
-            <FilterGroup name={"Market Cap"}>
-              <MarketCap/>
-            </FilterGroup>
-            <FilterGroup name={"Hello"}/>
-            <FilterGroup name={"Hello"}/>
-            <FilterGroup name={"Hello"}/>
-            <FilterGroup name={"Hello"}/>
+            <Filters sectorName={name}/>
           </Box>
           <Box>
             <Table columns={columns} data={data}/>
@@ -149,38 +144,4 @@ export function CompaniesList() {
       </Box>
     </Styles>
   );
-}
-
-function FilterGroup({children, ...remainingProps}) {
-  const [open, setOpen] = useState(true);
-
-  return <Box><Box {...remainingProps}
-                   p={2}
-                   sx={{
-                     color: 'red',
-                     borderBottom: '1px solid grey',
-                     cursor: 'pointer',
-                     transition: 'height 0.2s'
-                   }}
-
-                   onClick={() => {
-                     setOpen(!open)
-                   }}
-  >
-    {remainingProps.name}
-  </Box>
-    {open ? <Box>
-      {children}
-    </Box> : null}
-  </Box>;
-}
-
-
-function MarketCap(){
-  return <Box>
-    <Slider/>
-    <Button>Small</Button>
-    <Button>Mid</Button>
-    <Button>Large</Button>
-  </Box>
 }

@@ -1,27 +1,22 @@
 import React from "react";
-import { Box, Grid, Link, Image, Text } from "theme-ui";
-import styled from "styled-components";
-import { useTable } from "react-table";
-import makeData from "../somethings/makeData";
-import Sticky from "react-stickynode";
-import { TopNav } from "../components/TopNav";
-import { SectorBanner, Subpages } from "../components/Sector";
-import healthCareImage from "../images/health-insurance.png";
-import { CompaniesList } from "../components/Sector/companies-table";
+import {Box, Grid, Text} from "theme-ui";
+import {TopNav} from "../components/TopNav";
+import {SectorBanner, Subpages} from "../components/Sector";
+import {CompaniesList} from "../components/Sector/companies-table";
 
 export default ({
-  pageContext: { name, intro, insights, backgroundImage },
-}) => (
+                  pageContext: {displayName,name, intro, insights = [], backgroundImage},
+                }) => (
   <Box>
-    <TopNav />
+    <TopNav/>
     <SectorBanner
-      name={name}
+      name={displayName}
       intro={intro}
       insights={insights}
       backgroundImage={backgroundImage}
     />
-    <Subpages name={name} />
-    <SectorFinancials />
+    <Subpages name={name}/>
+    <SectorFinancials/>
     <Box
       m={40}
       sx={{
@@ -30,12 +25,12 @@ export default ({
         overflow: "scroll",
       }}
     >
-      <CompaniesList />
+      <CompaniesList name={name}/>
     </Box>
   </Box>
 );
 
-function ProductItem({ name }) {
+function ProductItem({name}) {
   return (
     <Grid
       columns={[2]}
@@ -52,7 +47,7 @@ function ProductItem({ name }) {
   );
 }
 
-const SectorFinancials = ({ visible = false }) => {
+const SectorFinancials = ({visible = false}) => {
   if (!visible) return null;
 
   return (
@@ -69,13 +64,13 @@ const SectorFinancials = ({ visible = false }) => {
           Disruptions{" "}
         </Text>
         <Box w={"100%"}>
-          <ProductItem name={"DNA Sequencing"} />
-          <ProductItem name={"DNA Sequencing"} />
-          <ProductItem name={"DNA Sequencing"} />
-          <ProductItem name={"DNA Sequencing"} />
-          <ProductItem name={"DNA Sequencing"} />
-          <ProductItem name={"DNA Sequencing"} />
-          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"}/>
+          <ProductItem name={"DNA Sequencing"}/>
+          <ProductItem name={"DNA Sequencing"}/>
+          <ProductItem name={"DNA Sequencing"}/>
+          <ProductItem name={"DNA Sequencing"}/>
+          <ProductItem name={"DNA Sequencing"}/>
+          <ProductItem name={"DNA Sequencing"}/>
         </Box>
       </Box>
       <Box sx={{}}>

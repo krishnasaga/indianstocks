@@ -3,7 +3,7 @@ import { Box, Grid, Link,Image, Text } from 'theme-ui';
 import {TopNav} from "../components/TopNav";
 import { SectorBanner, Subpages } from "../components/Sector";
 
-export default ({ pageContext: { name,intro,insights,backgroundImage} }) =>
+export default ({ pageContext: { name,intro,insights = [],backgroundImage} }) =>
   <Box>
     <TopNav/>
     <SectorBanner

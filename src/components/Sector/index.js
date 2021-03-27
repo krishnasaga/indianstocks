@@ -27,7 +27,7 @@ export const SectorBanner = ({name, intro, insights, backgroundImage}) => {
               fontSize: 40,
             }}
           >
-            {name.toUpperCase()}
+            {name}
           </Text>
 
           <Text
