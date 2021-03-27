@@ -79,7 +79,7 @@ export function Subpages({name}) {
       }}
     >
       <Container>
-        <Grid columns={[4, 4, 4, 4]} align={"center"}>
+        <Grid columns={[5,5,5,5]} align={"center"}>
           <Tab
             name={"Analysis"}
             href={`/sectors/${name}/complete-analysis-of-${name}-sector-in-india`}
@@ -93,6 +93,8 @@ export function Subpages({name}) {
             href={`/sectors/${name}/top-investors-in-${name}-in-india`}
           />
           <Tab name={"News"} href={`/sectors/${name}/latest-news`}/>
+          <Tab name={"Q&A"} href={`/sectors/${name}/latest-news`}/>
+
         </Grid>
       </Container>
     </Box>

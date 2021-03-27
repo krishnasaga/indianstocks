@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Box, Grid, Text} from "theme-ui";
+import {Box, Grid, Text,Slider,Button} from "theme-ui";
 import {useTable} from "react-table";
 import React, {useState} from "react";
 import makeData from "../../somethings/makeData";
@@ -134,7 +134,9 @@ export function CompaniesList() {
       <Box>
         <Grid columns={['1fr 4fr']} gap={0}>
           <Box>
-            <FilterGroup name={"Hello"}/>
+            <FilterGroup name={"Market Cap"}>
+              <MarketCap/>
+            </FilterGroup>
             <FilterGroup name={"Hello"}/>
             <FilterGroup name={"Hello"}/>
             <FilterGroup name={"Hello"}/>
@@ -168,7 +170,17 @@ function FilterGroup({children, ...remainingProps}) {
     {remainingProps.name}
   </Box>
     {open ? <Box>
-      Hello
+      {children}
     </Box> : null}
   </Box>;
+}
+
+
+function MarketCap(){
+  return <Box>
+    <Slider/>
+    <Button>Small</Button>
+    <Button>Mid</Button>
+    <Button>Large</Button>
+  </Box>
 }

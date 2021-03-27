@@ -90,7 +90,7 @@ function Dropdown({component}) {
       position: 'fixed',
       left: '0',
       top: '74px',
-      width: '90%',
+      width: '85%',
       boxShadow: '4px 4px 10px -5px rgb(0 0 0 / 10%)',
 
     }}
