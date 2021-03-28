@@ -199,7 +199,9 @@ function FilterGroup({ children, ...remainingProps }) {
       >
         <Grid columns={["6fr 1fr"]}>
           <Box>{remainingProps.name}</Box>
-          <Box mt={1}>{open ? <FiChevronUp /> : <FiChevronDown />}</Box>
+          <Box mt={1} sx={{
+            textAlign: 'right'
+          }}>{open ? <FiChevronUp /> : <FiChevronDown />}</Box>
         </Grid>
       </Box>
       {open ? <Box mt={4}>{children}</Box> : null}
