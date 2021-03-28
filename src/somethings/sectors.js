@@ -42,12 +42,31 @@ module.exports = [
     name: "energy",
     displayName: "Energy",
     backgroundImage: "/Energy-bg.jpg",
+    intro: "The present peak demand is about 1,15,000 MW and the Installed Capacity is 1,52,380 MW",
     focus: [
       {
         name: "Renewable Energy",
       },
       {
         name: "Energy Storage",
+      },
+    ],
+    insights: [
+      {
+        name: "Startups",
+        number: 25,
+      },
+      {
+        name: "Listed companies",
+        number: 25,
+      },
+      {
+        name: "Private Companies",
+        number: 25,
+      },
+      {
+        name: "CAGR",
+        number: "25%",
       },
     ],
   },

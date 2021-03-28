@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import {Box, Grid, Text,Slider,Button} from "theme-ui";
-import {useTable} from "react-table";
-import React, {useState} from "react";
+import {Box, Grid, Text} from "theme-ui";
+import {useSortBy, useTable} from "react-table";
+import React from "react";
 import makeData from "../../somethings/makeData";
-import { Filters } from './Filters';
+import {Filters} from './Filters';
+import {BsChevronDown,BsChevronUp} from "react-icons/bs";
 
 const Styles = styled(Box)`
   padding: 0;
@@ -58,7 +59,7 @@ function Table({columns, data}) {
   } = useTable({
     columns,
     data,
-  });
+  }, useSortBy);
 
   // Render the UI for your table
   return (
@@ -67,8 +68,11 @@ function Table({columns, data}) {
       {headerGroups.map((headerGroup) => (
         <tr {...headerGroup.getHeaderGroupProps()}>
           {headerGroup.headers.map((column) => (
-            <th {...column.getHeaderProps()}>
+            <th {...column.getHeaderProps(column.getSortByToggleProps())}>
               <Text variant={"smallLight"}>{column.render("Header")}</Text>
+              <span>{column.isSorted ? (column.isSortedDesc ?
+                <BsChevronDown/> :
+                <BsChevronUp/>) : ''} </span>
             </th>
           ))}
         </tr>

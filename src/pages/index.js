@@ -59,7 +59,7 @@ function Introbanner(){
           </Text>
         </Box>
         <Box my={10}>
-          <Text color={'text1'}
+          <Text color={'color2'}
                 sx={{ fontSize: '1.8rem'}}>
             With convergence of financial and technological expertise
           </Text>
