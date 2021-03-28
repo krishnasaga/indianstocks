@@ -135,10 +135,16 @@ export default {
       ...buttonStyles,
       bg: "color2",
     },
+    outlined: {
+      ...buttonStyles,
+      bg: "white",
+      border: "1px solid black",
+      color: "black",
+    },
   },
   text: {
     default: {
-      color: "color4",
+      color: "black",
       fontSize: 3,
     },
     smallLight: {

@@ -1,36 +1,35 @@
 import React from "react";
-import {Box, Grid, Text} from "theme-ui";
-import {TopNav} from "../components/TopNav";
-import {SectorBanner, Subpages} from "../components/Sector";
-import {CompaniesList} from "../components/Sector/companies-table";
+import { Box, Grid, Text } from "theme-ui";
+import { TopNav } from "../components/TopNav";
+import { SectorBanner, Subpages } from "../components/Sector";
+import { CompaniesList } from "../components/Sector/companies-table";
 
 export default ({
-                  pageContext: {displayName,name, intro, insights = [], backgroundImage},
-                }) => (
+  pageContext: { displayName, name, intro, insights = [], backgroundImage },
+}) => (
   <Box>
-    <TopNav/>
+    <TopNav />
     <SectorBanner
       name={displayName}
       intro={intro}
       insights={insights}
       backgroundImage={backgroundImage}
     />
-    <Subpages name={name}/>
-    <SectorFinancials/>
+    <Subpages name={name} />
+    <SectorFinancials />
     <Box
       m={40}
       sx={{
         borderRadius: 5,
         boxShadow: "0 3px 20px 0 rgb(0 77 165 / 7%)",
-        overflow: "scroll",
       }}
     >
-      <CompaniesList name={name}/>
+      <CompaniesList name={name} />
     </Box>
   </Box>
 );
 
-function ProductItem({name}) {
+function ProductItem({ name }) {
   return (
     <Grid
       columns={[2]}
@@ -47,7 +46,7 @@ function ProductItem({name}) {
   );
 }
 
-const SectorFinancials = ({visible = false}) => {
+const SectorFinancials = ({ visible = false }) => {
   if (!visible) return null;
 
   return (
@@ -64,13 +63,13 @@ const SectorFinancials = ({visible = false}) => {
           Disruptions{" "}
         </Text>
         <Box w={"100%"}>
-          <ProductItem name={"DNA Sequencing"}/>
-          <ProductItem name={"DNA Sequencing"}/>
-          <ProductItem name={"DNA Sequencing"}/>
-          <ProductItem name={"DNA Sequencing"}/>
-          <ProductItem name={"DNA Sequencing"}/>
-          <ProductItem name={"DNA Sequencing"}/>
-          <ProductItem name={"DNA Sequencing"}/>
+          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"} />
+          <ProductItem name={"DNA Sequencing"} />
         </Box>
       </Box>
       <Box sx={{}}>
