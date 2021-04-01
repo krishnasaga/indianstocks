@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Grid, Link, Text } from "theme-ui";
 import { Portal } from "react-portal";
 import OutsideClickHandler from "react-outside-click-handler";
@@ -6,13 +6,20 @@ import { useSpring, animated } from "react-spring";
 import { useBreakpointIndex } from "@theme-ui/match-media";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
+import { RiArrowRightSLine } from "react-icons/ri";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 
 const AnimatedBox = animated(Box);
 
 export const TopNav = () => {
   const [open, setOpen] = useState(false);
+
+  const [MobileComponent, setMobileComponent] = useState({
+    position: null,
+  });
   const [Menuopen, setMenuopen] = useState(false);
   const [dropdownComponent, setDropdownComponent] = useState("");
+  const index = useBreakpointIndex();
 
   const menuHandler = (event, componentName) => {
     setOpen(!open);
@@ -24,7 +31,11 @@ export const TopNav = () => {
     event.stopPropagation();
   };
 
-  const index = useBreakpointIndex();
+  useEffect(() => {
+    if (index > 1) {
+      setMenuopen(false);
+    }
+  }, [index]);
 
   return (
     <Box
@@ -55,7 +66,7 @@ export const TopNav = () => {
             {" "}
             <Menu onClick={(event) => menuHandler(event, "disruptions")}>
               {" "}
-              Disruptions{index}{" "}
+              Disruptions{" "}
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "research")}>
               {" "}
@@ -101,29 +112,233 @@ export const TopNav = () => {
         )}
       </Grid>
       {open ? <Dropdown component={dropdownComponent} /> : null}
-      {Menuopen ? <DropdownMenu /> : null}
+      {Menuopen ? (
+        <DropdownMenu
+          menuHandler={menuHandler}
+          MobileComponent={MobileComponent}
+          setMobileComponent={setMobileComponent}
+        />
+      ) : null}
       <OutsideClickHandler
         useCapture={true}
         onOutsideClick={() => {
           setOpen(false);
-          setMenuopen(false);
+          if (index >= 1) setMenuopen(false);
         }}
       />
     </Box>
   );
 };
 
-function DropdownMenu() {
+function DropdownMenu({ MobileComponent, setMobileComponent }) {
+  const menuHandler = (componentName) => {
+    setMobileComponent({ position: componentName });
+  };
+
+  const styles = {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    cursor: "pointer",
+  };
+
+  function DisruptionsDropdownMobile() {
+    return (
+      <Box
+        sx={{
+          height: "100vh",
+          width: "80vw",
+        }}
+      >
+        <Box
+          pt={3}
+          pb={2}
+          onClick={() => menuHandler(null)}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <MdKeyboardArrowLeft color="black" />
+          <Text ml={2}>Disruptions</Text>
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            textAlign: "left",
+          }}
+        >
+          <Text color={"color1"}> Electric Transport </Text>
+          <Text color={"color1"}> Genomics </Text>
+          <Text color={"color1"}> Battery ecosystems </Text>
+          <Text color={"color1"}> Materials </Text>
+          <Text color={"color1"}> Space Exploration </Text>
+          <Text color={"color1"}> Next IT </Text>
+          <Text color={"color1"}> Information Technology </Text>
+          <Text color={"color1"}> Internet of things </Text>
+          <Text color={"color1"}> Bioinformatics </Text>
+          <Text color={"color1"}> Telemedicine </Text>
+        </Box>
+      </Box>
+    );
+  }
+
+  function ResearchDropdownMobile() {
+    return (
+      <Box
+        bg={"color2"}
+        sx={{
+          position: "absolute",
+          top: "1px",
+          height: "100vh",
+          width: "100%",
+        }}
+      >
+        <Box
+          pt={3}
+          pb={2}
+          onClick={() => menuHandler(null)}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <MdKeyboardArrowLeft color="black" />
+          <Text ml={2}> Research</Text>
+        </Box>
+      </Box>
+    );
+  }
+  function SectorsDropdownMobile() {
+    return (
+      <Box
+        bg={"color2"}
+        sx={{
+          position: "absolute",
+          top: "1px",
+          height: "100vh",
+          width: "100%",
+        }}
+      >
+        <Box
+          pt={3}
+          pb={2}
+          onClick={() => menuHandler(null)}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <MdKeyboardArrowLeft color="black" />
+          <Text ml={2}> Sectors</Text>
+        </Box>
+      </Box>
+    );
+  }
+
+  function AnalyticsDropdownMobile() {
+    return (
+      <Box
+        bg={"color2"}
+        sx={{
+          position: "absolute",
+          top: "1px",
+          height: "100vh",
+          width: "100%",
+        }}
+      >
+        <Box
+          pt={3}
+          pb={2}
+          onClick={() => menuHandler(null)}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <MdKeyboardArrowLeft color="black" />
+          <Text ml={2}> Analytics</Text>
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            textAlign: "left",
+          }}
+        >
+          <Text color={"color1"}> Electric two wheeler penetration </Text>
+          <Text color={"color1"}> Electric Cars penetration </Text>
+          <Text color={"color1"}> Battery ecosystems </Text>
+          <Text color={"color1"}> Materials </Text>
+
+          <Text color={"color1"}> Telecom performance </Text>
+          <Text color={"color1"}> 5G ready </Text>
+
+          <Text color={"color1"}> Information Technology </Text>
+          <Text color={"color1"}> Internet of things </Text>
+
+          <Text color={"color1"}> Bioinformatics usage </Text>
+          <Text color={"color1"}> Telemedicine penetration </Text>
+        </Box>
+      </Box>
+    );
+  }
+
   return (
     <Box
       sx={{
+        position: "relative",
         height: "90vh",
       }}
     >
-      <Menu> Disruptions </Menu>
-      <Menu> Research </Menu>
-      <Menu> Sectors </Menu>
-      <Menu> Analytics </Menu>
+      {MobileComponent.position === "disruptions" ? (
+        <Menu>
+          {" "}
+          <DisruptionsDropdownMobile />{" "}
+        </Menu>
+      ) : (
+        <Box sx={styles} onClick={() => menuHandler("disruptions")}>
+          <Menu> Disruptions </Menu>
+          <RiArrowRightSLine color="black" />
+        </Box>
+      )}
+      {MobileComponent.position === "research" ? (
+        <Menu>
+          {" "}
+          <ResearchDropdownMobile />{" "}
+        </Menu>
+      ) : (
+        <Box sx={styles} onClick={() => menuHandler("research")}>
+          <Menu> Research </Menu>
+          <RiArrowRightSLine color="black" />
+        </Box>
+      )}
+
+      {MobileComponent.position === "sectors" ? (
+        <Menu>
+          {" "}
+          <SectorsDropdownMobile />{" "}
+        </Menu>
+      ) : (
+        <Box sx={styles} onClick={() => menuHandler("sectors")}>
+          <Menu> Sectors </Menu>
+          <RiArrowRightSLine color="black" />
+        </Box>
+      )}
+      {MobileComponent.position === "analytics" ? (
+        <Menu>
+          {" "}
+          <AnalyticsDropdownMobile />{" "}
+        </Menu>
+      ) : (
+        <Box sx={styles} onClick={() => menuHandler("analytics")}>
+          <Menu> Analytics </Menu>
+          <RiArrowRightSLine color="black" />
+        </Box>
+      )}
     </Box>
   );
 }
