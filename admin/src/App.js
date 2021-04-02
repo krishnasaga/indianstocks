@@ -1,8 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import { Admin, Resource } from 'react-admin';
-import { restClient } from 'ra-data-feathers';
-import { List, Datagrid, TextField, DateField, BooleanField,Create,SimpleForm,TextInput,ArrayInput,SimpleFormIterator,Edit } from 'react-admin';
+import {
+  Admin,
+  ArrayInput,
+  Create,
+  Datagrid,
+  Edit,
+  Link,
+  List,
+  Resource,
+  SimpleForm,
+  SimpleFormIterator,
+  TextField,
+  TextInput
+} from 'react-admin';
+import {restClient} from 'ra-data-feathers';
 import fetch from 'isomorphic-fetch';
 
 const rest = require('@feathersjs/rest-client');
@@ -26,13 +37,13 @@ function App() {
 }
 
 
-function SectorsList(props){
+function SectorsList(props) {
   return <List {...props}>
     <Datagrid>
-      <TextField source="_id" />
-      <TextField source="name" />
-      <TextField source="displayName" />
-      <TextField source="intro" />
+      <TextField source="_id"/>
+      <Link to={`/${props.id}`}><TextField source="name"/></Link>
+      <TextField source="displayName"/>
+      <TextField source="intro"/>
     </Datagrid>
   </List>;
 }
@@ -40,14 +51,14 @@ function SectorsList(props){
 export const SectorsCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput source="name" />
-      <TextInput source="displayName" />
-      <TextInput source="intro" />
-      <TextInput source="intro" />
+      <TextInput source="name"/>
+      <TextInput source="displayName"/>
+      <TextInput source="intro"/>
+      <TextInput source="backgroundImage"/>
       <ArrayInput source="insights">
         <SimpleFormIterator>
-          <TextInput source="naem" />
-          <TextInput source="number" />
+          <TextInput source="name"/>
+          <TextInput source="number"/>
         </SimpleFormIterator>
       </ArrayInput>
     </SimpleForm>
@@ -56,17 +67,16 @@ export const SectorsCreate = (props) => (
 
 
 export const SectorsEdit = (props) => (
-  <Edit {...props}>
-    <SimpleForm>      <TextInput source="_id" />
-
-      <TextInput source="name" />
-      <TextInput source="displayName" />
-      <TextInput source="intro" />
-      <TextInput source="intro" />
+  <Edit  {...props}>
+    <SimpleForm>
+      <TextInput source="name"/>
+      <TextInput source="displayName"/>
+      <TextInput source="intro"/>
+      <TextInput source="backgroundImage"/>
       <ArrayInput source="insights">
         <SimpleFormIterator>
-          <TextInput source="naem" />
-          <TextInput source="number" />
+          <TextInput source="name"/>
+          <TextInput source="number"/>
         </SimpleFormIterator>
       </ArrayInput>
     </SimpleForm>

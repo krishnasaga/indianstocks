@@ -1,5 +1,25 @@
+const axios = require('axios');
+
+let API_ENDPOINT = null;
+
+if(process.env.NODE_ENV === 'production') {
+  API_ENDPOINT = 'https://qx4w2t87f2.execute-api.us-east-1.amazonaws.com';
+}else {
+  API_ENDPOINT = 'http://localhost:3030';
+}
+
 exports.createPages = async function ({actions, graphql}) {
-  const data = require('./src/somethings/sectors.js');
+
+  let data = null;
+
+  console.log('API env variable is on',process.env.API);
+
+  if (!process.env.API) {
+    data = require('./src/somethings/sectors.js');
+  } else {
+    const response = await axios.get(`${API_ENDPOINT}/sector`);
+    data = response.data.data;
+  }
 
   data.forEach(edge => {
     const {name, displayName, intro, insights, backgroundImage} = edge;
@@ -57,6 +77,7 @@ exports.createPages = async function ({actions, graphql}) {
     });
 
   })
+
   actions.createPage({
     path: `/sectors`,
     component: require.resolve(`./src/templates/sectors-list.js`),
