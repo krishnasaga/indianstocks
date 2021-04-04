@@ -17,7 +17,7 @@ exports.createPages = async function ({actions, graphql}) {
   if (!process.env.API) {
     data = require('./src/somethings/sectors.js');
   } else {
-    const response = await axios.get(`${API_ENDPOINT}/sector`);
+    const response = await axios.get(`${API_ENDPOINT}/sectors`);
     data = response.data.data;
   }
 

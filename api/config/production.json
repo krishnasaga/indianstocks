@@ -1,5 +1,0 @@
-{
-  "host": "api-app.feathersjs.com",
-  "port": "PORT",
-  "mysql": "mysql://DB_USERNAME:DB_PASSWORD@indianstocks.cluster-cu7mpx4mljuc.us-east-1.rds.amazonaws.com/indianstocks"
-}
