@@ -6,8 +6,20 @@ const DataTypes = Sequelize.DataTypes;
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
   const sectors = sequelizeClient.define('sectors', {
-    text: {
+    name: {
       type: DataTypes.STRING,
+      allowNull: false
+    },
+    displayName: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    info: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    insights: {
+      type: DataTypes.JSON,
       allowNull: false
     }
   }, {
