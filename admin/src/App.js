@@ -19,7 +19,13 @@ import fetch from 'isomorphic-fetch';
 const rest = require('@feathersjs/rest-client');
 const feathers = require('@feathersjs/feathers');
 
-const feathersClient = rest('http://localhost:3030')
+let feathersClient = null;
+
+if (process.env.NODE_ENV !== 'production') {
+  feathersClient = rest('http://localhost:3030')
+} else {
+  feathersClient = rest('https://qx4w2t87f2.execute-api.us-east-1.amazonaws.com')
+}
 
 // Configure an AJAX library (see below) with that client
 const app = feathers();
