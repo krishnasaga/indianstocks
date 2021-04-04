@@ -37,7 +37,7 @@ function App() {
     <Admin className="App" dataProvider={restClient(app, {
       id: '_id', // If your database uses an id field other than 'id'. Optional.
     })}>
-      <Resource name={'sector'} list={SectorsList} create={SectorsCreate} edit={SectorsEdit}/>
+      <Resource name={'sectors'} list={SectorsList} create={SectorsCreate} edit={SectorsEdit}/>
     </Admin>
   );
 }
