@@ -67,7 +67,7 @@ function ClosePrice() {
           fontSize: "0.9rem",
         }}
       >
-        <Input placeholder="search" />
+        <Input placeholder="search" bg={"white"} />
         <Text
           sx={{
             textAlign: "center",
@@ -77,7 +77,7 @@ function ClosePrice() {
         >
           to
         </Text>
-        <Input placeholder="search" />
+        <Input placeholder="search" bg={"white"} />
       </Grid>
       <Grid
         mt={3}
@@ -87,10 +87,14 @@ function ClosePrice() {
           fontSize: "0.9rem",
         }}
       >
-        <Button p={2} to={`/`} as={Link} variant="outlined">
+        <Button p={2} to={`/`} as={Link} variant="outlined" sx={{
+          borderRight: "none",
+        }}>
           Small
         </Button>
-        <Button p={2} to={`/`} as={Link} variant="outlined">
+        <Button p={2} to={`/`} as={Link} variant="outlined" sx={{
+          borderRight: "none",
+        }}>
           Mid
         </Button>
         <Button p={2} to={`/`} variant="outlined" as={Link}>
@@ -113,7 +117,7 @@ function PE_Ratio() {
           fontSize: "0.9rem",
         }}
       >
-        <Input placeholder="search" />
+        <Input placeholder="search" bg={"white"} />
         <Text
           sx={{
             textAlign: "center",
@@ -123,7 +127,7 @@ function PE_Ratio() {
         >
           to
         </Text>
-        <Input placeholder="search" />
+        <Input placeholder="search" bg={"white"} />
       </Grid>
       <Grid
         mt={3}
@@ -133,10 +137,14 @@ function PE_Ratio() {
           fontSize: "0.9rem",
         }}
       >
-        <Button p={2} to={`/`} as={Link} variant="outlined">
+        <Button p={2} to={`/`} as={Link} variant="outlined" sx={{
+          borderRight: "none",
+        }}>
           Small
         </Button>
-        <Button p={2} to={`/`} as={Link} variant="outlined">
+        <Button p={2} to={`/`} as={Link} variant="outlined" sx={{
+          borderRight: "none",
+        }}>
           Mid
         </Button>
         <Button p={2} to={`/`} variant="outlined" as={Link}>
@@ -222,10 +230,14 @@ function MarketCap() {
           fontSize: "0.9rem",
         }}
       >
-        <Button p={2} to={`/`} as={Link} variant="outlined">
+        <Button p={2} to={`/`} as={Link} variant="outlined" sx={{
+          borderRight: "none",
+        }}>
           Small
         </Button>
-        <Button p={2} to={`/`} as={Link} variant="outlined">
+        <Button p={2} to={`/`} as={Link} variant="outlined" sx={{
+          borderRight: "none",
+        }}>
           Mid
         </Button>
         <Button p={2} to={`/`} variant="outlined" as={Link}>
@@ -240,7 +252,7 @@ function Focus() {
   const items = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
     <Box>
-      <Input placeholder="search" />
+      <Input placeholder="search" bg={"white"} />
       <Box mt={3}>
         {items.map(() => {
           return (
@@ -275,7 +287,9 @@ function CompanyType({ sectorName }) {
         p={2}
         to={`/sectors/${sectorName}/all-publicly-listed-companies-in-${sectorName}-sector-india`}
         as={Link}
-        variant="outlined"
+        variant="outlined" sx={{
+          borderRight: "none",
+        }}
       >
         Public
       </Button>
@@ -283,7 +297,9 @@ function CompanyType({ sectorName }) {
         p={2}
         to={`/sectors/${sectorName}/all-private-limited-companies-in-${sectorName}-sector-india`}
         as={Link}
-        variant="outlined"
+        variant="outlined" sx={{
+          borderRight: "none",
+        }}
       >
         Private
       </Button>
@@ -291,7 +307,9 @@ function CompanyType({ sectorName }) {
         p={2}
         to={`/all-companies-in-${sectorName}-india`}
         variant="outlined"
-        as={Link}
+        as={Link} sx={{
+          borderRight: "none",
+        }}
       >
         All
       </Button>
