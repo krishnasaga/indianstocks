@@ -168,11 +168,14 @@ function StockUniverse() {
       {items.map((res) => {
         return (
           <Label mt={2}>
-            <Checkbox />
+            <Checkbox sx={{
+              cursor: "pointer"
+            }} />
             <Text
               sx={{
                 fontSize: "0.9rem",
                 fontWeight: "400",
+                cursor: "pointer"
               }}
             >
               {res}
@@ -257,11 +260,14 @@ function Focus() {
         {items.map(() => {
           return (
             <Label mt={2}>
-              <Checkbox />
+              <Checkbox sx={{
+                cursor: "pointer"
+              }} />
               <Text
                 sx={{
                   fontSize: "0.9rem",
                   fontWeight: "400",
+                  cursor: "pointer"
                 }}
               >
                 Consumer Discretionary
