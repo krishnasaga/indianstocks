@@ -1,9 +1,9 @@
-import {Box, Container, Grid, Link, Text} from "theme-ui";
-import {AnimatedNumber} from "../Number";
+import { Box, Container, Grid, Link, Text } from "theme-ui";
+import { AnimatedNumber } from "../Number";
 
 import React from "react";
 
-export const SectorBanner = ({name, intro, insights, backgroundImage}) => {
+export const SectorBanner = ({ name, intro, insights, backgroundImage }) => {
   return (
     <Box
       sx={{
@@ -19,7 +19,7 @@ export const SectorBanner = ({name, intro, insights, backgroundImage}) => {
       }}
     >
       <Grid columns={[1, 2]}>
-        <Box my={20} px={20} py={70}>
+        <Box my={20} px={20} py={70} >
           <Text
             color={"text2"}
             variant="bold1"
@@ -48,13 +48,13 @@ export const SectorBanner = ({name, intro, insights, backgroundImage}) => {
                     textAlign: "center",
                   }}
                 >
-                  <Text color={"color2"} variant="bold1" sx={{fontSize: 20}}>
+                  <Text color={"color2"} variant="bold1" sx={{ fontSize: 20 }}>
                     {insight.name}
                   </Text>
                   <AnimatedNumber
                     color={"color2"}
                     variant="light2"
-                    sx={{fontSize: "2rem"}}
+                    sx={{ fontSize: "2rem" }}
                   >
                     {insight.number}
                   </AnimatedNumber>
@@ -63,13 +63,13 @@ export const SectorBanner = ({name, intro, insights, backgroundImage}) => {
             })}
           </Grid>
         </Box>
-        <Box sx={{textAlign: "center"}}></Box>
+        <Box sx={{ textAlign: "center" }}></Box>
       </Grid>
     </Box>
   );
 };
 
-export function Subpages({name}) {
+export function Subpages({ name }) {
   return (
     <Box
       bg={"color4"}
@@ -79,7 +79,7 @@ export function Subpages({name}) {
       }}
     >
       <Container>
-        <Grid columns={[5,5,5,5]} align={"center"}>
+        <Grid columns={[5, 5, 5, 5]} align={"center"}>
           <Tab
             name={"Analysis"}
             href={`/sectors/${name}/complete-analysis-of-${name}-sector-in-india`}
@@ -92,8 +92,8 @@ export function Subpages({name}) {
             name={"Investors"}
             href={`/sectors/${name}/top-investors-in-${name}-in-india`}
           />
-          <Tab name={"News"} href={`/sectors/${name}/latest-news`}/>
-          <Tab name={"Q&A"} href={`/sectors/${name}/latest-news`}/>
+          <Tab name={"News"} href={`/sectors/${name}/latest-news`} />
+          <Tab name={"Q&A"} href={`/sectors/${name}/latest-news`} />
 
         </Grid>
       </Container>
@@ -101,7 +101,7 @@ export function Subpages({name}) {
   );
 }
 
-function Tab({name, href}) {
+function Tab({ name, href }) {
   return (
     <Box
       p={2}

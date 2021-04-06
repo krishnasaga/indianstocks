@@ -4,12 +4,14 @@ import { Link } from "@reach/router";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { Input, Checkbox } from "theme-ui";
 
+
 export const Filters = ({ sectorName }) => {
   return (
     <Box>
       <Grid
         sx={{
           borderBottom: "1px solid #e5e5e5",
+          width: "100px"
         }}
         p={3}
         columns={"6fr 3fr"}
@@ -51,7 +53,7 @@ export const Filters = ({ sectorName }) => {
       <FilterGroup name={"PE Ratio"}>
         <PE_Ratio />
       </FilterGroup>
-    </Box>
+    </Box >
   );
 };
 
