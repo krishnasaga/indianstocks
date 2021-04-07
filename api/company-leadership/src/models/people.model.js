@@ -5,27 +5,31 @@ const DataTypes = Sequelize.DataTypes;
 
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
-  const sectors = sequelizeClient.define('sectors', {
-    name: {
+  const people = sequelizeClient.define('people', {
+    id: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    displayName: {
+    firstName: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    backgroundImage: {
+    lastName: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
-    intro: {
+    highestQualification: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
-    insights: {
-      type: DataTypes.JSON,
-      allowNull: false
-    }
+    role: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    expertise: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
   }, {
     hooks: {
       beforeCount(options) {
@@ -35,10 +39,10 @@ module.exports = function (app) {
   });
 
   // eslint-disable-next-line no-unused-vars
-  sectors.associate = function (models) {
+  people.associate = function (models) {
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
   };
 
-  return sectors;
+  return people;
 };

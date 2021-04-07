@@ -5,6 +5,7 @@ import React, {useState} from "react";
 import makeData from "../../somethings/makeData";
 import {Filters} from './Filters';
 import {BsArrowLeft, BsChevronDown, BsChevronUp} from "react-icons/bs";
+import ScrollLock from 'react-scrolllock';
 
 const Styles = styled(Box)`
   padding: 0;
@@ -138,6 +139,7 @@ export function CompaniesList({name}) {
   return (
     <Styles bg={"color.background"} headerColor={"primary"}>
       <Box>
+        { filtersOpen ? <ScrollLock/> : null }
         <Grid columns={[2]}
               sx={{display: ['block', 'block', 'none']}}
         >
@@ -155,6 +157,7 @@ export function CompaniesList({name}) {
           <Box
             bg={'white'}
             sx={{
+              overflowY: 'scroll',
               width: '100%',
               height: ['100vh', '100vh', 'initial'],
               display: [
@@ -172,7 +175,9 @@ export function CompaniesList({name}) {
               left: 0
             }}
           >
-            <Box>
+            <Box sx={{
+              display: ['block','block','none']
+            }}>
               <BsArrowLeft
                 size={50}
                 onClick={() => {
