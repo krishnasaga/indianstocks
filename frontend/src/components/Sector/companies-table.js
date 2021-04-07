@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Box, Grid, Text } from "theme-ui";
-import { useSortBy, useTable } from "react-table";
-import React from "react";
+import {Box, Button, Grid, Text} from "theme-ui";
+import {useSortBy, useTable} from "react-table";
+import React, {useState} from "react";
 import makeData from "../../somethings/makeData";
-import { Filters } from './Filters';
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import {Filters} from './Filters';
+import {BsArrowLeft, BsChevronDown, BsChevronUp} from "react-icons/bs";
 
 const Styles = styled(Box)`
   padding: 0;
@@ -26,7 +26,7 @@ const Styles = styled(Box)`
       }
     }
    th {
-    background: ${({ bg }) => bg}
+    background: ${({bg}) => bg}
     color:  red;
    }
     th,
@@ -48,7 +48,7 @@ const mapCellFormat = (value) => {
   return "smallNegativeNumber";
 };
 
-function Table({ columns, data }) {
+function Table({columns, data}) {
   // Use the state and functions returned from useTable to build your UI
   const {
     getTableProps,
@@ -65,43 +65,43 @@ function Table({ columns, data }) {
   return (
     <table {...getTableProps()}>
       <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                <Text variant={"smallLight"}>{column.render("Header")}</Text>
-                <span>{column.isSorted ? (column.isSortedDesc ?
-                  <BsChevronDown /> :
-                  <BsChevronUp />) : ''} </span>
-              </th>
-            ))}
-          </tr>
-        ))}
+      {headerGroups.map((headerGroup) => (
+        <tr {...headerGroup.getHeaderGroupProps()}>
+          {headerGroup.headers.map((column) => (
+            <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+              <Text variant={"smallLight"}>{column.render("Header")}</Text>
+              <span>{column.isSorted ? (column.isSortedDesc ?
+                <BsChevronDown/> :
+                <BsChevronUp/>) : ''} </span>
+            </th>
+          ))}
+        </tr>
+      ))}
       </thead>
       <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                const { number } = cell.getCellProps();
-                return (
-                  <td {...cell.getCellProps()}>
-                    <Text variant={mapCellFormat(cell.value)}>
-                      {cell.render("Cell")}
-                    </Text>
-                  </td>
-                );
-              })}
-            </tr>
-          );
-        })}
+      {rows.map((row, i) => {
+        prepareRow(row);
+        return (
+          <tr {...row.getRowProps()}>
+            {row.cells.map((cell) => {
+              const {number} = cell.getCellProps();
+              return (
+                <td {...cell.getCellProps()}>
+                  <Text variant={mapCellFormat(cell.value)}>
+                    {cell.render("Cell")}
+                  </Text>
+                </td>
+              );
+            })}
+          </tr>
+        );
+      })}
       </tbody>
     </table>
   );
 }
 
-export function CompaniesList({ name }) {
+export function CompaniesList({name}) {
   const columns = React.useMemo(
     () => [
       {
@@ -134,15 +134,62 @@ export function CompaniesList({ name }) {
 
   const data = React.useMemo(() => makeData(20), []);
 
+  const [filtersOpen, setFiltersOpen] = useState(false)
   return (
     <Styles bg={"color.background"} headerColor={"primary"}>
       <Box>
-        <Grid columns={[1, '2fr 7fr']} gap={0}>
+        <Grid columns={[2]}
+              sx={{display: ['block', 'block', 'none']}}
+        >
           <Box>
-            <Filters sectorName={name} />
+
           </Box>
           <Box>
-            <Table columns={columns} data={data} />
+            <Button onClick={() => {
+              setFiltersOpen(true);
+            }}> Filters </Button>
+          </Box>
+        </Grid>
+
+        <Grid columns={[1, 1, '2fr 7fr']} gap={0}>
+          <Box
+            bg={'white'}
+            sx={{
+              width: '100%',
+              height: ['100vh', '100vh', 'initial'],
+              display: [
+                filtersOpen ? 'block' : 'none',
+                filtersOpen ? 'block' : 'none', 'block',
+                'block'
+              ],
+              position: [
+                filtersOpen ? 'fixed' : 'static',
+                filtersOpen ? 'fixed' : 'static',
+                'static'
+              ],
+              zIndex: '9999',
+              top: 0,
+              left: 0
+            }}
+          >
+            <Box>
+              <BsArrowLeft
+                size={50}
+                onClick={() => {
+                setFiltersOpen(false);
+              }}
+              />
+            </Box>
+            <Filters
+              bg={'white'}
+              sectorName={name}/>
+          </Box>
+          <Box>
+            <Table
+
+              columns={columns}
+              data={data}
+            />
           </Box>
         </Grid>
       </Box>
