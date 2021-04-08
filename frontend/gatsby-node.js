@@ -89,6 +89,7 @@ exports.createPages = async function ({actions, graphql}) {
     fromPath: '/sectors',
     toPath: '/coming-soon',
     redirectInBrowser: true,
+    force: true
   });
 
 }
