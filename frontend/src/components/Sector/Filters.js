@@ -19,7 +19,7 @@ export const Filters = ({ sectorName, ...remainingProps }) => {
         columns={"6fr 3fr"}
       >
         <Text
-          pt={2}
+          mt={2}
           sx={{
             fontSize: "0.8rem",
           }}

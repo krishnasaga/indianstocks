@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Box, Button, Grid, Text } from "theme-ui";
-import { useSortBy, useTable } from "react-table";
-import React, { useState } from "react";
+import {Box, Button, Grid, Text} from "theme-ui";
+import {useSortBy, useTable} from "react-table";
+import React, {useState} from "react";
 import makeData from "../../somethings/makeData";
-import { Filters } from './Filters';
-import { BsArrowLeft, BsChevronDown, BsChevronUp, BsFillFunnelFill } from "react-icons/bs";
+import {Filters} from './Filters';
+import {BsArrowLeft, BsChevronDown, BsChevronUp, BsFillFunnelFill} from "react-icons/bs";
 import ScrollLock from 'react-scrolllock';
 
 const Styles = styled(Box)`
@@ -27,7 +27,7 @@ const Styles = styled(Box)`
       }
     }
    th {
-    background: ${({ bg }) => bg}
+    background: ${({bg}) => bg}
     color:  red;
    }
     th,
@@ -49,7 +49,7 @@ const mapCellFormat = (value) => {
   return "smallNegativeNumber";
 };
 
-function Table({ columns, data }) {
+function Table({columns, data}) {
   // Use the state and functions returned from useTable to build your UI
   const {
     getTableProps,
@@ -66,43 +66,43 @@ function Table({ columns, data }) {
   return (
     <table {...getTableProps()}>
       <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                <Text variant={"smallLight"}>{column.render("Header")}</Text>
-                <span>{column.isSorted ? (column.isSortedDesc ?
-                  <BsChevronDown /> :
-                  <BsChevronUp />) : ''} </span>
-              </th>
-            ))}
-          </tr>
-        ))}
+      {headerGroups.map((headerGroup) => (
+        <tr {...headerGroup.getHeaderGroupProps()}>
+          {headerGroup.headers.map((column) => (
+            <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+              <Text variant={"smallLight"}>{column.render("Header")}</Text>
+              <span>{column.isSorted ? (column.isSortedDesc ?
+                <BsChevronDown/> :
+                <BsChevronUp/>) : ''} </span>
+            </th>
+          ))}
+        </tr>
+      ))}
       </thead>
       <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                const { number } = cell.getCellProps();
-                return (
-                  <td {...cell.getCellProps()}>
-                    <Text variant={mapCellFormat(cell.value)}>
-                      {cell.render("Cell")}
-                    </Text>
-                  </td>
-                );
-              })}
-            </tr>
-          );
-        })}
+      {rows.map((row, i) => {
+        prepareRow(row);
+        return (
+          <tr {...row.getRowProps()}>
+            {row.cells.map((cell) => {
+              const {number} = cell.getCellProps();
+              return (
+                <td {...cell.getCellProps()}>
+                  <Text variant={mapCellFormat(cell.value)}>
+                    {cell.render("Cell")}
+                  </Text>
+                </td>
+              );
+            })}
+          </tr>
+        );
+      })}
       </tbody>
     </table>
   );
 }
 
-export function CompaniesList({ name }) {
+export function CompaniesList({name}) {
   const columns = React.useMemo(
     () => [
       {
@@ -137,29 +137,37 @@ export function CompaniesList({ name }) {
 
   const [filtersOpen, setFiltersOpen] = useState(false)
   return (
-    <Styles bg={"color.background"} headerColor={"primary"} >
-      <Box >
-        {filtersOpen ? <ScrollLock /> : null}
-        <Grid columns={[2]}
-          sx={{ display: ['block', 'block', 'none'] }}
+    <Styles bg={"color.background"} headerColor={"primary"}>
+      <Box>
+        {filtersOpen ? <ScrollLock/> : null}
+        <Box
+          p={2}
+        >
+        <Grid columns={['1fr 110px']}
+              sx={{display: ['grid', 'grid', 'none']}}
         >
           <Box>
 
           </Box>
-          <Box >
-            <Button variant="outlined" sx={{ py: "1", px: "3" }} onClick={() => {
+          <Box>
+            <Button variant="outlined" sx={{py: "1", px: "3"}} onClick={() => {
               setFiltersOpen(true);
-            }}><BsFillFunnelFill size={12} sx={{
-              display: 'inline',
-            }} /> <Text sx={{
-              display: 'inline',
-              p: "1",
-              fontSize: "0.8rem",
-              fontWeight: "600"
-            }}>Filters</Text> </Button>
+            }}>
+              <BsFillFunnelFill size={14} />
+              <Text
+              as={'span'}
+              mx={2}
+              sx={{
+                fontSize: "0.8rem",
+                fontWeight: "600"
+              }}
+            >Filters
+
+            </Text>
+            </Button>
           </Box>
         </Grid>
-
+        </Box>
         <Grid columns={[1, 1, '2fr 7fr']} gap={0}>
           <Box
             bg={'white'}
@@ -185,8 +193,8 @@ export function CompaniesList({ name }) {
             <Box sx={{
               display: ['block', 'block', 'none']
             }}
-              p={10}
-              color={'rgb(0, 0, 0)'}
+                 p={10}
+                 color={'rgb(0, 0, 0)'}
             >
               <BsArrowLeft
                 size={40}
@@ -197,7 +205,7 @@ export function CompaniesList({ name }) {
             </Box>
             <Filters
               bg={'white'}
-              sectorName={name} />
+              sectorName={name}/>
           </Box>
           <Box>
             <Table
