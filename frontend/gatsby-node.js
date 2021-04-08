@@ -2,9 +2,9 @@ const axios = require('axios');
 
 let API_ENDPOINT = null;
 
-if(process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
   API_ENDPOINT = 'https://qx4w2t87f2.execute-api.us-east-1.amazonaws.com';
-}else {
+} else {
   API_ENDPOINT = 'http://localhost:3030';
 }
 
@@ -12,7 +12,7 @@ exports.createPages = async function ({actions, graphql}) {
 
   let data = null;
 
-  console.log('API env variable is on',process.env.API);
+  console.log('API env variable is on', process.env.API);
 
   if (!process.env.API) {
     data = require('./src/somethings/sectors.js');
@@ -76,6 +76,7 @@ exports.createPages = async function ({actions, graphql}) {
       })
     });
 
+
   })
 
   actions.createPage({
@@ -83,6 +84,11 @@ exports.createPages = async function ({actions, graphql}) {
     component: require.resolve(`./src/templates/sectors-list.js`),
     context: {sectors: data},
   })
+
+  actions.createRedirect({
+    fromPath: '/sectors',
+    toPath: '/coming-soon'
+  });
 
 }
 
