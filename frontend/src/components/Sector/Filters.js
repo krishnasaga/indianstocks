@@ -5,10 +5,10 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { Input, Checkbox } from "theme-ui";
 
 
-export const Filters = ({ sectorName,...remainingProps }) => {
+export const Filters = ({ sectorName, ...remainingProps }) => {
   return (
     <Box bg={'white'}
-         {...remainingProps}
+      {...remainingProps}
     >
       <Grid
         sx={{
@@ -27,10 +27,12 @@ export const Filters = ({ sectorName,...remainingProps }) => {
           2 filters applied
         </Text>
         <Button
+          bg={"white"}
           p={1}
           sx={{
             fontSize: "0.8rem",
             fontWeight: "600",
+            color: "rgb(0,0,0)",
           }}
           variant="outlined"
         >
