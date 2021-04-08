@@ -5,13 +5,15 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { Input, Checkbox } from "theme-ui";
 
 
-export const Filters = ({ sectorName }) => {
+export const Filters = ({ sectorName,...remainingProps }) => {
   return (
-    <Box>
+    <Box bg={'white'}
+         {...remainingProps}
+    >
       <Grid
         sx={{
           borderBottom: "1px solid #e5e5e5",
-          width: "100px"
+          width: "100%"
         }}
         p={3}
         columns={"6fr 3fr"}
