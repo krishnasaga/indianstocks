@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === "production") {
   API_ENDPOINT = "http://localhost:3030";
 }
 
-exports.createPages = async function ({ actions, graphql }) {
+exports.createPages = async function ({actions, graphql}) {
   let data = null;
 
   console.log("API env variable is on", process.env.API);
@@ -21,13 +21,13 @@ exports.createPages = async function ({ actions, graphql }) {
   }
 
   data.forEach((edge) => {
-    const { name, displayName, intro, insights, backgroundImage } = edge;
+    const {name, displayName, intro, insights, backgroundImage} = edge;
 
     const pages = [
       {
         path: `/sectors/${name}`,
         component: require.resolve(`./src/templates/sectors.js`),
-        context: { slug: `/sectors/${name}` },
+        context: {slug: `/sectors/${name}`},
       },
       {
         path: `/sectors/${name}/complete-analysis-of-${name}-sector-in-india`,
@@ -35,27 +35,28 @@ exports.createPages = async function ({ actions, graphql }) {
         context: {
           slug: `/sectors/${name}/complete-analysis-of-${name}-sector-in-india`,
         },
+        comingSoon: true
       },
       {
         path: `/sectors/${name}/all-companies-in-${name}-sector-india`,
         component: require.resolve(`./src/templates/sectors.js`),
         context: {
           slug: `/sectors/${name}/all-companies-in-${name}-sector-india`,
-        },
+        }
       },
       {
         path: `/sectors/${name}/all-publicly-listed-companies-in-${name}-sector-india`,
         component: require.resolve(`./src/templates/sectors.js`),
         context: {
           slug: `/sectors/${name}/all-companies-in-${name}-sector-india`,
-        },
+        }
       },
       {
         path: `/sectors/${name}/all-private-limited-companies-in-${name}-sector-india`,
         component: require.resolve(`./src/templates/sectors.js`),
         context: {
           slug: `/sectors/${name}/all-companies-in-${name}-sector-india`,
-        },
+        }
       },
       {
         path: `/sectors/${name}/latest-news-about-companies-in-${name}-sector-india`,
@@ -63,15 +64,18 @@ exports.createPages = async function ({ actions, graphql }) {
         context: {
           slug: `/sectors/${name}/latest-news-about-companies-in-${name}-sector-india`,
         },
+        comingSoon: true
       },
       {
-        path: `/sectors/${name}/latest-news-about-companies-in-${name}-sector-india`,
+        path: `/sectors/${name}/q-and-a-of-${name}-sector-india`,
         component: require.resolve(`./src/templates/sectors.js`),
         context: {
           slug: `/sectors/${name}/latest-news-about-companies-in-${name}-sector-india`,
         },
-      },
+        comingSoon: true
+      }
     ];
+
 
     pages.forEach((params) => {
       actions.createPage({
@@ -86,36 +90,20 @@ exports.createPages = async function ({ actions, graphql }) {
         },
       });
     });
+
+
+    pages.filter((page) => page.comingSoon)
+      .forEach((params) => {
+        actions.createRedirect({
+          fromPath: params.path,
+          toPath: '/coming-soon',
+          force: true,
+          redirectInBrowser: true
+        });
+
+      });
+
+
   });
 
-  actions.createPage({
-    path: `/sectors`,
-    component: require.resolve(`./src/templates/sectors-list.js`),
-    context: { sectors: data },
-  });
-
-  actions.createRedirect({
-    fromPath: "/sectors/... /top-investors-in-()",
-    toPath: "/coming-soon",
-    redirectInBrowser: true,
-    force: true,
-  });
-  actions.createRedirect({
-    fromPath: "/sectors/complete-analysis-of-*",
-    toPath: "/coming-soon",
-    redirectInBrowser: true,
-    force: true,
-  });
-  actions.createRedirect({
-    fromPath: "/sectors/sneha/latest-news-of-*",
-    toPath: "/coming-soon",
-    redirectInBrowser: true,
-    force: true,
-  });
-  actions.createRedirect({
-    fromPath: "sectors/*/q-and-a-of-",
-    toPath: "/coming-soon",
-    redirectInBrowser: true,
-    force: true,
-  });
 };
