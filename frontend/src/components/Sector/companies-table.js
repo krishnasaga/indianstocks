@@ -12,7 +12,6 @@ const Styles = styled(Box)`
 
   table {
     border-spacing: 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     width: 100%;
     tr {
       :last-child {
@@ -142,9 +141,10 @@ export function CompaniesList({name}) {
         {filtersOpen ? <ScrollLock/> : null}
         <Box
           p={2}
+          sx={{display: ['block', 'block', 'none']}}
         >
         <Grid columns={['1fr 110px']}
-              sx={{display: ['grid', 'grid', 'none']}}
+
         >
           <Box>
 
@@ -205,7 +205,12 @@ export function CompaniesList({name}) {
             </Box>
             <Filters
               bg={'white'}
-              sectorName={name}/>
+              sectorName={name}
+              sx={{
+                borderRight: '1px solid #e5e5e5',
+                height: '100%'
+              }}
+            />
           </Box>
           <Box>
             <Table

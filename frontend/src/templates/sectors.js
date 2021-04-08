@@ -18,7 +18,8 @@ export default ({
     <Subpages name={name} />
     <SectorFinancials />
     <Box
-      m={40}
+      my={4}
+      mx={[1,1,4,4]}
       sx={{
         borderRadius: 5,
         boxShadow: "0 3px 20px 0 rgb(0 77 165 / 7%)",
