@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, Text } from "theme-ui";
 import { TopNav } from "../components/TopNav";
-import { Footer } from "../components/Footer";
+// import { Footer } from "../components/Footer";
 import { SectorBanner, Subpages } from "../components/Sector";
 import { CompaniesList } from "../components/Sector/companies-table";
 
@@ -20,7 +20,7 @@ export default ({
     <SectorFinancials />
     <Box
       my={4}
-      mx={[1,1,4,4]}
+      mx={[1, 1, 4, 4]}
       sx={{
         borderRadius: 5,
         boxShadow: "0 3px 20px 0 rgb(0 77 165 / 7%)",
@@ -28,7 +28,7 @@ export default ({
     >
       <CompaniesList name={name} />
     </Box>
-    <Footer/>
+    {/* <Footer/> */}
   </Box>
 );
 

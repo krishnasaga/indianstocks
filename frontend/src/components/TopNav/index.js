@@ -84,29 +84,31 @@ export const TopNav = () => {
           </>
         )}
         {index <= 1 && (
-          <Box p={0}>
+          <Box px={0}>
             {!Menuopen ? (
-              <Menu
-                pt={2}
+              <Box
+                px={"1.5rem"}
+                color="black"
                 sx={{
                   float: "right",
+                  lineHeight: "5rem",
                 }}
                 onClick={(event) => menuDropOpen(event, true)}
               >
-                {" "}
-                <GiHamburgerMenu />
-              </Menu>
+                <GiHamburgerMenu style={{ height: "25px", width: "25px" }} />
+              </Box>
             ) : (
-              <Menu
-                p={2}
+              <Box
+                px={"1.5rem"}
+                color="black"
                 sx={{
                   float: "right",
+                  lineHeight: "5rem",
                 }}
                 onClick={(event) => menuDropOpen(event, false)}
               >
-                {" "}
-                <AiOutlineClose />
-              </Menu>
+                <AiOutlineClose style={{ height: "25px", width: "25px" }} />
+              </Box>
             )}
           </Box>
         )}
@@ -148,6 +150,7 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
         sx={{
           height: "100vh",
           width: "80vw",
+          // background: "white",
         }}
       >
         <Box
@@ -287,11 +290,13 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
     );
   }
 
+  const menuStyles = { fontWeight: "500", fontSize: "1.3rem" };
+
   return (
     <Box
       sx={{
         position: "relative",
-        height: "90vh",
+        height: "92vh",
       }}
     >
       {MobileComponent.position === "disruptions" ? (
@@ -301,8 +306,11 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
         </Menu>
       ) : (
         <Box sx={styles} onClick={() => menuHandler("disruptions")}>
-          <Menu> Disruptions </Menu>
-          <RiArrowRightSLine color="black" />
+          <Menu sx={menuStyles}> Disruptions </Menu>
+          <RiArrowRightSLine
+            color="black"
+            style={{ marginRight: "10px", height: "25px", width: "25px" }}
+          />
         </Box>
       )}
       {MobileComponent.position === "research" ? (
@@ -312,8 +320,11 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
         </Menu>
       ) : (
         <Box sx={styles} onClick={() => menuHandler("research")}>
-          <Menu> Research </Menu>
-          <RiArrowRightSLine color="black" />
+          <Menu sx={menuStyles}> Research </Menu>
+          <RiArrowRightSLine
+            color="black"
+            style={{ marginRight: "10px", height: "25px", width: "25px" }}
+          />
         </Box>
       )}
 
@@ -324,19 +335,25 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
         </Menu>
       ) : (
         <Box sx={styles} onClick={() => menuHandler("sectors")}>
-          <Menu> Sectors </Menu>
-          <RiArrowRightSLine color="black" />
+          <Menu sx={menuStyles}> Sectors </Menu>
+          <RiArrowRightSLine
+            color="black"
+            style={{ marginRight: "10px", height: "25px", width: "25px" }}
+          />
         </Box>
       )}
       {MobileComponent.position === "analytics" ? (
-        <Menu>
+        <Menu sx={menuStyles}>
           {" "}
           <AnalyticsDropdownMobile />{" "}
         </Menu>
       ) : (
         <Box sx={styles} onClick={() => menuHandler("analytics")}>
-          <Menu> Analytics </Menu>
-          <RiArrowRightSLine color="black" />
+          <Menu sx={menuStyles}> Analytics </Menu>
+          <RiArrowRightSLine
+            color="black"
+            style={{ marginRight: "10px", height: "25px", width: "25px" }}
+          />
         </Box>
       )}
     </Box>
@@ -366,7 +383,7 @@ export const Menu = ({ children, ...remainingProps }) => {
   return (
     <Box {...remainingProps}>
       <Box
-        p={20}
+        p={[10, 20]}
         color={"color5"}
         sx={{
           textAlign: "center",
