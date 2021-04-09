@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Box, Grid, Link, Text } from "theme-ui";
-import { Portal } from "react-portal";
+import React, {useEffect, useState} from "react";
+import {Box, Grid, Link, Text} from "theme-ui";
+import {Portal} from "react-portal";
 import OutsideClickHandler from "react-outside-click-handler";
-import { useSpring, animated } from "react-spring";
-import { useBreakpointIndex } from "@theme-ui/match-media";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineClose } from "react-icons/ai";
-import { RiArrowRightSLine } from "react-icons/ri";
-import { MdKeyboardArrowLeft } from "react-icons/md";
+import {animated, useSpring} from "react-spring";
+import {useBreakpointIndex} from "@theme-ui/match-media";
+import {GiHamburgerMenu} from "react-icons/gi";
+import {AiOutlineClose} from "react-icons/ai";
+import {RiArrowRightSLine} from "react-icons/ri";
+import {MdKeyboardArrowLeft} from "react-icons/md";
 
 const AnimatedBox = animated(Box);
 
@@ -47,15 +47,22 @@ export const TopNav = () => {
         width: index > 1 ? "85%" : "100%",
       }}
     >
-      <Grid columns={index > 1 ? ["1fr 1fr 1fr 1fr 1fr 1fr 1fr"] : ["1fr 1fr"]}>
+      <Grid
+        alignItems={['center']}
+        columns={
+        index > 1
+          ? ["1fr 1fr 1fr 1fr 1fr 1fr 1fr"]
+          : ["1fr 64px"]}>
         <Box
-          p={25}
+          px={24}
           sx={{
             gridAlignSelf: "start",
+            lineHeight: '4rem',
+            verticalAlign: 'middle'
           }}
         >
           {" "}
-          <Link href={"/"} sx={{ textDecoration: "none", color: "black" }}>
+          <Link href={"/"} sx={{textDecoration: "none", color: "black"}}>
             Invest{" "}
           </Link>
         </Box>
@@ -80,40 +87,52 @@ export const TopNav = () => {
               {" "}
               Analytics{" "}
             </Menu>
-            <NavButton />
+            <NavButton/>
           </>
         )}
         {index <= 1 && (
-          <Box px={0}>
+          <Box>
             {!Menuopen ? (
               <Box
                 px={"1.5rem"}
                 color="black"
                 sx={{
-                  float: "right",
-                  lineHeight: "5rem",
+                  height: '4rem'
                 }}
                 onClick={(event) => menuDropOpen(event, true)}
               >
-                <GiHamburgerMenu style={{ height: "25px", width: "25px" }} />
+                <GiHamburgerMenu
+                  style={{
+                    height: "25px",
+                    width: "25px",
+                    transform: 'translate(0,75%)'
+                  }}
+                />
               </Box>
             ) : (
               <Box
                 px={"1.5rem"}
                 color="black"
                 sx={{
-                  float: "right",
-                  lineHeight: "5rem",
+                  height: '4rem'
                 }}
                 onClick={(event) => menuDropOpen(event, false)}
+
               >
-                <AiOutlineClose style={{ height: "25px", width: "25px" }} />
+                <AiOutlineClose
+                  style={{
+                    height: "25px",
+                    width: "25px",
+                    transform: 'translate(0,75%)'
+                  }}
+
+                />
               </Box>
             )}
           </Box>
         )}
       </Grid>
-      {open ? <Dropdown component={dropdownComponent} /> : null}
+      {open ? <Dropdown component={dropdownComponent}/> : null}
       {Menuopen ? (
         <DropdownMenu
           menuHandler={menuHandler}
@@ -132,9 +151,9 @@ export const TopNav = () => {
   );
 };
 
-function DropdownMenu({ MobileComponent, setMobileComponent }) {
+function DropdownMenu({MobileComponent, setMobileComponent}) {
   const menuHandler = (componentName) => {
-    setMobileComponent({ position: componentName });
+    setMobileComponent({position: componentName});
   };
 
   const styles = {
@@ -162,7 +181,7 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
             alignItems: "center",
           }}
         >
-          <MdKeyboardArrowLeft color="black" />
+          <MdKeyboardArrowLeft color="black"/>
           <Text ml={2}>Disruptions</Text>
         </Box>
 
@@ -208,12 +227,13 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
             alignItems: "center",
           }}
         >
-          <MdKeyboardArrowLeft color="black" />
+          <MdKeyboardArrowLeft color="black"/>
           <Text ml={2}> Research</Text>
         </Box>
       </Box>
     );
   }
+
   function SectorsDropdownMobile() {
     return (
       <Box
@@ -234,7 +254,7 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
             alignItems: "center",
           }}
         >
-          <MdKeyboardArrowLeft color="black" />
+          <MdKeyboardArrowLeft color="black"/>
           <Text ml={2}> Sectors</Text>
         </Box>
       </Box>
@@ -261,7 +281,7 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
             alignItems: "center",
           }}
         >
-          <MdKeyboardArrowLeft color="black" />
+          <MdKeyboardArrowLeft color="black"/>
           <Text ml={2}> Analytics</Text>
         </Box>
 
@@ -290,7 +310,7 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
     );
   }
 
-  const menuStyles = { fontWeight: "500", fontSize: "1.3rem" };
+  const menuStyles = {fontWeight: "500", fontSize: "1.3rem"};
 
   return (
     <Box
@@ -302,28 +322,28 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
       {MobileComponent.position === "disruptions" ? (
         <Menu>
           {" "}
-          <DisruptionsDropdownMobile />{" "}
+          <DisruptionsDropdownMobile/>{" "}
         </Menu>
       ) : (
         <Box sx={styles} onClick={() => menuHandler("disruptions")}>
           <Menu sx={menuStyles}> Disruptions </Menu>
           <RiArrowRightSLine
             color="black"
-            style={{ marginRight: "10px", height: "25px", width: "25px" }}
+            style={{marginRight: "10px", height: "25px", width: "25px"}}
           />
         </Box>
       )}
       {MobileComponent.position === "research" ? (
         <Menu>
           {" "}
-          <ResearchDropdownMobile />{" "}
+          <ResearchDropdownMobile/>{" "}
         </Menu>
       ) : (
         <Box sx={styles} onClick={() => menuHandler("research")}>
           <Menu sx={menuStyles}> Research </Menu>
           <RiArrowRightSLine
             color="black"
-            style={{ marginRight: "10px", height: "25px", width: "25px" }}
+            style={{marginRight: "10px", height: "25px", width: "25px"}}
           />
         </Box>
       )}
@@ -331,28 +351,28 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
       {MobileComponent.position === "sectors" ? (
         <Menu>
           {" "}
-          <SectorsDropdownMobile />{" "}
+          <SectorsDropdownMobile/>{" "}
         </Menu>
       ) : (
         <Box sx={styles} onClick={() => menuHandler("sectors")}>
           <Menu sx={menuStyles}> Sectors </Menu>
           <RiArrowRightSLine
             color="black"
-            style={{ marginRight: "10px", height: "25px", width: "25px" }}
+            style={{marginRight: "10px", height: "25px", width: "25px"}}
           />
         </Box>
       )}
       {MobileComponent.position === "analytics" ? (
         <Menu sx={menuStyles}>
           {" "}
-          <AnalyticsDropdownMobile />{" "}
+          <AnalyticsDropdownMobile/>{" "}
         </Menu>
       ) : (
         <Box sx={styles} onClick={() => menuHandler("analytics")}>
           <Menu sx={menuStyles}> Analytics </Menu>
           <RiArrowRightSLine
             color="black"
-            style={{ marginRight: "10px", height: "25px", width: "25px" }}
+            style={{marginRight: "10px", height: "25px", width: "25px"}}
           />
         </Box>
       )}
@@ -360,7 +380,7 @@ function DropdownMenu({ MobileComponent, setMobileComponent }) {
   );
 }
 
-function NavButton({ children, ...remainingProps }) {
+function NavButton({children, ...remainingProps}) {
   return (
     <Box
       {...remainingProps}
@@ -379,7 +399,7 @@ function NavButton({ children, ...remainingProps }) {
   );
 }
 
-export const Menu = ({ children, ...remainingProps }) => {
+export const Menu = ({children, ...remainingProps}) => {
   return (
     <Box {...remainingProps}>
       <Box
@@ -404,10 +424,10 @@ const dropdownComponents = {
   sectors: SectorsDropdown,
 };
 
-function Dropdown({ component }) {
+function Dropdown({component}) {
   const Component = dropdownComponents[component];
 
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+  const props = useSpring({opacity: 1, from: {opacity: 0}});
 
   return (
     <Portal>
@@ -427,7 +447,7 @@ function Dropdown({ component }) {
         }}
         style={props}
       >
-        <Component />
+        <Component/>
       </AnimatedBox>
     </Portal>
   );
@@ -442,7 +462,7 @@ function AnalyticsDropdown() {
     >
       <Text py={10}>Analytics</Text>
       <Grid columns={[4]}>
-        <Box sx={{ borderRight: "1px solid grey" }}>
+        <Box sx={{borderRight: "1px solid grey"}}>
           <Text color={"color2"}> Electric two wheeler penetration </Text>
           <Text color={"color2"}> Electric Cars penetration </Text>
           <Text color={"color2"}> Battery ecosystems </Text>
@@ -474,7 +494,7 @@ function DisruptionsDropdown() {
     >
       <Text py={20}>Disruptions</Text>
       <Grid columns={[4]}>
-        <Box sx={{ borderRight: "1px solid grey" }}>
+        <Box sx={{borderRight: "1px solid grey"}}>
           <Text color={"color2"}> Electric Transport </Text>
           <Text color={"color2"}> Genomics </Text>
           <Text color={"color2"}> Battery ecosystems </Text>
