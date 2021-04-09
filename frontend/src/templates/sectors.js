@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid, Text } from "theme-ui";
 import { TopNav } from "../components/TopNav";
+import { Footer } from "../components/Footer";
 import { SectorBanner, Subpages } from "../components/Sector";
 import { CompaniesList } from "../components/Sector/companies-table";
 
@@ -27,6 +28,7 @@ export default ({
     >
       <CompaniesList name={name} />
     </Box>
+    <Footer/>
   </Box>
 );
 
