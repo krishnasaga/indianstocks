@@ -101,12 +101,12 @@ function Table({columns, data}) {
   );
 }
 
-export function CompaniesList({name}) {
+export function CompaniesList({name,companies}) {
   const columns = React.useMemo(
     () => [
       {
         Header: "Company Name",
-        accessor: "companyName",
+        accessor: "name",
       },
       {
         Header: "Sector",
@@ -215,7 +215,7 @@ export function CompaniesList({name}) {
           <Box >
             <Table
               columns={columns}
-              data={data}
+              data={companies}
             />
           </Box>
         </Grid>

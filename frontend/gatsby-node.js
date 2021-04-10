@@ -3,7 +3,7 @@ const axios = require("axios");
 let API_ENDPOINT = null;
 
 if (process.env.NODE_ENV === "production") {
-  API_ENDPOINT = "https://qx4w2t87f2.execute-api.us-east-1.amazonaws.com";
+  API_ENDPOINT = "https://979lav1fck.execute-api.us-east-1.amazonaws.com/production";
 } else {
   API_ENDPOINT = "http://localhost:3030";
 }
@@ -11,17 +11,17 @@ if (process.env.NODE_ENV === "production") {
 exports.createPages = async function ({ actions, graphql }) {
   let data = null;
 
-  console.log("API env variable is on", process.env.API);
 
   if (!process.env.API) {
     data = require("./src/somethings/sectors.js");
   } else {
-    const response = await axios.get(`${API_ENDPOINT}/sectors`);
-    data = response.data.data;
+    const sectorResponse = await axios.get(`${API_ENDPOINT}/sectors`);
+    data = sectorResponse.data.data;
   }
 
-  data.forEach((edge) => {
-    const { name, displayName, intro, insights, backgroundImage } = edge;
+  await Promise.all(data.forEach(async (edge) => {
+    const { name, displayName, intro, insights, backgroundImage,companies } = edge;
+    const companyResponse = await axios.get(`${API_ENDPOINT}/company`);
 
     const pages = [
       {
@@ -76,7 +76,9 @@ exports.createPages = async function ({ actions, graphql }) {
       },
     ];
 
-    pages.forEach((params) => {
+    pages.map(  (params) => {
+
+
       actions.createPage({
         ...params,
         context: {
@@ -86,6 +88,7 @@ exports.createPages = async function ({ actions, graphql }) {
           intro,
           insights,
           backgroundImage,
+          companies: companyResponse.data.data
         },
       });
     });
@@ -100,5 +103,5 @@ exports.createPages = async function ({ actions, graphql }) {
           redirectInBrowser: true,
         });
       });
-  });
+  }));
 };
