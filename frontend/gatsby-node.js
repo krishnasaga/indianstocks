@@ -11,7 +11,6 @@ if (process.env.NODE_ENV === "production") {
 exports.createPages = async function ({ actions, graphql }) {
   let data = null;
 
-
   if (!process.env.API) {
     data = require("./src/somethings/sectors.js");
   } else {
@@ -19,9 +18,8 @@ exports.createPages = async function ({ actions, graphql }) {
     data = sectorResponse.data.data;
   }
 
-  await Promise.all(data.forEach(async (edge) => {
+  data.forEach(async (edge) => {
     const { name, displayName, intro, insights, backgroundImage,companies } = edge;
-    const companyResponse = await axios.get(`${API_ENDPOINT}/company`);
 
     const pages = [
       {
@@ -103,5 +101,5 @@ exports.createPages = async function ({ actions, graphql }) {
           redirectInBrowser: true,
         });
       });
-  }));
+  })
 };
