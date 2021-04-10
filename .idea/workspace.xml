@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/PrivateRoute/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/coming-soon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gatsby-node.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/comming-soon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Sector/Filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sector/Filters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Sector/companies-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sector/companies-table.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,12 +14,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JsFlowSettings">
-    <service-enabled>true</service-enabled>
-    <exe-path />
-    <other-services-enabled>true</other-services-enabled>
-    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1qtZvnU9sBazdZCc0uSKB6bveRN" />
   <component name="ProjectViewState">
@@ -56,5 +46,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

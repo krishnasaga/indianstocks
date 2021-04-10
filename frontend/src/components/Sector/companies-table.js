@@ -191,9 +191,9 @@ export function CompaniesList({name}) {
             }}
           >
             <Box sx={{
-              display: ['block', 'block', 'none']
+              display: ['block', 'block', 'none'],
             }}
-                 p={10}
+                 p={[1, 10]}
                  color={'rgb(0, 0, 0)'}
             >
               <BsArrowLeft
@@ -208,13 +208,12 @@ export function CompaniesList({name}) {
               sectorName={name}
               sx={{
                 borderRight: '1px solid #e5e5e5',
-                height: '100%'
+                height: '100%',
               }}
             />
           </Box>
-          <Box>
+          <Box >
             <Table
-
               columns={columns}
               data={data}
             />

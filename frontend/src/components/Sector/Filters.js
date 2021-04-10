@@ -14,12 +14,14 @@ export const Filters = ({ sectorName, ...remainingProps }) => {
         sx={{
           borderBottom: "1px solid #e5e5e5",
           width: "100%"
+
         }}
-        p={3}
+        p={[1, 3]}
         columns={"6fr 3fr"}
       >
         <Text
           mt={2}
+          px={1}
           sx={{
             fontSize: "0.8rem",
           }}
@@ -63,7 +65,7 @@ export const Filters = ({ sectorName, ...remainingProps }) => {
 
 function ClosePrice() {
   return (
-    <Box>
+    <Box >
       <Slider />
       <Grid
         mt={3}
@@ -228,7 +230,7 @@ function FilterGroup({ children, ...remainingProps }) {
 
 function MarketCap() {
   return (
-    <Box>
+    <Box >
       <Slider />
 
       <Grid
