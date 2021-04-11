@@ -3,7 +3,7 @@ const axios = require("axios");
 
 let API_ENDPOINT = null;
 
-if (!(process.env.NODE_ENV === "production")) {
+if (process.env.NODE_ENV === "production") {
   API_ENDPOINT = "https://979lav1fck.execute-api.us-east-1.amazonaws.com/production";
 } else {
   API_ENDPOINT = "http://localhost:3030";
