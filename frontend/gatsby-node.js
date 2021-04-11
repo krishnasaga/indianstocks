@@ -1,31 +1,25 @@
 const axios = require("axios");
+const {getSectors, getCompanies} = require('./companies');
 
-let API_ENDPOINT = null;
-
-if (process.env.NODE_ENV === "production") {
-  API_ENDPOINT = "https://979lav1fck.execute-api.us-east-1.amazonaws.com/production";
-} else {
-  API_ENDPOINT = "http://localhost:3030";
-}
-
-exports.createPages = async function ({ actions, graphql }) {
+exports.createPages = async function ({actions, graphql}) {
   let data = null;
 
   if (!process.env.API) {
     data = require("./src/somethings/sectors.js");
   } else {
-    const sectorResponse = await axios.get(`${API_ENDPOINT}/sectors`);
-    data = sectorResponse.data.data;
+    const sectorsResponse = await getSectors();
+    data = sectorsResponse.data;
   }
 
-  data.forEach(async (edge) => {
-    const { name, displayName, intro, insights, backgroundImage,companies } = edge;
-
+  await Promise.all(data.map(async (edge) => {
+    const {id, name, displayName, intro, insights, backgroundImage} = edge;
+    const { data } = await getCompanies();
+    const companies  = data;
     const pages = [
       {
         path: `/sectors/${name}`,
         component: require.resolve(`./src/templates/sectors.js`),
-        context: { slug: `/sectors/${name}` },
+        context: {slug: `/sectors/${name}`},
       },
       {
         path: `/sectors/${name}/complete-analysis-of-${name}-sector-in-india`,
@@ -74,7 +68,7 @@ exports.createPages = async function ({ actions, graphql }) {
       },
     ];
 
-    pages.map(  (params) => {
+    pages.map((params) => {
 
 
       actions.createPage({
@@ -86,7 +80,7 @@ exports.createPages = async function ({ actions, graphql }) {
           intro,
           insights,
           backgroundImage,
-          companies: companyResponse.data.data
+          companies: companies || []
         },
       });
     });
@@ -101,5 +95,5 @@ exports.createPages = async function ({ actions, graphql }) {
           redirectInBrowser: true,
         });
       });
-  })
+  }))
 };
