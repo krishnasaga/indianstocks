@@ -24,7 +24,7 @@ let feathersClient = null;
 if (process.env.NODE_ENV !== 'production') {
   feathersClient = rest('http://localhost:3030')
 } else {
-  feathersClient = rest('https://qx4w2t87f2.execute-api.us-east-1.amazonaws.com')
+  feathersClient = rest('https://979lav1fck.execute-api.us-east-1.amazonaws.com/production')
 }
 
 // Configure an AJAX library (see below) with that client
