@@ -1,16 +1,47 @@
 import React from 'react';
-import {Box,Grid, Text, Heading, Link} from 'theme-ui';
+import {Box,Grid, Text, Link, Avatar} from 'theme-ui';
 import {AiFillTwitterCircle} from "react-icons/ai";
 import {FaFacebook, FaLinkedin, FaInstagramSquare} from "react-icons/fa";
-import { IconButton } from 'theme-ui';
-import styled from "styled-components";
 
+
+const FooterHeading = ({ children }) => {
+  return (
+      <Text
+          color={"white"}
+          sx={{
+            fontWeight: "600",
+            fontSize: ["0.9rem", "1rem"],
+            paddingBottom: "10px"
+          }}
+      >
+        {children}
+      </Text>
+  );
+};
+
+const FooterLink = ({ children }) => {
+  return (
+      <Link
+          color={"white"}
+          sx={{
+            fontSize: ["0.8rem", "0.9rem"],
+            fontWeight: "500",
+            cursor: "pointer",
+            lineHeight: "1.8",
+            ':hover': {
+              textDecoration: "underline",
+            },
+          }}
+      >
+        {children}
+      </Link>
+  );
+};
 
 export const Footer = () => {
   return <Box
     as={'footer'}
-    // bg={'color4'}
-      bg={'black'}
+    bg={'color4'}
     sx={{
       // height: '400px',
       color: 'white',
@@ -25,13 +56,14 @@ export const Footer = () => {
           paddingY: '20px',
           marginLeft: ['20px', '20px', '0']
         }}>
+
           Brand
         </Box>
       </Grid>
     </Box>
 
-    <Box>
-      <Grid gap={2}
+    <Box >
+      <Grid gap={3}
       columns={[2, 3, 6]}
       >
       <Box sx={{
@@ -41,10 +73,13 @@ export const Footer = () => {
         flexDirection: 'column',
         order: ['4', '4', '1']
       }}>
-        <Heading as='h4' >Stay Connected</Heading>
-        <Link>Crunchbase News</Link>
-        <Link>Subscribe to Crunchbase Daily</Link>
-        <Text sx={{color: 'white'}}><AiFillTwitterCircle /> <FaFacebook /> <FaLinkedin /> <FaInstagramSquare/></Text>
+        <FooterHeading as='h4' >Stay Connected</FooterHeading>
+        <FooterLink>Crunchbase News</FooterLink>
+        <FooterLink>Subscribe to Crunchbase Daily</FooterLink>
+        <Text sx={{
+          color: 'white',
+          paddingTop: "10px"
+        }}><AiFillTwitterCircle /> <FaFacebook /> <FaLinkedin /> <FaInstagramSquare/></Text>
       </Box>
 
       <Box sx={{
@@ -53,13 +88,13 @@ export const Footer = () => {
         marginLeft: ['20px', '20px', '0'],
         order: ['1', '1', '2']
       }}>
-        <Heading as='h4'>Who We Are</Heading>
-        <Link>Company</Link>
-        <Link>Careers</Link>
-        <Link>Partners</Link>
-        <Link>Blog</Link>
-        <Link>Press</Link>
-        <Link>Contact Us</Link>
+        <FooterHeading as='h4'>Who We Are</FooterHeading>
+        <FooterLink>Company</FooterLink>
+        <FooterLink>Careers</FooterLink>
+        <FooterLink>Partners</FooterLink>
+        <FooterLink>Blog</FooterLink>
+        <FooterLink>Press</FooterLink>
+        <FooterLink>Contact Us</FooterLink>
 
       </Box>
         <Box sx={{
@@ -68,13 +103,13 @@ export const Footer = () => {
           marginLeft: ['0', '0', '0'],
           order: ['2', '2', '3']
         }}>
-          <Heading as='h4'>What We Do</Heading>
-          <Link>Crunchbase Pro</Link>
-          <Link>Marketplace</Link>
-          <Link>Crunchbase Enterprise</Link>
-          <Link>Data Licensing</Link>
-          <Link>Customer Stories</Link>
-          <Link>Pricing</Link>
+          <FooterHeading as='h4'>What We Do</FooterHeading>
+          <FooterLink>Crunchbase Pro</FooterLink>
+          <FooterLink>Marketplace</FooterLink>
+          <FooterLink>Crunchbase Enterprise</FooterLink>
+          <FooterLink>Data Licensing</FooterLink>
+          <FooterLink>Customer Stories</FooterLink>
+          <FooterLink>Pricing</FooterLink>
         </Box>
 
         <Box sx={{
@@ -83,30 +118,37 @@ export const Footer = () => {
           marginLeft: ['20px', '0', '0'],
           order: ['3', '3', '4']
         }}>
-          <Heading as='h4'>Helpful Links</Heading>
-          <Link>Create a Profile</Link>
-          <Link>Features Lists and Searches</Link>
-          <Link>The Crunchbase Difference</Link>
-          <Link>Knowledge Center</Link>
-          <Link>Privacy</Link>
-          <Link>Do not sell my info</Link>
+          <FooterHeading as='h4'>Helpful Links</FooterHeading>
+          <FooterLink>Create a Profile</FooterLink>
+          <FooterLink>Features Lists and Searches</FooterLink>
+          <FooterLink>The Crunchbase Difference</FooterLink>
+          <FooterLink>Knowledge Center</FooterLink>
+          <FooterLink>Privacy</FooterLink>
+          <FooterLink>Do not sell my info</FooterLink>
         </Box>
     </Grid>
     </Box>
 
     <Box sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      paddingY: '20px'
-    }}>
-        <Box sx={{paddingY: '10px'}}>Browse By: Organizations, People, Events</Box>
-        <Box sx={{
-          paddingY: '10px',
-          display: 'flex',
-          textAlign: 'center'
-        }}><Box sx={{paddingY: '10px'}}>Browse By: Organizations, People, Events</Box></Box>
+      paddingTop: '40px',
+      textAlign: 'center'}}>
+      <FooterHeading>Browse By: Organizations, People, Events</FooterHeading>
     </Box>
 
+    <Box sx={{
+      padding: '20px 20px 40px 20px',
+      textAlign: 'center',
+    }}><FooterLink>Terms of Service</FooterLink><span>|</span>
+      <FooterLink>Privacy Policy</FooterLink><span>|</span>
+      <FooterLink>Sitemap</FooterLink><span>|</span>
+      <Text sx={{
+        color: 'white',
+        fontSize: ['0.8rem', '0.9rem'],
+        lineHeight: '1.8',
+        display: 'inline'
+      }}
+      > &copy; 2021 Crunchbase Inc. All Rights Reserved. (0.1.11672 548)
+      </Text>
+    </Box>
   </Box>;
 };
