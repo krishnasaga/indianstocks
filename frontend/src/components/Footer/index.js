@@ -1,13 +1,12 @@
 import React from 'react';
-import {Box,Grid, Text, Link, Avatar} from 'theme-ui';
-import {AiFillTwitterCircle} from "react-icons/ai";
-import {FaFacebook, FaLinkedin, FaInstagramSquare} from "react-icons/fa";
+import {Box, Grid, Text, Link, IconButton, Avatar} from 'theme-ui';
+import {FaTwitterSquare, FaFacebookSquare, FaLinkedin, FaInstagramSquare} from 'react-icons/fa';
 
 
 const FooterHeading = ({ children }) => {
   return (
       <Text
-          color={"white"}
+          color={"rgb(255, 255, 255)"}
           sx={{
             fontWeight: "600",
             fontSize: ["0.9rem", "1rem"],
@@ -22,7 +21,7 @@ const FooterHeading = ({ children }) => {
 const FooterLink = ({ children }) => {
   return (
       <Link
-          color={"white"}
+          color={"rgb(255, 255, 255)"}
           sx={{
             fontSize: ["0.8rem", "0.9rem"],
             fontWeight: "500",
@@ -44,7 +43,7 @@ export const Footer = () => {
     bg={'color4'}
     sx={{
       // height: '400px',
-      color: 'white',
+      color: 'rgb(255, 255, 255)',
       fontSize: '0.9rem'
     }}>
     <Box>
@@ -54,10 +53,25 @@ export const Footer = () => {
           gridColumnStart: ['1', '1', '2'],
           gridColumnEnd: '5',
           paddingY: '20px',
-          marginLeft: ['20px', '20px', '0']
+          marginLeft: ['20px', '20px', '0'],
+          display: 'flex',
+          alignItems: 'center',
         }}>
+          <Avatar src="https://pbs.twimg.com/profile_images/1253417530380611585/-yUUl-Dx_400x400.jpg" sx={{
+            width: '48',
+            height: '48',
+            borderRadius: '0'
+          }} />
 
-          Brand
+          <Text sx={{
+            display: 'inline',
+            color: 'rgb(255, 255, 255)',
+            textTransform: 'lowercase',
+            fontSize: '2.3rem',
+            fontWeight: 'bold',
+            paddingLeft: '5px'
+          }}
+          >Crunchbase</Text>
         </Box>
       </Grid>
     </Box>
@@ -77,9 +91,12 @@ export const Footer = () => {
         <FooterLink>Crunchbase News</FooterLink>
         <FooterLink>Subscribe to Crunchbase Daily</FooterLink>
         <Text sx={{
-          color: 'white',
-          paddingTop: "10px"
-        }}><AiFillTwitterCircle /> <FaFacebook /> <FaLinkedin /> <FaInstagramSquare/></Text>
+          color: 'rgb(255, 255, 255)',
+        }}><IconButton><FaTwitterSquare size={21} cursor={'pointer'} /></IconButton>
+          <IconButton><FaFacebookSquare size={21} cursor={'pointer'}/></IconButton>
+          <IconButton><FaLinkedin size={21} cursor={'pointer'}/></IconButton>
+          <IconButton><FaInstagramSquare size={21} cursor={'pointer'}/></IconButton>
+        </Text>
       </Box>
 
       <Box sx={{
@@ -95,7 +112,6 @@ export const Footer = () => {
         <FooterLink>Blog</FooterLink>
         <FooterLink>Press</FooterLink>
         <FooterLink>Contact Us</FooterLink>
-
       </Box>
         <Box sx={{
           display: 'flex',
@@ -131,24 +147,32 @@ export const Footer = () => {
 
     <Box sx={{
       paddingTop: '40px',
-      textAlign: 'center'}}>
+      textAlign: 'center'
+    }}>
       <FooterHeading>Browse By: Organizations, People, Events</FooterHeading>
     </Box>
 
     <Box sx={{
       padding: '20px 20px 40px 20px',
       textAlign: 'center',
-    }}><FooterLink>Terms of Service</FooterLink><span>|</span>
+    }}>
+      <FooterLink>Terms of Service</FooterLink><span>|</span>
       <FooterLink>Privacy Policy</FooterLink><span>|</span>
       <FooterLink>Sitemap</FooterLink><span>|</span>
       <Text sx={{
-        color: 'white',
+        color: 'rgb(255, 255, 255)',
         fontSize: ['0.8rem', '0.9rem'],
         lineHeight: '1.8',
         display: 'inline'
       }}
-      > &copy; 2021 Crunchbase Inc. All Rights Reserved. (0.1.11672 548)
-      </Text>
+      > &copy; 2021 Crunchbase Inc. All Rights Reserved.</Text>
+      <Text sx={{
+      color: 'darkgrey',
+      fontSize: ['0.8rem', '0.9rem'],
+      lineHeight: '1.8',
+      display: 'inline',
+        paddingLeft: '5px'
+    }}>(0.1.11672 548)</Text>
     </Box>
   </Box>;
 };
