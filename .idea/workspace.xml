@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="fix footer padding, fontSizes, bottom text, and layout">
+    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="add circle icons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TopNav/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +41,7 @@
       <updated>1617901080804</updated>
       <workItem from="1617901082764" duration="1587000" />
       <workItem from="1617902866864" duration="599000" />
+      <workItem from="1618475056649" duration="19223000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -62,7 +64,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618335210595</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add footer brand img and temp icons">
+      <created>1618415892490</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618415892490</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -73,7 +82,8 @@
     <MESSAGE value="fix footer responsive content order, add text and icons" />
     <MESSAGE value="fix footer layout and add more text" />
     <MESSAGE value="fix footer padding, fontSizes, bottom text, and layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix footer padding, fontSizes, bottom text, and layout" />
+    <MESSAGE value="add footer brand img and temp icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="add footer brand img and temp icons" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

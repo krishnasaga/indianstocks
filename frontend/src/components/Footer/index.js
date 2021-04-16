@@ -1,6 +1,7 @@
 import React from 'react';
 import {Box, Grid, Text, Link, IconButton, Avatar} from 'theme-ui';
-import {FaTwitterSquare, FaFacebookSquare, FaLinkedin, FaInstagramSquare} from 'react-icons/fa';
+import {FaFacebookF, FaTwitter, FaLinkedinIn} from 'react-icons/fa';
+import {ImInstagram} from 'react-icons/im'
 
 
 const FooterHeading = ({ children }) => {
@@ -62,12 +63,11 @@ export const Footer = () => {
             height: '48',
             borderRadius: '0'
           }} />
-
           <Text sx={{
             display: 'inline',
             color: 'rgb(255, 255, 255)',
             textTransform: 'lowercase',
-            fontSize: '2.3rem',
+            fontSize: '2.1rem',
             fontWeight: 'bold',
             paddingLeft: '5px'
           }}
@@ -90,12 +90,87 @@ export const Footer = () => {
         <FooterHeading as='h4' >Stay Connected</FooterHeading>
         <FooterLink>Crunchbase News</FooterLink>
         <FooterLink>Subscribe to Crunchbase Daily</FooterLink>
-        <Text sx={{
-          color: 'rgb(255, 255, 255)',
-        }}><IconButton><FaTwitterSquare size={21} cursor={'pointer'} /></IconButton>
-          <IconButton><FaFacebookSquare size={21} cursor={'pointer'}/></IconButton>
-          <IconButton><FaLinkedin size={21} cursor={'pointer'}/></IconButton>
-          <IconButton><FaInstagramSquare size={21} cursor={'pointer'}/></IconButton>
+        <Text sx={{color: 'color4'}}>
+          <IconButton aria-label="Toggle dark mode" >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="currentcolor"
+                cursor="pointer" >
+              <circle
+                  r={11}
+                  cx={12}
+                  cy={12}
+                  fill="white"
+                  stroke="none"
+                  strokeWidth={2}
+              /><FaTwitter size={12} style={{
+              transform: 'translate(25%,25%)',
+            }}/>
+            </svg>
+          </IconButton>
+          <IconButton aria-label="Toggle dark mode">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="currentcolor"
+                cursor="pointer">
+              <circle
+                  r={11}
+                  cx={12}
+                  cy={12}
+                  fill="white"
+                  stroke="none"
+                  strokeWidth={2}
+              /><FaFacebookF size={12} cursor={'pointer'} style={{
+              transform: 'translate(25%,25%)',
+            }}/>
+            </svg>
+          </IconButton>
+          <IconButton aria-label="Toggle dark mode">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="currentcolor"
+                cursor="pointer">
+              <circle
+                  r={11}
+                  cx={12}
+                  cy={12}
+                  fill="white"
+                  stroke="none"
+                  strokeWidth={2}
+              /><FaLinkedinIn size={12} cursor={'pointer'} style={{
+              transform: 'translate(25%,25%)',
+            }}/>
+            </svg>
+          </IconButton>
+          <IconButton aria-label="Toggle dark mode">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+                fill="currentcolor"
+                cursor="pointer">
+              <circle
+                  r={11}
+                  cx={12}
+                  cy={12}
+                  fill="white"
+                  stroke="none"
+                  strokeWidth={2}
+              /><ImInstagram size={12} cursor={'pointer'} style={{
+              transform: 'translate(25%,25%)',
+            }}/>
+            </svg>
+          </IconButton>
         </Text>
       </Box>
 
