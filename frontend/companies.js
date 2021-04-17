@@ -39,7 +39,7 @@ const getCompanies = async ({id = 'all'} = {}) => {
     return companiesResponse;
   }
 
-  const response = await axios.get(`${API_ENDPOINT}/company`);
+  const response = await axios.get(`${API_ENDPOINT}/company?$limit=100`);
   companiesCacheInFileSystem.set(id, response.data);
   return response.data;
 
