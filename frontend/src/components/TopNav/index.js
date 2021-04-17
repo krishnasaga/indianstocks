@@ -1,15 +1,53 @@
 import React, {useEffect, useState} from "react";
-import {Box, Grid, Link, Text} from "theme-ui";
+import {Box, Grid, Link, Text, IconButton} from "theme-ui";
 import {Portal} from "react-portal";
 import OutsideClickHandler from "react-outside-click-handler";
 import {animated, useSpring} from "react-spring";
 import {useBreakpointIndex} from "@theme-ui/match-media";
 import {GiHamburgerMenu} from "react-icons/gi";
 import {AiOutlineClose} from "react-icons/ai";
-import {RiArrowRightSLine} from "react-icons/ri";
+import {RiArrowRightSLine, RiArrowDropDownLine} from "react-icons/ri";
 import {MdKeyboardArrowLeft} from "react-icons/md";
+import {HiArrowRight} from "react-icons/hi";
 
 const AnimatedBox = animated(Box);
+
+const LinkMobile = ({ children }) => {
+    return (
+        <Link
+            color={"rgb(0, 0, 0)"}
+            sx={{
+                fontSize: ["0.9rem", "0.9rem"],
+                fontWeight: "500",
+                cursor: "pointer",
+                marginTop: '20px',
+                marginLeft: '10px'
+            }}
+        >
+            {children}
+        </Link>
+    );
+};
+
+const LinkDropdown = ({ children }) => {
+    return (
+        <Link
+            color={"color2"}
+            sx={{
+                fontSize: ["0.9rem", "0.9rem"],
+                fontWeight: "500",
+                cursor: "pointer",
+                marginBottom: '20px',
+                marginLeft: '10px',
+                ':hover': {
+                    color: 'blue',
+                },
+            }}
+        >
+            {children}
+        </Link>
+    );
+};
 
 export const TopNav = () => {
   const [open, setOpen] = useState(false);
@@ -30,6 +68,7 @@ export const TopNav = () => {
     setMenuopen(valv);
     event.stopPropagation();
   };
+
 
   useEffect(() => {
     if (index > 1) {
@@ -58,34 +97,62 @@ export const TopNav = () => {
           sx={{
             gridAlignSelf: "start",
             lineHeight: '4rem',
-            verticalAlign: 'middle'
+            verticalAlign: 'middle',
           }}
         >
           {" "}
-          <Link href={"/"} sx={{textDecoration: "none", color: "black"}}>
+          <Link href={"/"} sx={{
+              textDecoration: "none",
+              color: "black"}}>
             Invest{" "}
           </Link>
+
         </Box>
         {index > 1 && <Box p={25}> </Box>}
 
         {index > 1 && (
           <>
             {" "}
-            <Menu onClick={(event) => menuHandler(event, "disruptions")}>
+            <Menu sx={{
+                ':hover': {
+                    color: 'blue',
+                },
+                // ':checked': {
+                //     color: 'blue',
+                //     borderBottom: '3px solid blue',
+                // },
+            }} onClick={(event) => menuHandler(event, "disruptions")}>
               {" "}
-              Disruptions{" "}
+                <Text sx={{
+                    fontSize: '1rem',
+                    ':hover': {
+                        color: 'blue',
+                    },
+                }}>Disruptions
+                    <RiArrowDropDownLine size={20} style={{
+                    transform: 'translate(0,21%)',
+                }} />
+                </Text>
+              {" "}
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "research")}>
               {" "}
-              Research{" "}
+              Research{" "}<RiArrowDropDownLine size={20} style={{
+                transform: 'translate(0,21%)'
+            }} />
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "sectors")}>
               {" "}
-              Sectors{" "}
+              Sectors{" "}<RiArrowDropDownLine size={20} style={{
+                transform: 'translate(0,21%)'
+
+            }} />
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "analytics")}>
               {" "}
-              Analytics{" "}
+              Analytics{" "}<RiArrowDropDownLine size={20} style={{
+                transform: 'translate(0,21%)'
+            }} />
             </Menu>
             <NavButton/>
           </>
@@ -173,16 +240,17 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
         }}
       >
         <Box
-          pt={3}
-          pb={2}
+          pt={1}
           onClick={() => menuHandler(null)}
           sx={{
             display: "flex",
             alignItems: "center",
+              paddingBottom: '25px',
+              borderBottom: '1px solid black'
           }}
         >
           <MdKeyboardArrowLeft color="black"/>
-          <Text ml={2}>Disruptions</Text>
+          <Text ml={2} color={'red'} >Disruptions</Text>
         </Box>
 
         <Box
@@ -192,16 +260,16 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
             textAlign: "left",
           }}
         >
-          <Text color={"color1"}> Electric Transport </Text>
-          <Text color={"color1"}> Genomics </Text>
-          <Text color={"color1"}> Battery ecosystems </Text>
-          <Text color={"color1"}> Materials </Text>
-          <Text color={"color1"}> Space Exploration </Text>
-          <Text color={"color1"}> Next IT </Text>
-          <Text color={"color1"}> Information Technology </Text>
-          <Text color={"color1"}> Internet of things </Text>
-          <Text color={"color1"}> Bioinformatics </Text>
-          <Text color={"color1"}> Telemedicine </Text>
+            <LinkMobile color={"color1"}>Electric Transport </LinkMobile>
+          <LinkMobile color={"color1"}> Genomics </LinkMobile>
+          <LinkMobile color={"color1"}> Battery ecosystems </LinkMobile>
+          <LinkMobile color={"color1"}> Materials </LinkMobile>
+          <LinkMobile color={"color1"}> Space Exploration </LinkMobile>
+          <LinkMobile color={"color1"}> Next IT </LinkMobile>
+          <LinkMobile color={"color1"}> Information Technology </LinkMobile>
+          <LinkMobile color={"color1"}> Internet of things </LinkMobile>
+          <LinkMobile color={"color1"}> Bioinformatics </LinkMobile>
+          <LinkMobile color={"color1"}> Telemedicine </LinkMobile>
         </Box>
       </Box>
     );
@@ -292,19 +360,19 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
             textAlign: "left",
           }}
         >
-          <Text color={"color1"}> Electric two wheeler penetration </Text>
-          <Text color={"color1"}> Electric Cars penetration </Text>
-          <Text color={"color1"}> Battery ecosystems </Text>
-          <Text color={"color1"}> Materials </Text>
+          <LinkMobile color={"color1"}> Electric two wheeler penetration </LinkMobile>
+          <LinkMobile color={"color1"}> Electric Cars penetration </LinkMobile>
+          <LinkMobile color={"color1"}> Battery ecosystems </LinkMobile>
+          <LinkMobile color={"color1"}> Materials </LinkMobile>
 
-          <Text color={"color1"}> Telecom performance </Text>
-          <Text color={"color1"}> 5G ready </Text>
+          <LinkMobile color={"color1"}> Telecom performance </LinkMobile>
+          <LinkMobile color={"color1"}> 5G ready </LinkMobile>
 
-          <Text color={"color1"}> Information Technology </Text>
-          <Text color={"color1"}> Internet of things </Text>
+          <LinkMobile color={"color1"}> Information Technology </LinkMobile>
+          <LinkMobile color={"color1"}> Internet of things </LinkMobile>
 
-          <Text color={"color1"}> Bioinformatics usage </Text>
-          <Text color={"color1"}> Telemedicine penetration </Text>
+          <LinkMobile color={"color1"}> Bioinformatics usage </LinkMobile>
+          <LinkMobile color={"color1"}> Telemedicine penetration </LinkMobile>
         </Box>
       </Box>
     );
@@ -458,27 +526,48 @@ function AnalyticsDropdown() {
     <Box
       sx={{
         height: "200px",
+          marginBottom: "20px",
       }}
     >
-      <Text py={10}>Analytics</Text>
+      <Text pb={20} mx={10} color={"color2"} sx={{fontWeight: "bold"}}>Analytics</Text>
       <Grid columns={[4]}>
-        <Box sx={{borderRight: "1px solid grey"}}>
-          <Text color={"color2"}> Electric two wheeler penetration </Text>
-          <Text color={"color2"}> Electric Cars penetration </Text>
-          <Text color={"color2"}> Battery ecosystems </Text>
-          <Text color={"color2"}> Materials </Text>
+        <Box sx={{borderRight: "1px solid grey", display: "flex", flexDirection: "column"}}>
+          <LinkDropdown> Electric two wheeler penetration
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
+          <LinkDropdown> Electric Cars penetration
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
+          <LinkDropdown> Battery ecosystems
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
+          <LinkDropdown> Materials
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
         </Box>
-        <Box>
-          <Text color={"color2"}> Telecom performance </Text>
-          <Text color={"color2"}> 5G ready </Text>
+        <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
+          <LinkDropdown> Telecom performance
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
+          <LinkDropdown> 5G ready
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
         </Box>
-        <Box>
-          <Text color={"color2"}> Information Technology </Text>
-          <Text color={"color2"}> Internet of things </Text>
+        <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
+          <LinkDropdown> Information Technology
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
+          <LinkDropdown> Internet of things
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
         </Box>
-        <Box>
-          <Text color={"color2"}> Bioinformatics usage </Text>
-          <Text color={"color2"}> Telemedicine penetration </Text>
+        <Box sx={{display: 'flex', flexDirection: 'column'}}>
+          <LinkDropdown> Bioinformatics usage
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
+          <LinkDropdown> Telemedicine penetration
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
         </Box>
       </Grid>
     </Box>
@@ -490,27 +579,48 @@ function DisruptionsDropdown() {
     <Box
       sx={{
         height: "200px",
+          marginBottom: '20px',
       }}
     >
-      <Text py={20}>Disruptions</Text>
+      <Text pb={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Disruptions</Text>
       <Grid columns={[4]}>
-        <Box sx={{borderRight: "1px solid grey"}}>
-          <Text color={"color2"}> Electric Transport </Text>
-          <Text color={"color2"}> Genomics </Text>
-          <Text color={"color2"}> Battery ecosystems </Text>
-          <Text color={"color2"}> Materials </Text>
+        <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
+          <LinkDropdown> Electric Transport
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
+          <LinkDropdown> Genomics
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
+          <LinkDropdown> Battery ecosystems
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
+          <LinkDropdown> Materials
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
         </Box>
-        <Box>
-          <Text color={"color2"}> Space Exploration </Text>
-          <Text color={"color2"}> Next IT </Text>
+        <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
+          <LinkDropdown> Space Exploration
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
+          <LinkDropdown> Next IT
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
         </Box>
-        <Box>
-          <Text color={"color2"}> Information Technology </Text>
-          <Text color={"color2"}> Internet of things </Text>
+        <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
+          <LinkDropdown> Information Technology
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
+          <LinkDropdown> Internet of things
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
         </Box>
-        <Box>
-          <Text color={"color2"}> Bioinformatics </Text>
-          <Text color={"color2"}> Telemedicine </Text>
+        <Box sx={{display: 'flex', flexDirection: 'column'}}>
+          <LinkDropdown> Bioinformatics
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
+          <LinkDropdown> Telemedicine
+              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
+          </LinkDropdown>
         </Box>
       </Grid>
     </Box>
@@ -524,7 +634,8 @@ function ResearchDropdown() {
         height: "200px",
       }}
     >
-      Research
+        <Text py={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Research</Text>
+
     </Box>
   );
 }
@@ -536,7 +647,8 @@ function SectorsDropdown() {
         height: "200px",
       }}
     >
-      Sectors
+        <Text py={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Sectors</Text>
+
     </Box>
   );
 }
