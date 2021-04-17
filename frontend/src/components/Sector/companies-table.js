@@ -81,27 +81,14 @@ function Table({columns, data}) {
       <tbody {...getTableBodyProps()}>
       {rows.map((row, i) => {
         prepareRow(row);
-        return (
-          <tr {...row.getRowProps()}>
-            {row.cells.map((cell) => {
-              const {number} = cell.getCellProps();
-              return (
-                <td {...cell.getCellProps()}>
-                  <Text variant={mapCellFormat(cell.value)}>
-                    {cell.render("Cell")}
-                  </Text>
-                </td>
-              );
-            })}
-          </tr>
-        );
+        return <TableRow row={row}/>;
       })}
       </tbody>
     </table>
   );
 }
 
-export function CompaniesList({name,companies}) {
+export function CompaniesList({name, companies}) {
   const columns = React.useMemo(
     () => [
       {
@@ -143,30 +130,30 @@ export function CompaniesList({name,companies}) {
           p={2}
           sx={{display: ['block', 'block', 'none']}}
         >
-        <Grid columns={['1fr 110px']}
+          <Grid columns={['1fr 110px']}
 
-        >
-          <Box>
+          >
+            <Box>
 
-          </Box>
-          <Box>
-            <Button variant="outlined" sx={{py: "1", px: "3"}} onClick={() => {
-              setFiltersOpen(true);
-            }}>
-              <BsFillFunnelFill size={14} />
-              <Text
-              as={'span'}
-              mx={2}
-              sx={{
-                fontSize: "0.8rem",
-                fontWeight: "600"
-              }}
-            >Filters
+            </Box>
+            <Box>
+              <Button variant="outlined" sx={{py: "1", px: "3"}} onClick={() => {
+                setFiltersOpen(true);
+              }}>
+                <BsFillFunnelFill size={14}/>
+                <Text
+                  as={'span'}
+                  mx={2}
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontWeight: "600"
+                  }}
+                >Filters
 
-            </Text>
-            </Button>
-          </Box>
-        </Grid>
+                </Text>
+              </Button>
+            </Box>
+          </Grid>
         </Box>
         <Grid columns={[1, 1, '2fr 7fr']} gap={0}>
           <Box
@@ -212,7 +199,7 @@ export function CompaniesList({name,companies}) {
               }}
             />
           </Box>
-          <Box >
+          <Box>
             <Table
               columns={columns}
               data={companies}
@@ -222,4 +209,22 @@ export function CompaniesList({name,companies}) {
       </Box>
     </Styles>
   );
+}
+
+
+function TableRow({row}) {
+  return <Box as={'tr'} {...row.getRowProps()} sx={{
+    height: '100px'
+  }}>
+    {row.cells.map((cell) => {
+      const {number} = cell.getCellProps();
+      return (
+        <td {...cell.getCellProps()}>
+          <Text variant={mapCellFormat(cell.value)}>
+            {cell.render("Cell")}
+          </Text>
+        </td>
+      );
+    })}
+  </Box>;
 }
