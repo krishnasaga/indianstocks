@@ -94,26 +94,80 @@ export function CompaniesList({name, companies}) {
       {
         Header: "Company Name",
         accessor: "name",
+        Cell:(cell) =>{
+          return <Grid columns={['28px 1fr']}>
+            <Box as={'div'}
+            bg={'red'}
+            sx={{
+              display: 'inline-block',
+              width: '28px',
+              height: '28px',
+              borderRadius: '28px',
+            }}>
+
+            </Box>
+            <Box sx={{
+              lineHeight: '20px'
+            }}>
+              <Text sx={{fontSize: '1rem'}}>{cell.value}</Text>
+            </Box>
+          </Grid>;
+        }
       },
       {
-        Header: "Sector",
+        Header: "Focus",
         accessor: "sector",
+        Cell: (cell) => {
+          return <Grid>
+            <Box>
+              Hello
+            </Box>
+          </Grid>
+        }
       },
       {
         Header: "PE ratio",
         accessor: "peRatio",
+        Cell: (cell) => {
+          return <Grid>
+            <Box>
+              Hello
+            </Box>
+          </Grid>
+        }
       },
       {
         Header: "PB ratio",
         accessor: "pbRatio",
+        Cell: (cell) => {
+          return <Grid>
+            <Box>
+              Hello
+            </Box>
+          </Grid>
+        }
       },
       {
         Header: "Market Cap",
         accessor: "marketCap",
+        Cell: (cell) => {
+          return <Grid>
+            <Box>
+              Hello
+            </Box>
+          </Grid>
+        }
       },
       {
         Header: "Revenue",
         accessor: "revenue",
+        Cell: (cell) => {
+          return <Grid>
+            <Box>
+              Hello
+            </Box>
+          </Grid>
+        }
       },
     ],
     []
@@ -214,7 +268,7 @@ export function CompaniesList({name, companies}) {
 
 function TableRow({row}) {
   return <Box as={'tr'} {...row.getRowProps()} sx={{
-    height: '100px'
+    height: '80px'
   }}>
     {row.cells.map((cell) => {
       const {number} = cell.getCellProps();

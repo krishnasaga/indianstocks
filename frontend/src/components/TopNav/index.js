@@ -9,6 +9,7 @@ import {AiOutlineClose} from "react-icons/ai";
 import {RiArrowRightSLine, RiArrowDropDownLine} from "react-icons/ri";
 import {MdKeyboardArrowLeft} from "react-icons/md";
 import {HiArrowRight} from "react-icons/hi";
+import { TextArrow } from "../TextArrow";
 
 const AnimatedBox = animated(Box);
 
@@ -31,7 +32,8 @@ const LinkMobile = ({ children }) => {
 
 const LinkDropdown = ({ children }) => {
     return (
-        <Link
+        <TextArrow
+            as={Link}
             color={"color2"}
             sx={{
                 fontSize: ["0.9rem", "0.9rem"],
@@ -45,7 +47,7 @@ const LinkDropdown = ({ children }) => {
             }}
         >
             {children}
-        </Link>
+        </TextArrow>
     );
 };
 
@@ -533,40 +535,30 @@ function AnalyticsDropdown() {
       <Grid columns={[4]}>
         <Box sx={{borderRight: "1px solid grey", display: "flex", flexDirection: "column"}}>
           <LinkDropdown> Electric two wheeler penetration
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
           <LinkDropdown> Electric Cars penetration
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
           <LinkDropdown> Battery ecosystems
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
           <LinkDropdown> Materials
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
         </Box>
         <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
           <LinkDropdown> Telecom performance
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
           <LinkDropdown> 5G ready
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
         </Box>
         <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
           <LinkDropdown> Information Technology
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
           <LinkDropdown> Internet of things
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
         </Box>
         <Box sx={{display: 'flex', flexDirection: 'column'}}>
           <LinkDropdown> Bioinformatics usage
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
           <LinkDropdown> Telemedicine penetration
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
         </Box>
       </Grid>
@@ -586,40 +578,30 @@ function DisruptionsDropdown() {
       <Grid columns={[4]}>
         <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
           <LinkDropdown> Electric Transport
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
           <LinkDropdown> Genomics
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
           <LinkDropdown> Battery ecosystems
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
           <LinkDropdown> Materials
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
         </Box>
         <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
           <LinkDropdown> Space Exploration
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
           <LinkDropdown> Next IT
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
         </Box>
         <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
           <LinkDropdown> Information Technology
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
           <LinkDropdown> Internet of things
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
         </Box>
         <Box sx={{display: 'flex', flexDirection: 'column'}}>
           <LinkDropdown> Bioinformatics
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
           <LinkDropdown> Telemedicine
-              <HiArrowRight style={{transform: 'translate(50%,21%)'}}/>
           </LinkDropdown>
         </Box>
       </Grid>
