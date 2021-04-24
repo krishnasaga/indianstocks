@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Grid, Text, Link, Container, Button } from "theme-ui";
 import { TopNav } from "../components/TopNav";
 import introImage from "./background.jpg";
+import { Cards } from '../components/Cards';
 
 const Explorer = ({ children, ...remainingProps }) => {
   return (
@@ -43,6 +44,9 @@ export default () => {
             <Explorer>
               <a href={"/sectors"}>Explore Companies by Sector</a>
             </Explorer>
+          </Grid>
+          <Grid>
+            <Cards/>
           </Grid>
         </Container>
       </Box>
