@@ -11,20 +11,21 @@ export const TextArrow = (props) => {
   return <Box
     as={'span'}
     onMouseEnter={() => {
-      api.start({x: 10})
+      api.start({x: 15, display: 'inline-block'})
     }}
 
     onMouseLeave={() => {
-      api.start({x: 0})
+      api.start({x: 0, display: 'none'})
     }}
     {...props}
   >
     {props.children}<AnimatedArrow
     style={{
-      transform: 'translate(50%,21%)',
-      display: 'inline-block',
+      transform: 'translate(70%,21%)',
+      display: 'none',
       ...styles
     }}
-  > <HiArrowRight/> </AnimatedArrow>
+  > <HiArrowRight/></AnimatedArrow>
   </Box>
 }
+

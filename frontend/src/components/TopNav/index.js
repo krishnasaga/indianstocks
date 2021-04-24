@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Box, Grid, Link, Text, IconButton} from "theme-ui";
+import {Box, Grid, Link, Text} from "theme-ui";
 import {Portal} from "react-portal";
 import OutsideClickHandler from "react-outside-click-handler";
 import {animated, useSpring} from "react-spring";
@@ -8,8 +8,8 @@ import {GiHamburgerMenu} from "react-icons/gi";
 import {AiOutlineClose} from "react-icons/ai";
 import {RiArrowRightSLine, RiArrowDropDownLine} from "react-icons/ri";
 import {MdKeyboardArrowLeft} from "react-icons/md";
-import {HiArrowRight} from "react-icons/hi";
 import { TextArrow } from "../TextArrow";
+import { DropdownMenuText } from "../DropdownMenuText";
 
 const AnimatedBox = animated(Box);
 
@@ -125,36 +125,26 @@ export const TopNav = () => {
                 // },
             }} onClick={(event) => menuHandler(event, "disruptions")}>
               {" "}
-                <Text sx={{
-                    fontSize: '1rem',
-                    ':hover': {
-                        color: 'blue',
-                    },
-                }}>Disruptions
-                    <RiArrowDropDownLine size={20} style={{
-                    transform: 'translate(0,21%)',
-                }} />
-                </Text>
+
+                <DropdownMenuText>
+                Disruptions
+                </DropdownMenuText>
               {" "}
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "research")}>
               {" "}
-              Research{" "}<RiArrowDropDownLine size={20} style={{
-                transform: 'translate(0,21%)'
-            }} />
+                <DropdownMenuText>Research</DropdownMenuText>
+                {" "}
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "sectors")}>
               {" "}
-              Sectors{" "}<RiArrowDropDownLine size={20} style={{
-                transform: 'translate(0,21%)'
-
-            }} />
+                <DropdownMenuText>Sectors</DropdownMenuText>
+              {" "}
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "analytics")}>
               {" "}
-              Analytics{" "}<RiArrowDropDownLine size={20} style={{
-                transform: 'translate(0,21%)'
-            }} />
+                <DropdownMenuText>Analytics</DropdownMenuText>
+              {" "}
             </Menu>
             <NavButton/>
           </>
