@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Grid, Text, Card} from 'theme-ui';
+import {Box, Grid, Text, Card,Image} from 'theme-ui';
 
 export const Cards = () => {
     return <Box
@@ -16,28 +16,28 @@ export const Cards = () => {
                     sx={{
                         maxWidth: 256,
                     }}>
-                    <Image src={images.nyc} />
+                    <Image src={''} />
                     <Text>Card text</Text>
                 </Card>
                 <Card
                     sx={{
                         maxWidth: 256,
                     }}>
-                    <Image src={images.nyc} />
+                    <Image src={''} />
                     <Text>Card text</Text>
                 </Card>
                 <Card
                     sx={{
                         maxWidth: 256,
                     }}>
-                    <Image src={images.nyc} />
+                    <Image src={''} />
                     <Text>Card text</Text>
                 </Card>
                 <Card
                     sx={{
                         maxWidth: 256,
                     }}>
-                    <Image src={images.nyc} />
+                    <Image src={''} />
                     <Text>Card text</Text>
                 </Card>
             </Grid>
