@@ -1,10 +1,11 @@
 import React from "react";
-import { Box, Grid, Text, Link, Container, Button } from "theme-ui";
-import { TopNav } from "../components/TopNav";
+import {Box, Button, Container, Grid, Text} from "theme-ui";
+import {TopNav} from "../components/TopNav";
 import introImage from "./background.jpg";
-import { Cards } from '../components/Cards';
+import {Cards} from '../components/Cards';
+import {Footer} from "../components/Footer";
 
-const Explorer = ({ children, ...remainingProps }) => {
+const Explorer = ({children, ...remainingProps}) => {
   return (
     <Container>
       <Box {...remainingProps} py={20}>
@@ -27,29 +28,16 @@ const Explorer = ({ children, ...remainingProps }) => {
 export default () => {
   return (
     <Box>
-      <TopNav />
-      <Introbanner />
+      <TopNav/>
+      <Introbanner/>
       <Box bg={"color5"}>
         <Container>
-          <Grid py={100} columns={[1, 1, 2, 4]}>
-            <Explorer>
-              <a href={"/sectors"}>Explore Companies by Sector</a>
-            </Explorer>
-            <Explorer>
-              <a href={"/sectors"}>Explore Companies by Sector</a>
-            </Explorer>
-            <Explorer>
-              <a href={"/sectors"}>Explore Companies by Sector</a>
-            </Explorer>
-            <Explorer>
-              <a href={"/sectors"}>Explore Companies by Sector</a>
-            </Explorer>
-          </Grid>
-          <Grid>
+          <Box py={'4rem'}>
             <Cards/>
-          </Grid>
+          </Box>
         </Container>
       </Box>
+      <Footer/>
     </Box>
   );
 };
@@ -75,12 +63,12 @@ function Introbanner() {
               }}
             ></Box>
             <Box my={10}>
-              <Text color={"text2"} sx={{ fontSize: "2.8rem" }}>
+              <Text color={"text2"} sx={{fontSize: "2.8rem"}}>
                 Invest on Big Disruptions
               </Text>
             </Box>
             <Box my={10}>
-              <Text color={"color2"} sx={{ fontSize: "1.8rem" }}>
+              <Text color={"color2"} sx={{fontSize: "1.8rem"}}>
                 With convergence of financial and technological expertise
               </Text>
             </Box>
