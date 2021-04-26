@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
+    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="add responsive svgs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Cards/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Cards/index.js" afterDir="false" />
     </list>
@@ -64,7 +64,7 @@
       <workItem from="1617902866864" duration="599000" />
       <workItem from="1618475056649" duration="39250000" />
       <workItem from="1619014114462" duration="13356000" />
-      <workItem from="1619252101390" duration="27215000" />
+      <workItem from="1619252101390" duration="28152000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -122,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619350151019</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add responsive cards and cards text">
+      <created>1619452630227</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1619452630227</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +145,8 @@
     <MESSAGE value="integrate DropdownMenuText animation in code, fix TextArrow animation" />
     <MESSAGE value="create Cards\ and started code" />
     <MESSAGE value="add cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="add cards" />
+    <MESSAGE value="add responsive cards and cards text" />
+    <option name="LAST_COMMIT_MESSAGE" value="add responsive cards and cards text" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

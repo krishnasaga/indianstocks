@@ -55,19 +55,19 @@ export const Cards = () => {
                 justifyItems: 'center',
             }}>
             <CardWrapper>
-                <BsFillGearFill size={'fit'}/>
+                <BsFillGearFill size={'80%'} />
               <CardText>ARK Disruptive Innovation</CardText>
             </CardWrapper>
             <CardWrapper>
-              <BsFillGearFill size={100} />
+              <BsFillGearFill size={'80%'} />
               <CardText>Autonomous Tech & Robotics</CardText>
             </CardWrapper>
             <CardWrapper>
-              <BsFillGearFill size={100} />
+              <BsFillGearFill size={'80%'} />
               <CardText>Genomic Revolution</CardText>
             </CardWrapper>
             <CardWrapper>
-              <BsFillGearFill size={100} />
+              <BsFillGearFill size={'80%'} />
               <CardText>Next Generation Internet</CardText>
             </CardWrapper>
             </Grid>
