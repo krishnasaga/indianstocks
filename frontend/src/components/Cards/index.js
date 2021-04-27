@@ -6,11 +6,11 @@ const CardWrapper = ({ children }) => {
     return (
         <Box
             ml={10} pb={50} sx={{
-            maxWidth: ['200', '400'],
-            height: ['300', '400'],
+            maxWidth: ['200', '600'],
+            height: ['300', '300', '350'],
             border: '1px solid rgb(255, 255, 255)',
             display: 'grid',
-            gridTemplateRows: ['230px 70px', '280px 120px'],
+            gridTemplateRows: ['180px 70px', '230px 120px'],
             gridAutoFlow: 'row',
             alignItems: 'end',
             justifyItems: 'center',
@@ -25,7 +25,7 @@ const CardWrapper = ({ children }) => {
 
 const CardFigure = ({ children }) => {
     return (
-        <Box px={['20px', '20px', '50px']} sx={{
+        <Box px={['20px', '20px', '70px']} sx={{
             display: 'flex',
             alignItems: 'flex-end',
         }}
