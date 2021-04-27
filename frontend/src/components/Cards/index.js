@@ -23,6 +23,18 @@ const CardWrapper = ({ children }) => {
     );
 };
 
+const CardFigure = ({ children }) => {
+    return (
+        <Box px={['20px', '20px', '50px']} sx={{
+            display: 'flex',
+            alignItems: 'flex-end',
+        }}
+        >
+            {children}
+        </Box>
+    );
+};
+
 const CardText = ({ children }) => {
     return (
         <Text p={20} sx={{
@@ -55,19 +67,27 @@ export const Cards = () => {
                 justifyItems: 'center',
             }}>
             <CardWrapper>
-                <BsFillGearFill size={'80%'} />
+                <CardFigure>
+                    <BsFillGearFill size={'100%'} />
+                </CardFigure>
               <CardText>ARK Disruptive Innovation</CardText>
             </CardWrapper>
             <CardWrapper>
-              <BsFillGearFill size={'80%'} />
+                <CardFigure>
+                    <BsFillGearFill size={'100%'} />
+                </CardFigure>
               <CardText>Autonomous Tech & Robotics</CardText>
             </CardWrapper>
             <CardWrapper>
-              <BsFillGearFill size={'80%'} />
+                <CardFigure>
+                    <BsFillGearFill size={'100%'} />
+                </CardFigure>
               <CardText>Genomic Revolution</CardText>
             </CardWrapper>
             <CardWrapper>
-              <BsFillGearFill size={'80%'} />
+                <CardFigure>
+                    <BsFillGearFill size={'100%'} />
+                </CardFigure>
               <CardText>Next Generation Internet</CardText>
             </CardWrapper>
             </Grid>
