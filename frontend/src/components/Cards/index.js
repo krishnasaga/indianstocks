@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Grid, Text } from 'theme-ui';
+import { Box, Grid, Text, Button } from 'theme-ui';
 import { BsFillGearFill } from 'react-icons/bs'
+import {HiArrowRight} from "react-icons/hi";
 
 const CardWrapper = ({ children }) => {
     return (
@@ -16,6 +17,8 @@ const CardWrapper = ({ children }) => {
             justifyItems: 'center',
             color: 'color4',
             textAlign: 'center',
+            // opacity: '0',
+
         }}
         >
             {children}
@@ -35,6 +38,8 @@ const CardFigure = ({ children }) => {
     );
 };
 
+
+
 const CardText = ({ children }) => {
     return (
         <Text p={20} sx={{
@@ -53,6 +58,30 @@ const CardText = ({ children }) => {
     );
 };
 
+const CardOverlay = ({ children }) => {
+    return (
+        <Box
+            ml={10} sx={{
+            maxWidth: ['200', '600'],
+            height: ['300', '300', '350'],
+            border: '1px solid black',
+            backgroundColor: 'white',
+            display: 'grid',
+            gridAutoFlow: 'row',
+            gridTemplateRows: ['20 400 180'],
+            alignItems: 'center',
+            justifyItems: 'start',
+            color: 'color4',
+            textAlign: 'left',
+            paddingLeft: '10px',
+            // opacity: '0',
+            // transform: 'translate(-100%,0)',
+        }}
+        >
+            {children}
+        </Box>
+    );
+};
 
 export const Cards = () => {
     return <Box
@@ -72,6 +101,28 @@ export const Cards = () => {
                 </CardFigure>
               <CardText>ARK Disruptive Innovation</CardText>
             </CardWrapper>
+
+            <CardOverlay sx={{
+                display: 'flex',
+            }}>
+                <Text pb={'5px'} sx={{
+                    fontWeight: 'bold',
+                    color: 'color5',
+                }}>ARK Disruptive Innovation</Text>
+                <Text sx={{
+                    color: 'color4',
+                    fontSize: '1.1rem',
+                }}>Aims to provide broad exposure to disruptive innovation.
+                    ARK believes innovations centered around artificial intelligence,
+                    robotics, energy storage, DNA sequencing, and blockchain technology
+                    will change the way the world works and deliver outsized growth as industries transform.
+                </Text>
+                <Button sx={{
+
+                }}>See more <HiArrowRight/> </Button>
+
+            </CardOverlay>
+
             <CardWrapper>
                 <CardFigure>
                     <BsFillGearFill size={'100%'} />
