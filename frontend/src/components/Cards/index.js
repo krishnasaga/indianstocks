@@ -38,8 +38,6 @@ const CardFigure = ({ children }) => {
     );
 };
 
-
-
 const CardText = ({ children }) => {
     return (
         <Text p={20} sx={{
@@ -60,26 +58,63 @@ const CardText = ({ children }) => {
 
 const CardOverlay = ({ children }) => {
     return (
-        <Box
-            ml={10} sx={{
+        <Box px={'20px'} py={'30px'} sx={{
             maxWidth: ['200', '600'],
             height: ['300', '300', '350'],
             border: '1px solid black',
             backgroundColor: 'white',
-            display: 'grid',
-            gridAutoFlow: 'row',
-            gridTemplateRows: ['20 400 180'],
-            alignItems: 'center',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'start',
             justifyItems: 'start',
             color: 'color4',
             textAlign: 'left',
-            paddingLeft: '10px',
             // opacity: '0',
             // transform: 'translate(-100%,0)',
         }}
         >
             {children}
         </Box>
+    );
+};
+
+const CardOverlayHeading = ({ children }) => {
+    return (
+        <Text pb={1} sx={{
+        fontWeight: 'bold',
+            color: 'color5',
+    }}
+        >
+            {children}
+        </Text>
+    );
+};
+
+const CardOverlayText = ({ children }) => {
+    return (
+        <Text sx={{
+            color: 'color4',
+            fontSize: '1.05rem',
+        }}
+        >
+            {children}
+        </Text>
+    );
+};
+
+const CardOverlayButton = ({ children }) => {
+    return (
+        <Button sx={{
+            backgroundColor: 'white',
+            color: 'color5',
+            padding: '0',
+            fontWeight: 'bold',
+            display: 'flex',
+            alignItems: 'center',
+            marginTop: 'auto',
+        }}>
+            {children}
+        </Button>
     );
 };
 
@@ -102,25 +137,22 @@ export const Cards = () => {
               <CardText>ARK Disruptive Innovation</CardText>
             </CardWrapper>
 
-            <CardOverlay sx={{
-                display: 'flex',
-            }}>
-                <Text pb={'5px'} sx={{
-                    fontWeight: 'bold',
-                    color: 'color5',
-                }}>ARK Disruptive Innovation</Text>
-                <Text sx={{
-                    color: 'color4',
-                    fontSize: '1.1rem',
-                }}>Aims to provide broad exposure to disruptive innovation.
+            <CardOverlay>
+                <CardOverlayHeading>ARK Disruptive Innovation</CardOverlayHeading>
+                <CardOverlayText>Aims to provide broad exposure to disruptive innovation.
                     ARK believes innovations centered around artificial intelligence,
                     robotics, energy storage, DNA sequencing, and blockchain technology
                     will change the way the world works and deliver outsized growth as industries transform.
-                </Text>
-                <Button sx={{
-
-                }}>See more <HiArrowRight/> </Button>
-
+                </CardOverlayText>
+                <CardOverlayButton>
+                    <Text pr={3} sx={{
+                        color: 'color5',
+                        fontSize: '1.05rem',
+                    }}>See more
+                    </Text>
+                     <HiArrowRight style={{
+                         transform: 'translate(0,10%)'}}/>
+                </CardOverlayButton>
             </CardOverlay>
 
             <CardWrapper>
