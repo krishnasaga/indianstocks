@@ -150,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619547479683</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="finish card overlay styling">
+      <created>1619624935829</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1619624935830</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,7 +177,8 @@
     <MESSAGE value="fix responsive icons in cards" />
     <MESSAGE value="fix cards height and icons size" />
     <MESSAGE value="start card overlay content" />
-    <option name="LAST_COMMIT_MESSAGE" value="start card overlay content" />
+    <MESSAGE value="finish card overlay styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish card overlay styling" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

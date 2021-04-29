@@ -104,16 +104,20 @@ const CardOverlayText = ({ children }) => {
 
 const CardOverlayButton = ({ children }) => {
     return (
+
         <Button sx={{
             backgroundColor: 'white',
             color: 'color5',
             padding: '0',
-            fontWeight: 'bold',
             display: 'flex',
             alignItems: 'center',
             marginTop: 'auto',
-        }}>
-            {children}
+            fontWeight: 'bold',
+            fontSize: '1rem',
+        }}> {children}
+            <HiArrowRight size={25} style={{
+             transform: 'translate(0,10%)',
+             paddingLeft: '10px'}}/>
         </Button>
     );
 };
@@ -145,14 +149,9 @@ export const Cards = () => {
                     will change the way the world works and deliver outsized growth as industries transform.
                 </CardOverlayText>
                 <CardOverlayButton>
-                    <Text pr={3} sx={{
-                        color: 'color5',
-                        fontSize: '1.05rem',
-                    }}>See more
-                    </Text>
-                     <HiArrowRight style={{
-                         transform: 'translate(0,10%)'}}/>
+                    See more
                 </CardOverlayButton>
+
             </CardOverlay>
 
             <CardWrapper>
