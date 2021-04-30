@@ -3,6 +3,40 @@ import { Box, Grid, Text, Button } from 'theme-ui';
 import { BsFillGearFill } from 'react-icons/bs'
 import {HiArrowRight} from "react-icons/hi";
 
+// LOOP CARDS IN AN ARRAY
+
+// == TRY 1 ==
+// const Cards=['Card 1', 'Card 2', 'Card 3', 'Card 4'];
+// const CardsList=[];
+// Cards.forEach((card,index)=>{
+//     CardsList.push(<Box key={index}>{card}</Box>)
+// })
+// function App() {
+//     return (
+//         <Box>
+//             {CardsList}
+//         </Box>
+//     );
+// }
+
+// export default App;
+
+// == TRY 2 ==
+
+// render(){
+//     const Cards = ['Card 1', 'Card 2', 'Card 3', 'Card 4'];
+//     const CardsList = [];
+//     for (const [index,value] of Cards.entries()) {
+//         CardsList.push(<Box key={index}>{value}</Box>)
+//     }
+// }
+//
+// return (
+//     <Box>
+//         {CardsList}
+//     </Box>
+// )
+
 const CardWrapper = ({ children }) => {
     return (
         <Box
@@ -60,7 +94,7 @@ const CardOverlay = ({ children }) => {
     return (
         <Box px={'20px'} py={'30px'} sx={{
             maxWidth: ['200', '600'],
-            height: ['300', '300', '350'],
+            maxHeight: ['300', '300', '350'],
             border: '1px solid black',
             backgroundColor: 'white',
             display: 'flex',
@@ -69,8 +103,10 @@ const CardOverlay = ({ children }) => {
             justifyItems: 'start',
             color: 'color4',
             textAlign: 'left',
-            // opacity: '0',
-            // transform: 'translate(-100%,0)',
+            opacity: '1',
+            // transform: 'translate(0,-100%)',
+
+
         }}
         >
             {children}
@@ -122,6 +158,9 @@ const CardOverlayButton = ({ children }) => {
     );
 };
 
+
+
+
 export const Cards = () => {
     return <Box
         as={'cards'}
@@ -134,25 +173,31 @@ export const Cards = () => {
                 columns={[2, 4]} sx={{
                 justifyItems: 'center',
             }}>
-            <CardWrapper>
-                <CardFigure>
-                    <BsFillGearFill size={'100%'} />
-                </CardFigure>
-              <CardText>ARK Disruptive Innovation</CardText>
-            </CardWrapper>
 
-            <CardOverlay>
-                <CardOverlayHeading>ARK Disruptive Innovation</CardOverlayHeading>
-                <CardOverlayText>Aims to provide broad exposure to disruptive innovation.
-                    ARK believes innovations centered around artificial intelligence,
-                    robotics, energy storage, DNA sequencing, and blockchain technology
-                    will change the way the world works and deliver outsized growth as industries transform.
-                </CardOverlayText>
-                <CardOverlayButton>
-                    See more
-                </CardOverlayButton>
 
-            </CardOverlay>
+                    <CardWrapper sx={{
+                        position: 'relative',
+                        opacity: '1',
+                    }}>
+                    <CardFigure>
+                        <BsFillGearFill size={'100%'} />
+                    </CardFigure>
+                    <CardText>ARK Disruptive Innovation</CardText>
+                </CardWrapper>
+
+                    <CardOverlay>
+                        <CardOverlayHeading>ARK Disruptive Innovation</CardOverlayHeading>
+                        <CardOverlayText>Aims to provide broad exposure to disruptive innovation.
+                            ARK believes innovations centered around artificial intelligence,
+                            robotics, energy storage, DNA sequencing, and blockchain technology
+                            will change the way the world works and deliver outsized growth as industries transform.
+                        </CardOverlayText>
+                        <CardOverlayButton>
+                            See more
+                        </CardOverlayButton>
+                    </CardOverlay>
+
+
 
             <CardWrapper>
                 <CardFigure>
