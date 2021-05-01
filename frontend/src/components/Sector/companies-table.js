@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Box, Button, Grid, Text} from "theme-ui";
+import {Box, Button, Grid, Image, Text} from "theme-ui";
 import {useSortBy, useTable} from "react-table";
 import React, {useState} from "react";
 import makeData from "../../somethings/makeData";
@@ -96,16 +96,7 @@ export function CompaniesList({name, companies}) {
         accessor: "name",
         Cell: (cell) => {
           return <Grid columns={['28px 1fr']}>
-            <Box as={'div'}
-                 bg={'red'}
-                 sx={{
-                   display: 'inline-block',
-                   width: '28px',
-                   height: '28px',
-                   borderRadius: '28px',
-                 }}>
-
-            </Box>
+            <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'}/>
             <Box sx={{
               lineHeight: '20px'
             }}>
