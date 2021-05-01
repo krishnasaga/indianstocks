@@ -13,8 +13,8 @@ exports.createPages = async function ({actions, graphql}) {
 
   await Promise.all(data.map(async (edge) => {
     const {id, name, displayName, intro, insights, backgroundImage} = edge;
-    const { data } = await getCompanies();
-    const companies  = data;
+    const {data} = await getCompanies();
+    const companies = data;
     const pages = [
       {
         path: `/sectors/${name}`,
@@ -95,5 +95,18 @@ exports.createPages = async function ({actions, graphql}) {
           redirectInBrowser: true,
         });
       });
-  }))
-};
+
+  }));
+
+  const sectors = await getSectors();
+
+  actions.createPage({
+    path: '/',
+    component: require.resolve(`./src/templates/index.js`),
+    context: {
+      sectors: sectors.data
+    }
+  });
+
+
+}

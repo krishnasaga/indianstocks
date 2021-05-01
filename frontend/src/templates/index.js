@@ -1,7 +1,7 @@
 import React from "react";
 import {Box, Button, Container, Grid, Text} from "theme-ui";
 import {TopNav} from "../components/TopNav";
-import introImage from "./background.jpg";
+import introImage from "../pages/background.jpg";
 import {Cards} from '../components/Cards';
 import {Footer} from "../components/Footer";
 
@@ -25,7 +25,9 @@ const Explorer = ({children, ...remainingProps}) => {
   );
 };
 
-export default () => {
+export default ({
+                  pageContext: { sectors },
+                }) => {
   return (
     <Box>
       <TopNav/>
@@ -33,7 +35,9 @@ export default () => {
       <Box bg={"color5"}>
         <Container>
           <Box py={'4rem'}>
-            <Cards/>
+            <Cards items={sectors}
+
+            />
           </Box>
         </Container>
       </Box>
