@@ -16,7 +16,6 @@ export default ({
       insights={insights}
       backgroundImage={backgroundImage}
     />
-    <Subpages name={name}/>
     <SectorFinancials/>
     <Box
       my={4}

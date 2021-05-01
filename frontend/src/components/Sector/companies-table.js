@@ -94,16 +94,16 @@ export function CompaniesList({name, companies}) {
       {
         Header: "Company Name",
         accessor: "name",
-        Cell:(cell) =>{
+        Cell: (cell) => {
           return <Grid columns={['28px 1fr']}>
             <Box as={'div'}
-            bg={'red'}
-            sx={{
-              display: 'inline-block',
-              width: '28px',
-              height: '28px',
-              borderRadius: '28px',
-            }}>
+                 bg={'red'}
+                 sx={{
+                   display: 'inline-block',
+                   width: '28px',
+                   height: '28px',
+                   borderRadius: '28px',
+                 }}>
 
             </Box>
             <Box sx={{
@@ -209,7 +209,7 @@ export function CompaniesList({name, companies}) {
             </Box>
           </Grid>
         </Box>
-        <Grid columns={[1, 1, '2fr 7fr']} gap={0}>
+        <Grid columns={[1, 1, '7fr']} gap={0}>
           <Box
             bg={'white'}
             sx={{
@@ -244,14 +244,14 @@ export function CompaniesList({name, companies}) {
                 }}
               />
             </Box>
-            <Filters
+            {false ? <Filters
               bg={'white'}
               sectorName={name}
               sx={{
                 borderRight: '1px solid #e5e5e5',
                 height: '100%',
               }}
-            />
+            /> : null}
           </Box>
           <Box>
             <Table
