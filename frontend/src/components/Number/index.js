@@ -21,3 +21,7 @@ function parseToNumber(numberOrString) {
   const number = numberOrString.replace('%','');
   return Number.parseFloat(number);
 }
+
+export const Number = ({children,formatString}) => {
+  return <Text>{children}</Text>;
+};
