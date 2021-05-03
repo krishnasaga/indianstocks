@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Box, Grid, Link, Text} from "theme-ui";
+import {Box, Grid, Link, Text,Image} from "theme-ui";
 import {Portal} from "react-portal";
 import OutsideClickHandler from "react-outside-click-handler";
 import {animated, useSpring} from "react-spring";
@@ -106,7 +106,7 @@ export const TopNav = () => {
           <Link href={"/"} sx={{
               textDecoration: "none",
               color: "black"}}>
-            Invest{" "}
+            <Image src={'/big-invest.png'}/>
           </Link>
 
         </Box>
