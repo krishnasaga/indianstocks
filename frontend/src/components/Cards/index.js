@@ -70,7 +70,6 @@ const CardWrapper = ({children, onClick}) => {
       textAlign: 'center',
       cursor: 'pointer',
 
-
         width: '100%',
 
 
@@ -117,13 +116,13 @@ const CardOverlayWrapper = ({children}) => {
             position: 'absolute',
             top: '0',
             bottom: '0',
-            left: '0',
+            left: ['10px'],
             right: '0',
             height: '100%',
             width: '100%',
             opacity: '0',
             transition: '.5s ease',
-            transform: 'translate(3%, 0)',
+            border: ['1px solid white'],
         }}
         >
             {children}
@@ -136,8 +135,8 @@ const CardOverlay = ({children}) => {
     <Box px={'20px'} py={'30px'} sx={{
       maxWidth: ['200', '600'],
       maxHeight: ['300', '300', '350'],
-      border: '1px solid black',
-      backgroundColor: 'white',
+
+      backgroundColor: ['color5','white'],
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'start',
@@ -147,6 +146,7 @@ const CardOverlay = ({children}) => {
 
         position: 'absolute',
         height: '100%',
+        width: '100%',
     }}
     >
       {children}
@@ -159,6 +159,7 @@ const CardOverlayHeading = ({children}) => {
     <Text pb={1} sx={{
       fontWeight: 'bold',
       color: 'color5',
+        display: ['none', 'block']
     }}
     >
       {children}
@@ -171,6 +172,7 @@ const CardOverlayText = ({children}) => {
     <Text sx={{
       color: 'color4',
       fontSize: '1.05rem',
+        display: ['none', 'block']
     }}
     >
       {children}
@@ -182,14 +184,17 @@ const CardOverlayButton = ({children}) => {
   return (
 
     <Button sx={{
-      backgroundColor: 'white',
-      color: 'color5',
+      backgroundColor: ['color5', 'white'],
+      color: ['white', 'color5'],
       padding: '0',
       display: 'flex',
       alignItems: 'center',
       marginTop: 'auto',
       fontWeight: 'bold',
       fontSize: '1rem',
+        position: 'absolute',
+        bottom: ['6', '3'],
+        left: ['5', '3'],
     }}> {children}
       <HiArrowRight size={25} style={{
         transform: 'translate(0,10%)',
@@ -198,11 +203,6 @@ const CardOverlayButton = ({children}) => {
     </Button>
   );
 };
-
-
-
-
-
 
 export const Cards = ({items = []}) => {
   console.log(items);
