@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Button, Grid, Text} from 'theme-ui';
+import {Box, Button, Grid, Text, Link} from 'theme-ui';
 import {BsFillGearFill} from 'react-icons/bs'
 import {HiArrowRight} from "react-icons/hi";
 
@@ -37,6 +37,22 @@ import {HiArrowRight} from "react-icons/hi";
 //     </Box>
 // )
 
+const CardContainer = ({children}) => {
+    return (
+        <Box sx={{
+            position: 'relative',
+            opacity: '1',
+            width: '100%',
+            ':hover': {
+                '.overlay': { opacity: '1' },
+            },
+        }}
+        >
+            {children}
+        </Box>
+    );
+};
+
 const CardWrapper = ({children, onClick}) => {
   return (
     <Box
@@ -52,8 +68,11 @@ const CardWrapper = ({children, onClick}) => {
       justifyItems: 'center',
       color: 'color4',
       textAlign: 'center',
-      cursor: 'pointer'
-      // opacity: '0',
+      cursor: 'pointer',
+
+
+        width: '100%',
+
 
     }}
     >
@@ -92,6 +111,26 @@ const CardText = ({children}) => {
   );
 };
 
+const CardOverlayWrapper = ({children}) => {
+    return (
+        <Box className={'overlay'} sx={{
+            position: 'absolute',
+            top: '0',
+            bottom: '0',
+            left: '0',
+            right: '0',
+            height: '100%',
+            width: '100%',
+            opacity: '0',
+            transition: '.5s ease',
+            transform: 'translate(3%, 0)',
+        }}
+        >
+            {children}
+        </Box>
+    );
+};
+
 const CardOverlay = ({children}) => {
   return (
     <Box px={'20px'} py={'30px'} sx={{
@@ -105,10 +144,9 @@ const CardOverlay = ({children}) => {
       justifyItems: 'start',
       color: 'color4',
       textAlign: 'left',
-      opacity: '1',
-      // transform: 'translate(0,-100%)',
 
-
+        position: 'absolute',
+        height: '100%',
     }}
     >
       {children}
@@ -162,6 +200,10 @@ const CardOverlayButton = ({children}) => {
 };
 
 
+
+
+
+
 export const Cards = ({items = []}) => {
   console.log(items);
   return <Box
@@ -177,33 +219,36 @@ export const Cards = ({items = []}) => {
       }}>
 
         {items.map(({name, displayName}, index) => {
-          return <CardWrapper key={index + 1} sx={{
+          return <CardContainer key={index + 1} sx={{
             position: 'relative',
             opacity: '1',
           }}
                               onClick={() => {
                                 window.location.href = `/sectors/${name}`
                               }}>
+              <CardWrapper>
             <CardFigure>
               <BsFillGearFill size={'100%'}/>
             </CardFigure>
             <CardText>{displayName}</CardText>
-          </CardWrapper>
+              </CardWrapper>
+              <CardOverlayWrapper >
+                  <CardOverlay >
+                      <CardOverlayHeading>
+                          ARK Disruptive Innovation
+                      </CardOverlayHeading>
+                      <CardOverlayText>Aims to provide broad exposure to disruptive innovation.
+                          ARK believes innovations centered around artificial intelligence,
+                          robotics, energy storage, DNA sequencing, and blockchain technology
+                          will change the way the world works and deliver outsized growth as industries transform.
+                      </CardOverlayText>
+                      <CardOverlayButton>
+                          See more
+                      </CardOverlayButton>
+                  </CardOverlay>
+              </CardOverlayWrapper>
+          </CardContainer>
         })}
-
-        <CardOverlay>
-          <CardOverlayHeading>ARK Disruptive Innovation</CardOverlayHeading>
-          <CardOverlayText>Aims to provide broad exposure to disruptive innovation.
-            ARK believes innovations centered around artificial intelligence,
-            robotics, energy storage, DNA sequencing, and blockchain technology
-            will change the way the world works and deliver outsized growth as industries transform.
-          </CardOverlayText>
-          <CardOverlayButton>
-            See more
-          </CardOverlayButton>
-        </CardOverlay>
-
-
       </Grid>
     </Box>
   </Box>;

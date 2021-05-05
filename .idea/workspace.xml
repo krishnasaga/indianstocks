@@ -65,6 +65,7 @@
       <workItem from="1618475056649" duration="39250000" />
       <workItem from="1619014114462" duration="13356000" />
       <workItem from="1619252101390" duration="28152000" />
+      <workItem from="1620164559862" duration="5844000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -164,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619710236419</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add starter code for loop in cards">
+      <created>1619797310883</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1619797310884</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +194,8 @@
     <MESSAGE value="start card overlay content" />
     <MESSAGE value="finish card overlay styling" />
     <MESSAGE value="fix CardOverlayButton component" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix CardOverlayButton component" />
+    <MESSAGE value="add starter code for loop in cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="add starter code for loop in cards" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
