@@ -60,14 +60,14 @@ function Introbanner() {
     >
       <Container>
         <Grid>
-          <Box>
+          <Box p={20}>
             <Box
               sx={{
                 height: "250px",
               }}
             ></Box>
             <Box my={10}>
-              <Text color={"text2"} sx={{fontSize: "2.8rem"}}>
+              <Text  color={"text2"} sx={{fontSize: "2.8rem"}}>
                 Invest on Big Disruptions
               </Text>
             </Box>
