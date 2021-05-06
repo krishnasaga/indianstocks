@@ -53,10 +53,9 @@ const CardContainer = ({children}) => {
     );
 };
 
-const CardWrapper = ({children, onClick}) => {
+const CardWrapper = ({children}) => {
   return (
     <Box
-      onClick={onClick}
       ml={10} pb={50} sx={{
       maxWidth: ['200', '600'],
       height: ['300', '300', '350'],
@@ -122,7 +121,7 @@ const CardOverlayWrapper = ({children}) => {
             width: '100%',
             opacity: '0',
             transition: '.5s ease',
-            border: ['1px solid white'],
+            border: ['2px solid white'],
         }}
         >
             {children}
@@ -180,10 +179,10 @@ const CardOverlayText = ({children}) => {
   );
 };
 
-const CardOverlayButton = ({children}) => {
+const CardOverlayButton = ({children, onClick}) => {
   return (
 
-    <Button sx={{
+    <Button onClick={onClick} sx={{
       backgroundColor: ['color5', 'white'],
       color: ['white', 'color5'],
       padding: '0',
@@ -195,7 +194,8 @@ const CardOverlayButton = ({children}) => {
         position: 'absolute',
         bottom: ['6', '3'],
         left: ['5', '3'],
-    }}> {children}
+    }}
+    > {children}
       <HiArrowRight size={25} style={{
         transform: 'translate(0,10%)',
         paddingLeft: '10px'
@@ -223,26 +223,26 @@ export const Cards = ({items = []}) => {
             position: 'relative',
             opacity: '1',
           }}
-                              onClick={() => {
-                                window.location.href = `/sectors/${name}`
-                              }}>
+          >
               <CardWrapper>
             <CardFigure>
               <BsFillGearFill size={'100%'}/>
             </CardFigure>
             <CardText>{displayName}</CardText>
               </CardWrapper>
-              <CardOverlayWrapper >
-                  <CardOverlay >
+              <CardOverlayWrapper  >
+                  <CardOverlay>
                       <CardOverlayHeading>
-                          ARK Disruptive Innovation
+                          {displayName}
                       </CardOverlayHeading>
                       <CardOverlayText>Aims to provide broad exposure to disruptive innovation.
                           ARK believes innovations centered around artificial intelligence,
                           robotics, energy storage, DNA sequencing, and blockchain technology
                           will change the way the world works and deliver outsized growth as industries transform.
                       </CardOverlayText>
-                      <CardOverlayButton>
+                      <CardOverlayButton onClick={() => {
+                          window.location.href = `/sectors/${name}`
+                      }}>
                           See more
                       </CardOverlayButton>
                   </CardOverlay>
