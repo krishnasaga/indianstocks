@@ -65,7 +65,7 @@ function Introbanner() {
               sx={{
                 height: "250px",
               }}
-            ></Box>
+            > </Box>
             <Box my={10}>
               <Text  color={"text2"} sx={{fontSize: "2.8rem"}}>
                 Invest on Big Disruptions

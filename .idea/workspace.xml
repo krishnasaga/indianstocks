@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
+    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="fix padding on container homepage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/templates/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/index.js" afterDir="false" />
     </list>
@@ -67,7 +67,7 @@
       <workItem from="1619252101390" duration="28152000" />
       <workItem from="1620164559862" duration="8476000" />
       <workItem from="1620244680605" duration="51000" />
-      <workItem from="1620320350765" duration="7761000" />
+      <workItem from="1620320350765" duration="8737000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -188,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620323531786</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix padding on container homepage">
+      <created>1620328198851</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1620328198851</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +221,8 @@
     <MESSAGE value="add overlay on card hover" />
     <MESSAGE value="add mobile overlay styles" />
     <MESSAGE value="fix button link and heading in cards overlay" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix button link and heading in cards overlay" />
+    <MESSAGE value="fix padding on container homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix padding on container homepage" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
