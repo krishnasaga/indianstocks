@@ -19,7 +19,7 @@ export const AnimatedNumber = ({children,...remainingProps}) => {
 function parseToNumber(numberOrString) {
   if(typeof  numberOrString === 'number') return numberOrString;
   const number = numberOrString.replace('%','');
-  return Number.parseFloat(number);
+  return parseFloat(number);
 }
 
 export const Number = ({children,formatString}) => {
