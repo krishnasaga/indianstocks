@@ -19,10 +19,28 @@ const LinkMobile = ({ children }) => {
             color={"rgb(0, 0, 0)"}
             sx={{
                 fontSize: ["0.9rem", "0.9rem"],
-                fontWeight: "500",
+                fontWeight: "bold",
                 cursor: "pointer",
                 marginTop: '20px',
                 marginLeft: '10px'
+            }}
+        >
+            {children}
+        </Link>
+    );
+};
+
+const LinkMobileTitle = ({ children }) => {
+    return (
+        <Link
+            color={"rgb(0, 0, 0)"}
+            sx={{
+                fontSize: '0.8rem',
+                fontWeight: "bold",
+                cursor: "pointer",
+                marginTop: '20px',
+                marginLeft: '10px',
+                textTransform: 'uppercase',
             }}
         >
             {children}
@@ -36,7 +54,7 @@ const LinkDropdown = ({ children }) => {
             as={Link}
             color={"color2"}
             sx={{
-                fontSize: ["0.9rem", "0.9rem"],
+                fontSize: '0.9rem',
                 fontWeight: "500",
                 cursor: "pointer",
                 marginBottom: '20px',
@@ -80,7 +98,7 @@ export const TopNav = () => {
 
   return (
     <Box
-      bg={"white"}
+      bg={"background"}
       sx={{
         position: "fixed",
         top: "0",
@@ -220,7 +238,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
         sx={{
           height: "100vh",
           width: "80vw",
-          // background: "white",
+
         }}
       >
         <Box
@@ -230,22 +248,32 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
             display: "flex",
             alignItems: "center",
               paddingBottom: '25px',
-              borderBottom: '1px solid black'
+              borderBottom: '1px solid #b5b8cf',
+              width: '100vw'
           }}
         >
-          <MdKeyboardArrowLeft color="black"/>
-          <Text ml={2} >Disruptions</Text>
+          <MdKeyboardArrowLeft color="black" size={30} style={{
+              transform: 'translate(0,4%)',
+          }}/>
+          <Text ml={3} sx={{
+              fontSize: '1rem',
+              fontWeight: 'bold',
+          }}>Disruptions</Text>
         </Box>
 
         <Box
+            pt={22}
           sx={{
             display: "flex",
             flexDirection: "column",
             textAlign: "left",
+              color: "color1",
           }}
         >
-            <LinkMobile color={"color1"}>Electric Transport </LinkMobile>
-          <LinkMobile color={"color1"}> Genomics </LinkMobile>
+            <LinkMobileTitle sx={{
+
+            }}>Infrastructure </LinkMobileTitle>
+          <LinkMobile color={"color1"}> Teraform </LinkMobile>
           <LinkMobile color={"color1"}> Battery ecosystems </LinkMobile>
           <LinkMobile color={"color1"}> Materials </LinkMobile>
           <LinkMobile color={"color1"}> Space Exploration </LinkMobile>
@@ -262,7 +290,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
   function ResearchDropdownMobile() {
     return (
       <Box
-        bg={"white"}
+        bg={"background"}
         sx={{
           position: "absolute",
           top: "1px",
@@ -290,7 +318,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
   function SectorsDropdownMobile() {
     return (
       <Box
-        bg={"white"}
+        bg={"background"}
         sx={{
           position: "absolute",
           top: "1px",
@@ -317,7 +345,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
   function AnalyticsDropdownMobile() {
     return (
       <Box
-        bg={"white"}
+        bg={"background"}
         sx={{
           position: "absolute",
           top: "1px",
