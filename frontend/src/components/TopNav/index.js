@@ -42,7 +42,7 @@ const LinkDropdown = ({ children }) => {
                 marginBottom: '20px',
                 marginLeft: '10px',
                 ':hover': {
-                    color: 'blue',
+                    color: 'color5',
                 },
             }}
         >
@@ -80,7 +80,7 @@ export const TopNav = () => {
 
   return (
     <Box
-      bg={"color2"}
+      bg={"white"}
       sx={{
         position: "fixed",
         top: "0",
@@ -115,15 +115,7 @@ export const TopNav = () => {
         {index > 1 && (
           <>
             {" "}
-            <Menu sx={{
-                ':hover': {
-                    color: 'blue',
-                },
-                // ':checked': {
-                //     color: 'blue',
-                //     borderBottom: '3px solid blue',
-                // },
-            }} onClick={(event) => menuHandler(event, "disruptions")}>
+            <Menu onClick={(event) => menuHandler(event, "disruptions")}>
               {" "}
 
                 <DropdownMenuText>
@@ -242,7 +234,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
           }}
         >
           <MdKeyboardArrowLeft color="black"/>
-          <Text ml={2} color={'red'} >Disruptions</Text>
+          <Text ml={2} >Disruptions</Text>
         </Box>
 
         <Box
@@ -270,7 +262,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
   function ResearchDropdownMobile() {
     return (
       <Box
-        bg={"color2"}
+        bg={"white"}
         sx={{
           position: "absolute",
           top: "1px",
@@ -285,6 +277,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
           sx={{
             display: "flex",
             alignItems: "center",
+              borderBottom: '1px solid black'
           }}
         >
           <MdKeyboardArrowLeft color="black"/>
@@ -297,7 +290,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
   function SectorsDropdownMobile() {
     return (
       <Box
-        bg={"color2"}
+        bg={"white"}
         sx={{
           position: "absolute",
           top: "1px",
@@ -324,7 +317,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
   function AnalyticsDropdownMobile() {
     return (
       <Box
-        bg={"color2"}
+        bg={"white"}
         sx={{
           position: "absolute",
           top: "1px",

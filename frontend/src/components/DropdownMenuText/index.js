@@ -10,7 +10,7 @@ const AnimatedIcon = animated.span;
 const AnimatedBox = animated(Box);
 
 export const DropdownMenuText = (props) => {
-    const [stylesDot, apiDot] = useSpring(() => ({ opacity: 0, color: "blue" }));
+    const [stylesDot, apiDot] = useSpring(() => ({ opacity: 0, color: "color4" }));
     const [stylesCheveron, apiCheveron] = useSpring(() => ({
         opacity: 1
     }));
@@ -30,7 +30,7 @@ export const DropdownMenuText = (props) => {
             sx={{
                 transition: "color 0.2s",
                 "&:hover": {
-                    color: "blue"
+                    color: "color4"
                 },
                 cursor: "pointer"
             }}
