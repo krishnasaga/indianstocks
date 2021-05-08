@@ -207,6 +207,7 @@ const CardOverlayButton = ({children, onClick}) => {
 export const Cards = ({items = []}) => {
   console.log(items);
   return <Box
+    id={'explore'}
     as={'cards'}
     sx={{
       fontSize: '0.9rem',

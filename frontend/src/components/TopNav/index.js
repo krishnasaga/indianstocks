@@ -10,6 +10,7 @@ import {RiArrowRightSLine} from "react-icons/ri";
 import {MdKeyboardArrowLeft} from "react-icons/md";
 import {TextArrow} from "../TextArrow";
 import {DropdownMenuText} from "../DropdownMenuText";
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const AnimatedBox = animated(Box);
 
@@ -446,7 +447,10 @@ function NavButton({children, ...remainingProps}) {
         cursor: "pointer",
       }}
     >
-      Explore
+      <AnchorLink style={{
+        textDecoration: 'none',
+        color: 'inherit',
+      }} href={"#explore"} offset={120}>Explore</AnchorLink>
     </Box>
   );
 }

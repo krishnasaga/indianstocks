@@ -4,6 +4,7 @@ import {TopNav} from "../components/TopNav";
 import introImage from "../pages/background.jpg";
 import {Cards} from '../components/Cards';
 import {Footer} from "../components/Footer";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Explorer = ({children, ...remainingProps}) => {
   return (
@@ -26,7 +27,7 @@ const Explorer = ({children, ...remainingProps}) => {
 };
 
 export default ({
-                  pageContext: { sectors },
+                  pageContext: {sectors},
                 }) => {
   return (
     <Box>
@@ -60,14 +61,14 @@ function Introbanner() {
     >
       <Container>
         <Grid>
-          <Box p={20}>
+          <Box p={20} sx={{textAlign: 'center'}}>
             <Box
               sx={{
                 height: "250px",
               }}
             > </Box>
             <Box my={10}>
-              <Text  color={"text2"} sx={{fontSize: "2.8rem"}}>
+              <Text color={"text2"} sx={{fontSize: "4rem"}}>
                 Invest on Big Disruptions
               </Text>
             </Box>
@@ -76,11 +77,14 @@ function Introbanner() {
                 With convergence of financial and technological expertise
               </Text>
             </Box>
-            <Button my={40} varient={"primary"}>
+            <Button
+              style={{
+                textDecoration: 'none',
+              }}
+              as={AnchorLink} my={40} varient={"primary"} href={'#explore'} offset={120}>
               Explore
             </Button>
           </Box>
-          <Box></Box>
         </Grid>
       </Container>
       <Box
