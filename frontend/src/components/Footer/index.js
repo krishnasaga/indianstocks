@@ -58,20 +58,13 @@ export const Footer = () => {
           display: 'flex',
           alignItems: 'center',
         }}>
-          <Avatar src="https://pbs.twimg.com/profile_images/1253417530380611585/-yUUl-Dx_400x400.jpg" sx={{
-            width: '48',
-            height: '48',
-            borderRadius: '0'
-          }}/>
           <Text sx={{
             display: 'inline',
             color: 'rgb(255, 255, 255)',
-            textTransform: 'lowercase',
             fontSize: '2.1rem',
             fontWeight: 'bold',
-            paddingLeft: '5px'
           }}
-          >Crunchbase</Text>
+          >BigInvest</Text>
         </Box>
       </Grid>
     </Box>
@@ -199,9 +192,9 @@ export const Footer = () => {
           order: ['2', '2', '3']
         }}>
           <FooterHeading as='h4'>What We Do</FooterHeading>
-          <FooterLink>Crunchbase Pro</FooterLink>
+          <FooterLink>Pro Membership</FooterLink>
           <FooterLink>Marketplace</FooterLink>
-          <FooterLink>Crunchbase Enterprise</FooterLink>
+          <FooterLink>BigInvest Enterprise</FooterLink>
           <FooterLink>Data Licensing</FooterLink>
           <FooterLink>Customer Stories</FooterLink>
           <FooterLink>Pricing</FooterLink>
@@ -253,14 +246,7 @@ export const Footer = () => {
         lineHeight: '1.8',
         display: 'inline'
       }}
-      > &copy; 2021 Crunchbase Inc. All Rights Reserved.</Text>
-      <Text sx={{
-        color: 'darkgrey',
-        fontSize: ['0.8rem', '0.9rem'],
-        lineHeight: '1.8',
-        display: 'inline',
-        paddingLeft: '5px'
-      }}>(0.1.11672 548)</Text>
+      > &copy; 2021 BigInvest. All Rights Reserved.</Text>
     </Box>
   </Box>;
 };
