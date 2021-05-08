@@ -65,11 +65,11 @@ function Introbanner() {
           <Box p={20} sx={{textAlign: 'center'}}>
             <Box
               sx={{
-                height: "250px",
+                height: ["100px","250px"],
               }}
             > </Box>
             <Box my={10}>
-              <Text color={"text2"} sx={{fontSize: "4rem"}}>
+              <Text color={"text2"} sx={{fontSize: ["2.8rem","4rem"]}}>
                 Invest on Big Disruptions
               </Text>
             </Box>
@@ -85,7 +85,12 @@ function Introbanner() {
               as={AnchorLink}
               my={40}
               varient={"primary"}
-              href={'#explore'} offset={120}>
+              href={'#explore'}
+              offset={120}
+              px={40}
+              py={20}
+
+            >
               Explore
             </Button>
           </Box>
