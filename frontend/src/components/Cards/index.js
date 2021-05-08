@@ -57,7 +57,7 @@ const CardWrapper = ({children}) => {
   return (
     <Box
       ml={10} pb={50} sx={{
-      maxWidth: ['200', '600'],
+      maxWidth: ['100', '200', '600'],
       height: ['300', '300', '350'],
       border: '1px solid rgb(255, 255, 255)',
       display: 'grid',
@@ -81,7 +81,7 @@ const CardWrapper = ({children}) => {
 
 const CardFigure = ({children}) => {
   return (
-    <Box px={['20px', '20px', '70px']} sx={{
+    <Box px={['80px', '20px', '70px']} sx={{
       display: 'flex',
       alignItems: 'flex-end',
     }}
@@ -132,7 +132,7 @@ const CardOverlayWrapper = ({children}) => {
 const CardOverlay = ({children}) => {
   return (
     <Box px={'20px'} py={'30px'} sx={{
-      maxWidth: ['200', '600'],
+      maxWidth: ['100', '200', '600'],
       maxHeight: ['300', '300', '350'],
 
       backgroundColor: ['color5','white'],
@@ -215,7 +215,7 @@ export const Cards = ({items = []}) => {
     }}>
     <Box>
       <Grid
-        columns={[2, 4]} sx={{
+        columns={[1, 2, 4]} sx={{
         justifyItems: 'center',
       }}>
 

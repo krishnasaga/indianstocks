@@ -101,6 +101,7 @@ export const Footer = () => {
                   strokeWidth={2}
                 />
                 <FaTwitter size={12} style={{
+                  position: 'relative',
                   transform: 'translate(25%,25%)',
                 }}/>
               </svg>
