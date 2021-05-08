@@ -9,7 +9,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 const Explorer = ({children, ...remainingProps}) => {
   return (
     <Container>
-      <Box {...remainingProps} py={20} sx={{width: '100%'}}>
+      <Box {...remainingProps} py={20} sx={{width: '100vw'}}>
         <Box
           bg={"color2"}
           h={[200]}
@@ -30,7 +30,7 @@ export default ({
                   pageContext: {sectors},
                 }) => {
   return (
-    <Box>
+    <Box sx={{width: '100%', overflowX: 'hidden'}}>
       <TopNav/>
       <Introbanner/>
       <Box bg={"color5"}>
@@ -95,7 +95,7 @@ function Introbanner() {
         bg={"black"}
         sx={{
           position: "absolute",
-          width: "100%",
+          width: "100vw",
           height: "100%",
           opacity: 0.7,
           zIndex: -1,
