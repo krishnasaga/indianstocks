@@ -1,72 +1,54 @@
 import React, {useEffect, useState} from "react";
-import {Box, Grid, Link, Text,Image} from "theme-ui";
+import {Box, Grid, Image, Link, Text} from "theme-ui";
 import {Portal} from "react-portal";
 import OutsideClickHandler from "react-outside-click-handler";
 import {animated, useSpring} from "react-spring";
 import {useBreakpointIndex} from "@theme-ui/match-media";
 import {GiHamburgerMenu} from "react-icons/gi";
 import {AiOutlineClose} from "react-icons/ai";
-import {RiArrowRightSLine, RiArrowDropDownLine} from "react-icons/ri";
+import {RiArrowRightSLine} from "react-icons/ri";
 import {MdKeyboardArrowLeft} from "react-icons/md";
-import { TextArrow } from "../TextArrow";
-import { DropdownMenuText } from "../DropdownMenuText";
+import {TextArrow} from "../TextArrow";
+import {DropdownMenuText} from "../DropdownMenuText";
 
 const AnimatedBox = animated(Box);
 
-const LinkMobile = ({ children }) => {
-    return (
-        <Link
-            color={"rgb(0, 0, 0)"}
-            sx={{
-                fontSize: ["0.9rem", "0.9rem"],
-                fontWeight: "bold",
-                cursor: "pointer",
-                marginTop: '20px',
-                marginLeft: '10px'
-            }}
-        >
-            {children}
-        </Link>
-    );
+const LinkMobile = ({children}) => {
+  return (
+    <Link
+      color={"rgb(0, 0, 0)"}
+      sx={{
+        fontSize: ["0.9rem", "0.9rem"],
+        fontWeight: "500",
+        cursor: "pointer",
+        marginTop: '20px',
+        marginLeft: '10px'
+      }}
+    >
+      {children}
+    </Link>
+  );
 };
 
-const LinkMobileTitle = ({ children }) => {
-    return (
-        <Link
-            color={"rgb(0, 0, 0)"}
-            sx={{
-                fontSize: '0.8rem',
-                fontWeight: "bold",
-                cursor: "pointer",
-                marginTop: '20px',
-                marginLeft: '10px',
-                textTransform: 'uppercase',
-            }}
-        >
-            {children}
-        </Link>
-    );
-};
-
-const LinkDropdown = ({ children }) => {
-    return (
-        <TextArrow
-            as={Link}
-            color={"color2"}
-            sx={{
-                fontSize: '0.9rem',
-                fontWeight: "500",
-                cursor: "pointer",
-                marginBottom: '20px',
-                marginLeft: '10px',
-                ':hover': {
-                    color: 'color5',
-                },
-            }}
-        >
-            {children}
-        </TextArrow>
-    );
+const LinkDropdown = ({children}) => {
+  return (
+    <TextArrow
+      as={Link}
+      color={"color2"}
+      sx={{
+        fontSize: ["0.9rem", "0.9rem"],
+        fontWeight: "500",
+        cursor: "pointer",
+        marginBottom: '20px',
+        marginLeft: '10px',
+        ':hover': {
+          color: 'color5',
+        },
+      }}
+    >
+      {children}
+    </TextArrow>
+  );
 };
 
 export const TopNav = () => {
@@ -98,7 +80,7 @@ export const TopNav = () => {
 
   return (
     <Box
-      bg={"background"}
+      bg={"white"}
       sx={{
         position: "fixed",
         top: "0",
@@ -109,22 +91,21 @@ export const TopNav = () => {
       <Grid
         alignItems={['center']}
         columns={
-        index > 1
-          ? ["1fr 1fr 1fr 1fr 1fr 1fr 1fr"]
-          : ["1fr 64px"]}>
+          index > 1
+            ? ["1fr 1fr 1fr 1fr 1fr 1fr 1fr"]
+            : ["1fr 64px"]}>
         <Box
-          px={24}
-          sx={{
-            gridAlignSelf: "start",
-            lineHeight: '4rem',
-            verticalAlign: 'middle',
-          }}
+          p={12}
         >
-          {" "}
           <Link href={"/"} sx={{
-              textDecoration: "none",
-              color: "black"}}>
-            <Image src={'/big-invest.png'}/>
+            textDecoration: "none",
+            color: "black"
+          }}>
+
+            <Image sx={{
+              height: '2rem'
+            }} src={'/big-invest.png'}/>
+
           </Link>
 
         </Box>
@@ -136,24 +117,24 @@ export const TopNav = () => {
             <Menu onClick={(event) => menuHandler(event, "disruptions")}>
               {" "}
 
-                <DropdownMenuText>
+              <DropdownMenuText>
                 Disruptions
-                </DropdownMenuText>
+              </DropdownMenuText>
               {" "}
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "research")}>
               {" "}
-                <DropdownMenuText>Research</DropdownMenuText>
-                {" "}
+              <DropdownMenuText>Research</DropdownMenuText>
+              {" "}
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "sectors")}>
               {" "}
-                <DropdownMenuText>Sectors</DropdownMenuText>
+              <DropdownMenuText>Sectors</DropdownMenuText>
               {" "}
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "analytics")}>
               {" "}
-                <DropdownMenuText>Analytics</DropdownMenuText>
+              <DropdownMenuText>Analytics</DropdownMenuText>
               {" "}
             </Menu>
             <NavButton/>
@@ -238,7 +219,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
         sx={{
           height: "100vh",
           width: "80vw",
-
+          // background: "white",
         }}
       >
         <Box
@@ -247,33 +228,23 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
           sx={{
             display: "flex",
             alignItems: "center",
-              paddingBottom: '25px',
-              borderBottom: '1px solid #b5b8cf',
-              width: '100vw'
+            paddingBottom: '25px',
+            borderBottom: '1px solid black'
           }}
         >
-          <MdKeyboardArrowLeft color="black" size={30} style={{
-              transform: 'translate(0,4%)',
-          }}/>
-          <Text ml={3} sx={{
-              fontSize: '1rem',
-              fontWeight: 'bold',
-          }}>Disruptions</Text>
+          <MdKeyboardArrowLeft color="black"/>
+          <Text ml={2}>Disruptions</Text>
         </Box>
 
         <Box
-            pt={22}
           sx={{
             display: "flex",
             flexDirection: "column",
             textAlign: "left",
-              color: "color1",
           }}
         >
-            <LinkMobileTitle sx={{
-
-            }}>Infrastructure </LinkMobileTitle>
-          <LinkMobile color={"color1"}> Teraform </LinkMobile>
+          <LinkMobile color={"color1"}>Electric Transport </LinkMobile>
+          <LinkMobile color={"color1"}> Genomics </LinkMobile>
           <LinkMobile color={"color1"}> Battery ecosystems </LinkMobile>
           <LinkMobile color={"color1"}> Materials </LinkMobile>
           <LinkMobile color={"color1"}> Space Exploration </LinkMobile>
@@ -290,7 +261,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
   function ResearchDropdownMobile() {
     return (
       <Box
-        bg={"background"}
+        bg={"white"}
         sx={{
           position: "absolute",
           top: "1px",
@@ -305,7 +276,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
           sx={{
             display: "flex",
             alignItems: "center",
-              borderBottom: '1px solid black'
+            borderBottom: '1px solid black'
           }}
         >
           <MdKeyboardArrowLeft color="black"/>
@@ -318,7 +289,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
   function SectorsDropdownMobile() {
     return (
       <Box
-        bg={"background"}
+        bg={"white"}
         sx={{
           position: "absolute",
           top: "1px",
@@ -345,7 +316,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
   function AnalyticsDropdownMobile() {
     return (
       <Box
-        bg={"background"}
+        bg={"white"}
         sx={{
           position: "absolute",
           top: "1px",
@@ -539,7 +510,7 @@ function AnalyticsDropdown() {
     <Box
       sx={{
         height: "200px",
-          marginBottom: "20px",
+        marginBottom: "20px",
       }}
     >
       <Text pb={20} mx={10} color={"color2"} sx={{fontWeight: "bold"}}>Analytics</Text>
@@ -582,7 +553,7 @@ function DisruptionsDropdown() {
     <Box
       sx={{
         height: "200px",
-          marginBottom: '20px',
+        marginBottom: '20px',
       }}
     >
       <Text pb={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Disruptions</Text>
@@ -627,7 +598,7 @@ function ResearchDropdown() {
         height: "200px",
       }}
     >
-        <Text py={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Research</Text>
+      <Text py={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Research</Text>
 
     </Box>
   );
@@ -640,7 +611,7 @@ function SectorsDropdown() {
         height: "200px",
       }}
     >
-        <Text py={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Sectors</Text>
+      <Text py={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Sectors</Text>
 
     </Box>
   );
