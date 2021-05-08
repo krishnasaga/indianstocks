@@ -86,7 +86,7 @@ export const TopNav = () => {
         position: "fixed",
         top: "0",
         zIndex: "99",
-        width: index > 1 ? "85%" : "100%",
+        width: index > 1 ? "85%" : "85%",
       }}
     >
       <Grid

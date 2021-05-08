@@ -9,7 +9,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 const Explorer = ({children, ...remainingProps}) => {
   return (
     <Container>
-      <Box {...remainingProps} py={20}>
+      <Box {...remainingProps} py={20} sx={{width: '100%'}}>
         <Box
           bg={"color2"}
           h={[200]}
@@ -53,6 +53,7 @@ function Introbanner() {
       bg={"black"}
       sx={{
         height: "100vh",
+          width: "100vw",
         background: `black url(${introImage}) fixed center`,
         position: "relative",
         filter: "light(1)",
