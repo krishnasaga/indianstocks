@@ -81,7 +81,10 @@ function Introbanner() {
               style={{
                 textDecoration: 'none',
               }}
-              as={AnchorLink} my={40} varient={"primary"} href={'#explore'} offset={120}>
+              as={AnchorLink}
+              my={40}
+              varient={"primary"}
+              href={'#explore'} offset={120}>
               Explore
             </Button>
           </Box>
