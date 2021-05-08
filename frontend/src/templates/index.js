@@ -35,7 +35,7 @@ export default ({
       <Introbanner/>
       <Box bg={"color5"}>
         <Container>
-          <Box py={'4rem'}>
+          <Box py={'4rem'} sx={{paddingLeft: '35px',paddingRight: '50px'}}>
             <Cards items={sectors}
 
             />

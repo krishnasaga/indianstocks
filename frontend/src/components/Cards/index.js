@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Button, Grid, Text} from 'theme-ui';
+import {Box, Button, Grid, Text, Link} from 'theme-ui';
 import {BsFillGearFill} from 'react-icons/bs'
 import {HiArrowRight} from "react-icons/hi";
 
@@ -38,26 +38,26 @@ import {HiArrowRight} from "react-icons/hi";
 // )
 
 const CardContainer = ({children}) => {
-  return (
-    <Box sx={{
-      position: 'relative',
-      opacity: '1',
-      width: '100%',
-      ':hover': {
-        '.overlay': {opacity: '1'},
-      },
-    }}
-    >
-      {children}
-    </Box>
-  );
+    return (
+        <Box sx={{
+            position: 'relative',
+            opacity: '1',
+            width: '100%',
+            ':hover': {
+                '.overlay': { opacity: '1' },
+            },
+        }}
+        >
+            {children}
+        </Box>
+    );
 };
 
 const CardWrapper = ({children}) => {
   return (
     <Box
       ml={10} pb={50} sx={{
-      maxWidth: ['200', '600'],
+      maxWidth: ['100', '200', '600'],
       height: ['300', '300', '350'],
       border: '1px solid rgb(255, 255, 255)',
       display: 'grid',
@@ -69,7 +69,7 @@ const CardWrapper = ({children}) => {
       textAlign: 'center',
       cursor: 'pointer',
 
-      width: '100%',
+        width: '100%',
 
 
     }}
@@ -81,7 +81,7 @@ const CardWrapper = ({children}) => {
 
 const CardFigure = ({children}) => {
   return (
-    <Box px={['20px', '20px', '70px']} sx={{
+    <Box px={['80px', '20px', '70px']} sx={{
       display: 'flex',
       alignItems: 'flex-end',
     }}
@@ -110,32 +110,32 @@ const CardText = ({children}) => {
 };
 
 const CardOverlayWrapper = ({children}) => {
-  return (
-    <Box className={'overlay'} sx={{
-      position: 'absolute',
-      top: '0',
-      bottom: '0',
-      left: ['10px'],
-      right: '0',
-      height: '100%',
-      width: '100%',
-      opacity: '0',
-      transition: '.5s ease',
-      border: ['2px solid white'],
-    }}
-    >
-      {children}
-    </Box>
-  );
+    return (
+        <Box className={'overlay'} sx={{
+            position: 'absolute',
+            top: '0',
+            bottom: '0',
+            left: ['10px'],
+            right: '0',
+            height: '100%',
+            width: '100%',
+            opacity: '0',
+            transition: '.5s ease',
+            border: ['2px solid white'],
+        }}
+        >
+            {children}
+        </Box>
+    );
 };
 
 const CardOverlay = ({children}) => {
   return (
     <Box px={'20px'} py={'30px'} sx={{
-      maxWidth: ['200', '600'],
+      maxWidth: ['100', '200', '600'],
       maxHeight: ['300', '300', '350'],
 
-      backgroundColor: ['color5', 'white'],
+      backgroundColor: ['color5','white'],
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'start',
@@ -143,9 +143,9 @@ const CardOverlay = ({children}) => {
       color: 'color4',
       textAlign: 'left',
 
-      position: 'absolute',
-      height: '100%',
-      width: '100%',
+        position: 'absolute',
+        height: '100%',
+        width: '100%',
     }}
     >
       {children}
@@ -158,7 +158,7 @@ const CardOverlayHeading = ({children}) => {
     <Text pb={1} sx={{
       fontWeight: 'bold',
       color: 'color5',
-      display: ['none', 'block']
+        display: ['none', 'block']
     }}
     >
       {children}
@@ -171,7 +171,7 @@ const CardOverlayText = ({children}) => {
     <Text sx={{
       color: 'color4',
       fontSize: '1.05rem',
-      display: ['none', 'block']
+        display: ['none', 'block']
     }}
     >
       {children}
@@ -191,9 +191,9 @@ const CardOverlayButton = ({children, onClick}) => {
       marginTop: 'auto',
       fontWeight: 'bold',
       fontSize: '1rem',
-      position: 'absolute',
-      bottom: ['6', '3'],
-      left: ['5', '3'],
+        position: 'absolute',
+        bottom: ['6', '3'],
+        left: ['5', '3'],
     }}
     > {children}
       <HiArrowRight size={25} style={{
@@ -205,6 +205,7 @@ const CardOverlayButton = ({children, onClick}) => {
 };
 
 export const Cards = ({items = []}) => {
+  console.log(items);
   return <Box
     id={'explore'}
     as={'cards'}
@@ -214,7 +215,7 @@ export const Cards = ({items = []}) => {
     }}>
     <Box>
       <Grid
-        columns={[1, 2, 4, 4]} sx={{
+        columns={[1, 2, 4]} sx={{
         justifyItems: 'center',
       }}>
 
@@ -224,29 +225,29 @@ export const Cards = ({items = []}) => {
             opacity: '1',
           }}
           >
-            <CardWrapper>
-              <CardFigure>
-                <BsFillGearFill size={'100%'}/>
-              </CardFigure>
-              <CardText>{displayName}</CardText>
-            </CardWrapper>
-            <CardOverlayWrapper>
-              <CardOverlay>
-                <CardOverlayHeading>
-                  {displayName}
-                </CardOverlayHeading>
-                <CardOverlayText>Aims to provide broad exposure to disruptive innovation.
-                  ARK believes innovations centered around artificial intelligence,
-                  robotics, energy storage, DNA sequencing, and blockchain technology
-                  will change the way the world works and deliver outsized growth as industries transform.
-                </CardOverlayText>
-                <CardOverlayButton onClick={() => {
-                  window.location.href = `/sectors/${name}`
-                }}>
-                  See more
-                </CardOverlayButton>
-              </CardOverlay>
-            </CardOverlayWrapper>
+              <CardWrapper>
+            <CardFigure>
+              <BsFillGearFill size={'100%'}/>
+            </CardFigure>
+            <CardText>{displayName}</CardText>
+              </CardWrapper>
+              <CardOverlayWrapper  >
+                  <CardOverlay>
+                      <CardOverlayHeading>
+                          {displayName}
+                      </CardOverlayHeading>
+                      <CardOverlayText>Aims to provide broad exposure to disruptive innovation.
+                          ARK believes innovations centered around artificial intelligence,
+                          robotics, energy storage, DNA sequencing, and blockchain technology
+                          will change the way the world works and deliver outsized growth as industries transform.
+                      </CardOverlayText>
+                      <CardOverlayButton onClick={() => {
+                          window.location.href = `/sectors/${name}`
+                      }}>
+                          See more
+                      </CardOverlayButton>
+                  </CardOverlay>
+              </CardOverlayWrapper>
           </CardContainer>
         })}
       </Grid>
