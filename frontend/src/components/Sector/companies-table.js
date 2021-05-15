@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import {Box, Button, Grid, Image, Text} from "theme-ui";
-import {useSortBy, useTable, useBlockLayout} from "react-table";
+import {useBlockLayout, useSortBy, useTable} from "react-table";
 import React, {useState} from "react";
-import makeData from "../../somethings/makeData";
 import {Filters} from './Filters';
 import {BsArrowLeft, BsChevronDown, BsChevronUp, BsFillFunnelFill} from "react-icons/bs";
 import ScrollLock from 'react-scrolllock';
-import { useSticky } from "react-table-sticky";
+import {useSticky} from "react-table-sticky";
 
 // STYLING DOESN'T WORK IN STYLES FOR FONT-SIZE, COLOR FOR TH
 
@@ -77,54 +76,55 @@ const mapCellFormat = (value) => {
 
 function Table({columns, data}) {
   // Use the state and functions returned from useTable to build your UI
-  const defaultColumn = React.useMemo (
-      () => ({
-        minWidth: 150,
-        width: 150,
-        maxWidth: 400
-      }),
-      []
+  const defaultColumn = React.useMemo(
+    () => ({
+      minWidth: 150,
+      width: 150,
+      maxWidth: 400
+    }),
+    []
   );
-      {
+  {
     const {
       getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({
-    columns,
-    data,
-      defaultColumn
-  }, useSortBy,
-        useBlockLayout,
+      getTableBodyProps,
+      headerGroups,
+      rows,
+      prepareRow,
+    } = useTable({
+        columns,
+        data,
+        defaultColumn
+      }, useSortBy,
+      useBlockLayout,
       useSticky);
 
-  // Render the UI for your table
-  return (
-    <table {...getTableProps()}>
-      <thead>
-      {headerGroups.map((headerGroup) => (
-        <tr {...headerGroup.getHeaderGroupProps()}>
-          {headerGroup.headers.map((column) => (
-            <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-              <Text variant={"smallLight"}>{column.render("Header")}</Text>
-              <span>{column.isSorted ? (column.isSortedDesc ?
-                <BsChevronDown/> :
-                <BsChevronUp/>) : ''} </span>
-            </th>
-          ))}
-        </tr>
-      ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-      {rows.map((row, i) => {
-        prepareRow(row);
-        return <TableRow row={row}/>;
-      })}
-      </tbody>
-    </table>
-  );
+    // Render the UI for your table
+    return (
+      <table {...getTableProps()}>
+        <thead>
+        {headerGroups.map((headerGroup) => (
+          <tr {...headerGroup.getHeaderGroupProps()}>
+            {headerGroup.headers.map((column) => (
+              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                <Text variant={"smallLight"}>{column.render("Header")}</Text>
+                <span>{column.isSorted ? (column.isSortedDesc ?
+                  <BsChevronDown/> :
+                  <BsChevronUp/>) : ''} </span>
+              </th>
+            ))}
+          </tr>
+        ))}
+        </thead>
+        <tbody {...getTableBodyProps()}>
+        {rows.map((row, i) => {
+          prepareRow(row);
+          return <TableRow row={row}/>;
+        })}
+        </tbody>
+      </table>
+    );
+  }
 }
 
 export function CompaniesList({name, companies}) {
@@ -204,9 +204,6 @@ export function CompaniesList({name, companies}) {
     ],
     []
   );
-
-  const data = React.useMemo(() => makeData(20), []);
-  return <Table columns={columns} data={data} />;
 
   const [filtersOpen, setFiltersOpen] = useState(false)
   return (
@@ -315,8 +312,3 @@ function TableRow({row}) {
     })}
   </Box>;
 }
-
-
-
-
-
