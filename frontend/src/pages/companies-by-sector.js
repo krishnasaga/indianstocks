@@ -91,6 +91,7 @@ function App() {
           {
             Header: 'Company Name',
             accessor: 'companyName',
+            position: 'fixed',
           },
           {
             Header: 'Sector',
@@ -130,3 +131,5 @@ function App() {
 }
 
 export default App
+
+

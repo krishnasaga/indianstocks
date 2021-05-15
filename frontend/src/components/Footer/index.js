@@ -91,7 +91,8 @@ export const Footer = () => {
                 width="24"
                 height="24"
                 fill="currentcolor"
-                cursor="pointer">
+                cursor="pointer"
+                transform= 'translate(25%,25%)'>
                 <circle
                   r={11}
                   cx={12}
@@ -106,7 +107,7 @@ export const Footer = () => {
                 }}/>
               </svg>
             </IconButton>
-            <IconButton aria-label="Toggle dark mode">
+            <IconButton aria-label="Toggle dark mode" >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -123,7 +124,7 @@ export const Footer = () => {
                   strokeWidth={2}
                 />
                 <FaFacebookF size={12} cursor={'pointer'} style={{
-                  transform: 'translate(25%,25%)',
+                  transform: 'translate(25%,25%)'
                 }}/>
               </svg>
             </IconButton>

@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import {Box, Button, Grid, Image, Text} from "theme-ui";
-import {useSortBy, useTable} from "react-table";
+import {useSortBy, useTable, useBlockLayout} from "react-table";
 import React, {useState} from "react";
 import makeData from "../../somethings/makeData";
 import {Filters} from './Filters';
 import {BsArrowLeft, BsChevronDown, BsChevronUp, BsFillFunnelFill} from "react-icons/bs";
 import ScrollLock from 'react-scrolllock';
+import { useSticky } from "react-table-sticky";
+
+// STYLING DOESN'T WORK IN STYLES FOR FONT-SIZE, COLOR FOR TH
 
 const Styles = styled(Box)`
   padding: 0;
@@ -13,6 +16,31 @@ const Styles = styled(Box)`
   table {
     border-spacing: 0;
     width: 100%;
+    
+    &.sticky {
+      overflow: scroll;
+      .column-1 {
+        position: sticky;
+        z-index: 1;
+        width: fit-content;
+    }
+
+      .body {
+        position: relative;
+        z-index: 0;
+      }
+
+      [data-sticky-td] {
+        position: sticky;
+      }
+
+      [data-sticky-last-left-td] {
+        box-shadow: 2px 0px 3px #ccc;
+      }
+
+      [data-sticky-first-right-td] {
+        box-shadow: -2px 0px 3px #ccc;
+      }
     tr {
       :last-child {
         td {
@@ -27,7 +55,6 @@ const Styles = styled(Box)`
     }
    th {
     background: ${({bg}) => bg}
-    color:  red;
    }
     th,
     td {
@@ -50,8 +77,17 @@ const mapCellFormat = (value) => {
 
 function Table({columns, data}) {
   // Use the state and functions returned from useTable to build your UI
-  const {
-    getTableProps,
+  const defaultColumn = React.useMemo (
+      () => ({
+        minWidth: 150,
+        width: 150,
+        maxWidth: 400
+      }),
+      []
+  );
+      {
+    const {
+      getTableProps,
     getTableBodyProps,
     headerGroups,
     rows,
@@ -59,7 +95,10 @@ function Table({columns, data}) {
   } = useTable({
     columns,
     data,
-  }, useSortBy);
+      defaultColumn
+  }, useSortBy,
+        useBlockLayout,
+      useSticky);
 
   // Render the UI for your table
   return (
@@ -94,13 +133,15 @@ export function CompaniesList({name, companies}) {
       {
         Header: "Company Name",
         accessor: "name",
+        sticky: "left",
         Cell: (cell) => {
           return <Grid columns={['28px 1fr']}>
             <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'}/>
-            <Box sx={{
-              lineHeight: '20px'
+            <Box className={"column-1"} sx={{
+              lineHeight: '20px',
+              sticky: "left",
             }}>
-              <Text sx={{fontSize: '1rem'}}>{cell.value}</Text>
+              <Text sx={{fontSize: '1rem', color: 'pink'}}>{cell.value}</Text>
             </Box>
           </Grid>;
         }
@@ -165,6 +206,7 @@ export function CompaniesList({name, companies}) {
   );
 
   const data = React.useMemo(() => makeData(20), []);
+  return <Table columns={columns} data={data} />;
 
   const [filtersOpen, setFiltersOpen] = useState(false)
   return (
@@ -273,3 +315,8 @@ function TableRow({row}) {
     })}
   </Box>;
 }
+
+
+
+
+

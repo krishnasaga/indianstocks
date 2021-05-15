@@ -1,5 +1,6 @@
 import { Box, Container, Grid, Link, Text } from "theme-ui";
 import { AnimatedNumber } from "../Number";
+import ReactTable from 'react-table';
 
 import React from "react";
 
@@ -115,3 +116,158 @@ function Tab({ name, href }) {
     </Box>
   );
 }
+
+// export const SectorBanner = ({ name, intro, insights, backgroundImage }) => {
+//     return (
+//
+//     );
+// };
+
+
+// TRIAL CODE FROM GITHUB
+
+// const columns = [
+//     {
+//         name: 'Amount',
+//         selector: 'amount',
+//         // cell: row => amountFormatter(row.amount),
+//         sortable: true,
+//         maxWidth: '25%',
+//         fixed: "left",
+//     },
+//     {
+//         name: 'Status',
+//         sortable: true,
+//         maxWidth: '25%',
+//         selector: 'status',
+//         // cell: row => <div className={row.status.toLowerCase()}>{row.status}</div>,
+//     },
+//     {
+//         name: 'Method',
+//         // selector: row => `${row.bank} *** ${row.last4}`,
+//         sortable: true,
+//         maxWidth: '25%'
+//     },
+//     {
+//         name: 'Date',
+//         sortable: true,
+//         selector: 'date',
+//         // cell: row => dateFormatter(row.date),
+//         // sortFunction: function (a, b) {
+//         //     return new Date(a) - new Date(b)
+//         // },
+//         maxWidth: '25%'
+//     }
+// ];
+//
+// export default class Table extends React.Component {
+//     render() {
+//         return (
+//
+//                 <ReactTable
+//                     columns={columns}
+//                     // data={records.default}
+//
+//                     fixedHeader
+//                     allowOverflow	= {false}
+//                     overflowY={false}
+//                     overflowX={false}
+//                     wrap={false}
+//                     highlightOnHover={true}
+//
+//                     pagination={true}
+//                     paginationPerPage={10}
+//                     paginationRowsPerPageOptions={[10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 150, 200, 250, 300]}
+//
+//                     // customStyles={customStyles}
+//                 />
+//
+//         )
+//     }
+// }
+
+// TRIAL CODE FROM CODESANDBOX
+
+// class App extends React.Component {
+//     constructor() {
+//         super();
+//         this.state = {
+//             // data: makeData()
+//         };
+//
+//         this.tableScrollTop = 0;
+//     }
+//     render() {
+//         const { data } = this.state;
+//         return (
+//             <div>
+//                 <ReactTable
+//                     data={data}
+//                     pageSizeOptions={[20, 30, 50, 100, 200, 500]}
+//                     columns={[
+//                         {
+//                             Header: "Name",
+//                             columns: [
+//                                 {
+//                                     Header: "First Name",
+//                                     accessor: "firstName",
+//                                     width: 200
+//                                 },
+//                                 {
+//                                     Header: "Last Name",
+//                                     id: "lastName",
+//                                     accessor: d => d.lastName,
+//                                     width: 100,
+//                                     className: "frozen",
+//                                     headerClassName: "frozen"
+//                                 }
+//                             ]
+//                         },
+//                         {
+//                             Header: "Info",
+//                             columns: [
+//                                 {
+//                                     Header: "Age",
+//                                     accessor: "age",
+//                                     minWidth: 300
+//                                 },
+//                                 {
+//                                     Header: "Visits",
+//                                     accessor: "visits",
+//                                     minWidth: 50
+//                                 },
+//                                 {
+//                                     Header: "Status",
+//                                     accessor: "status",
+//                                     width: 150
+//                                 }
+//                             ]
+//                         }
+//                     ]}
+//                     defaultPageSize={20}
+//                     className="-striped -highlight"
+//                     getTableProps={() => {
+//                         return {
+//                             onScroll: e => {
+//                                 function $(s) {
+//
+//                                 }
+//
+//                                 if (this.tableScrollTop === e.target.scrollTop) {
+//                                     let left = e.target.scrollLeft > 0 ? e.target.scrollLeft : 0;
+//                                     $(".ReactTable .rt-tr .frozen").css({ left: left });
+//                                 } else {
+//                                     this.tableScrollTop = e.target.scrollTop;
+//                                 }
+//                             }
+//                         };
+//                     }}
+//                 />
+//                 <br />
+//             </div>
+//         );
+//     }
+// }
+//
+// export default App
+
