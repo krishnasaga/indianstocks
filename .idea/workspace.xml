@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Sector/companies-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sector/companies-table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Sector/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sector/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/companies-by-sector.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/companies-by-sector.js" afterDir="false" />
-    </list>
+    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +83,7 @@
       <workItem from="1620838834744" duration="4143000" />
       <workItem from="1620908308696" duration="5000" />
       <workItem from="1620979525435" duration="5625000" />
-      <workItem from="1621065325687" duration="4558000" />
+      <workItem from="1621065325687" duration="4891000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -269,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620477355707</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="add starter code for react-table-sticky">
+      <created>1621080803211</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1621080803211</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +298,8 @@
     <MESSAGE value="remove container right white space" />
     <MESSAGE value="fix right white space on mob" />
     <MESSAGE value="change cards mob to one column" />
-    <option name="LAST_COMMIT_MESSAGE" value="change cards mob to one column" />
+    <MESSAGE value="add starter code for react-table-sticky" />
+    <option name="LAST_COMMIT_MESSAGE" value="add starter code for react-table-sticky" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
