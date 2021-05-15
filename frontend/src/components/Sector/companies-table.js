@@ -15,6 +15,22 @@ const Styles = styled(Box)`
   table {
     border-spacing: 0;
     width: 100%;
+
+    .resizer {
+      display: inline-block;
+      width: 5px;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translateX(50%);
+      z-index: 1;
+
+      &.isResizing {
+        background: blue;
+      }
+    }
+  }
     
     &.sticky {
       overflow: scroll;
