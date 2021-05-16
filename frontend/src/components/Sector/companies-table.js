@@ -15,6 +15,27 @@ const Styles = styled(Box)`
   table {
     border-spacing: 0;
     width: 100%;
+    border: 1px solid black;
+    .tr {
+      :last-child {
+        .td {
+          border-bottom: 0;
+        }
+      }
+    }
+
+    .th,
+    .td {
+      padding: 5px;
+      border-bottom: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      background-color: #fff;
+      overflow: hidden;
+      color: green;
+
+      :last-child {
+        border-right: 0;
+      }
 
     .resizer {
       display: inline-block;
@@ -34,11 +55,15 @@ const Styles = styled(Box)`
     
     &.sticky {
       overflow: scroll;
-      .column-1 {
+      .header {
         position: sticky;
         z-index: 1;
         width: fit-content;
     }
+      .header {
+        top: 0;
+        box-shadow: 0px 3px 3px #ccc;
+      }
 
       .body {
         position: relative;
@@ -117,12 +142,14 @@ function Table({columns, data}) {
 
     // Render the UI for your table
     return (
-      <table {...getTableProps()}>
-        <thead>
+      <table {...getTableProps()}
+             className="table sticky"
+             style={{ width: 800, height: 400 }}>
+        <thead className={'header'}>
         {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
+          <tr {...headerGroup.getHeaderGroupProps()} className={"tr"}>
             {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+              <th {...column.getHeaderProps(column.getSortByToggleProps())} className="th">
                 <Text variant={"smallLight"}>{column.render("Header")}</Text>
                 <span>{column.isSorted ? (column.isSortedDesc ?
                   <BsChevronDown/> :
@@ -132,10 +159,10 @@ function Table({columns, data}) {
           </tr>
         ))}
         </thead>
-        <tbody {...getTableBodyProps()}>
+        <tbody {...getTableBodyProps()} className={"body"}>
         {rows.map((row, i) => {
           prepareRow(row);
-          return <TableRow row={row}/>;
+          return <TableRow row={row} className={"tr"}/>;
         })}
         </tbody>
       </table>
@@ -153,7 +180,7 @@ export function CompaniesList({name, companies}) {
         Cell: (cell) => {
           return <Grid columns={['28px 1fr']}>
             <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'}/>
-            <Box className={"column-1"} sx={{
+            <Box sx={{
               lineHeight: '20px',
               sticky: "left",
             }}>
