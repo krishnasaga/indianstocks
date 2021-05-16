@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="add starter code for react-table-sticky">
+    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Sector/companies-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sector/companies-table.js" afterDir="false" />
     </list>
@@ -86,7 +86,7 @@
       <workItem from="1620838834744" duration="4143000" />
       <workItem from="1620908308696" duration="5000" />
       <workItem from="1620979525435" duration="5625000" />
-      <workItem from="1621065325687" duration="7800000" />
+      <workItem from="1621065325687" duration="10756000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -277,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621081368185</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="add starter code for react-table-sticky">
+      <created>1621094064270</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1621094064270</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

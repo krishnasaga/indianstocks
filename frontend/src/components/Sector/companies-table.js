@@ -59,7 +59,7 @@ const Styles = styled(Box)`
     tr {
       :last-child {
         td {
-          border-bottom: 1;
+          //border-bottom: 1;
         }
       }
       :hover {
