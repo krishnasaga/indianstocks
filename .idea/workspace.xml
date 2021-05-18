@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
+    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="add starter code for react-table-sticky">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Sector/companies-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sector/companies-table.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Sector/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sector/index.js" afterDir="false" />
@@ -43,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/MY_PROJECTS/figmaToSCSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -87,7 +87,8 @@
       <workItem from="1620838834744" duration="4143000" />
       <workItem from="1620908308696" duration="5000" />
       <workItem from="1620979525435" duration="5625000" />
-      <workItem from="1621065325687" duration="13418000" />
+      <workItem from="1621065325687" duration="15302000" />
+      <workItem from="1621359513523" duration="879000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -292,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621157474121</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="add starter code for react-table-sticky">
+      <created>1621160982937</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1621160982937</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

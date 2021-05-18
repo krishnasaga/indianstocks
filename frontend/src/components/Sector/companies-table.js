@@ -37,20 +37,20 @@ const Styles = styled(Box)`
         border-right: 0;
       }
 
-    .resizer {
-      display: inline-block;
-      width: 5px;
-      height: 100%;
-      position: absolute;
-      right: 0;
-      top: 0;
-      transform: translateX(50%);
-      z-index: 1;
-
-      &.isResizing {
-        background: blue;
-      }
-    }
+    //.resizer {
+    //  display: inline-block;
+    //  width: 5px;
+    //  height: 100%;
+    //  position: absolute;
+    //  right: 0;
+    //  top: 0;
+    //  transform: translateX(50%);
+    //  z-index: 1;
+    //
+    //  &.isResizing {
+    //    background: blue;
+    //  }
+    //}
   }
     
     &.sticky {
@@ -96,16 +96,14 @@ const Styles = styled(Box)`
    th {
     background: ${({bg}) => bg}
    }
-    th,
-    td {
-      margin: 0;
-      padding: 0.5rem;
-      border-bottom: 1px solid #e5e5e5;
-      cursor: pointer;
-      :last-child {
-        border-right: 0;
-      }
-    }
+    //th,
+    //td {
+    //  cursor: pointer;
+    //  overflow: hidden;
+    //  :last-child {
+    //    border-right: 0;
+    //  }
+    //}
   }
 `;
 
