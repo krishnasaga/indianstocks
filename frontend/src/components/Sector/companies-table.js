@@ -6,6 +6,7 @@ import {Filters} from './Filters';
 import {BsArrowLeft, BsChevronDown, BsChevronUp, BsFillFunnelFill} from "react-icons/bs";
 import ScrollLock from 'react-scrolllock';
 import {useSticky} from "react-table-sticky";
+export { Table as CompaniesTable } from '../Table'; // Placeholder
 
 // STYLING DOESN'T WORK IN Styles FOR FONT-SIZE, COLOR FOR th
 
