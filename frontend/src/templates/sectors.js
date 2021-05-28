@@ -3,7 +3,7 @@ import {Box, Grid, Text} from "theme-ui";
 import {TopNav} from "../components/TopNav";
 import {Footer} from "../components/Footer";
 import {SectorBanner, Subpages} from "../components/Sector";
-import {CompaniesList} from "../components/Sector/companies-table";
+import {CompaniesList,CompaniesTable} from "../components/Sector/companies-table";
 
 export default ({
                   pageContext: {displayName, name, intro, insights = [], backgroundImage, companies},
@@ -25,7 +25,7 @@ export default ({
         boxShadow: "0 3px 20px 0 rgb(0 77 165 / 7%)",
       }}
     >
-      <CompaniesList
+      <CompaniesTable
         name={name}
         companies={companies}
       />
