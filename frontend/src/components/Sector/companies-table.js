@@ -7,7 +7,7 @@ import {BsArrowLeft, BsChevronDown, BsChevronUp, BsFillFunnelFill} from "react-i
 import ScrollLock from 'react-scrolllock';
 import {useSticky} from "react-table-sticky";
 
-// STYLING DOESN'T WORK IN STYLES FOR FONT-SIZE, COLOR FOR TH
+// STYLING DOESN'T WORK IN Styles FOR FONT-SIZE, COLOR FOR th
 
 const Styles = styled(Box)`
   padding: 0;
@@ -25,14 +25,14 @@ const Styles = styled(Box)`
     }
 
     .th,
-    .td {
-      padding: 5px;
+    .td {     
       border-bottom: 1px solid #ddd;
       border-right: 1px solid #ddd;
-      background-color: #fff;
-      overflow: hidden;
-      color: green;
-
+      //overflow: hidden;
+      color: green;    
+      background: white;
+      padding: 5px;
+      text-align: end;
       :last-child {
         border-right: 0;
       }
@@ -59,15 +59,15 @@ const Styles = styled(Box)`
         position: sticky;
         z-index: 1;
         width: fit-content;
-    }
-      .header {
         top: 0;
         box-shadow: 0px 3px 3px #ccc;
+        background: #ECF3FD;
       }
 
       .body {
         position: relative;
         z-index: 0;
+        width: 100%;
       }
 
       [data-sticky-td] {
@@ -81,7 +81,12 @@ const Styles = styled(Box)`
       [data-sticky-first-right-td] {
         box-shadow: -2px 0px 3px #ccc;
       }
+      
     tr {
+      height: 50px;
+      :hover {
+        background: #ECF3FD;
+      }
       :last-child {
         td {
           //border-bottom: 1;
@@ -96,16 +101,47 @@ const Styles = styled(Box)`
    th {
     background: ${({bg}) => bg}
    }
-    //th,
-    //td {
-    //  cursor: pointer;
-    //  overflow: hidden;
-    //  :last-child {
-    //    border-right: 0;
-    //  }
-    //}
-  }
+   
+   tr {
+     display: flex;
+     border: 1px solid blue;
+     align-items: center;
+     padding: 0;
+     margin: 0;
+     
+     td {
+       background: white;
+       //border: 1px solid grey;
+     }
+   }
+   }
+    }     
+  
 `;
+
+const BodyCell = ({children}) => {
+    return (
+        <Text sx={{
+            color: "black",
+            // border: "1px solid red",
+            fontSize: "1rem",
+        }}>
+            {children}
+        </Text>
+    )
+}
+
+const StickyCell = ({children}) => {
+    return (
+        <Text sx={{
+            color: "black",
+            // border: "1px solid red",
+            fontSize: "1rem",
+        }}>
+            {children}
+        </Text>
+    )
+}
 
 const mapCellFormat = (value) => {
   if (typeof value === "string") return "";
@@ -117,9 +153,9 @@ function Table({columns, data}) {
   // Use the state and functions returned from useTable to build your UI
   const defaultColumn = React.useMemo(
     () => ({
-      minWidth: 150,
+      minWidth: 200,
       width: 150,
-      maxWidth: 400
+
     }),
     []
   );
@@ -140,9 +176,10 @@ function Table({columns, data}) {
 
     // Render the UI for your table
     return (
+
       <table {...getTableProps()}
              className="table sticky"
-             style={{ width: 800, height: 400 }}>
+             style={{height: 400 }}>
         <thead className={'header'}>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()} className={"tr"}>
@@ -176,13 +213,13 @@ export function CompaniesList({name, companies}) {
         accessor: "name",
         sticky: "left",
         Cell: (cell) => {
-          return <Grid columns={['28px 1fr']}>
-            <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'}/>
+          return <Grid columns={['28px 1fr']}   >
+            <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'} sx={{alignSelf: 'center'}}/>
             <Box sx={{
               lineHeight: '20px',
               sticky: "left",
             }}>
-              <Text sx={{fontSize: '1rem', color: 'pink'}}>{cell.value}</Text>
+              <Text sx={{fontSize: '1rem', color: 'black'}}>{cell.value}</Text>
             </Box>
           </Grid>;
         }
@@ -192,9 +229,9 @@ export function CompaniesList({name, companies}) {
         accessor: "sector",
         Cell: (cell) => {
           return <Grid>
-            <Box>
+            <BodyCell>
               Hello
-            </Box>
+            </BodyCell>
           </Grid>
         }
       },
@@ -203,9 +240,9 @@ export function CompaniesList({name, companies}) {
         accessor: "peRatio",
         Cell: (cell) => {
           return <Grid>
-            <Box>
+            <BodyCell>
               Hello
-            </Box>
+            </BodyCell>
           </Grid>
         }
       },
@@ -214,9 +251,9 @@ export function CompaniesList({name, companies}) {
         accessor: "pbRatio",
         Cell: (cell) => {
           return <Grid>
-            <Box>
+            <BodyCell>
               Hello
-            </Box>
+            </BodyCell>
           </Grid>
         }
       },
@@ -225,9 +262,9 @@ export function CompaniesList({name, companies}) {
         accessor: "marketCap",
         Cell: (cell) => {
           return <Grid>
-            <Box>
+            <BodyCell>
               Hello
-            </Box>
+            </BodyCell>
           </Grid>
         }
       },
@@ -236,9 +273,9 @@ export function CompaniesList({name, companies}) {
         accessor: "revenue",
         Cell: (cell) => {
           return <Grid>
-            <Box>
+            <BodyCell>
               Hello
-            </Box>
+            </BodyCell>
           </Grid>
         }
       },
@@ -256,7 +293,6 @@ export function CompaniesList({name, companies}) {
           sx={{display: ['block', 'block', 'none']}}
         >
           <Grid columns={['1fr 110px']}
-
           >
             <Box>
 
@@ -285,6 +321,7 @@ export function CompaniesList({name, companies}) {
             bg={'white'}
             sx={{
               overflowY: 'scroll',
+                overflowX: 'scroll',
               width: '100%',
               height: ['100vh', '100vh', 'initial'],
               display: [
@@ -339,7 +376,7 @@ export function CompaniesList({name, companies}) {
 
 function TableRow({row}) {
   return <Box as={'tr'} {...row.getRowProps()} sx={{
-    height: '80px'
+
   }}>
     {row.cells.map((cell) => {
       const {number} = cell.getCellProps();

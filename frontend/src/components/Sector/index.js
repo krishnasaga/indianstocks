@@ -1,6 +1,5 @@
 import { Box, Container, Grid, Link, Text } from "theme-ui";
 import { AnimatedNumber } from "../Number";
-import ReactTable from 'react-table';
 
 import React from "react";
 

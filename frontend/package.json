@@ -41,6 +41,7 @@
     "react-portal": "^4.2.1",
     "react-scrolllock": "^5.0.1",
     "react-spring": "^9.0.0",
+    "react-sticky-table": "^5.1.11",
     "react-stickynode": "^3.0.4",
     "react-table": "^7.6.3",
     "react-vis": "^1.11.7",
