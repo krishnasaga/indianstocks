@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Table/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Table/makeData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Sector/companies-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sector/companies-table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Sector/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Sector/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +94,7 @@
       <workItem from="1621437048320" duration="4541000" />
       <workItem from="1621530962424" duration="17336000" />
       <workItem from="1621868584647" duration="16699000" />
-      <workItem from="1622223650679" duration="3646000" />
+      <workItem from="1622223650679" duration="12429000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -320,14 +320,20 @@
       <option name="project" value="LOCAL" />
       <updated>1621531155319</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="fix z-index on sticky table">
+      <created>1622227764646</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1622227764646</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add footer layout" />
     <MESSAGE value="fix footer responsive content order, add text and icons" />
     <MESSAGE value="fix footer layout and add more text" />
     <MESSAGE value="fix footer padding, fontSizes, bottom text, and layout" />
@@ -352,7 +358,8 @@
     <MESSAGE value="fix right white space on mob" />
     <MESSAGE value="change cards mob to one column" />
     <MESSAGE value="add starter code for react-table-sticky" />
-    <option name="LAST_COMMIT_MESSAGE" value="add starter code for react-table-sticky" />
+    <MESSAGE value="fix z-index on sticky table" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix z-index on sticky table" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
