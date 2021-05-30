@@ -1,6 +1,5 @@
 import React from 'react'
-import './index.css'
-import Box from 'theme-ui';
+import { Box } from 'theme-ui';
 
 
 export const Table = () => {
