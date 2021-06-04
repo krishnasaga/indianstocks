@@ -1,9 +1,10 @@
 import React from 'react';
-import {Box, Text, Image, Grid} from 'theme-ui';
+import {Box, Grid, Image, Text} from 'theme-ui';
 import './index.css';
 
 const StickyColCell = ({children}) => {
   return (
+    <Box as={'td'} sx={{position: 'sticky', left: 0}}>
       <Grid sx={{
         gridAutoFlow: "column",
       }}>
@@ -15,6 +16,7 @@ const StickyColCell = ({children}) => {
           {children}
         </Text>
       </Grid>
+    </Box>
   )
 }
 
