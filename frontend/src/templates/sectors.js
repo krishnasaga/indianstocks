@@ -2,13 +2,16 @@ import React from "react";
 import {Box, Grid, Text} from "theme-ui";
 import {TopNav} from "../components/TopNav";
 import {Footer} from "../components/Footer";
-import {SectorBanner, Subpages} from "../components/Sector";
-import {CompaniesList,CompaniesTable} from "../components/Sector/companies-table";
+import {SectorBanner} from "../components/Sector";
+import {CompaniesTable} from "../components/Sector/companies-table";
 
 export default ({
                   pageContext: {displayName, name, intro, insights = [], backgroundImage, companies},
                 }) => (
   <Box>
+    <Helmet>
+      <title> Top {displayName} companies in india by market capitalization | BigInvest </title>
+    </Helmet>
     <TopNav/>
     <SectorBanner
       name={displayName}
@@ -32,7 +35,8 @@ export default ({
     </Box>
     <Footer/>
   </Box>
-);
+)
+;
 
 function ProductItem({name}) {
   return (
