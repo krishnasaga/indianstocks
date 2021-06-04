@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Table/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Table/makeData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +94,10 @@
       <workItem from="1621437048320" duration="4541000" />
       <workItem from="1621530962424" duration="17336000" />
       <workItem from="1621868584647" duration="16699000" />
-      <workItem from="1622223650679" duration="12429000" />
+      <workItem from="1622223650679" duration="19145000" />
+      <workItem from="1622407580332" duration="3000" />
+      <workItem from="1622448908549" duration="7279000" />
+      <workItem from="1622645625308" duration="2630000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -327,14 +330,20 @@
       <option name="project" value="LOCAL" />
       <updated>1622227764646</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="add code to new table component">
+      <created>1622399310379</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1622399310379</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix footer responsive content order, add text and icons" />
     <MESSAGE value="fix footer layout and add more text" />
     <MESSAGE value="fix footer padding, fontSizes, bottom text, and layout" />
     <MESSAGE value="add footer brand img and temp icons" />
@@ -359,7 +368,8 @@
     <MESSAGE value="change cards mob to one column" />
     <MESSAGE value="add starter code for react-table-sticky" />
     <MESSAGE value="fix z-index on sticky table" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix z-index on sticky table" />
+    <MESSAGE value="add code to new table component" />
+    <option name="LAST_COMMIT_MESSAGE" value="add code to new table component" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

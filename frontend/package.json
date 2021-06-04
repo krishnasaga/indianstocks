@@ -9,8 +9,8 @@
   "scripts": {
     "build": "gatsby build",
     "build:api": "API=true gatsby build",
-    "develop:api": "ENABLE_GATSBY_REFRESH_ENDPOINT=true API=true gatsby develop -p 8085 ",
-    "develop": "gatsby develop -p 8085",
+    "develop:api": "ENABLE_GATSBY_REFRESH_ENDPOINT=true API=true gatsby develop -p 8087 ",
+    "develop": "gatsby develop -p 8087",
     "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
     "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
     "start": "gatsby develop",
