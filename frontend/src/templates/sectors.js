@@ -4,6 +4,7 @@ import {TopNav} from "../components/TopNav";
 import {Footer} from "../components/Footer";
 import {SectorBanner} from "../components/Sector";
 import {CompaniesTable} from "../components/Sector/companies-table";
+import { Helmet } from 'react-helmet';
 
 export default ({
                   pageContext: {displayName, name, intro, insights = [], backgroundImage, companies},
