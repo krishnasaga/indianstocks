@@ -23,6 +23,13 @@ export default ({
     <Box
       my={4}
       mx={[1, 1, 4, 4]}
+    >
+      Top {displayName} companies in india by Market Capitalization
+      Listed below are the top {displayName} companies in india. They are listed in size by market capitalization. To reorder the list, simply click on one of the options - such as 24h or 7d - to see the sector from a different perspective.
+    </Box>
+    <Box
+      my={4}
+      mx={[1, 1, 4, 4]}
       sx={{
         borderRadius: 5,
         boxShadow: "0 3px 20px 0 rgb(0 77 165 / 7%)",
