@@ -7,10 +7,13 @@ const StickyColCell = ({children}) => {
     <Box as={'td'} sx={{position: 'sticky', left: 0}}>
       <Grid sx={{
         gridAutoFlow: "column",
+        alignItems: "center",
+        justifyContent: "start",
+
       }}>
         <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'} sx={{alignSelf: 'center'}}/>
         <Text sx={{
-          color: "red",
+          color: "black",
           fontSize: "1rem",
         }}>
           {children}
@@ -55,7 +58,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -63,7 +66,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -71,7 +74,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -79,7 +82,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -87,7 +90,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -95,7 +98,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -103,7 +106,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -111,7 +114,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -119,7 +122,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -127,7 +130,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -135,7 +138,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -143,7 +146,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -151,7 +154,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -159,7 +162,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -167,7 +170,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -175,7 +178,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -183,7 +186,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -191,7 +194,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -199,7 +202,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -207,7 +210,7 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <th>Name</th>
+          <StickyColCell>Name</StickyColCell>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
