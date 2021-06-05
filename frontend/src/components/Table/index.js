@@ -25,11 +25,8 @@ const StickyColCell = ({children}) => {
 
 export const Table = () => {
   return <Box>
-    Table
-
     <div role="region" aria-labelledby="caption" tabIndex="0">
       <table>
-        <caption id="caption">Sticky table</caption>
         <thead>
         <tr>
           <th>Company Name</th>

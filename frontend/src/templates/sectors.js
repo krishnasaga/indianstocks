@@ -14,18 +14,22 @@ export default ({
       <title> Top {displayName} companies in india by market capitalization | BigInvest </title>
     </Helmet>
     <TopNav/>
-    <SectorBanner
+    { 0 ? <SectorBanner
       name={displayName}
       intro={intro}
       insights={insights}
       backgroundImage={backgroundImage}
-    />
+    /> : null }
     <SectorFinancials/>
+
     <Box
-      my={4}
+      mt={'100px'}
+      mb={4}
       mx={[1, 1, 4, 4]}
     >
-      Top {displayName} companies in india by Market Capitalization
+      <Text as={'h2'}>
+        Top {displayName} companies in india by Market Capitalization
+      </Text>
       Listed below are the top {displayName} companies in india. They are listed in size by market capitalization. To reorder the list, simply click on one of the options - such as 24h or 7d - to see the sector from a different perspective.
     </Box>
     <Box
