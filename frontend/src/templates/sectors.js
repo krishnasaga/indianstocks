@@ -51,7 +51,10 @@ export default ({
       <CompaniesTable
         columns={[{
           Header: "#",
-          accessor: "rank",
+          accessor: "id",
+        },{
+          Header: "#",
+          accessor: "name",
         }]}
         data={companies || new Array(100).fill(1).map((value, index) => {
           return {rank: index};
