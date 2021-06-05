@@ -500,6 +500,7 @@ function Dropdown({component}) {
           top: "74px",
           width: "85%",
           boxShadow: "4px 4px 10px -5px rgb(0 0 0 / 10%)",
+            zIndex: "99",
         }}
         style={props}
       >
