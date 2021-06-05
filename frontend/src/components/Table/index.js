@@ -2,26 +2,65 @@ import React from 'react';
 import {Box, Grid, Image, Text} from 'theme-ui';
 import './index.css';
 
-const StickyColCell = ({children}) => {
+const StickyColStar = ({children}) => {
   return (
-    <Box as={'td'} sx={{position: 'sticky', left: 0}}>
-      <Grid sx={{
-        gridAutoFlow: "column",
-        alignItems: "center",
-        justifyContent: "start",
-
-      }}>
-        <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'} sx={{alignSelf: 'center'}}/>
-        <Text sx={{
-          color: "black",
-          fontSize: "1rem",
+      <Box as={'td'} sx={{position: 'sticky', left: 0}}>
+        <Grid sx={{
+          gridAutoFlow: "column",
+          alignItems: "center",
+          justifyContent: "start",
         }}>
-          {children}
-        </Text>
-      </Grid>
-    </Box>
+          <Text sx={{
+            color: "red",
+            fontSize: "1rem",
+          }}>
+            {children}
+          </Text>
+        </Grid>
+      </Box>
   )
 }
+
+const StickyColNumber = ({children}) => {
+  return (
+      <Box as={'td'} sx={{position: 'sticky', left: "50px"}}>
+        <Grid sx={{
+          gridAutoFlow: "column",
+          alignItems: "center",
+          justifyContent: "start",
+        }}>
+          <Text sx={{
+            color: "blue",
+            fontSize: "1rem",
+          }}>
+            {children}
+          </Text>
+        </Grid>
+      </Box>
+  )
+}
+
+const StickyColName = ({children}) => {
+  return (
+      <Box as={'td'} sx={{position: 'sticky', left: "100px"}}>
+        <Grid sx={{
+          gridAutoFlow: "column",
+          alignItems: "center",
+          justifyContent: "start",
+
+        }}>
+          <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'} sx={{alignSelf: 'center'}}/>
+          <Text sx={{
+            color: "black",
+            fontSize: "1rem",
+          }}>
+            {children}
+          </Text>
+        </Grid>
+      </Box>
+  )
+}
+
 
 
 export const Table = () => {
@@ -30,6 +69,8 @@ export const Table = () => {
       <table>
         <thead>
         <tr>
+          <th></th>
+          <th>#</th>
           <th>Company Name</th>
           <th>Focus</th>
           <th>PE ratio</th>
@@ -39,8 +80,21 @@ export const Table = () => {
         </tr>
         </thead>
         <tbody>
+        {/*Example code without components*/}
+        {/*<tr>*/}
+        {/*  <th>Star</th>*/}
+        {/*  <th>Number</th>*/}
+        {/*  <th>Name</th>*/}
+        {/*  <td>Hello</td>*/}
+        {/*  <td>Hello</td>*/}
+        {/*  <td>Hello</td>*/}
+        {/*  <td>Hello</td>*/}
+        {/*  <td>Hello</td>*/}
+        {/*</tr>*/}
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -48,7 +102,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -56,7 +112,20 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
+          <td>Hello</td>
+          <td>Hello</td>
+          <td>Hello</td>
+          <td>Hello</td>
+          <td>Hello</td>
+        </tr>
+
+        <tr>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -64,7 +133,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -72,7 +143,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -80,7 +153,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -88,7 +163,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -96,7 +173,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -104,7 +183,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -112,7 +193,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -120,7 +203,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -128,7 +213,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -136,7 +223,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -144,7 +233,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -152,7 +243,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -160,7 +253,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -168,7 +263,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -176,7 +273,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -184,7 +283,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -192,7 +293,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
@@ -200,15 +303,9 @@ export const Table = () => {
           <td>Hello</td>
         </tr>
         <tr>
-          <StickyColCell>Name</StickyColCell>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColCell>Name</StickyColCell>
+          <StickyColStar>Star</StickyColStar>
+          <StickyColNumber>Number</StickyColNumber>
+          <StickyColName>Name</StickyColName>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>

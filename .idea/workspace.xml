@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TopNav/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,7 @@
       <workItem from="1622223650679" duration="19145000" />
       <workItem from="1622407580332" duration="3000" />
       <workItem from="1622448908549" duration="7279000" />
-      <workItem from="1622645625308" duration="11491000" />
+      <workItem from="1622645625308" duration="16206000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -356,14 +356,20 @@
       <option name="project" value="LOCAL" />
       <updated>1622830072680</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fix zIndex on topNav Dropdown comp">
+      <created>1622882187619</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1622882187619</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add footer brand img and temp icons" />
     <MESSAGE value="add styling to topnav, add final icons to footer" />
     <MESSAGE value="integrate DropdownMenuText animation in code, fix TextArrow animation" />
     <MESSAGE value="create Cards\ and started code" />
@@ -388,7 +394,8 @@
     <MESSAGE value="add code to new table component" />
     <MESSAGE value="add StickyColCell comp to table" />
     <MESSAGE value="add starter styles to sticky-table" />
-    <option name="LAST_COMMIT_MESSAGE" value="add starter styles to sticky-table" />
+    <MESSAGE value="fix zIndex on topNav Dropdown comp" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix zIndex on topNav Dropdown comp" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
