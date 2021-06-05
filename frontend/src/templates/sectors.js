@@ -4,7 +4,8 @@ import {TopNav} from "../components/TopNav";
 import {Footer} from "../components/Footer";
 import {SectorBanner} from "../components/Sector";
 import {CompaniesTable} from "../components/Sector/companies-table";
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
+import {More} from '../components/Sector/More';
 
 export default ({
                   pageContext: {displayName, name, intro, insights = [], backgroundImage, companies},
@@ -14,12 +15,12 @@ export default ({
       <title> Top {displayName} companies in india by market capitalization | BigInvest </title>
     </Helmet>
     <TopNav/>
-    { 0 ? <SectorBanner
+    {0 ? <SectorBanner
       name={displayName}
       intro={intro}
       insights={insights}
       backgroundImage={backgroundImage}
-    /> : null }
+    /> : null}
     <SectorFinancials/>
 
     <Box
@@ -27,10 +28,17 @@ export default ({
       mb={4}
       mx={[1, 1, 4, 4]}
     >
-      <Text as={'h2'}>
+      <Text as={'h1'}>
         Top {displayName} companies in india by Market Capitalization
       </Text>
-      Listed below are the top {displayName} companies in india. They are listed in size by market capitalization. To reorder the list, simply click on one of the options - such as 24h or 7d - to see the sector from a different perspective.
+      <Text as={'p'}>
+        Listed below are the top {displayName} companies in india. They are listed in size by market capitalization. To
+        reorder the list, simply click on one of the options - such as 24h or 7d - to see the sector from a different
+        perspective.
+      </Text>
+    </Box>
+    <Box px={[4]}>
+      <More/>
     </Box>
     <Box
       my={4}
@@ -41,8 +49,13 @@ export default ({
       }}
     >
       <CompaniesTable
-        name={name}
-        companies={companies}
+        columns={[{
+          Header: "#",
+          accessor: "rank",
+        }]}
+        data={companies || new Array(100).fill(1).map((value, index) => {
+          return {rank: index};
+        })}
       />
     </Box>
     <Footer/>

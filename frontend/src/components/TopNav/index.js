@@ -87,6 +87,7 @@ export const TopNav = () => {
         top: "0",
         zIndex: "99",
         width: index > 1 ? "85%" : "100%",
+        boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px '
       }}
     >
       <Grid
@@ -116,22 +117,15 @@ export const TopNav = () => {
           <>
             {" "}
             <Menu onClick={(event) => menuHandler(event, "disruptions")}>
-              {" "}
-
               <DropdownMenuText>
                 Disruptions
               </DropdownMenuText>
-              {" "}
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "research")}>
-              {" "}
               <DropdownMenuText>Research</DropdownMenuText>
-              {" "}
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "sectors")}>
-              {" "}
               <DropdownMenuText>Sectors</DropdownMenuText>
-              {" "}
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "analytics")}>
               {" "}
@@ -500,7 +494,7 @@ function Dropdown({component}) {
           top: "74px",
           width: "85%",
           boxShadow: "4px 4px 10px -5px rgb(0 0 0 / 10%)",
-            zIndex: "99",
+          zIndex: "99",
         }}
         style={props}
       >

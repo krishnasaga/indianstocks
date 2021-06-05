@@ -236,10 +236,9 @@ export const Cards = ({items = []}) => {
                       <CardOverlayHeading>
                           {displayName}
                       </CardOverlayHeading>
-                      <CardOverlayText>Aims to provide broad exposure to disruptive innovation.
-                          ARK believes innovations centered around artificial intelligence,
-                          robotics, energy storage, DNA sequencing, and blockchain technology
-                          will change the way the world works and deliver outsized growth as industries transform.
+                      <CardOverlayText>
+                        Nulla facilisi. Phasellus dictum lectus ligula, a viverra urna scelerisque nec. Morbi auctor sit amet purus non sollicitudin. Morbi pretium elementum vestibulum. Fusce ac lacus vel lorem volutpat pharetra. Phasellus non commodo dolor, non congue felis. Duis faucibus odio vitae libero scelerisque aliquet. Etiam neque tortor, hendrerit eu iaculis id, pellentesque quis arcu.
+
                       </CardOverlayText>
                       <CardOverlayButton onClick={() => {
                           window.location.href = `/sectors/${name}`

@@ -1,72 +1,106 @@
 import React from 'react';
 import {Box, Grid, Image, Text} from 'theme-ui';
 import './index.css';
+import {useBlockLayout, useSortBy, useTable} from "react-table";
 
 const StickyColStar = ({children}) => {
   return (
-      <Box as={'td'} sx={{position: 'sticky', left: 0}}>
-        <Grid sx={{
-          gridAutoFlow: "column",
-          alignItems: "center",
-          justifyContent: "start",
+    <Box as={'td'} sx={{position: 'sticky', left: 0}}>
+      <Grid sx={{
+        gridAutoFlow: "column",
+        alignItems: "center",
+        justifyContent: "start",
+      }}>
+        <Text sx={{
+          color: "red",
+          fontSize: "1rem",
         }}>
-          <Text sx={{
-            color: "red",
-            fontSize: "1rem",
-          }}>
-            {children}
-          </Text>
-        </Grid>
-      </Box>
+          {children}
+        </Text>
+      </Grid>
+    </Box>
   )
 }
 
 const StickyColNumber = ({children}) => {
   return (
-      <Box as={'td'} sx={{position: 'sticky', left: "50px"}}>
-        <Grid sx={{
-          gridAutoFlow: "column",
-          alignItems: "center",
-          justifyContent: "start",
+    <Box as={'td'} sx={{position: 'sticky', left: "50px"}}>
+      <Grid sx={{
+        gridAutoFlow: "column",
+        alignItems: "center",
+        justifyContent: "start",
+      }}>
+        <Text sx={{
+          color: "blue",
+          fontSize: "1rem",
         }}>
-          <Text sx={{
-            color: "blue",
-            fontSize: "1rem",
-          }}>
-            {children}
-          </Text>
-        </Grid>
-      </Box>
+          {children}
+        </Text>
+      </Grid>
+    </Box>
   )
 }
 
 const StickyColName = ({children}) => {
   return (
-      <Box as={'td'} sx={{position: 'sticky', left: "100px"}}>
-        <Grid sx={{
-          gridAutoFlow: "column",
-          alignItems: "center",
-          justifyContent: "start",
+    <Box as={'td'} sx={{position: 'sticky', left: "100px"}}>
+      <Grid sx={{
+        gridAutoFlow: "column",
+        alignItems: "center",
+        justifyContent: "start",
 
+      }}>
+        <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'} sx={{alignSelf: 'center'}}/>
+        <Text sx={{
+          color: "black",
+          fontSize: "1rem",
         }}>
-          <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'} sx={{alignSelf: 'center'}}/>
-          <Text sx={{
-            color: "black",
-            fontSize: "1rem",
-          }}>
-            {children}
-          </Text>
-        </Grid>
-      </Box>
+          {children}
+        </Text>
+      </Grid>
+    </Box>
   )
 }
 
+export const TableRow = ({rank = 'NA'}) => <tr>
+  <StickyColStar>Star</StickyColStar>
+  <StickyColNumber>{rank}</StickyColNumber>
+  <StickyColName>Name</StickyColName>
+  <td>Hello</td>
+  <td>Hello</td>
+  <td>Hello</td>
+  <td>Hello</td>
+  <td>Hello</td>
+</tr>;
 
 
-export const Table = () => {
+export const Table = ({columns, data}) => {
+
+  const defaultColumn = React.useMemo(
+    () => ({
+      minWidth: 200,
+      width: 150,
+
+    }),
+    []
+  );
+
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = useTable({
+      columns,
+      data,
+      defaultColumn
+    }, useSortBy,
+    useBlockLayout);
+
   return <Box>
     <div role="region" aria-labelledby="caption" tabIndex="0">
-      <table>
+      <table {...getTableProps()} >
         <thead>
         <tr>
           <th></th>
@@ -91,232 +125,14 @@ export const Table = () => {
         {/*  <td>Hello</td>*/}
         {/*  <td>Hello</td>*/}
         {/*</tr>*/}
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <StickyColStar>Star</StickyColStar>
-          <StickyColNumber>Number</StickyColNumber>
-          <StickyColName>Name</StickyColName>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-          <td>Hello</td>
-        </tr>
+        {rows.map((data, index) => <TableRow key={index} rank={index}/>)}
         </tbody>
       </table>
     </div>
   </Box>;
 }
+
+
 
 
 

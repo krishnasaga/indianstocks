@@ -6,7 +6,8 @@ import {Filters} from './Filters';
 import {BsArrowLeft, BsChevronDown, BsChevronUp, BsFillFunnelFill} from "react-icons/bs";
 import ScrollLock from 'react-scrolllock';
 import {useSticky} from "react-table-sticky";
-export { Table as CompaniesTable } from '../Table'; // Placeholder
+
+export {Table as CompaniesTable} from '../Table'; // Placeholder
 
 // STYLING DOESN'T WORK IN Styles FOR FONT-SIZE, COLOR FOR th
 
@@ -121,27 +122,27 @@ const Styles = styled(Box)`
 `;
 
 const BodyCell = ({children}) => {
-    return (
-        <Text sx={{
-            color: "black",
-            // border: "1px solid red",
-            fontSize: "1rem",
-        }}>
-            {children}
-        </Text>
-    )
+  return (
+    <Text sx={{
+      color: "black",
+      // border: "1px solid red",
+      fontSize: "1rem",
+    }}>
+      {children}
+    </Text>
+  )
 }
 
 const StickyCell = ({children}) => {
-    return (
-        <Text sx={{
-            color: "black",
-            // border: "1px solid red",
-            fontSize: "1rem",
-        }}>
-            {children}
-        </Text>
-    )
+  return (
+    <Text sx={{
+      color: "black",
+      // border: "1px solid red",
+      fontSize: "1rem",
+    }}>
+      {children}
+    </Text>
+  )
 }
 
 const mapCellFormat = (value) => {
@@ -151,7 +152,7 @@ const mapCellFormat = (value) => {
 };
 
 function Table({columns, data}) {
-  // Use the state and functions returned from useTable to build your UI
+
   const defaultColumn = React.useMemo(
     () => ({
       minWidth: 200,
@@ -180,7 +181,7 @@ function Table({columns, data}) {
 
       <table {...getTableProps()}
              className="table sticky"
-             style={{height: 400 }}>
+             style={{height: 400}}>
         <thead className={'header'}>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()} className={"tr"}>
@@ -214,7 +215,7 @@ export function CompaniesList({name, companies}) {
         accessor: "name",
         sticky: "left",
         Cell: (cell) => {
-          return <Grid columns={['28px 1fr']}   >
+          return <Grid columns={['28px 1fr']}>
             <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'} sx={{alignSelf: 'center'}}/>
             <Box sx={{
               lineHeight: '20px',
@@ -322,7 +323,7 @@ export function CompaniesList({name, companies}) {
             bg={'white'}
             sx={{
               overflowY: 'scroll',
-                overflowX: 'scroll',
+              overflowX: 'scroll',
               width: '100%',
               height: ['100vh', '100vh', 'initial'],
               display: [
@@ -376,9 +377,7 @@ export function CompaniesList({name, companies}) {
 
 
 function TableRow({row}) {
-  return <Box as={'tr'} {...row.getRowProps()} sx={{
-
-  }}>
+  return <Box as={'tr'} {...row.getRowProps()} sx={{}}>
     {row.cells.map((cell) => {
       const {number} = cell.getCellProps();
       return (
