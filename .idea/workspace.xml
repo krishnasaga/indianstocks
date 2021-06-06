@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +96,8 @@
       <workItem from="1622448908549" duration="7279000" />
       <workItem from="1622645625308" duration="17199000" />
       <workItem from="1622968524169" duration="2525000" />
-      <workItem from="1622971522997" duration="2267000" />
+      <workItem from="1622971522997" duration="5522000" />
+      <workItem from="1622983612128" duration="1207000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -372,14 +372,20 @@
       <option name="project" value="LOCAL" />
       <updated>1622890104529</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="reduce width of first two sticky columns">
+      <created>1622973957953</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1622973957953</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="integrate DropdownMenuText animation in code, fix TextArrow animation" />
     <MESSAGE value="create Cards\ and started code" />
     <MESSAGE value="add cards" />
     <MESSAGE value="add responsive cards and cards text" />
@@ -404,7 +410,8 @@
     <MESSAGE value="add starter styles to sticky-table" />
     <MESSAGE value="fix zIndex on topNav Dropdown comp" />
     <MESSAGE value="add three sticky columns and stickyCell components in tbody" />
-    <option name="LAST_COMMIT_MESSAGE" value="add three sticky columns and stickyCell components in tbody" />
+    <MESSAGE value="reduce width of first two sticky columns" />
+    <option name="LAST_COMMIT_MESSAGE" value="reduce width of first two sticky columns" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
