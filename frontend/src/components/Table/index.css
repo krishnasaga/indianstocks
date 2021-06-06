@@ -35,7 +35,7 @@ table thead th {
     position: sticky;
     top: 0;
     z-index: 1;
-    width: 25vw;
+    /*width: 25vw;*/
     background: white;
     font-size: 1rem;
     color: black;
@@ -59,6 +59,9 @@ table thead th:first-child {
     left: 0;
     z-index: 2;
     text-align: left;
+    /*display: block;*/
+    /*width: 50px;*/
+
 }
 
 table thead th:nth-child(2) {
@@ -66,6 +69,7 @@ table thead th:nth-child(2) {
     left: 50px;
     z-index: 2;
     text-align: left;
+    background: red;
 }
 
 table thead th:nth-child(3) {
@@ -127,6 +131,38 @@ tr td {
     padding-left: 2rem;
     padding-right: 2rem;
     color: black;
+}
+
+tr td:first-child {
+    /*width: 0.5vw;*/
+}
+
+tr td:nth-child(2) {
+    /*width: 0.5vw;*/
+}
+
+tr td:nth-child(3) {
+    /*width: 25vw;*/
+}
+
+tr td:nth-child(4) {
+    width: 25vw;
+}
+
+tr td:nth-child(5) {
+    width: 25vw;
+}
+
+tr td:nth-child(6) {
+    width: 25vw;
+}
+
+tr td:nth-child(7) {
+    width: 25vw;
+}
+
+tr td:nth-child(8) {
+    width: 25vw;
 }
 
 
