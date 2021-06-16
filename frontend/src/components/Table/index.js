@@ -1,9 +1,9 @@
 import React from 'react';
-import {Box, Grid, Image, Text} from 'theme-ui';
+import { Box, Grid, Image, Text, Button } from 'theme-ui';
 import './index.css';
-import {AiOutlineStar} from 'react-icons';
+import { AiOutlineStar } from 'react-icons/ai';
 
-const StickyColStar = ({children}) => {
+const StickyColStar = () => {
   return (
       <Box as={'td'} sx={{position: 'sticky', left: 0}}>
         <Grid sx={{
@@ -11,12 +11,16 @@ const StickyColStar = ({children}) => {
           alignItems: "center",
           justifyContent: "start",
         }}>
-          <Text sx={{
+          <Button sx={{
             color: "lightgrey",
-            fontSize: "0.8rem",
+            padding: '0',
+            ':hover': {
+              color: "orange",
+              cursor: "pointer",
+            }
           }}>
-            {children}
-          </Text>
+            <AiOutlineStar size={18}/>
+          </Button>
         </Grid>
       </Box>
   )
@@ -93,7 +97,9 @@ export const Table = () => {
         {/*  <td>Hello</td>*/}
         {/*</tr>*/}
         <tr>
-          <StickyColStar>Star</StickyColStar>
+          <StickyColStar>
+
+          </StickyColStar>
           <StickyColNumber>1</StickyColNumber>
           <StickyColName>Name</StickyColName>
           <td>Hello</td>
