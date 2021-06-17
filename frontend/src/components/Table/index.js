@@ -1,7 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Grid, Image, Text, Button } from 'theme-ui';
 import './index.css';
 import { AiOutlineStar } from 'react-icons/ai';
+
+function ToolTip ({ children, ...remainingProps }) {
+  const [isShown, setIsShown] = useState(false);
+
+  return (
+      <Box className="App">
+        <Button sx={{
+          color: "lightgrey",
+          padding: '0',
+          position: "relative",
+          zIndex: "0",
+          ':hover': {
+            color: "orange",
+            cursor: "pointer",
+          }
+        }}
+            onMouseEnter={() => setIsShown(true)}
+            onMouseLeave={() => setIsShown(false)}>
+          <AiOutlineStar size={18}/>
+        </Button >
+        {isShown && (
+            <Text sx={{
+              clipPath: "polygon(0 0, 100% 0%, 100% 75%, 55% 75%, 50% 100%, 45% 75%, 0% 75%)",
+              color: "white",
+              background: "black",
+              position: 'absolute',
+              zIndex: "1",
+              fontSize: "0.8rem",
+              padding: "5px 5px 15px 5px",
+              borderRadius: "6px",
+            }}>
+              Add to Main Watchlist
+            </Text>
+        )}
+      </Box>
+  );
+}
 
 const StickyColStar = () => {
   return (
@@ -66,8 +103,6 @@ const StickyColName = ({children}) => {
   )
 }
 
-
-
 export const Table = () => {
   return <Box>
     <div role="region" aria-labelledby="caption" tabIndex="0">
@@ -102,7 +137,7 @@ export const Table = () => {
           </StickyColStar>
           <StickyColNumber>1</StickyColNumber>
           <StickyColName>Name</StickyColName>
-          <td>Hello</td>
+          <td><ToolTip></ToolTip></td>
           <td>Hello</td>
           <td>Hello</td>
           <td>Hello</td>
