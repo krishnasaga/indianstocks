@@ -12,8 +12,11 @@
 /*    monospace;*/
 /*}*/
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet');
+
 table {
     font-size: 125%;
+    font-family: 'Inter', sans-serif;
     white-space: nowrap;
     margin: 0;
     border: none;
@@ -37,8 +40,8 @@ table thead th {
     z-index: 1;
     /*width: 25vw;*/
     background: white;
-    font-size: 1rem;
-    color: black;
+    font-size:0.8rem;
+    color: #222531FF;
 }
 
 table td {
@@ -119,18 +122,18 @@ caption {
 }
 
 tr:hover td {
-    background: #ECF3FD;
+    background: #fafbfd;
 }
 
 tr:hover {
-    background: #ECF3FD;
+    background: #fafbfd;
 }
 
 tr td {
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #F5F5F5;
     padding-left: 2rem;
     padding-right: 2rem;
-    color: black;
+    color: #222531FF;
 }
 
 tr td:first-child {
@@ -144,6 +147,7 @@ tr td:nth-child(2) {
 tr td:nth-child(3) {
     /*width: 25vw;*/
 }
+/*CODE BELOW FIXES WIDTH OF STICKY COLS*/
 
 tr td:nth-child(4) {
     width: 25vw;

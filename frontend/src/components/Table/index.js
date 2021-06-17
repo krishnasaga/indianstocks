@@ -13,6 +13,7 @@ function ToolTip ({ children, ...remainingProps }) {
           padding: '0',
           position: "relative",
           zIndex: "0",
+          background: "none",
           ':hover': {
             color: "orange",
             cursor: "pointer",
@@ -20,7 +21,7 @@ function ToolTip ({ children, ...remainingProps }) {
         }}
             onMouseEnter={() => setIsShown(true)}
             onMouseLeave={() => setIsShown(false)}>
-          <AiOutlineStar size={18}/>
+          <AiOutlineStar size={16}/>
         </Button >
         {isShown && (
             <Text sx={{
@@ -94,8 +95,9 @@ const StickyColName = ({children}) => {
         }}>
           <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'} sx={{alignSelf: 'center'}}/>
           <Text sx={{
-            color: "black",
-            fontSize: "1rem",
+            color: "#222531FF",
+            fontSize: "0.95rem",
+            fontWeight: "600"
           }}>
             {children}
           </Text>
