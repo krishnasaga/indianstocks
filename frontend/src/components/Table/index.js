@@ -28,7 +28,7 @@ function ToolTip ({ children, ...remainingProps }) {
               color: "white",
               background: "black",
               position: 'absolute',
-              zIndex: "1",
+              zIndex: "5",
               fontSize: "0.8rem",
               padding: "5px 5px 15px 5px",
               borderRadius: "6px",
@@ -48,16 +48,17 @@ const StickyColStar = () => {
           alignItems: "center",
           justifyContent: "start",
         }}>
-          <Button sx={{
-            color: "lightgrey",
-            padding: '0',
-            ':hover': {
-              color: "orange",
-              cursor: "pointer",
-            }
-          }}>
-            <AiOutlineStar size={18}/>
-          </Button>
+          {/*<Button sx={{*/}
+          {/*  color: "lightgrey",*/}
+          {/*  padding: '0',*/}
+          {/*  ':hover': {*/}
+          {/*    color: "orange",*/}
+          {/*    cursor: "pointer",*/}
+          {/*  }*/}
+          {/*}}>*/}
+          {/*  <AiOutlineStar size={18}/>*/}
+          {/*</Button>*/}
+        <ToolTip></ToolTip>
         </Grid>
       </Box>
   )
