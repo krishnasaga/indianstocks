@@ -101,7 +101,8 @@
       <workItem from="1622983612128" duration="1207000" />
       <workItem from="1623010055554" duration="88000" />
       <workItem from="1623761386601" duration="1608000" />
-      <workItem from="1623860622401" duration="15833000" />
+      <workItem from="1623860622401" duration="19918000" />
+      <workItem from="1624010035351" duration="1339000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -404,14 +405,20 @@
       <option name="project" value="LOCAL" />
       <updated>1623928837450</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="fix font and fontsize on sticky table">
+      <created>1623953865458</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1623953865458</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix responsive icons in cards" />
     <MESSAGE value="fix cards height and icons size" />
     <MESSAGE value="start card overlay content" />
     <MESSAGE value="finish card overlay styling" />
@@ -436,7 +443,8 @@
     <MESSAGE value="add button and stars on col 1 in sticky table" />
     <MESSAGE value="add starter code for ToolTip in sticky table" />
     <MESSAGE value="add ToolTip to sticky column" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ToolTip to sticky column" />
+    <MESSAGE value="fix font and fontsize on sticky table" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix font and fontsize on sticky table" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

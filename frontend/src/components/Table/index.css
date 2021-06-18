@@ -31,6 +31,7 @@ table td,
 table th {
     /*border: 1px solid red;*/
     padding: 0.5rem 1rem;
+    background: yellow;
 
 }
 table thead th {
@@ -41,7 +42,8 @@ table thead th {
     /*width: 25vw;*/
     background: white;
     font-size:0.8rem;
-    color: #222531FF;
+    color: #282c34;
+    border-bottom: 1px solid #F5F5F5;
 }
 
 table td {
@@ -54,6 +56,7 @@ table tbody th {
     font-style: italic;
     text-align: left;
     position: relative;
+
 }
 
 /* TABLE HEADER */
@@ -62,6 +65,9 @@ table thead th:first-child {
     left: 0;
     z-index: 2;
     text-align: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    /*background: green;*/
     /*display: block;*/
     /*width: 50px;*/
 
@@ -69,17 +75,20 @@ table thead th:first-child {
 
 table thead th:nth-child(2) {
     position: sticky;
-    left: 50px;
+    left: 30px;
     z-index: 2;
     text-align: left;
     background: red;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 table thead th:nth-child(3) {
     position: sticky;
-    left: 100px;
+    left: 57px;
     z-index: 2;
     text-align: left;
+    padding-left: 1rem;
 }
 
 /* TABLE STICKY COLUMNS */
@@ -102,6 +111,7 @@ table tbody th:nth-child(3) {
     left: 100px;
     background: white;
     z-index: 1;
+    padding-left: 0;
 }
 
 caption {
@@ -134,18 +144,28 @@ tr td {
     padding-left: 2rem;
     padding-right: 2rem;
     color: #222531FF;
+    /*background: #47d3d9;*/
 }
 
 tr td:first-child {
     /*width: 0.5vw;*/
+    /*background: #114bc1;*/
+    padding-left: 7px;
+    padding-right: 5px;
+    width: 20px;
 }
 
 tr td:nth-child(2) {
     /*width: 0.5vw;*/
+    /*background: #a6a6a5;*/
+    padding-left: 9px;
+    padding-right: 15px;
 }
 
 tr td:nth-child(3) {
     /*width: 25vw;*/
+    /*background: #a414af;*/
+    padding-left: 1rem;
 }
 /*CODE BELOW FIXES WIDTH OF STICKY COLS*/
 

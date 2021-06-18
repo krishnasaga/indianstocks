@@ -29,7 +29,7 @@ function ToolTip ({ children, ...remainingProps }) {
               color: "white",
               background: "black",
               position: 'absolute',
-              zIndex: "5",
+              zIndex: "10",
               fontSize: "0.8rem",
               padding: "5px 5px 15px 5px",
               borderRadius: "6px",
@@ -67,7 +67,7 @@ const StickyColStar = () => {
 
 const StickyColNumber = ({children}) => {
   return (
-      <Box as={'td'} sx={{position: 'sticky', left: "50px"}}>
+      <Box as={'td'} sx={{position: 'sticky', left: "30px"}}>
         <Grid sx={{
           gridAutoFlow: "column",
           alignItems: "center",
@@ -86,7 +86,7 @@ const StickyColNumber = ({children}) => {
 
 const StickyColName = ({children}) => {
   return (
-      <Box as={'td'} sx={{position: 'sticky', left: "100px"}}>
+      <Box as={'td'} sx={{position: 'sticky', left: "57px"}}>
         <Grid sx={{
           gridAutoFlow: "column",
           alignItems: "center",
