@@ -96,7 +96,7 @@ const StickyColName = ({children}) => {
         justifyContent: "start",
 
       }}>
-        <Image src={'/company-icons/tata.png'} width={'24px'} height={'24px'} sx={{alignSelf: 'center'}}/>
+        <Image src={'/company-icons/tata.png'} width={'24px'} height={'24px'} sx={{alignSelf: 'center', maxWidth: 'inherit'}}/>
         <Text
           color={'color7'}
           sx={{
