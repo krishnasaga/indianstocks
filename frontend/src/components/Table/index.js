@@ -74,9 +74,10 @@ const StickyColNumber = ({children}) => {
         gridAutoFlow: "column",
         alignItems: "center",
         justifyContent: "start",
+          background: "blue",
       }}>
         <Text sx={{
-          color: "grey",
+          color: "#6f7082",
           fontSize: "0.8rem",
         }}>
           {children}
@@ -150,12 +151,12 @@ const Revenue = ({children, sx, ...props}) => {
 
 const PBRatio = ({children, sx, ...props}) => {
   const [open, setOpen] = useState(false);
-  return <TD as={'td'} color={'red'}>{children}</TD>;
+  return <TD as={'td'} color={'#EA3943'}>{children}</TD>;
 }
 
 const PERatio = ({children, sx, ...props}) => {
   const [open, setOpen] = useState(false);
-  return <TD as={'td'} color={'green'}>{children}</TD>;
+  return <TD as={'td'} color={'#16C784'}>{children}</TD>;
 }
 
 
@@ -198,8 +199,8 @@ export const Table = () => {
               <StickyColName>Name</StickyColName>
               <MarketCap as={'td'} color={'#000000'}>$32,569.21</MarketCap>
               <Revenue as={'td'} color={'#000000'}>$32,569.21</Revenue>
-              <PERatio as={'td'} color={'green'}>15.5</PERatio>
-              <PBRatio as={'td'} color={'red'} onClick={() => {
+              <PERatio as={'td'} color={'#16C784'}>15.5</PERatio>
+              <PBRatio as={'td'} color={'#EA3943'} onClick={() => {
                 setOpen(true);
               }}>12 <Popover open={open}>
                 Hello

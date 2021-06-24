@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
+    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="fix font and fontsize on sticky table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
