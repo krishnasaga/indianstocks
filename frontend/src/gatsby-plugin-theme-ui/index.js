@@ -26,6 +26,7 @@ export default {
     text2: "#ffffff",
     text3: "#d20e0e",
     text4: "#b72828",
+
     background: "#fff",
     background2: "#b3b3b3",
     background3: "#b3b3b3",
@@ -38,6 +39,7 @@ export default {
     color3: "#6CA5D4",
     color4: "#6F7899",
     color5: "#1F315D",
+    color7: "rgb(34, 37, 49)"
   },
   styles: {
     root: {

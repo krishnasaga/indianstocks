@@ -2,13 +2,15 @@ import React, {useState} from 'react';
 import {Box, Button, Grid, Image, Text} from 'theme-ui';
 import './index.css';
 import {AiOutlineStar} from 'react-icons/ai';
+import {Popover} from '../Popover';
 
 function ToolTip({children, ...remainingProps}) {
   const [isShown, setIsShown] = useState(false);
 
   return (
     <Box className="App">
-      <Button sx={{
+      <Button
+        sx={{
         color: "lightgrey",
         padding: '0',
         position: "relative",
@@ -19,7 +21,7 @@ function ToolTip({children, ...remainingProps}) {
           cursor: "pointer",
         }
       }}
-              onMouseEnter={() => setIsShown(true)}
+              onMouseEnter={() => setIsShown(false)}
               onMouseLeave={() => setIsShown(false)}>
         <AiOutlineStar size={16}/>
       </Button>
@@ -93,12 +95,15 @@ const StickyColName = ({children}) => {
         justifyContent: "start",
 
       }}>
-        <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'} sx={{alignSelf: 'center'}}/>
-        <Text sx={{
-          color: "#222531FF",
-          fontSize: "0.95rem",
-          fontWeight: "600"
-        }}>
+        <Image src={'/company-icons/tata.png'} width={'24px'} height={'24px'} sx={{alignSelf: 'center'}}/>
+        <Text
+          color={'color7'}
+          sx={{
+            fontSize: "14px",
+            fontWeight: "600",
+            fontSmooth: 'always',
+            '-webkit-font-smoothing': 'antialiased'
+          }}>
           {children}
         </Text>
       </Grid>
@@ -106,8 +111,44 @@ const StickyColName = ({children}) => {
   )
 }
 
+const TD = ({children, sx, ...props}) => {
+  return <Box
+    py={'12px'}
+    color={'color7'}
+    sx={{
+      fontSize: '14px',
+      fontWeight: '500',
+      ...sx,
+    }}{...props}>{children}</Box>;
+};
+
+const MarketCap = ({children, sx, ...props}) => {
+  const [open, setOpen] = useState(false);
+  return <TD as={'td'}>{children}</TD>;
+}
+
+const Revenue = ({children, sx, ...props}) => {
+  const [open, setOpen] = useState(false);
+  return <TD as={'td'}>{children}</TD>;
+}
+
+const PBRatio = ({children, sx, ...props}) => {
+  const [open, setOpen] = useState(false);
+  return <TD as={'td'} color={'red'}>{children}</TD>;
+}
+
+const PERatio = ({children, sx, ...props}) => {
+  const [open, setOpen] = useState(false);
+  return <TD as={'td'} color={'green'}>{children}</TD>;
+}
+
+
+
 export const Table = () => {
+  const [open, setOpen] = useState(false);
+
   return <Box>
+
     <div role="region" aria-labelledby="caption" tabIndex="0">
       <table>
         <thead>
@@ -140,10 +181,14 @@ export const Table = () => {
               <StickyColStar>Star</StickyColStar>
               <StickyColNumber>6</StickyColNumber>
               <StickyColName>Name</StickyColName>
-              <Box as={'td'} color={'#000000'}>$32,569.21</Box>
-              <Box as={'td'} color={'#000000'}>$32,569.21</Box>
-              <Box as={'td'} color={'green'}>15.5</Box>
-              <Box as={'td'} color={'red'}>12</Box>
+              <MarketCap as={'td'} color={'#000000'}>$32,569.21</MarketCap>
+              <Revenue as={'td'} color={'#000000'}>$32,569.21</Revenue>
+              <PERatio as={'td'} color={'green'}>15.5</PERatio>
+              <PBRatio as={'td'} color={'red'} onClick={() => {
+                setOpen(true);
+              }}>12 <Popover open={open}>
+                Hello
+              </Popover></PBRatio>
             </tr>;
           })
         }
