@@ -11,18 +11,18 @@ function ToolTip({children, ...remainingProps}) {
     <Box className="App">
       <Button
         sx={{
-        color: "lightgrey",
-        padding: '0',
-        position: "relative",
-        zIndex: "0",
-        background: "none",
-        ':hover': {
-          color: "orange",
-          cursor: "pointer",
-        }
-      }}
-              onMouseEnter={() => setIsShown(false)}
-              onMouseLeave={() => setIsShown(false)}>
+          color: "lightgrey",
+          padding: '0',
+          position: "relative",
+          zIndex: "0",
+          background: "none",
+          ':hover': {
+            color: "orange",
+            cursor: "pointer",
+          }
+        }}
+        onMouseEnter={() => setIsShown(false)}
+        onMouseLeave={() => setIsShown(false)}>
         <AiOutlineStar size={16}/>
       </Button>
       {isShown && (
@@ -106,6 +106,12 @@ const StickyColName = ({children}) => {
           }}>
           {children}
         </Text>
+        <Text p={'5px'} sx={{
+          borderRadius: '5px',
+          display: ['inline-block', 'none']
+        }}>
+          7
+        </Text>
       </Grid>
     </Box>
   )
@@ -141,7 +147,6 @@ const PERatio = ({children, sx, ...props}) => {
   const [open, setOpen] = useState(false);
   return <TD as={'td'} color={'green'}>{children}</TD>;
 }
-
 
 
 export const Table = () => {
