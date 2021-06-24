@@ -106,10 +106,20 @@ const StickyColName = ({children}) => {
           }}>
           {children}
         </Text>
-        <Text p={'5px'} sx={{
+        <Text p={'5px'}
+              color={'grey'}
+              sx={{
           borderRadius: '5px',
           display: ['inline-block', 'none']
         }}>
+          TICKER
+        </Text>
+        <Text p={'5px'}
+              bg={'grey'}
+              sx={{
+                borderRadius: '5px',
+                display: ['inline-block', 'none']
+              }}>
           7
         </Text>
       </Grid>
