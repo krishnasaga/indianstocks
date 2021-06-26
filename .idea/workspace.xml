@@ -7,6 +7,7 @@
     <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +103,7 @@
       <workItem from="1623761386601" duration="1608000" />
       <workItem from="1623860622401" duration="19918000" />
       <workItem from="1624010035351" duration="1339000" />
+      <workItem from="1624695011431" duration="7557000" />
     </task>
     <task id="LOCAL-00001" summary="add footer layout">
       <created>1618071216696</created>
@@ -418,14 +420,20 @@
       <option name="project" value="LOCAL" />
       <updated>1624558419065</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="fix row height on desktop">
+      <created>1624558898766</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1624558898766</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="start card overlay content" />
     <MESSAGE value="finish card overlay styling" />
     <MESSAGE value="fix CardOverlayButton component" />
     <MESSAGE value="add starter code for loop in cards" />
@@ -450,7 +458,8 @@
     <MESSAGE value="add ToolTip to sticky column" />
     <MESSAGE value="fix font and fontsize on sticky table" />
     <MESSAGE value="set green and red hex colors in table" />
-    <option name="LAST_COMMIT_MESSAGE" value="set green and red hex colors in table" />
+    <MESSAGE value="fix row height on desktop" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix row height on desktop" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

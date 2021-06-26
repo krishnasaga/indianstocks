@@ -74,7 +74,6 @@ const StickyColNumber = ({children}) => {
         gridAutoFlow: "column",
         alignItems: "center",
         justifyContent: "start",
-          background: "blue",
       }}>
         <Text sx={{
           color: "#6f7082",
@@ -89,40 +88,74 @@ const StickyColNumber = ({children}) => {
 
 const StickyColName = ({children}) => {
   return (
-    <Box as={'td'} sx={{position: 'sticky', left: "57px"}}>
-      <Grid sx={{
+    <Box as={'td'} sx={{
+        position: 'sticky',
+        left: "57px",
+        padding: [ "8px", "1.8rem 5px"]
+    }}>
+      <Grid columns={[2, 1]} width={[ null, null,]} sx={{
         gridAutoFlow: "column",
         alignItems: "center",
         justifyContent: "start",
-
+        fontWeight: "600",
+        fontSmooth: 'always',
+        gridGap: '10px',
+         '-webkit-font-smoothing': 'antialiased'
       }}>
-        <Image src={'/company-icons/tata.png'} width={'24px'} height={'24px'} sx={{alignSelf: 'center', maxWidth: 'inherit'}}/>
-        <Text
-          color={'color7'}
-          sx={{
-            fontSize: "14px",
-            fontWeight: "600",
-            fontSmooth: 'always',
-            '-webkit-font-smoothing': 'antialiased'
-          }}>
-          {children}
-        </Text>
-        <Text p={'5px'}
-              color={'grey'}
-              sx={{
-          borderRadius: '5px',
-          display: ['inline-block', 'none']
-        }}>
-          TICKER
-        </Text>
-        <Text p={'5px'}
-              bg={'grey'}
-              sx={{
-                borderRadius: '5px',
-                display: ['inline-block', 'none']
-              }}>
-          7
-        </Text>
+          <Image src={'/company-icons/tata.png'} width={'24px'} height={'24px'} sx={{
+              alignSelf: 'center',
+              maxWidth: 'inherit',
+              padding: '0',
+              margin: '0'
+          }}/>
+          <Box>
+              <Box sx={{gridColumnStart: ['2', '1']}}>
+                  <Text
+                      color={'color7'}
+                      sx={{
+                          fontSize: "14px",
+                          display: ['flex', 'inline']
+                      }}>
+                      {children}
+                  </Text>
+                  <Text
+                      color={'#908A9D'}
+                      sx={{
+                          fontSize: '12px',
+                          padding: '0',
+                          paddingLeft: '5px',
+                          display: ['none', 'inline']
+                      }}>
+                      TICKER
+                  </Text>
+              </Box>
+
+              <Box>
+                  <Text p={'3px 6px 2px 6px'}
+                        bg={'#EFF2F5'}
+                        color={'#58667E'}
+                        sx={{
+                            fontSize: '12px',
+                            borderRadius: '4px',
+                            display: ['inline-block', 'none']
+                        }}>
+                      7
+                  </Text>
+                  <Text
+                      color={'#908A9D'}
+                      sx={{
+                          fontSize: '12px',
+                          padding: '0',
+                          paddingLeft: '5px',
+                          display: ['inline-block', 'none']
+                      }}>
+                      TICKER
+                  </Text>
+              </Box>
+          </Box>
+
+
+
       </Grid>
     </Box>
   )
