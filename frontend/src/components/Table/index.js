@@ -208,11 +208,11 @@ export const Table = () => {
         <tr>
           <th></th>
           <th>#</th>
-          <th>Company Name</th>
-          <th>Market Cap</th>
-          <th>Revenue</th>
-          <th>PE ratio</th>
-          <th>PB ratio</th>
+          <th p={'0px'}>Company Name</th>
+          <th p={'0px'}>Market Cap</th>
+          <th p={'0px'}>Revenue</th>
+          <th p={'0px'}>PE ratio</th>
+          <th p={'0px'}>PB ratio</th>
         </tr>
         </thead>
         <tbody>
@@ -234,9 +234,9 @@ export const Table = () => {
               <StickyColStar>Star</StickyColStar>
               <StickyColNumber>6</StickyColNumber>
               <StickyColName>Name NameName</StickyColName>
-              <MarketCap as={'td'} color={'#000000'}>$32,569.21</MarketCap>
-              <Revenue as={'td'} color={'#000000'}>$32,569.21</Revenue>
-              <PERatio as={'td'} color={'#16C784'}>15.5</PERatio>
+              <MarketCap as={'td'} color={'#000000'} >$32,569.21</MarketCap>
+              <Revenue as={'td'} color={'#000000'} >$32,569.21</Revenue>
+              <PERatio as={'td'} color={'#16C784'} >15.5</PERatio>
               <PBRatio as={'td'} color={'#EA3943'} onClick={() => {
                 setOpen(true);
               }}>12 <Popover open={open}>
