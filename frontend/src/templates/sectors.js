@@ -28,16 +28,16 @@ export default ({
       mb={4}
       mx={[1, 1, 4, 4]}
     >
-      <Text as={'h1'}>
+      <Text as={'h1'} sx={{fontSize: [3]}} >
         Top {displayName} companies in india by Market Capitalization
       </Text>
-      <Text as={'p'}>
+      <Text as={'p'} sx={{fontSize: [2]}}>
         Listed below are the top {displayName} companies in india. They are listed in size by market capitalization. To
         reorder the list, simply click on one of the options - such as 24h or 7d - to see the sector from a different
         perspective.
       </Text>
     </Box>
-    <Box px={[4]}>
+    <Box px={[0.5,4]}>
       <More/>
     </Box>
     <Box

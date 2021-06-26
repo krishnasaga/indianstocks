@@ -4,21 +4,26 @@ import PropTypes from "prop-types";
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
-      <head>
-        <meta charSet="utf-8" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        {props.headComponents}
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <head>
+      <meta charSet="utf-8"/>
+      <meta httpEquiv="x-ua-compatible" content="ie=edge"/>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      />
+      {props.headComponents}
+      <link rel="preconnect" href="https://fonts.gstatic.com"/>
 
-            <link
-              href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
-              rel="stylesheet" />
-        <style>
-          {`
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet"/>
+      <script>
+        {`html,body{
+        font-family: 'inter'
+      }`}
+      </script>
+      <style>
+        {`
           .react-vis-magic-css-import-rule {
           display: inherit;
         }
@@ -303,18 +308,18 @@ export default function HTML(props) {
           .rv-radial-chart .rv-xy-plot__series--label {
           pointer-events: none;
         }`}
-        </style>
-      </head>
-      <body {...props.bodyAttributes}>
-        {props.preBodyComponents}
-        <div sx={{overflowX: 'hidden'}}
-          key={`body`}
-          id="___gatsby"
-          dangerouslySetInnerHTML={{ __html: props.body }}
-        />
-        {props.postBodyComponents}
+      </style>
+    </head>
+    <body {...props.bodyAttributes}>
+    {props.preBodyComponents}
+    <div sx={{overflowX: 'hidden'}}
+         key={`body`}
+         id="___gatsby"
+         dangerouslySetInnerHTML={{__html: props.body}}
+    />
+    {props.postBodyComponents}
 
-      </body>
+    </body>
     </html>
   );
 }

@@ -7,9 +7,9 @@ export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   breakpoints: ["40em", "52em", "64em"],
   fonts: {
-    body: "Open Sans, system-ui, sans-serif",
-    heading: "Open Sans, system-ui, sans-serif",
-    monospace: '"Open Sans", monospace',
+    body: "Inter,Open Sans, system-ui, sans-serif",
+    heading: "Inter,Open Sans, system-ui, sans-serif",
+    monospace: 'Inter,"Open Sans", monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
