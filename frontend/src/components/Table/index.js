@@ -86,6 +86,8 @@ const StickyColNumber = ({children}) => {
   )
 }
 
+// VERY NICE COMP, NEEDS ONLY TEXT OVERFLOW FIX
+
 const StickyColName = ({children}) => {
   return (
     <Box as={'td'} sx={{
@@ -113,8 +115,10 @@ const StickyColName = ({children}) => {
                   <Text
                       color={'color7'}
                       sx={{
+                          whiteSpace: ['break-spaces', 'nowrap'],
                           fontSize: "14px",
-                          display: ['flex', 'inline']
+                          display: ['flex', 'inline'],
+                          textAlign: 'left'
                       }}>
                       {children}
                   </Text>
@@ -124,20 +128,20 @@ const StickyColName = ({children}) => {
                           fontSize: '12px',
                           padding: '0',
                           paddingLeft: '5px',
-                          display: ['none', 'inline']
+                          display: ['none', 'inline'],
                       }}>
                       TICKER
                   </Text>
               </Box>
 
-              <Box>
+              <Box sx={{textAlign: 'left'}}>
                   <Text p={'3px 6px 2px 6px'}
                         bg={'#EFF2F5'}
                         color={'#58667E'}
                         sx={{
                             fontSize: '12px',
                             borderRadius: '4px',
-                            display: ['inline-block', 'none']
+                            display: ['inline-block', 'none'],
                         }}>
                       7
                   </Text>
@@ -154,12 +158,12 @@ const StickyColName = ({children}) => {
               </Box>
           </Box>
 
-
-
       </Grid>
+
     </Box>
   )
 }
+
 
 const TD = ({children, sx, ...props}) => {
   return <Box
@@ -229,7 +233,7 @@ export const Table = () => {
             return <tr key={index}>
               <StickyColStar>Star</StickyColStar>
               <StickyColNumber>6</StickyColNumber>
-              <StickyColName>Name</StickyColName>
+              <StickyColName>Name NameName</StickyColName>
               <MarketCap as={'td'} color={'#000000'}>$32,569.21</MarketCap>
               <Revenue as={'td'} color={'#000000'}>$32,569.21</Revenue>
               <PERatio as={'td'} color={'#16C784'}>15.5</PERatio>
