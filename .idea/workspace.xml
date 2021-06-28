@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
+    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="fix nonsticky col width on mob 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,14 +103,8 @@
       <workItem from="1623761386601" duration="1608000" />
       <workItem from="1623860622401" duration="19918000" />
       <workItem from="1624010035351" duration="1339000" />
-      <workItem from="1624695011431" duration="16398000" />
-    </task>
-    <task id="LOCAL-00001" summary="add footer layout">
-      <created>1618071216696</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1618071216696</updated>
+      <workItem from="1624695011431" duration="20031000" />
+      <workItem from="1624901635800" duration="4136000" />
     </task>
     <task id="LOCAL-00002" summary="fix footer responsive content order, add text and icons">
       <created>1618245300817</created>
@@ -447,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624715106164</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="fix nonsticky col width on mob">
+      <created>1624715351453</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1624715351460</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

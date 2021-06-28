@@ -86,14 +86,14 @@ const StickyColNumber = ({children}) => {
   )
 }
 
-// VERY NICE COMP, NEEDS ONLY TEXT OVERFLOW FIX
 
 const StickyColName = ({children}) => {
   return (
     <Box as={'td'} sx={{
         position: 'sticky',
         left: "57px",
-        padding: [ "8px", "1.8rem 5px"]
+        padding: [ "8px", "1.8rem 5px"],
+        zIndex: "100",
     }}>
       <Grid columns={[2, 1]} width={[ null, null,]} sx={{
         gridAutoFlow: "column",
@@ -111,14 +111,16 @@ const StickyColName = ({children}) => {
               margin: '0'
           }}/>
           <Box>
-              <Box sx={{gridColumnStart: ['2', '1']}}>
+              <Box sx={{gridColumnStart: ['2', '1'], paddingRight: '10px',}} >
                   <Text
                       color={'color7'}
                       sx={{
                           whiteSpace: ['break-spaces', 'nowrap'],
                           fontSize: "14px",
                           display: ['flex', 'inline'],
-                          textAlign: 'left'
+                          textAlign: 'left',
+
+
                       }}>
                       {children}
                   </Text>
@@ -157,9 +159,7 @@ const StickyColName = ({children}) => {
                   </Text>
               </Box>
           </Box>
-
       </Grid>
-
     </Box>
   )
 }
@@ -172,6 +172,10 @@ const TD = ({children, sx, ...props}) => {
     sx={{
       fontSize: '14px',
       fontWeight: '500',
+        backgroundColor: 'white',
+        ':hover': {
+            background: '#fafbfd'
+        },
       ...sx,
     }}{...props}>{children}</Box>;
 };
