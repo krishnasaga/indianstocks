@@ -27,6 +27,11 @@ module.exports = function (app) {
   company.associate = function (models) {
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
+    company.belongsToMany(models.ideas,{
+      through: 'ideas_to_companies_map',
+      foreignKey: 'companyId',
+      as: 'companies'
+    })
   };
 
   return company;
