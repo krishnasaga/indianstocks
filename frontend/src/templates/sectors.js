@@ -39,7 +39,7 @@ export default ({
           perspective.
         </Text>
       </Box>
-      <Box sx={{overflowX: 'scroll', minWidth: '100px'}} p={[1,4]}>
+      <Box sx={{overflowX: 'scroll', minWidth: '100px'}} p={[1,1]}>
         <Grid columns={[2]} sx={{ minWidth: ['150%','100%']}} >
           <Box as={Paper} p={2}>
             <Grid columns={[2]}>

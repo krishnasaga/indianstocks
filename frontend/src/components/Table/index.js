@@ -69,7 +69,7 @@ const StickyColStar = () => {
 
 const StickyColNumber = ({children}) => {
   return (
-    <Box as={'td'} sx={{position: 'sticky', left: "30px"}}>
+    <Box as={'td'} sx={{position: 'sticky', left: "30px",display: ['none','block']}}>
       <Grid sx={{
         gridAutoFlow: "column",
         alignItems: "center",
@@ -203,11 +203,13 @@ export const Table = () => {
   return <Box>
 
     <div role="region" aria-labelledby="caption" tabIndex="0">
-      <table>
+      <Box as={'table'} sx={{borderCollapse: 'collapse', borderSpacing: 0}}>
         <thead>
         <tr>
           <th></th>
-          <th>#</th>
+          <Box as={'th'} sx={{
+            display: ['none','block']
+          }}>#</Box>
           <th p={'0px'}>Company Name</th>
           <th p={'0px'}>Market Cap</th>
           <th p={'0px'}>Revenue</th>
@@ -247,7 +249,7 @@ export const Table = () => {
         }
 
         </tbody>
-      </table>
+      </Box>
     </div>
   </Box>;
 }
