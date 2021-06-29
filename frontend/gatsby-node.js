@@ -108,5 +108,12 @@ exports.createPages = async function ({actions, graphql}) {
     }
   });
 
+  actions.createPage({
+    path: '/ideas',
+    component: require.resolve(`./src/templates/ideas.js`),
+    context: {
+      sectors: sectors.data
+    }
+  });
 
 }
