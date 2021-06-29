@@ -31,8 +31,8 @@ table th {
     /*border: 1px solid red;*/
     padding: 0.5rem 5px;
     background: yellow;
-
 }
+
 table thead th {
     padding: 1rem 10px;
     position: sticky;
@@ -56,7 +56,6 @@ table tbody th {
     font-style: italic;
     text-align: left;
     position: relative;
-
 }
 
 /* TABLE HEADER */
@@ -70,7 +69,6 @@ table thead th:first-child {
     /*background: green;*/
     /*display: block;*/
     /*width: 50px;*/
-
 }
 
 table thead th:nth-child(2) {
@@ -127,6 +125,7 @@ caption {
     max-height: 98vh;
     overflow: auto;
 }
+
 [role="region"][aria-labelledby][tabindex]:focus {
     /*box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);*/
     outline: 0;

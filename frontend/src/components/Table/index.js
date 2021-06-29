@@ -93,7 +93,6 @@ const StickyColName = ({children}) => {
         position: 'sticky',
         left: "57px",
         padding: [ "8px", "1.8rem 5px"],
-        zIndex: "100",
     }}>
       <Grid columns={[2, 1]} width={[ null, null,]} sx={{
         gridAutoFlow: "column",

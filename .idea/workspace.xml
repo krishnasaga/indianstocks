@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="fix nonsticky col width on mob 2">
+    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.js" afterDir="false" />
@@ -104,14 +104,7 @@
       <workItem from="1623860622401" duration="19918000" />
       <workItem from="1624010035351" duration="1339000" />
       <workItem from="1624695011431" duration="20031000" />
-      <workItem from="1624901635800" duration="4136000" />
-    </task>
-    <task id="LOCAL-00002" summary="fix footer responsive content order, add text and icons">
-      <created>1618245300817</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1618245300817</updated>
+      <workItem from="1624901635800" duration="7184000" />
     </task>
     <task id="LOCAL-00003" summary="fix footer padding, fontSizes, bottom text, and layout">
       <created>1618335210594</created>
@@ -449,14 +442,20 @@
       <option name="project" value="LOCAL" />
       <updated>1624715351460</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="fix space between sticky and nonsticky cols">
+      <created>1624906067137</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1624906067140</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add overlay on card hover" />
     <MESSAGE value="add mobile overlay styles" />
     <MESSAGE value="fix button link and heading in cards overlay" />
     <MESSAGE value="fix padding on container homepage" />
@@ -481,7 +480,8 @@
     <MESSAGE value="fix table row height on mob and name col on mob" />
     <MESSAGE value="fix name col text overflow" />
     <MESSAGE value="fix nonsticky col width on mob" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix nonsticky col width on mob" />
+    <MESSAGE value="fix space between sticky and nonsticky cols" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix space between sticky and nonsticky cols" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
