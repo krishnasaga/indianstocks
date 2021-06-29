@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Container, Grid, Link, Text} from "theme-ui";
+import {Box, Container, Grid, Link, Text, Image, Heading} from "theme-ui";
 import {TopNav} from "../components/TopNav";
 import {Footer} from "../components/Footer";
 import {Helmet} from 'react-helmet';
@@ -19,23 +19,37 @@ export default ({
         <Grid columns={[1, 4]} gap={4} as={'ul'} sx={{listStyle: 'none', padding: 0, margin: 0}}>
           {
             new Array(10).fill(10).map((data) => {
-              return <Paper as={'li'} p={2} bg={'white'}>
+              return <Paper as={'li'} p={0} bg={'white'}>
                 <Link href={'/'} sx={{
                   textDecoration: 'none',
                   color: 'initial',
 
                 }}>
-                  <Text sx={{
-                    fontSize: [1]
+                    <Image src={"https://image.shutterstock.com/image-illustration/abstract-glowing-virtual-neural-network-600w-1168141114.jpg"}></Image>
+                  <Text p={2} sx={{
+                    fontSize: [1],
                   }}>
-                    companies in india by market capitalization
-                    companies in india by market capitalization
-                    companies in india by market capitalization
-                    companies in india by market capitalization
-                    companies in india by market capitalization
+                      <Heading>Sneha Sanam</Heading>
                     companies in india by market capitalization
                     companies in india by market capitalization
                   </Text>
+                    <Image p={2} src={"https://image.shutterstock.com/image-vector/stock-exchange-vector-background-market-600w-1839270889.jpg"}></Image>
+                  <Box sx={{
+                      fontSize: "15px",
+                  }}>
+                      <Grid columns={2} p={2} >
+                          <Box >
+                              <Text >Market Cap</Text>
+                              <Text>2000,500</Text>
+                              <Text>One year change</Text>
+                              <Text>40.89%</Text>
+                          </Box>
+                          <Box>
+                              <Text>Companies</Text>
+                              <Text>20</Text>
+                          </Box>
+                      </Grid>
+                  </Box>
                 </Link>
               </Paper>;
             })
