@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="" />
+    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/templates/sectors-stats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gatsby-node.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/src/templates" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -101,14 +105,7 @@
       <workItem from="1624010035351" duration="1339000" />
       <workItem from="1624695011431" duration="20031000" />
       <workItem from="1624901635800" duration="11491000" />
-      <workItem from="1625070001876" duration="5034000" />
-    </task>
-    <task id="LOCAL-00006" summary="integrate DropdownMenuText animation in code, fix TextArrow animation">
-      <created>1619277259783</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1619277259783</updated>
+      <workItem from="1625070001876" duration="8946000" />
     </task>
     <task id="LOCAL-00007" summary="create Cards\ and started code">
       <created>1619281714735</created>
@@ -446,14 +443,20 @@
       <option name="project" value="LOCAL" />
       <updated>1625074908906</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="add static folder to git">
+      <created>1625075435615</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1625075435615</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix padding on container homepage, &#10;fix styling on topnav" />
     <MESSAGE value="remove container right white space" />
     <MESSAGE value="fix right white space on mob" />
     <MESSAGE value="change cards mob to one column" />
@@ -478,7 +481,8 @@
     <MESSAGE value="fix zIndex on nameCol" />
     <MESSAGE value="add starter code for Paper cards in ideas.js" />
     <MESSAGE value="add styling and imgs to Paper cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="add styling and imgs to Paper cards" />
+    <MESSAGE value="add static folder to git" />
+    <option name="LAST_COMMIT_MESSAGE" value="add static folder to git" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
