@@ -19,37 +19,76 @@ export default ({
         <Grid columns={[1, 4]} gap={4} as={'ul'} sx={{listStyle: 'none', padding: 0, margin: 0}}>
           {
             new Array(10).fill(10).map((data) => {
-              return <Paper as={'li'} p={0} bg={'white'}>
+              return <Paper as={'li'} p={0} bg={'white'} sx={{ fontWeight: "500", }}>
                 <Link href={'/'} sx={{
                   textDecoration: 'none',
                   color: 'initial',
+                    fontSize: [1],
 
                 }}>
-                    <Image src={"https://image.shutterstock.com/image-illustration/abstract-glowing-virtual-neural-network-600w-1168141114.jpg"}></Image>
+                    <Image src={"././information-technology.jpg.webp"}/>
                   <Text p={2} sx={{
                     fontSize: [1],
                   }}>
-                      <Heading>Sneha Sanam</Heading>
-                    companies in india by market capitalization
-                    companies in india by market capitalization
+                      <Text sx={{
+                          fontSize: "4",
+                          fontWeight: "500",
+                      }}>Sneha Sanam</Text>
+                      <Text sx={{
+                          fontSize: "13px",
+                      }} >
+                          companies in india by market capitalization
+                          companies in india by market capitalization
+                      </Text>
+
                   </Text>
-                    <Image p={2} src={"https://image.shutterstock.com/image-vector/stock-exchange-vector-background-market-600w-1839270889.jpg"}></Image>
-                  <Box sx={{
-                      fontSize: "15px",
-                  }}>
-                      <Grid columns={2} p={2} >
-                          <Box >
-                              <Text >Market Cap</Text>
-                              <Text>2000,500</Text>
-                              <Text>One year change</Text>
-                              <Text>40.89%</Text>
+                    <Image p={0} src={"././unknown.png"} sx={{ width: "100%", paddingX: "3"}}/>
+                      <Grid columns={2} p={3} sx={{ paddingBottom: "20px", lineHeight: "1.2"}} >
+                          <Box sx={{
+                              width: "170px",
+                          }}>
+                              <Text sx={{
+                                  fontSize: "13px",
+                              }} >Market Cap</Text>
+                              <Text sx={{
+                                  fontWeight: "600",
+                                  fontSize: "15px",
+                                  paddingTop: "8px"
+                              }}>
+                                  $2000,500
+                              </Text>
+                              <Text sx={{
+                                  fontWeight: "600",
+                                  fontSize: "15px",
+                                  display: "inline",
+                                  paddingRight: "5px",
+                              }}>
+                                  1 year change
+                              </Text>
+                              <Text sx={{
+                                  fontWeight: "600",
+                                  fontSize: "15px",
+                                  color: "#16C784",
+                                  display: "inline",
+                              }}>
+                                  40.89%
+                              </Text>
                           </Box>
-                          <Box>
-                              <Text>Companies</Text>
-                              <Text>20</Text>
+                          <Box width={"20%"}>
+                              <Text sx={{
+                                  fontSize: "13px",
+                              }}>
+                                  Companies
+                              </Text>
+                              <Text sx={{
+                                  fontWeight: "600",
+                                  fontSize: "15px",
+                                  paddingTop: "8px"
+                              }}>
+                                  20
+                              </Text>
                           </Box>
                       </Grid>
-                  </Box>
                 </Link>
               </Paper>;
             })
