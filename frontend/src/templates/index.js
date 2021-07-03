@@ -5,6 +5,7 @@ import introImage from "../pages/background.jpg";
 import {Cards} from '../components/Cards';
 import {Footer} from "../components/Footer";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import {IdeasSlider} from '../components/Home/IdeasSlider';
 
 const Explorer = ({children, ...remainingProps}) => {
   return (
@@ -27,15 +28,16 @@ const Explorer = ({children, ...remainingProps}) => {
 };
 
 export default ({
-                  pageContext: {sectors},
+                  pageContext: {ideas, sectors},
                 }) => {
   return (
     <Box sx={{width: '100%', overflowX: 'hidden'}}>
       <TopNav/>
       <Introbanner/>
+      <IdeasSlider ideas={ideas}/>
       <Box bg={"color5"}>
         <Container>
-          <Box py={'4rem'} sx={{paddingLeft: '35px',paddingRight: '50px'}}>
+          <Box py={'4rem'} sx={{paddingLeft: '35px', paddingRight: '50px'}}>
             <Cards items={sectors}
 
             />
@@ -52,8 +54,8 @@ function Introbanner() {
     <Box
       bg={"black"}
       sx={{
-        height: "100vh",
-          width: "100vw",
+        height: "100%",
+        width: "100vw",
         background: `black url(${introImage}) fixed center`,
         position: "relative",
         filter: "light(1)",
@@ -65,11 +67,11 @@ function Introbanner() {
           <Box p={20} sx={{textAlign: 'center'}}>
             <Box
               sx={{
-                height: ["100px","250px"],
+                height: ["100px", "100px"],
               }}
             > </Box>
             <Box my={10}>
-              <Text as={'h1'} color={"text2"} sx={{fontSize: ["2.8rem","4rem"]}}>
+              <Text as={'h1'} color={"text2"} sx={{fontSize: ["2.8rem", "4rem"]}}>
                 Invest on Big Disruptions
               </Text>
             </Box>

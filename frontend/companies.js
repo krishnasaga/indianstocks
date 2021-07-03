@@ -19,6 +19,11 @@ const companiesCacheInFileSystem = cache({
   ns: "companies" // Optional. A grouping namespace for items.
 });
 
+const ideasCacheInFileSystem = cache({
+  basePath: "./.apicache", // Optional. Path where cache files are stored (default).
+  ns: "ideas" // Optional. A grouping namespace for items.
+});
+
 const getSectors = async ({id = 'all'} = {}) => {
   const sectorsResponse = await sectorsCacheInFileSystem.get(id);
 
@@ -46,7 +51,22 @@ const getCompanies = async ({id = 'all'} = {}) => {
 };
 
 
+
+const getIdeas = async ({id = 'all'} = {}) => {
+  const ideasResponse = await ideasCacheInFileSystem.get(id);
+
+  if (ideasResponse) {
+    return ideasResponse;
+  }
+
+  const response = await axios.get(`${API_ENDPOINT}/ideas?$limit=100`);
+  ideasCacheInFileSystem.set(id, response.data);
+  return response.data;
+
+};
+
 module.exports = {
   getSectors,
-  getCompanies
+  getCompanies,
+  getIdeas
 };
