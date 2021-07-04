@@ -81,7 +81,7 @@ export default ({
           fontWeight: "600",
       }}
     >
-        <Grid columns={[1, 2]}>
+        <Grid columns={[1]}>
             <Box p={3} sx={{
 
             }}>
@@ -112,7 +112,6 @@ export default ({
                             "\n" +
                             "C/O https://placeholder.com/#How_To_Use_Our_Placeholders"} sx={{
                                 height: "100%",
-
                             }}/>
                         </Box>
                     </Grid>
