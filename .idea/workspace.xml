@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/src/templates/sectors-stats.js" afterDir="false" />
+    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="add starter code for new stats page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/gatsby-node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/html.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/html.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/templates/sectors-stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/sectors-stats.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +50,11 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Niche\SAGAR\indianstocks\frontend\src\templates" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend/src/components/Footer/index.js" working-dir="$PROJECT_DIR$/frontend/src/components/Footer">
@@ -105,14 +110,8 @@
       <workItem from="1624010035351" duration="1339000" />
       <workItem from="1624695011431" duration="20031000" />
       <workItem from="1624901635800" duration="11491000" />
-      <workItem from="1625070001876" duration="8946000" />
-    </task>
-    <task id="LOCAL-00007" summary="create Cards\ and started code">
-      <created>1619281714735</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1619281714735</updated>
+      <workItem from="1625070001876" duration="16500000" />
+      <workItem from="1625387328614" duration="1571000" />
     </task>
     <task id="LOCAL-00008" summary="add cards">
       <created>1619350151019</created>
@@ -450,14 +449,20 @@
       <option name="project" value="LOCAL" />
       <updated>1625075435615</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="add starter code for new stats page">
+      <created>1625079921488</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1625079921488</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove container right white space" />
     <MESSAGE value="fix right white space on mob" />
     <MESSAGE value="change cards mob to one column" />
     <MESSAGE value="add starter code for react-table-sticky" />
@@ -482,7 +487,8 @@
     <MESSAGE value="add starter code for Paper cards in ideas.js" />
     <MESSAGE value="add styling and imgs to Paper cards" />
     <MESSAGE value="add static folder to git" />
-    <option name="LAST_COMMIT_MESSAGE" value="add static folder to git" />
+    <MESSAGE value="add starter code for new stats page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add starter code for new stats page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

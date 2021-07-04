@@ -19,7 +19,8 @@ export default function HTML(props) {
         rel="stylesheet"/>
       <script>
         {`html,body{
-        font-family: 'inter'
+        font-family: 'inter';
+        '-webkit-font-smoothing': 'antialiased';
       }`}
       </script>
       <style>
@@ -31,6 +32,7 @@ export default function HTML(props) {
           .rv-treemap {
           font-size: 12px;
           position: relative;
+          '-webkit-font-smoothing': 'antialiased'
         }
 
           .rv-treemap__leaf {

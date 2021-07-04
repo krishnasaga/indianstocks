@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Grid, Text} from "theme-ui";
+import {Box, Grid, Text, Image} from "theme-ui";
 import {TopNav} from "../components/TopNav";
 import {Footer} from "../components/Footer";
 import {SectorBanner} from "../components/Sector";
@@ -68,29 +68,75 @@ export default ({
         </Grid>
       </Box>
     </Grid>
-    <Box px={[0.5, 4]}>
-      <More/>
-    </Box>
+    {/*<Box px={[0.5, 4]}>*/}
+    {/*  <More/>*/}
+    {/*</Box>*/}
     <Box
       my={4}
       mx={[1, 1, 4, 4]}
       sx={{
         borderRadius: 5,
         boxShadow: "0 3px 20px 0 rgb(0 77 165 / 7%)",
+          '-webkit-font-smoothing': 'antialiased',
+          fontWeight: "600",
       }}
     >
-      <CompaniesTable
-        columns={[{
-          Header: "#",
-          accessor: "id",
-        }, {
-          Header: "#",
-          accessor: "name",
-        }]}
-        data={companies || new Array(100).fill(1).map((value, index) => {
-          return {rank: index};
-        })}
-      />
+        <Grid columns={[1, 2]}>
+            <Box p={3} sx={{
+
+            }}>
+                <Text p={3} pl={0}>Earnings and Revenue History</Text>
+                <Paper>
+                    <Image  src={"https://via.placeholder.com/350x150\n" +
+                    "\n" +
+                    "C/O https://placeholder.com/#How_To_Use_Our_Placeholders"} sx={{
+
+                    }}/>
+                </Paper>
+            </Box>
+
+            <Box p={3}>
+                <Text p={3} pl={0} >Revenue Breakdown</Text>
+                <Paper>
+                    <Grid columns={2}>
+                        <Box>
+                            <Text sx={{
+                                fontWeight: "500",
+                                fontSize: "1rem",
+                            }}>
+                                Lorem ipsum
+                            </Text>
+                        </Box>
+                        <Box>
+                            <Image  src={"https://via.placeholder.com/350x150\n" +
+                            "\n" +
+                            "C/O https://placeholder.com/#How_To_Use_Our_Placeholders"} sx={{
+                                height: "100%",
+
+                            }}/>
+                        </Box>
+                    </Grid>
+                </Paper>
+            </Box>
+        </Grid>
+
+
+
+
+      {/*<CompaniesTable*/}
+      {/*  columns={[{*/}
+      {/*    Header: "#",*/}
+      {/*    accessor: "id",*/}
+      {/*  }, {*/}
+      {/*    Header: "#",*/}
+      {/*    accessor: "name",*/}
+      {/*  }]}*/}
+      {/*  data={companies || new Array(100).fill(1).map((value, index) => {*/}
+      {/*    return {rank: index};*/}
+      {/*  })}*/}
+      {/*/>*/}
+
+
     </Box>
     <Footer/>
   </Box>
