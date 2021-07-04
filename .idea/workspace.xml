@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/templates/sectors-stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/sectors-stats.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,14 +109,7 @@
       <workItem from="1624695011431" duration="20031000" />
       <workItem from="1624901635800" duration="11491000" />
       <workItem from="1625070001876" duration="16500000" />
-      <workItem from="1625387328614" duration="3070000" />
-    </task>
-    <task id="LOCAL-00010" summary="fix responsive icons in cards">
-      <created>1619536468115</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1619536468115</updated>
+      <workItem from="1625387328614" duration="4253000" />
     </task>
     <task id="LOCAL-00011" summary="fix cards height and icons size">
       <created>1619537158905</created>
@@ -455,14 +447,20 @@
       <option name="project" value="LOCAL" />
       <updated>1625389775099</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="fix layout of cards in sectors-stats.js">
+      <created>1625390453871</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1625390453871</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add starter code for react-table-sticky" />
     <MESSAGE value="fix z-index on sticky table" />
     <MESSAGE value="add code to new table component" />
     <MESSAGE value="add StickyColCell comp to table" />
@@ -487,7 +485,8 @@
     <MESSAGE value="add starter code for new stats page" />
     <MESSAGE value="add starter code for cards in stats page" />
     <MESSAGE value="add antialiased to ideas.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="add antialiased to ideas.js" />
+    <MESSAGE value="fix layout of cards in sectors-stats.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix layout of cards in sectors-stats.js" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
