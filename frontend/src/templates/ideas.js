@@ -19,7 +19,7 @@ export default ({
         <Grid columns={[1, 4]} gap={4} as={'ul'} sx={{listStyle: 'none', padding: 0, margin: 0}}>
           {
             new Array(10).fill(10).map((data) => {
-              return <Paper as={'li'} p={0} bg={'white'} sx={{ fontWeight: "500", }}>
+              return <Paper as={'li'} p={0} bg={'white'} sx={{ fontWeight: "500",  '-webkit-font-smoothing': 'antialiased', }}>
                 <Link href={'/'} sx={{
                   textDecoration: 'none',
                   color: 'initial',

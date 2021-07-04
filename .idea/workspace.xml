@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="add starter code for new stats page">
+    <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/html.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/html.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/templates/sectors-stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/sectors-stats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/templates/ideas.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/templates/ideas.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,14 +110,7 @@
       <workItem from="1624695011431" duration="20031000" />
       <workItem from="1624901635800" duration="11491000" />
       <workItem from="1625070001876" duration="16500000" />
-      <workItem from="1625387328614" duration="1571000" />
-    </task>
-    <task id="LOCAL-00008" summary="add cards">
-      <created>1619350151019</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1619350151019</updated>
+      <workItem from="1625387328614" duration="2400000" />
     </task>
     <task id="LOCAL-00009" summary="add responsive cards and cards text">
       <created>1619452630227</created>
@@ -456,14 +448,20 @@
       <option name="project" value="LOCAL" />
       <updated>1625079921488</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="add starter code for cards in stats page">
+      <created>1625388948093</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1625388948094</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix right white space on mob" />
     <MESSAGE value="change cards mob to one column" />
     <MESSAGE value="add starter code for react-table-sticky" />
     <MESSAGE value="fix z-index on sticky table" />
@@ -488,7 +486,8 @@
     <MESSAGE value="add styling and imgs to Paper cards" />
     <MESSAGE value="add static folder to git" />
     <MESSAGE value="add starter code for new stats page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add starter code for new stats page" />
+    <MESSAGE value="add starter code for cards in stats page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add starter code for cards in stats page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
