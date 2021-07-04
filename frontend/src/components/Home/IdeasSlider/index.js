@@ -5,12 +5,21 @@ import React from "react";
 
 export const IdeasSlider = ({ideas = []}) => {
   return <Box bg={'#F5F5F5'} mt={0}>
-    <Box py={'100px'}>
+    <Box>
+      <Container>
+        <Text
+          px={[2,0]}
+          py={4}
+          sx={{
+            fontSize: [4]
+          }}>
+          Big Ideas
+        </Text>
+      </Container>
       <Container px={[2, 0]} sx={{
         overflowX: 'auto'
       }}>
-        <Box as={'ul'} columns={[1, Infinity]} gap={4}
-
+        <Box as={'ul'}
              sx={{
                listStyle: 'none',
                padding: 0,
@@ -21,7 +30,10 @@ export const IdeasSlider = ({ideas = []}) => {
 
             ideas.map((idea) => {
               return <Paper as={'li'} p={0} mr={4} mb={4} bg={'white'}
-                                 sx={{fontWeight: "500", display: 'inline-block', width: '290px'}}>
+                                 sx={{
+                                   fontWeight: "500",
+                                   display: 'inline-block',
+                                   width: '290px'}}>
                 <Link href={'/'} sx={{
                   whiteSpace: 'initial',
                   textDecoration: 'none',

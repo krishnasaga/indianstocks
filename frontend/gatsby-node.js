@@ -85,6 +85,7 @@ exports.createPages = async function ({actions, graphql}) {
 
 
   const ideas = await getIdeas();
+  const neftySectorIndexes = await getIdeas({type: 'nefty_sector_index'});
 
 
   actions.createPage({
@@ -100,7 +101,8 @@ exports.createPages = async function ({actions, graphql}) {
     component: require.resolve(`./src/templates/index.js`),
     context: {
       ideas: ideas.data,
-      sectors: sectors.data
+      sectors: sectors.data,
+      neftySectorIndexes: neftySectorIndexes.data
     }
   });
 

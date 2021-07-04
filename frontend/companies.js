@@ -4,7 +4,9 @@ const axios = require("axios");
 let API_ENDPOINT = null;
 
 if (process.env.NODE_ENV === "production") {
-  API_ENDPOINT = "https://979lav1fck.execute-api.us-east-1.amazonaws.com/production";
+  //API_ENDPOINT = "https://979lav1fck.execute-api.us-east-1.amazonaws.com/production";
+  API_ENDPOINT = "http://localhost:3030";
+
 } else {
   API_ENDPOINT = "http://localhost:3030";
 }
@@ -31,7 +33,7 @@ const getSectors = async ({id = 'all'} = {}) => {
     return sectorsResponse;
   }
 
-  const response = await axios.get(`${API_ENDPOINT}/sectors`);
+  const response = await axios.get(`${API_ENDPOINT}/ideas?type=sector`);
   sectorsCacheInFileSystem.set(id, response.data);
   return response.data;
 
@@ -51,16 +53,15 @@ const getCompanies = async ({id = 'all'} = {}) => {
 };
 
 
-
-const getIdeas = async ({id = 'all'} = {}) => {
-  const ideasResponse = await ideasCacheInFileSystem.get(id);
+const getIdeas = async ({id = 'all', type = 'idea'} = {}) => {
+  const ideasResponse = await ideasCacheInFileSystem.get(id+type);
 
   if (ideasResponse) {
     return ideasResponse;
   }
 
-  const response = await axios.get(`${API_ENDPOINT}/ideas?$limit=100`);
-  ideasCacheInFileSystem.set(id, response.data);
+  const response = await axios.get(`${API_ENDPOINT}/ideas?type=${type}&$limit=100`);
+  ideasCacheInFileSystem.set(id+type, response.data);
   return response.data;
 
 };

@@ -25,6 +25,10 @@ module.exports = function (app) {
     insights: {
       type: DataTypes.JSON,
       allowNull: false
+    },
+    type: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   }, {
     hooks: {
@@ -46,4 +50,3 @@ module.exports = function (app) {
 
   return ideas;
 };
-

@@ -1,11 +1,11 @@
 import React from "react";
-import {Box, Button, Container, Grid, Text} from "theme-ui";
+import {Box, Container, Grid, Text} from "theme-ui";
 import {TopNav} from "../components/TopNav";
 import introImage from "../pages/background.jpg";
 import {Cards} from '../components/Cards';
 import {Footer} from "../components/Footer";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import {IdeasSlider} from '../components/Home/IdeasSlider';
+import {SectorsSlider} from '../components/Home/SectorsSlider';
 
 const Explorer = ({children, ...remainingProps}) => {
   return (
@@ -28,13 +28,16 @@ const Explorer = ({children, ...remainingProps}) => {
 };
 
 export default ({
-                  pageContext: {ideas, sectors},
+                  pageContext: {ideas, sectors,neftySectorIndexes},
                 }) => {
   return (
     <Box sx={{width: '100%', overflowX: 'hidden'}}>
       <TopNav/>
       <Introbanner/>
-      <IdeasSlider ideas={ideas}/>
+      <SectorsSlider ideas={ideas}/>
+      <SectorsSlider ideas={neftySectorIndexes}/>
+
+      <IdeasSlider ideas={sectors}/>
       <Box bg={"color5"}>
         <Container>
           <Box py={'4rem'} sx={{paddingLeft: '35px', paddingRight: '50px'}}>
@@ -52,11 +55,11 @@ export default ({
 function Introbanner() {
   return (
     <Box
-      bg={"black"}
+      bg={"color4"}
       sx={{
         height: "100%",
         width: "100vw",
-        background: `black url(${introImage}) fixed center`,
+        background: ['color5',`black url(${introImage}) fixed center`],
         position: "relative",
         filter: "light(1)",
         zIndex: 0,
@@ -64,37 +67,23 @@ function Introbanner() {
     >
       <Container>
         <Grid>
-          <Box p={20} sx={{textAlign: 'center'}}>
+          <Box p={[2, 2]} sx={{textAlign: 'left'}}>
             <Box
               sx={{
-                height: ["100px", "100px"],
+                height: ['70px', "100px"],
               }}
             > </Box>
-            <Box my={10}>
-              <Text as={'h1'} color={"text2"} sx={{fontSize: ["2.8rem", "4rem"]}}>
+            <Box>
+              <Text as={'h1'} color={"text2"} sx={{fontSize: [5, "4rem"], weight: 500}}>
                 Invest on Big Disruptions
               </Text>
             </Box>
             <Box my={10}>
-              <Text as={'h2'} color={"color2"} sx={{fontSize: "1.8rem"}}>
+              <Text as={'h2'} color={"color2"} sx={{fontSize: [4], weight: 500}}>
                 With convergence of financial and technological expertise
               </Text>
             </Box>
-            <Button
-              style={{
-                textDecoration: 'none',
-              }}
-              as={AnchorLink}
-              my={40}
-              varient={"primary"}
-              href={'#explore'}
-              offset={120}
-              px={40}
-              py={20}
 
-            >
-              Explore
-            </Button>
           </Box>
         </Grid>
       </Container>
