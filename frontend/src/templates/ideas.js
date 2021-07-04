@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Container, Grid, Image, Link, Text} from "theme-ui";
+import {Box, Container, Grid, Image, Link, Text,Heading} from "theme-ui";
 import {TopNav} from "../components/TopNav";
 import {Footer} from "../components/Footer";
 import {Helmet} from 'react-helmet';

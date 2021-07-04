@@ -106,7 +106,7 @@ export const TopNav = () => {
 
             <Image sx={{
               height: '2rem'
-            }} src={'/big-invest.png'}/>
+            }} src={'/big_invest_comp.png'}/>
 
           </Link>
 
