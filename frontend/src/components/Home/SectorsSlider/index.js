@@ -3,17 +3,17 @@ import {Paper} from "../../Paper";
 import {EditorDock} from "../../../content-editor/EditorDock";
 import React from "react";
 
-export const SectorsSlider = ({ideas = []}) => {
+export const SectorsSlider = ({ideas = [], title = {}}) => {
   return <Box bg={'#F5F5F5'} mt={0}>
     <Box>
       <Container>
         <Text
-          px={[2,0]}
+          px={[2, 0]}
           py={4}
           sx={{
             fontSize: [4]
           }}>
-          Sectors
+          {title}
         </Text>
       </Container>
       <Container px={[2, 0]} sx={{
@@ -30,10 +30,11 @@ export const SectorsSlider = ({ideas = []}) => {
 
             ideas.map((idea) => {
               return <Paper as={'li'} p={0} mr={4} mb={4} bg={'white'}
-                                 sx={{
-                                   fontWeight: "500",
-                                   display: 'inline-block',
-                                   width: '290px'}}>
+                            sx={{
+                              fontWeight: "500",
+                              display: 'inline-block',
+                              width: '290px'
+                            }}>
                 <Link href={'/'} sx={{
                   whiteSpace: 'initial',
                   textDecoration: 'none',

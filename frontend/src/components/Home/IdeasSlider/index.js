@@ -41,7 +41,7 @@ export const IdeasSlider = ({ideas = []}) => {
                   fontSize: [1],
 
                 }}>
-
+                  <Image src={"/information-technology.jpg.webp"}/>
                   <Text p={2} sx={{
                     fontSize: [1],
                   }}>
@@ -49,6 +49,7 @@ export const IdeasSlider = ({ideas = []}) => {
                       fontSize: "4",
                       fontWeight: "500",
                     }}>{idea.name}</Text>
+
                     <Text sx={{
                       fontSize: "13px",
                     }}>

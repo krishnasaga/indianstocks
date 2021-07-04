@@ -34,10 +34,12 @@ export default ({
     <Box sx={{width: '100%', overflowX: 'hidden'}}>
       <TopNav/>
       <Introbanner/>
-      <SectorsSlider ideas={ideas}/>
-      <SectorsSlider ideas={neftySectorIndexes}/>
 
+      <SectorsSlider ideas={ideas} title={'Sectors'} />
       <IdeasSlider ideas={sectors}/>
+
+      <SectorsSlider ideas={neftySectorIndexes} title={'Nefty Sectoral Indexes'}/>
+
       <Box bg={"color5"}>
         <Container>
           <Box py={'4rem'} sx={{paddingLeft: '35px', paddingRight: '50px'}}>
