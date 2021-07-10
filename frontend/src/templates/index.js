@@ -28,14 +28,14 @@ const Explorer = ({children, ...remainingProps}) => {
 };
 
 export default ({
-                  pageContext: {ideas, sectors, neftySectorIndexes},
+                  pageContext: {ideas, sectors, neftySectorIndexes,IPOs},
                 }) => {
   return (
     <Box sx={{width: '100%', overflowX: 'hidden'}}>
       <TopNav/>
       <Introbanner/>
 
-      <IdeasSlider ideas={ideas.map((data) => {
+      <IdeasSlider ideas={IPOs.map((data) => {
         return {image: {url: `https://source.unsplash.com/290x145/?${data.name.replace(/ /g,',')}`},...data}
       })} title={'IPOs | Initial Public Offerings'} graphLine={false} />
 

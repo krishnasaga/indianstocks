@@ -1,5 +1,5 @@
 const axios = require("axios");
-const {getSectors, getCompanies, getIdeas} = require('./companies');
+const {getSectors, getCompanies, getIdeas,getIpos} = require('./companies');
 
 exports.createPages = async function ({actions, graphql}) {
 
@@ -121,11 +121,13 @@ exports.createPages = async function ({actions, graphql}) {
     }
   });
 
+  const IPOs = await getIpos();
 
   actions.createPage({
     path: '/',
     component: require.resolve(`./src/templates/index.js`),
     context: {
+      IPOs: IPOs.data,
       ideas: ideas.data,
       sectors: sectors.data,
       neftySectorIndexes: neftySectorIndexes.data

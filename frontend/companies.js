@@ -40,19 +40,30 @@ const getSectors = async ({id = 'all'} = {}) => {
 
 };
 
-const getCompanies = async ({id = 'all'} = {}) => {
+const getCompanies = async ({id = 'all',categoryId} = {}) => {
   const companiesResponse = await companiesCacheInFileSystem.get(id);
 
   if (companiesResponse) {
     return companiesResponse;
   }
-
-  const response = await axios.get(`${API_ENDPOINT}/company?$limit=100`);
+  const response = await axios.get(`${API_ENDPOINT}/company?$limit=100`,{});
   companiesCacheInFileSystem.set(id, response.data);
   return response.data;
 
 };
 
+
+const getIpos = async ({id = 'all'} = {}) => {
+  const companiesResponse = await companiesCacheInFileSystem.get(id+'192');
+
+  if (companiesResponse) {
+    return companiesResponse;
+  }
+  const response = await axios.get(`${API_ENDPOINT}/company?categoryId=192`,{});
+  companiesCacheInFileSystem.set(id+'192', response.data);
+  return response.data;
+
+};
 
 const getIdeas = async ({id, type = 'idea'} = {}) => {
   const ideasResponse = await ideasCacheInFileSystem.get(id + type);
@@ -83,5 +94,6 @@ module.exports = {
   getSectors,
   getCompanies,
   getIdeas,
-  getRandomImage
+  getRandomImage,
+  getIpos
 };
