@@ -6,6 +6,7 @@ import {Cards} from '../components/Cards';
 import {Footer} from "../components/Footer";
 import {IdeasSlider} from '../components/Home/IdeasSlider';
 import {SectorsSlider} from '../components/Home/SectorsSlider';
+import {IPOSlider} from '../BComponents/IPOSlider';
 
 const Explorer = ({children, ...remainingProps}) => {
   return (
@@ -28,16 +29,16 @@ const Explorer = ({children, ...remainingProps}) => {
 };
 
 export default ({
-                  pageContext: {ideas, sectors, neftySectorIndexes,IPOs},
+                  pageContext: {ideas, sectors, neftySectorIndexes, IPOs},
                 }) => {
   return (
     <Box sx={{width: '100%', overflowX: 'hidden'}}>
       <TopNav/>
       <Introbanner/>
 
-      <IdeasSlider ideas={IPOs.map((data) => {
-        return {image: {url: `https://source.unsplash.com/290x145/?${data.name.replace(/ /g,',')}`},...data}
-      })} title={'IPOs | Initial Public Offerings'} graphLine={false} />
+      <IPOSlider ideas={IPOs.map((data) => {
+        return {image: {url: `https://source.unsplash.com/290x145/?${data.name.replace(/ /g, ',')}`}, ...data}
+      })} title={'IPOs | Initial Public Offerings'} graphLine={false}/>
 
       <IdeasSlider ideas={ideas} title={'Big Ideas'}/>
 

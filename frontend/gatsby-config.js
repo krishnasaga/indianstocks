@@ -9,6 +9,9 @@ module.exports = {
     siteTitle: `Minimal Blog - Gatsby Theme`,
   },
   plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       // See the theme's README for all available options
@@ -69,13 +72,5 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-netlify`,
-    shouldAnalyseBundle && {
-      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
-      options: {
-        analyzerMode: `static`,
-        reportFilename: `_bundle.html`,
-        openAnalyzer: false,
-      },
-    },
   ].filter(Boolean),
 };
