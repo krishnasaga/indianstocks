@@ -35,13 +35,13 @@ export default ({
       <TopNav/>
       <Introbanner/>
 
-      <SectorsSlider ideas={sectors} title={'Sectors'}/>
-
-      <IdeasSlider ideas={ideas} title={'Big Ideas'}/>
-
       <IdeasSlider ideas={ideas.map((data) => {
         return {image: {url: `https://source.unsplash.com/290x145/?${data.name.replace(/ /g,',')}`},...data}
       })} title={'IPOs | Initial Public Offerings'} graphLine={false} />
+
+      <IdeasSlider ideas={ideas} title={'Big Ideas'}/>
+
+      <SectorsSlider ideas={sectors} title={'Sectors'}/>
 
       <SectorsSlider ideas={neftySectorIndexes} title={'ETFs'}/>
 
