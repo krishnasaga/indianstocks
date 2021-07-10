@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Table/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Table/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TopNav/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +42,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend/src/templates" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Niche\SAGAR\indianstocks\frontend\src\templates" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend/src/components/Footer/index.js" working-dir="$PROJECT_DIR$/frontend/src/components/Footer">
@@ -97,84 +101,16 @@
       <workItem from="1622448908549" duration="7279000" />
       <workItem from="1622645625308" duration="17199000" />
       <workItem from="1622968524169" duration="2525000" />
-      <workItem from="1622971522997" duration="2267000" />
-    </task>
-    <task id="LOCAL-00001" summary="add footer layout">
-      <created>1618071216696</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1618071216696</updated>
-    </task>
-    <task id="LOCAL-00002" summary="fix footer responsive content order, add text and icons">
-      <created>1618245300817</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1618245300817</updated>
-    </task>
-    <task id="LOCAL-00003" summary="fix footer padding, fontSizes, bottom text, and layout">
-      <created>1618335210594</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1618335210595</updated>
-    </task>
-    <task id="LOCAL-00004" summary="add footer brand img and temp icons">
-      <created>1618415892490</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1618415892490</updated>
-    </task>
-    <task id="LOCAL-00005" summary="add styling to topnav, add final icons to footer">
-      <created>1618592943746</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1618592943746</updated>
-    </task>
-    <task id="LOCAL-00006" summary="integrate DropdownMenuText animation in code, fix TextArrow animation">
-      <created>1619277259783</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1619277259783</updated>
-    </task>
-    <task id="LOCAL-00007" summary="create Cards\ and started code">
-      <created>1619281714735</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1619281714735</updated>
-    </task>
-    <task id="LOCAL-00008" summary="add cards">
-      <created>1619350151019</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1619350151019</updated>
-    </task>
-    <task id="LOCAL-00009" summary="add responsive cards and cards text">
-      <created>1619452630227</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1619452630227</updated>
-    </task>
-    <task id="LOCAL-00010" summary="fix responsive icons in cards">
-      <created>1619536468115</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1619536468115</updated>
-    </task>
-    <task id="LOCAL-00011" summary="fix cards height and icons size">
-      <created>1619537158905</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1619537158905</updated>
+      <workItem from="1622971522997" duration="5522000" />
+      <workItem from="1622983612128" duration="1207000" />
+      <workItem from="1623010055554" duration="88000" />
+      <workItem from="1623761386601" duration="1608000" />
+      <workItem from="1623860622401" duration="19918000" />
+      <workItem from="1624010035351" duration="1339000" />
+      <workItem from="1624695011431" duration="20031000" />
+      <workItem from="1624901635800" duration="11491000" />
+      <workItem from="1625070001876" duration="16500000" />
+      <workItem from="1625387328614" duration="4786000" />
     </task>
     <task id="LOCAL-00012" summary="start card overlay content">
       <created>1619547479682</created>
@@ -372,39 +308,186 @@
       <option name="project" value="LOCAL" />
       <updated>1622890104529</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="reduce width of first two sticky columns">
+      <created>1622973957953</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1622973957953</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add button and stars on col 1 in sticky table">
+      <created>1623867446115</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1623867446115</updated>
+    </task>
+    <task id="LOCAL-00042" summary="add starter code for ToolTip in sticky table">
+      <created>1623927468974</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1623927468974</updated>
+    </task>
+    <task id="LOCAL-00043" summary="add ToolTip to sticky column">
+      <created>1623928837450</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1623928837450</updated>
+    </task>
+    <task id="LOCAL-00044" summary="fix font and fontsize on sticky table">
+      <created>1623953865458</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1623953865458</updated>
+    </task>
+    <task id="LOCAL-00045" summary="set green and red hex colors in table">
+      <created>1624558419065</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1624558419065</updated>
+    </task>
+    <task id="LOCAL-00046" summary="fix row height on desktop">
+      <created>1624558898766</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1624558898766</updated>
+    </task>
+    <task id="LOCAL-00047" summary="fix table row height on mob and name col on mob">
+      <created>1624705594664</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1624705594664</updated>
+    </task>
+    <task id="LOCAL-00048" summary="fix name col text overflow">
+      <created>1624711784767</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1624711784767</updated>
+    </task>
+    <task id="LOCAL-00049" summary="fix nonsticky col width on mob">
+      <created>1624715106164</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1624715106164</updated>
+    </task>
+    <task id="LOCAL-00050" summary="fix nonsticky col width on mob">
+      <created>1624715351453</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1624715351460</updated>
+    </task>
+    <task id="LOCAL-00051" summary="fix space between sticky and nonsticky cols">
+      <created>1624906067137</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1624906067140</updated>
+    </task>
+    <task id="LOCAL-00052" summary="fix zIndex on nameCol">
+      <created>1624996139847</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1624996139848</updated>
+    </task>
+    <task id="LOCAL-00053" summary="add starter code for Paper cards in ideas.js">
+      <created>1624999735697</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1624999735697</updated>
+    </task>
+    <task id="LOCAL-00054" summary="add styling and imgs to Paper cards">
+      <created>1625074908906</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1625074908906</updated>
+    </task>
+    <task id="LOCAL-00055" summary="add static folder to git">
+      <created>1625075435615</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1625075435615</updated>
+    </task>
+    <task id="LOCAL-00056" summary="add starter code for new stats page">
+      <created>1625079921488</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1625079921488</updated>
+    </task>
+    <task id="LOCAL-00057" summary="add starter code for cards in stats page">
+      <created>1625388948093</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1625388948094</updated>
+    </task>
+    <task id="LOCAL-00058" summary="add antialiased to ideas.js">
+      <created>1625389775098</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1625389775099</updated>
+    </task>
+    <task id="LOCAL-00059" summary="fix layout of cards in sectors-stats.js">
+      <created>1625390453871</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1625390453871</updated>
+    </task>
+    <task id="LOCAL-00060" summary="add big_invest_comp.png in static">
+      <created>1625392543635</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1625392543636</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="integrate DropdownMenuText animation in code, fix TextArrow animation" />
-    <MESSAGE value="create Cards\ and started code" />
-    <MESSAGE value="add cards" />
-    <MESSAGE value="add responsive cards and cards text" />
-    <MESSAGE value="fix responsive icons in cards" />
-    <MESSAGE value="fix cards height and icons size" />
-    <MESSAGE value="start card overlay content" />
-    <MESSAGE value="finish card overlay styling" />
-    <MESSAGE value="fix CardOverlayButton component" />
-    <MESSAGE value="add starter code for loop in cards" />
-    <MESSAGE value="add overlay on card hover" />
-    <MESSAGE value="add mobile overlay styles" />
-    <MESSAGE value="fix button link and heading in cards overlay" />
-    <MESSAGE value="fix padding on container homepage" />
-    <MESSAGE value="fix padding on container homepage, &#10;fix styling on topnav" />
-    <MESSAGE value="remove container right white space" />
-    <MESSAGE value="fix right white space on mob" />
-    <MESSAGE value="change cards mob to one column" />
-    <MESSAGE value="add starter code for react-table-sticky" />
-    <MESSAGE value="fix z-index on sticky table" />
     <MESSAGE value="add code to new table component" />
     <MESSAGE value="add StickyColCell comp to table" />
     <MESSAGE value="add starter styles to sticky-table" />
     <MESSAGE value="fix zIndex on topNav Dropdown comp" />
     <MESSAGE value="add three sticky columns and stickyCell components in tbody" />
-    <option name="LAST_COMMIT_MESSAGE" value="add three sticky columns and stickyCell components in tbody" />
+    <MESSAGE value="reduce width of first two sticky columns" />
+    <MESSAGE value="add button and stars on col 1 in sticky table" />
+    <MESSAGE value="add starter code for ToolTip in sticky table" />
+    <MESSAGE value="add ToolTip to sticky column" />
+    <MESSAGE value="fix font and fontsize on sticky table" />
+    <MESSAGE value="set green and red hex colors in table" />
+    <MESSAGE value="fix row height on desktop" />
+    <MESSAGE value="fix table row height on mob and name col on mob" />
+    <MESSAGE value="fix name col text overflow" />
+    <MESSAGE value="fix nonsticky col width on mob" />
+    <MESSAGE value="fix space between sticky and nonsticky cols" />
+    <MESSAGE value="fix zIndex on nameCol" />
+    <MESSAGE value="add starter code for Paper cards in ideas.js" />
+    <MESSAGE value="add styling and imgs to Paper cards" />
+    <MESSAGE value="add static folder to git" />
+    <MESSAGE value="add starter code for new stats page" />
+    <MESSAGE value="add starter code for cards in stats page" />
+    <MESSAGE value="add antialiased to ideas.js" />
+    <MESSAGE value="fix layout of cards in sectors-stats.js" />
+    <MESSAGE value="add big_invest_comp.png in static" />
+    <option name="LAST_COMMIT_MESSAGE" value="add big_invest_comp.png in static" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

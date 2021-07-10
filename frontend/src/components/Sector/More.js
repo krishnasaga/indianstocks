@@ -4,7 +4,9 @@ import {Box, Text} from 'theme-ui';
 export const More = () => {
   return <Box>
     <Box as={'ul'} p={0} sx={{
-      listStyle: 'none'
+      listStyle: 'none',
+      overflowX: 'scroll',
+      whiteSpace: 'nowrap',
     }}>
       <Pill current={true}>
         Companies
@@ -27,9 +29,9 @@ export const More = () => {
 
 function Pill({children, current}) {
   return <Box as={'li'}
-              px={2}
+              px={[1,2]}
               py={1}
-              mr={2}
+              mr={[1,2]}
               sx={{
                 display: 'inline',
                 cursor: 'pointer',

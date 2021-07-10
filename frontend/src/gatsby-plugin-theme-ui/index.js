@@ -7,9 +7,9 @@ export default {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   breakpoints: ["40em", "52em", "64em"],
   fonts: {
-    body: "Open Sans, system-ui, sans-serif",
-    heading: "Open Sans, system-ui, sans-serif",
-    monospace: '"Open Sans", monospace',
+    body: "Inter,Open Sans, system-ui, sans-serif",
+    heading: "Inter,Open Sans, system-ui, sans-serif",
+    monospace: 'Inter,"Open Sans", monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   fontWeights: {
@@ -26,6 +26,7 @@ export default {
     text2: "#ffffff",
     text3: "#d20e0e",
     text4: "#b72828",
+
     background: "#fff",
     background2: "#b3b3b3",
     background3: "#b3b3b3",
@@ -38,6 +39,7 @@ export default {
     color3: "#6CA5D4",
     color4: "#6F7899",
     color5: "#1F315D",
+    color7: "rgb(34, 37, 49)"
   },
   styles: {
     root: {

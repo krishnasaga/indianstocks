@@ -1,146 +1,108 @@
 import React from "react";
-import {Box, Grid, Text} from "theme-ui";
+import {Box, Container, Grid, Image, Link, Text} from "theme-ui";
 import {TopNav} from "../components/TopNav";
 import {Footer} from "../components/Footer";
-import {SectorBanner} from "../components/Sector";
-import {CompaniesTable} from "../components/Sector/companies-table";
 import {Helmet} from 'react-helmet';
-import {More} from '../components/Sector/More';
+import {Paper} from '../components/Paper';
+import {EditorDock} from "../content-editor/EditorDock";
 
 export default ({
-                  pageContext: {displayName, name, intro, insights = [], backgroundImage, companies},
-                }) => (
-  <Box>
-    <Helmet>
-      <title> Top {displayName} companies in india by market capitalization | BigInvest </title>
-    </Helmet>
-    <TopNav/>
-    {0 ? <SectorBanner
-      name={displayName}
-      intro={intro}
-      insights={insights}
-      backgroundImage={backgroundImage}
-    /> : null}
-    <SectorFinancials/>
+                  pageContext: {
+                    sectors = []
+                  },
+                }) => {
+  return (<Box bg={'#F5F5F5'} mt={0}>
+      <Helmet>
+        <title> Top companies in india by market capitalization | BigInvest </title>
+      </Helmet>
+      <TopNav/>
 
-    <Box
-      mt={'100px'}
-      mb={4}
-      mx={[1, 1, 4, 4]}
-    >
-      <Text as={'h1'}>
-        Top {displayName} companies in india by Market Capitalization
-      </Text>
-      <Text as={'p'}>
-        Listed below are the top {displayName} companies in india. They are listed in size by market capitalization. To
-        reorder the list, simply click on one of the options - such as 24h or 7d - to see the sector from a different
-        perspective.
-      </Text>
-    </Box>
-    <Box px={[4]}>
-      <More/>
-    </Box>
-    <Box
-      my={4}
-      mx={[1, 1, 4, 4]}
-      sx={{
-        borderRadius: 5,
-        boxShadow: "0 3px 20px 0 rgb(0 77 165 / 7%)",
-      }}
-    >
-      <CompaniesTable
-        columns={[{
-          Header: "#",
-          accessor: "id",
-        },{
-          Header: "#",
-          accessor: "name",
-        }]}
-        data={companies || new Array(100).fill(1).map((value, index) => {
-          return {rank: index};
-        })}
-      />
-    </Box>
-    <Footer/>
-  </Box>
-)
-;
+      <Box py={'100px'}>
+        <Container px={[2, 0]}>
+          <Grid columns={[1, 4]} gap={4} as={'ul'} sx={{listStyle: 'none', padding: 0, margin: 0}}>
+            {
+              sectors.map((idea) => {
+                return <Paper as={'li'} p={0} bg={'white'} sx={{fontWeight: "500",}}>
+                  <Link href={`/sectors/${idea.name}`} sx={{
+                    textDecoration: 'none',
+                    color: 'initial',
+                    fontSize: [1],
 
-function ProductItem({name}) {
-  return (
-    <Grid
-      columns={[2]}
-      sx={{
-        "::hover": {
-          color: "red",
-        },
-      }}
-    >
-      <Box py={2}>
-        <Text color={"secondary"}>{name}</Text>
+                  }}>
+                    <Image src={"/information-technology.jpg.webp"}/>
+                    <Text p={2} sx={{
+                      fontSize: [1],
+                    }}>
+                      <Text sx={{
+                        fontSize: "4",
+                        fontWeight: "500",
+                      }}>{idea.displayName}</Text>
+                      <Text sx={{
+                        fontSize: "13px",
+                      }}>
+                        companies in india by market capitalization
+                        companies in india by market capitalization
+                      </Text>
+
+                    </Text>
+                    <Image p={0} src={"/unknown.png"} sx={{width: "100%", paddingX: "3"}}/>
+                    <Grid columns={2} p={3} sx={{paddingBottom: "20px", lineHeight: "1.2"}}>
+                      <Box sx={{
+                        width: "170px",
+                      }}>
+                        <Text sx={{
+                          fontSize: "13px",
+                        }}>Market Cap</Text>
+                        <Text sx={{
+                          fontWeight: "600",
+                          fontSize: "15px",
+                          paddingTop: "8px"
+                        }}>
+                          $2000,500
+                        </Text>
+                        <Text sx={{
+                          fontWeight: "600",
+                          fontSize: "15px",
+                          display: "inline",
+                          paddingRight: "5px",
+                        }}>
+                          1 year change
+                        </Text>
+                        <Text sx={{
+                          fontWeight: "600",
+                          fontSize: "15px",
+                          color: "#16C784",
+                          display: "inline",
+                        }}>
+                          40.89%
+                        </Text>
+                      </Box>
+                      <Box width={"20%"}>
+                        <Text sx={{
+                          fontSize: "13px",
+                        }}>
+                          Companies
+                        </Text>
+                        <Text sx={{
+                          fontWeight: "600",
+                          fontSize: "15px",
+                          paddingTop: "8px"
+                        }}>
+                          20
+                        </Text>
+                      </Box>
+                    </Grid>
+                  </Link>
+                </Paper>;
+              })
+            }
+          </Grid>
+        </Container>
       </Box>
-    </Grid>
+      <EditorDock open/>
+      <Footer/>
+    </Box>
   );
 }
 
-const SectorFinancials = ({visible = false}) => {
-  if (!visible) return null;
 
-  return (
-    <Grid
-      p={20}
-      columns={[1, 1, 2, 2]}
-      sx={{
-        alignItems: "center",
-      }}
-    >
-      <Box>
-        <Text as={"h2"} color={"primary"}>
-          {" "}
-          Disruptions{" "}
-        </Text>
-        <Box w={"100%"}>
-          <ProductItem name={"DNA Sequencing"}/>
-          <ProductItem name={"DNA Sequencing"}/>
-          <ProductItem name={"DNA Sequencing"}/>
-          <ProductItem name={"DNA Sequencing"}/>
-          <ProductItem name={"DNA Sequencing"}/>
-          <ProductItem name={"DNA Sequencing"}/>
-          <ProductItem name={"DNA Sequencing"}/>
-        </Box>
-      </Box>
-      <Box sx={{}}>
-        <Text as={"h2"} color={"primary"}>
-          {" "}
-          Performance{" "}
-        </Text>
-        <Text py={20} as={"h3"} color={"primary"}>
-          {" "}
-          Current Market size{" "}
-        </Text>
-        <Text
-          color={"secondary"}
-          py={20}
-          sx={{
-            fontSize: "2rem",
-          }}
-        >
-          $1 Trillion
-        </Text>
-        <Text py={20} as={"h3"} color={"primary"}>
-          {" "}
-          Expected market size by 2025{" "}
-        </Text>
-        <Text
-          color={"secondary"}
-          py={20}
-          sx={{
-            fontSize: "2rem",
-          }}
-        >
-          $5 Trillion
-        </Text>
-      </Box>
-    </Grid>
-  );
-};

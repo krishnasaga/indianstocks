@@ -15,7 +15,9 @@ const depthToShadow = (depth) => {
   }
 }
 
-export const Paper = ({children, sx, depth = 1, ...remainingProps}) => <Box sx={{
+export const Paper = ({children, sx, depth = 1, ...remainingProps}) =>
+
+    <Box sx={{
     boxShadow: depthToShadow(1),
     ...sx
   }}
