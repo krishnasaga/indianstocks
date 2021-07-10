@@ -1,5 +1,6 @@
 const cache = require('file-system-cache').default;
 const axios = require("axios");
+require('axios-debug-log');
 
 let API_ENDPOINT = null;
 
@@ -53,21 +54,34 @@ const getCompanies = async ({id = 'all'} = {}) => {
 };
 
 
-const getIdeas = async ({id = 'all', type = 'idea'} = {}) => {
-  const ideasResponse = await ideasCacheInFileSystem.get(id+type);
+const getIdeas = async ({id, type = 'idea'} = {}) => {
+  const ideasResponse = await ideasCacheInFileSystem.get(id + type);
 
   if (ideasResponse) {
     return ideasResponse;
   }
+  let response = null;
 
-  const response = await axios.get(`${API_ENDPOINT}/ideas?type=${type}&$limit=100`);
-  ideasCacheInFileSystem.set(id+type, response.data);
-  return response.data;
+  if (!id) {
+    response = await axios.get(`${API_ENDPOINT}/ideas?type=${type}&$limit=100`);
+
+  } else {
+    response = await axios.get(`${API_ENDPOINT}/ideas/${id}`);
+  }
+
+  ideasCacheInFileSystem.set(id + type, response.data);
+  return response.data || {};
 
 };
+
+const getRandomImage = ({keyword}) => {
+  return axios.get(`https://source.unsplash.com/400/?${keyword}`)
+};
+
 
 module.exports = {
   getSectors,
   getCompanies,
-  getIdeas
+  getIdeas,
+  getRandomImage
 };

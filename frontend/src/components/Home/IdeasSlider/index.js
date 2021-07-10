@@ -3,17 +3,17 @@ import {Paper} from "../../Paper";
 import {EditorDock} from "../../../content-editor/EditorDock";
 import React from "react";
 
-export const IdeasSlider = ({ideas = []}) => {
+export const IdeasSlider = ({ideas = [], graphLine = true,title}) => {
   return <Box bg={'#F5F5F5'} mt={0}>
     <Box>
       <Container>
         <Text
-          px={[2,0]}
+          px={[2, 0]}
           py={4}
           sx={{
             fontSize: [4]
           }}>
-          Big Ideas
+          {title}
         </Text>
       </Container>
       <Container px={[2, 0]} sx={{
@@ -29,24 +29,29 @@ export const IdeasSlider = ({ideas = []}) => {
           {
 
             ideas.map((idea) => {
+              const image = idea.image || {
+                url: "/information-technology.jpg.webp"
+              };
+
               return <Paper as={'li'} p={0} mr={4} mb={4} bg={'white'}
-                                 sx={{
-                                   fontWeight: "500",
-                                   display: 'inline-block',
-                                   width: '290px'}}>
-                <Link href={'/'} sx={{
+                            sx={{
+                              fontWeight: "500",
+                              display: 'inline-block',
+                              width: '290px'
+                            }}>
+                <Link href={`/ideas/${idea.name.toLowerCase().replace(/ /g, '-')}`} sx={{
                   whiteSpace: 'initial',
                   textDecoration: 'none',
                   color: 'initial',
                   fontSize: [1],
 
                 }}>
-                  <Image src={"/information-technology.jpg.webp"}/>
+                  <Image src={image.url}/>
                   <Text p={2} sx={{
                     fontSize: [1],
                   }}>
                     <Text sx={{
-                      fontSize: "4",
+                      fontSize: [4],
                       fontWeight: "500",
                     }}>{idea.name}</Text>
 
@@ -58,7 +63,7 @@ export const IdeasSlider = ({ideas = []}) => {
                     </Text>
 
                   </Text>
-                  <Image p={0} src={"/unknown.png"} sx={{width: "100%", paddingX: "3"}}/>
+                  {graphLine ? <Image p={0} src={"/unknown.png"} sx={{width: "100%", paddingX: "3"}}/> : null}
                   <Grid columns={2} p={3} sx={{paddingBottom: "20px", lineHeight: "1.2"}}>
                     <Box sx={{
                       width: "170px",

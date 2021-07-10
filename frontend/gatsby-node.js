@@ -1,17 +1,22 @@
 const axios = require("axios");
-const {getSectors, getCompanies,getIdeas} = require('./companies');
+const {getSectors, getCompanies, getIdeas} = require('./companies');
 
 exports.createPages = async function ({actions, graphql}) {
-  let data = null;
 
-  if (!process.env.API) {
-    data = require("./src/somethings/sectors.js");
-  } else {
-    const sectorsResponse = await getSectors();
-    data = sectorsResponse.data;
-  }
 
-  await Promise.all(data.map(async (edge) => {
+
+  const sectors = await getSectors();
+
+  actions.createPage({
+    path: '/sectors',
+    component: require.resolve(`./src/templates/sectors.js`),
+    context: {
+      sectors: sectors.data
+    }
+  });
+
+
+  await Promise.all(sectors.data.map(async (edge) => {
     const {id, name, displayName, intro, insights, backgroundImage} = edge;
     const {data} = await getCompanies();
     const companies = data;
@@ -28,18 +33,6 @@ exports.createPages = async function ({actions, graphql}) {
           slug: `/sectors/${name}/stats`,
         },
       },
-      {
-        path: `/ideas/${name}`,
-        component: require.resolve(`./src/templates/sectors-companies.js`),
-        context: {slug: `/sectors/${name}`},
-      },
-      {
-        path: `/ideas/${name}/stats`,
-        component: require.resolve(`./src/templates/sectors-stats.js`),
-        context: {
-          slug: `/sectors/${name}/stats`,
-        },
-      },
     ];
 
     pages.map((params) => {
@@ -51,9 +44,9 @@ exports.createPages = async function ({actions, graphql}) {
           ...params.context,
           name,
           displayName,
-          intro,
-          insights,
-          backgroundImage,
+          intro: '',
+          insights: [],
+          backgroundImage: '',
           companies: companies || []
         },
       });
@@ -72,19 +65,51 @@ exports.createPages = async function ({actions, graphql}) {
 
   }));
 
-  const sectors = await getSectors();
-
-  actions.createPage({
-    path: '/sectors',
-    component: require.resolve(`./src/templates/sectors.js`),
-    context: {
-      sectors: sectors.data
-    }
-  });
-
-
-
   const ideas = await getIdeas();
+
+  await Promise.all(ideas.data.map(async (edge) => {
+    const {id, name, displayName, intro, insights, backgroundImage} = edge;
+    const data =  await getIdeas({id});
+    const companies = data.companies;
+
+    const pages = [
+      {
+        path: `/ideas/${name.toLowerCase().replace(/ /g, '-')}`,
+        component: require.resolve(`./src/templates/sectors-companies.js`),
+        context: {slug: `/ideas/${name.toLowerCase().replace(/ /g, '-')}`,companies},
+
+      },
+      {
+        path: `/ideas/${name.toLowerCase().replace(/ /g, '-')}/stats`,
+        component: require.resolve(`./src/templates/sectors-stats.js`),
+        context: {
+          slug: `/ideas/${name.toLowerCase().replace(/ /g, '-')}/stats`,
+          companies
+        },
+      },
+    ];
+
+    pages.map((params) => {
+
+
+      actions.createPage({
+        ...params,
+        context: {
+          ...params.context,
+          name,
+          displayName: '',
+          intro: '',
+          insights: [],
+          backgroundImage: '',
+          companies: companies || []
+        },
+      });
+    });
+
+
+  }));
+
+
   const neftySectorIndexes = await getIdeas({type: 'nefty_sector_index'});
 
 
@@ -95,6 +120,7 @@ exports.createPages = async function ({actions, graphql}) {
       ideas: ideas.data
     }
   });
+
 
   actions.createPage({
     path: '/',

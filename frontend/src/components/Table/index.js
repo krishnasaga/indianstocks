@@ -200,7 +200,7 @@ const PERatio = ({children, sx, ...props}) => {
 }
 
 
-export const Table = () => {
+export const Table = ({data = []}) => {
   const [open, setOpen] = useState(false);
 
   return <Box>
@@ -234,11 +234,11 @@ export const Table = () => {
         {/*</tr>*/}
 
         {
-          new Array(100).fill(1).map((value, index) => {
+          data.map((value, index) => {
             return <tr key={index}>
               <StickyColStar>Star</StickyColStar>
               <StickyColNumber>6</StickyColNumber>
-              <StickyColName>Name NameName</StickyColName>
+              <StickyColName>{value.name}</StickyColName>
               <MarketCap as={'td'} color={'#000000'} >$32,569.21</MarketCap>
               <Revenue as={'td'} color={'#000000'} >$32,569.21</Revenue>
               <PERatio as={'td'} color={'#16C784'} >15.5</PERatio>

@@ -28,17 +28,27 @@ const Explorer = ({children, ...remainingProps}) => {
 };
 
 export default ({
-                  pageContext: {ideas, sectors,neftySectorIndexes},
+                  pageContext: {ideas, sectors, neftySectorIndexes},
                 }) => {
   return (
     <Box sx={{width: '100%', overflowX: 'hidden'}}>
       <TopNav/>
       <Introbanner/>
 
-      <SectorsSlider ideas={ideas} title={'Sectors'} />
-      <IdeasSlider ideas={sectors}/>
+      <SectorsSlider ideas={sectors} title={'Sectors'}/>
+
+      <IdeasSlider ideas={ideas} title={'Big Ideas'}/>
+
+      <IdeasSlider ideas={ideas.map((data) => {
+        return {image: {url: `https://source.unsplash.com/290x145/?${data.name.replace(/ /g,',')}`},...data}
+      })} title={'IPOs | Initial Public Offerings'} graphLine={false} />
+
+      <SectorsSlider ideas={neftySectorIndexes} title={'ETFs'}/>
 
       <SectorsSlider ideas={neftySectorIndexes} title={'Nefty Sectoral Indexes'}/>
+
+      <SectorsSlider ideas={neftySectorIndexes} title={'Nefty Indexes'}/>
+
 
       <Box bg={"color5"}>
         <Container>
@@ -61,7 +71,7 @@ function Introbanner() {
       sx={{
         height: "100%",
         width: "100vw",
-        background: ['color5',`black url(${introImage}) fixed center`],
+        background: ['color5', `black url(${introImage}) fixed center`],
         position: "relative",
         filter: "light(1)",
         zIndex: 0,

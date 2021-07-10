@@ -35,7 +35,7 @@ export const SectorsSlider = ({ideas = [], title = {}}) => {
                               display: 'inline-block',
                               width: '290px'
                             }}>
-                <Link href={'/'} sx={{
+                <Link href={`/sectors/${idea.name.toLowerCase().replace(/ /g, '-')}`} sx={{
                   whiteSpace: 'initial',
                   textDecoration: 'none',
                   color: 'initial',
@@ -47,9 +47,12 @@ export const SectorsSlider = ({ideas = [], title = {}}) => {
                     fontSize: [1],
                   }}>
                     <Text sx={{
-                      fontSize: "4",
+                      fontSize: [3],
                       fontWeight: "500",
-                    }}>{idea.name}</Text>
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis'
+                    }}>{idea.displayName !== 'ABCD' ? idea.displayName : idea.name}</Text>
                     <Text sx={{
                       fontSize: "13px",
                     }}>

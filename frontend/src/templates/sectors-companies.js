@@ -17,6 +17,7 @@ export default ({
       <title> Top {displayName} companies in india by market capitalization | BigInvest </title>
     </Helmet>
     <TopNav/>
+
     {0 ? <SectorBanner
       name={displayName}
       intro={intro}
