@@ -61,7 +61,7 @@ export const IPOSlider = ({ideas = [], graphLine = true, title}) => {
                               display: 'inline-block',
                               width: '290px'
                             }}>
-                <Link href={`/ideas/${idea.name.toLowerCase().replace(/ /g, '-')}`} sx={{
+                <Link href={`/ipo/${idea.name.toLowerCase().replace(/ /g, '-')}`} sx={{
                   whiteSpace: 'initial',
                   textDecoration: 'none',
                   color: 'initial',
@@ -87,10 +87,10 @@ export const IPOSlider = ({ideas = [], graphLine = true, title}) => {
                       companies in india by market capitalization
                     </Text>
                     <Grid columns={[2]} mt={2}>
-                      <InfoText text={'Start Date'} value={'20/07/2021'} color={'green'}/>
-                      <InfoText text={'Closing Date'} value={'20/07/2021'} color={'red'}/>
-                      <InfoText text={'Issue Price'} value={'$50'} color={'orange'}/>
-                      <InfoText text={'Minimum Quantity'} value={'20'} color={'orange'}/>
+                      <InfoText text={'Start Date'} value={'14 Jul 2021'} color={'green'}/>
+                      <InfoText text={'Closing Date'} value={'16 Jul 2021'} color={'red'}/>
+                      <InfoText text={'Price range'} value={'$72 – $76'} color={'orange'}/>
+                      <InfoText text={'Minimum order quantity'} value={'195'} color={'orange'}/>
                     </Grid>
                   </Text>
                   {graphLine ? <Image p={0} src={"/unknown.png"} sx={{width: "100%", paddingX: "3"}}/> : null}

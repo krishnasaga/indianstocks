@@ -123,7 +123,20 @@ exports.createPages = async function ({actions, graphql}) {
 
   const IPOs = await getIpos();
 
-  actions.createPage({
+  await Promise.all(ideas.data.map(async (edge) => {
+    const {id, name, displayName, intro, insights, backgroundImage} = edge;
+    const data =  await getIdeas({id});
+
+    const pages = [
+      {
+        path: `/ipos/${name.toLowerCase().replace(/ /g, '-')}`,
+        component: require.resolve(`./src/templates/sectors-companies.js`),
+        context: {slug: `/ipos/${name.toLowerCase().replace(/ /g, '-')}`,companies: []},
+
+      },
+    ];
+
+    actions.createPage({
     path: '/',
     component: require.resolve(`./src/templates/index.js`),
     context: {
