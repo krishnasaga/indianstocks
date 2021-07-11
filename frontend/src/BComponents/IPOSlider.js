@@ -1,42 +1,41 @@
-import {Box, Container, Image, Link, Text,Grid} from "theme-ui";
-import {Paper} from "../components/Paper";
+import {Box, Container, Grid, Link, Text} from "theme-ui";
 import {EditorDock} from "../content-editor/EditorDock";
 import React from "react";
+import {IPOCard} from "./IPOCard";
 
-const InfoText = ({text,value,valueSx,sx,...remainingProps}) => {
-  return <Box {...remainingProps} >
-    <Text sx={{
-      fontSize: [1],
-      fontWeight: 500,
-      ...sx
-    }}>
-      {text}
-    </Text>
-    <Text
-      sx={{
-        fontSize: [1],
-        fontWeight: 600,
-        ...sx
-      }}
-      {...remainingProps}
-    >
-      {value}
-    </Text>
-  </Box>;
-};
 
 export const IPOSlider = ({ideas = [], graphLine = true, title}) => {
   return <Box bg={'#F5F5F5'} mt={0}>
     <Box>
       <Container>
-        <Text
-          px={[2, 0]}
-          py={4}
-          sx={{
-            fontSize: [4]
-          }}>
-          {title}
-        </Text>
+        <Grid columns={['1fr 100px']} sx={{
+          alignItems: 'center'
+        }}>
+          <Box >
+            <Text
+              px={[2, 0]}
+              sx={{
+                fontSize: [4],
+                lineHeight: [4]
+              }}>
+              {title}
+            </Text>
+          </Box>
+          <Box  sx={{textAlign: 'right'}}>
+            <Link
+            href={'/ipos'}
+            sx={{
+              cursor: 'pointer'
+            }}> <Text
+              color={'blue'}
+              px={[2, 0]}
+              sx={{
+                fontSize: [1],
+                lineHeight: [5]
+              }}
+            > View All</Text> </Link>
+          </Box>
+        </Grid>
       </Container>
       <Container px={[2, 0]} sx={{
         overflowX: 'auto'
@@ -51,52 +50,8 @@ export const IPOSlider = ({ideas = [], graphLine = true, title}) => {
           {
 
             ideas.map((idea) => {
-              const image = idea.image || {
-                url: "/information-technology.jpg.webp"
-              };
 
-              return <Paper as={'li'} p={0} mr={4} mb={4} bg={'white'}
-                            sx={{
-                              fontWeight: "500",
-                              display: 'inline-block',
-                              width: '290px'
-                            }}>
-                <Link href={`/ipos/${idea.name.trim().toLowerCase().replace(/ /g, '-')}`} sx={{
-                  whiteSpace: 'initial',
-                  textDecoration: 'none',
-                  color: 'initial',
-                  fontSize: [1],
-
-                }}>
-                  <Image src={image.url}/>
-                  <Text p={2} sx={{
-                    fontSize: [1],
-                  }}>
-                    <Text sx={{
-                      fontSize: [4],
-                      fontWeight: "500",
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
-                      overflow: 'hide'
-                    }}>{idea.name}</Text>
-
-                    <Text sx={{
-                      fontSize: "13px",
-                    }}>
-                      companies in india by market capitalization
-                      companies in india by market capitalization
-                    </Text>
-                    <Grid columns={[2]} mt={2}>
-                      <InfoText text={'Start Date'} value={'14 Jul 2021'} color={'green'}/>
-                      <InfoText text={'Closing Date'} value={'16 Jul 2021'} color={'red'}/>
-                      <InfoText text={'Price range'} value={'$72 – $76'} color={'orange'}/>
-                      <InfoText text={'Minimum order quantity'} value={'195'} color={'orange'}/>
-                    </Grid>
-                  </Text>
-                  {graphLine ? <Image p={0} src={"/unknown.png"} sx={{width: "100%", paddingX: "3"}}/> : null}
-
-                </Link>
-              </Paper>;
+              return <IPOCard idea={idea}/>;
             })
           }
         </Box>

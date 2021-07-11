@@ -123,6 +123,17 @@ exports.createPages = async function ({actions, graphql}) {
 
   const IPOs = await getIpos();
 
+
+  actions.createPage({
+    path: '/ipos',
+    component: require.resolve(`./src/templates/ipos-list.js`),
+    context: {
+      ipos: IPOs.data.map((data) => {
+        return {image: {url: `https://source.unsplash.com/290x145/?${data.name.replace(/ /g, ',')}`}, ...data}
+      })
+    }
+  });
+
   await Promise.all(IPOs.data.map(async (edge) => {
     const {id, name, displayName, intro, insights, backgroundImage} = edge;
 
