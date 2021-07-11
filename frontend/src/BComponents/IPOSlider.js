@@ -61,7 +61,7 @@ export const IPOSlider = ({ideas = [], graphLine = true, title}) => {
                               display: 'inline-block',
                               width: '290px'
                             }}>
-                <Link href={`/ipo/${idea.name.toLowerCase().replace(/ /g, '-')}`} sx={{
+                <Link href={`/ipos/${idea.name.trim().toLowerCase().replace(/ /g, '-')}`} sx={{
                   whiteSpace: 'initial',
                   textDecoration: 'none',
                   color: 'initial',
