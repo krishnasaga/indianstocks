@@ -88,16 +88,20 @@ function Introbanner() {
               }}
             > </Box>
             <Box>
-              <Text as={'h1'} color={"text2"} sx={{fontSize: [5, "4rem"], weight: 500}}>
+              <Text as={'h1'} color={"text2"} sx={{fontSize: [4, "2rem"], fontWeight: 500}}>
                 Invest on Big Disruptions
               </Text>
             </Box>
             <Box my={10}>
-              <Text as={'h2'} color={"color2"} sx={{fontSize: [4], weight: 500}}>
+              <Text as={'h2'} color={"color2"} sx={{fontSize: [2], fontWeight: 500}}>
                 With convergence of financial and technological expertise
               </Text>
             </Box>
-
+            <Box my={10}>
+              <Text as={'h2'} color={"color2"} sx={{fontSize: [1], fontWeight: 500}}>
+                Disclaimer: We are a team of software engineers developing this application to visualise the information about market and technology in a better way. There is no warranty on any information  presented in this site is accurate. It may contain errors as a result of bugs in the code.
+              </Text>
+            </Box>
           </Box>
         </Grid>
       </Container>

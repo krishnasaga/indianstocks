@@ -9,7 +9,7 @@ export default ({
                 }) => (
   <Box>
     <Helmet>
-      <title> Know about IPO of {name} and subscribe for it | BigInvest </title>
+      <title> Know about IPO of {name}, Price, Issue Date, minimum order quantity and subscribe for it | BigInvest </title>
     </Helmet>
     <TopNav/>
     <Container>
