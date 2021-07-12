@@ -23,9 +23,10 @@ export default ({
             <Grid columns={[1, '4fr 2fr 2fr']}>
               <Box>
                 <Text sx={{
-                  fontSize: [5]
+                  fontSize: [5],
+                  textAlign: ['center','left']
                 }}>
-                  {name}
+                  {name} IPO
                 </Text>
               </Box>
               <Box>
@@ -73,7 +74,7 @@ export default ({
               </Box>
             </Grid>
           </Box>
-          <Box sx={{
+          <Box px={[2,0]} sx={{
             height: '500px'
           }}>
             <Box mt={[4]}>
@@ -95,13 +96,13 @@ export default ({
             </Box>
             <About mt={10} sx={{}} name={name}/>
           </Box>
-          <Box>
+          <Box px={[2,0]} >
             <Text as={'h2'}>You can apply at</Text>
             <Markets/>
           </Box>
         </Grid>
         <Grid>
-          <Box>
+          <Box px={[2,0]} >
             <Videos/>
           </Box>
         </Grid>
