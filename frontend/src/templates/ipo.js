@@ -83,7 +83,7 @@ export default ({
                 lineHeight: 2
               }}>IPO Details</Text>
               <Box>
-                <Grid columns={[2, 4]}>
+                <Grid columns={[2, 4]} gap={[4]} alignItems={'center'}>
                   <IpoDetailsItem/>
                   <IpoDetailsItem/>
                   <IpoDetailsItem/>
@@ -93,6 +93,7 @@ export default ({
                 </Grid>
               </Box>
             </Box>
+            <About mt={10} sx={{}} name={name}/>
           </Box>
           <Box>
             <Text as={'h2'}>You can apply at</Text>
@@ -161,8 +162,20 @@ const Videos = () => {
   </Box>
 }
 
+const About = ({name,...props}) => {
+  return <Box {...props}>
+    <Text as={'h2'} sx={{
+      fontSize: [3],
+      fontWeight: 500
+    }}
+    >
+      About {name}
+    </Text>
+  </Box>
+}
+
 const IpoDetailsItem = () => {
-  return <Box>
+  return <Box py={[2]}>
     <Text sx={{
       fontSize: [2]
     }}>Lot Size </Text>
