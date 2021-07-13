@@ -103,7 +103,7 @@ function Introbanner() {
               <Text as={'h2'} color={"color2"} sx={{fontSize: [1], fontWeight: 500}}>
                 Disclaimer: We are a team of software engineers developing this application to visualise information
                 related to market and technology adoption. There is no warranty on any information presented in this
-                site. It is may be accurate and it may contain errors as a result of bugs in the code.
+                site. It is may not be accurate and it may contain errors as a result of bugs in the code.
               </Text>
             </Box>
           </Box>
