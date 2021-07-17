@@ -122,7 +122,7 @@ export default ({
             <Text as={'h2'} sx={{
               fontSize: [3],
               fontWeight: 500
-            }}>Can be applied in bellow platforms</Text>
+            }}>Where to apply</Text>
             <Markets/>
           </Box>
         </Grid>
