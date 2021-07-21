@@ -8,6 +8,7 @@ import {Helmet} from 'react-helmet';
 import {More} from '../components/Sector/More';
 import {Paper} from '../components/Paper';
 import {GraphLine} from "../components/GraphLine";
+import { ResponsiveTimeSeries } from '../components/Charts/TimeSeries';
 
 export default ({
                   pageContext: {displayName, name, intro, insights = [], backgroundImage, companies},
@@ -87,11 +88,7 @@ export default ({
             }}>
                 <Text p={3} pl={0}>Earnings and Revenue History</Text>
                 <Paper>
-                    <Image  src={"https://via.placeholder.com/350x150\n" +
-                    "\n" +
-                    "C/O https://placeholder.com/#How_To_Use_Our_Placeholders"} sx={{
-
-                    }}/>
+                   <ResponsiveTimeSeries/>
                 </Paper>
             </Box>
 
