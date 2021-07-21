@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   XYPlot,
   LineSeries,
@@ -6,7 +7,6 @@ import {
   MarkSeries,
   AreaSeries
 } from "react-vis";
-import "../node_modules/react-vis/dist/style.css";
 import { useWindowSize } from "@react-hook/window-size";
 
 const SERIES_TYPES = {
@@ -35,7 +35,10 @@ export function TimeSeries({ series, options }) {
   );
 }
 
+
 export function ResponsiveTimeSeries(props) {
   const [width, height] = useWindowSize();
-  return <TimeSeries {...props} options={{ ...props.options, width }} />;
+  return <TimeSeries
+    {...props}
+    options={{ ...props.options, width }} />;
 }
