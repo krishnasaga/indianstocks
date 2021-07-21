@@ -18,5 +18,5 @@
   </a>
 </p>
 
-## Join this project discord with this link https://discord.gg/GRTGN9qPMA
+## Join this project discord with this link https://discord.gg/Kh3EsXaAx7
 
