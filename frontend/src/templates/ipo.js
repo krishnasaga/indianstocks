@@ -5,6 +5,7 @@ import { Footer } from "../components/Footer";
 import { Helmet } from 'react-helmet';
 import { BiLink, BiLinkExternal, FcDocument } from "react-icons/all";
 import { useCountDown } from "../components/UseCountDown";
+import { format } from 'date-fns';
 
 export default ({
   pageContext: { displayName, name, intro, insights = [], backgroundImage, companies , ipo},
