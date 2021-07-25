@@ -6,6 +6,7 @@ import {Helmet} from 'react-helmet';
 import {BiLink, BiLinkExternal, FcDocument} from "react-icons/all";
 import {useCountDown} from "../components/UseCountDown";
 import {format} from 'date-fns';
+import randomColor from 'randomcolor';
 
 export default ({
                   pageContext: {
@@ -286,7 +287,7 @@ const Logo = () => {
     height: '100px',
     borderRadius: '5px',
     margin: ['0 auto', 'initial'],
-    background: 'url("/company-icons/zomato.png")',
+    background: randomColor(),
     backgroundSize: 'cover'
   }}>
 

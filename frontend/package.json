@@ -42,6 +42,7 @@
     "gatsby-transformer-sharp": "^3.9.0",
     "isomorphic-fetch": "2.2.1",
     "namor": "^2.0.2",
+    "randomcolor": "^0.6.2",
     "react": "^16.13.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-charts": "^2.0.0-beta.7",
