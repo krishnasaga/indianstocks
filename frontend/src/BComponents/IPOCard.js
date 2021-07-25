@@ -1,7 +1,8 @@
-import {Box, Grid, Image, Link, Text} from "theme-ui";
+import {Box, Grid, Link, Text} from "theme-ui";
 import {Paper} from "../components/Paper";
 import React from "react";
 import {format} from 'date-fns'
+import randomColor from "randomcolor";
 
 export const InfoText = ({text, value, valueSx, sx, ...remainingProps}) => {
   return <Box {...remainingProps} >
@@ -37,10 +38,16 @@ export const IPOCard = ({ipo, sx, ...remainingProps}) => {
                    fontWeight: "500",
                    display: 'inline-block',
                    width: '290px',
+                   position: 'relative',
                    ...sx
                  }}
                  {...remainingProps}
   >
+    {
+      new Date(ipo.endDate) < Date.now()
+      ? <ClosedStamp/>
+      : null
+    }
     <Link href={`/ipos/${ipo.name.trim().toLowerCase().replace(/ /g, '-')}`} sx={{
       whiteSpace: 'initial',
       textDecoration: 'none',
@@ -48,19 +55,20 @@ export const IPOCard = ({ipo, sx, ...remainingProps}) => {
       fontSize: [1],
 
     }}>
-      <Image src={image.url} sx={{
-        width: '100%'
-      }}/>
-      <Text p={2} sx={{
+
+      <Box p={2} sx={{
         fontSize: [1],
       }}>
-        <Text sx={{
-          fontSize: [4],
-          fontWeight: "500",
-          textOverflow: 'ellipsis',
-          whiteSpace: 'nowrap',
-          overflow: 'hide'
-        }}>{ipo.name}</Text>
+        <Grid columns={'1fr 2fr'}>
+          <Logo/>
+          <Text sx={{
+            fontSize: [2],
+            fontWeight: "500",
+            overflow: 'hide'
+          }}>{ipo.name}
+          </Text>
+        </Grid>
+
 
         <Grid columns={[2]} mt={2}>
           <InfoText text={'Start Date'} value={format(new Date(ipo.startDate), 'dd MMM yyyy')} color={'green'}/>
@@ -72,8 +80,46 @@ export const IPOCard = ({ipo, sx, ...remainingProps}) => {
                     color={'orange'}/>
           <InfoText text={'Minimum order quantity'} value={ipo.lotSize || 'Unknown'} color={'orange'}/>
         </Grid>
-      </Text>
+      </Box>
 
     </Link>
   </Paper>)
+}
+
+const Logo = () => {
+  return <Box sx={{
+    width: '100px',
+    height: '100px',
+    borderRadius: '5px',
+    margin: ['0 auto', 'initial'],
+    background: randomColor(),
+    backgroundSize: 'cover'
+  }}>
+
+  </Box>
+}
+
+const ClosedStamp = () => {
+  return <Box
+
+    color={'red'}
+    sx={{
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    border: '8px solid red',
+    borderRadius: '10px',
+    transform: 'rotateZ(-45deg) translate(-50%,-50%)',
+    transformOrigin: '0% 0%',
+    fontSize: [6],
+    fontWeight: 'bold',
+    opacity: 0.5,
+  }}>
+    <Text color={'red'}
+          sx={{
+      fontSize: [6]
+    }}>
+      CLOSED
+    </Text>
+  </Box>
 }

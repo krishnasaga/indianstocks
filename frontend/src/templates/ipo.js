@@ -60,8 +60,8 @@ export default ({
                   <ExternalLink href={"https://twitter.com/zomato"}>Twitter</ExternalLink>
                   <ExternalLink href={'https://en.wikipedia.org/wiki/Zomato'}>Wikipedia</ExternalLink>
                   <DocLink
-                    href={'https://www.sebi.gov.in/filings/public-issues/apr-2021/zomato-limited-drhp_49956.html'}>RHP
-                    PDF</DocLink>
+                    href={'https://www.sebi.gov.in/filings/public-issues/apr-2021/zomato-limited-drhp_49956.html'}>
+                    RHP PDF</DocLink>
                 </Box>
               </Box>
             </Grid>
