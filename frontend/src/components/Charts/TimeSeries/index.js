@@ -22,7 +22,7 @@ export function TimeSeries({ series, options }) {
   return (
     <div>
       <XYPlot {...options}>
-        {series.map((currentSeries, index) => {
+        { series && series.map((currentSeries, index) => {
           const { type, data, color, opacity } = currentSeries;
           if (!type || !data) return null;
           const Series = SERIES_TYPES[type];
