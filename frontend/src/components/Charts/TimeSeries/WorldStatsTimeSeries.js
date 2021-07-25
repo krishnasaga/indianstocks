@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import {ResponsiveTimeSeries} from "./index";
+import 'isomorphic-fetch';
 
 export const WorldStatsTimeSeries = (props) => {
   const {data} = useWorldStatsChart({chartName: 'electricity/india-electricity-consumption-over-time'});

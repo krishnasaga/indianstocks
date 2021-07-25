@@ -309,7 +309,11 @@ export default function HTML(props) {
 
           .rv-radial-chart .rv-xy-plot__series--label {
           pointer-events: none;
-        }`}
+        }
+        
+        
+        
+        `}
       </style>
     </head>
     <body {...props.bodyAttributes}>

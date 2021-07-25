@@ -1,6 +1,7 @@
 const axios = require("axios");
 const {getSectors, getCompanies, getIdeas,getIpos} = require('./companies');
 
+
 exports.createPages = async function ({actions, graphql}) {
 
 

@@ -59,7 +59,7 @@ const getIpos = async ({id = 'all'} = {}) => {
   if (companiesResponse) {
     return companiesResponse;
   }
-  const response = await axios.get(`${API_ENDPOINT}/company?categoryId=192`,{});
+  const response = await axios.get(`${API_ENDPOINT}/ipos`,{});
   companiesCacheInFileSystem.set(id+'192', response.data);
   return response.data;
 
