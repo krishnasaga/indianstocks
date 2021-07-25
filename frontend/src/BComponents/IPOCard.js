@@ -66,9 +66,12 @@ export const IPOCard = ({ipo, sx, ...remainingProps}) => {
           <InfoText text={'Start Date'} value={format(new Date(ipo.startDate), 'dd MMM yyyy')} color={'green'}/>
           <InfoText text={'Closing Date'} value={format(new Date(ipo.endDate), 'dd MMM yyyy')} color={'red'}/>
           <InfoText text={'Price range'}
-                    value={`${ipo.minimumOrderQuantityBase || '-'} – ${ipo.minimumOrderQuantityMax || '-'}`}
+                    value={ipo.minimumOrderQuantityBase
+                      ?
+                      ` ${ipo.minimumOrderQuantityBase || '-'} – ${ipo.minimumOrderQuantityMax || '-'}`
+                      : 'Unknown'}
                     color={'orange'}/>
-          <InfoText text={'Minimum order quantity'} value={ipo.lotSize} color={'orange'}/>
+          <InfoText text={'Minimum order quantity'} value={ipo.lotSize || 'Unknown'} color={'orange'}/>
         </Grid>
       </Text>
 
