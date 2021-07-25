@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@lekoarts/gatsby-theme-minimal-blog": "^2.7.3",
+    "@react-hook/window-size": "^3.0.7",
     "@theme-ui/match-media": "^0.6.1",
     "axios": "^0.21.1",
     "axios-debug-log": "^0.8.2",

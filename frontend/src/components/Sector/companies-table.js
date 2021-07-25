@@ -216,7 +216,7 @@ export function CompaniesList({name, companies}) {
         sticky: "left",
         Cell: (cell) => {
           return <Grid columns={['28px 1fr']}>
-            <Image src={'/company-icons/tata.png'} width={'40px'} height={'40px'} sx={{alignSelf: 'center'}}/>
+            <Image src={`/company-icons/${name}.svg`} width={'40px'} height={'40px'} sx={{alignSelf: 'center'}}/>
             <Box sx={{
               lineHeight: '20px',
               sticky: "left",
