@@ -51,7 +51,7 @@ export const IPOSlider = ({ideas = [], graphLine = true, title}) => {
 
             ideas.map((idea) => {
 
-              return <IPOCard idea={idea}/>;
+              return <IPOCard ipo={idea}/>;
             })
           }
         </Box>

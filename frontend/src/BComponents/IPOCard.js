@@ -1,6 +1,7 @@
 import {Box, Grid, Image, Link, Text} from "theme-ui";
 import {Paper} from "../components/Paper";
 import React from "react";
+import { format } from 'date-fns'
 
 export const InfoText = ({text, value, valueSx, sx, ...remainingProps}) => {
   return <Box {...remainingProps} >
@@ -25,9 +26,9 @@ export const InfoText = ({text, value, valueSx, sx, ...remainingProps}) => {
 };
 
 
-export const IPOCard = ({idea,sx, ...remainingProps}) => {
+export const IPOCard = ({ipo,sx, ...remainingProps}) => {
 
-  const image = idea.image || {
+  const image = ipo.image || {
     url: "/information-technology.jpg.webp"
   };
 
@@ -40,7 +41,7 @@ export const IPOCard = ({idea,sx, ...remainingProps}) => {
                  }}
                  {...remainingProps}
   >
-    <Link href={`/ipos/${idea.name.trim().toLowerCase().replace(/ /g, '-')}`} sx={{
+    <Link href={`/ipos/${ipo.name.trim().toLowerCase().replace(/ /g, '-')}`} sx={{
       whiteSpace: 'initial',
       textDecoration: 'none',
       color: 'initial',
@@ -59,17 +60,11 @@ export const IPOCard = ({idea,sx, ...remainingProps}) => {
           textOverflow: 'ellipsis',
           whiteSpace: 'nowrap',
           overflow: 'hide'
-        }}>{idea.name}</Text>
+        }}>{ipo.name}</Text>
 
-        <Text sx={{
-          fontSize: "13px",
-        }}>
-          companies in india by market capitalization
-          companies in india by market capitalization
-        </Text>
         <Grid columns={[2]} mt={2}>
-          <InfoText text={'Start Date'} value={'14 Jul 2021'} color={'green'}/>
-          <InfoText text={'Closing Date'} value={'16 Jul 2021'} color={'red'}/>
+          <InfoText text={'Start Date'} value={format(new Date(ipo.startDate),'dd MM yyyy')} color={'green'}/>
+          <InfoText text={'Closing Date'} value={format(new Date(ipo.endDate),'dd MMM yyyy')} color={'red'}/>
           <InfoText text={'Price range'} value={'$72 – $76'} color={'orange'}/>
           <InfoText text={'Minimum order quantity'} value={'195'} color={'orange'}/>
         </Grid>

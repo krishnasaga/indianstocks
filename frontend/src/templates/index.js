@@ -37,7 +37,12 @@ export default ({
       <Introbanner/>
 
       <IPOSlider ideas={IPOs.map((data) => {
-        return {image: {url: `https://source.unsplash.com/290x145/?${data.name.replace(/ /g, ',')}`}, ...data}
+        return {
+
+          image: {
+          url: `https://source.unsplash.com/290x145/?${data.name.replace(/ /g, ',')
+          }`},
+          ...data}
       })} title={<>
         <Text as={'span'}>IPOs</Text> <Text as={'span'}
                                             sx={{fontSize: [1]}}>Initial Public Offerings</Text></>} graphLine={false}/>

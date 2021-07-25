@@ -30,7 +30,7 @@ export default ({
             {
 
               ipos.map((idea) => {
-                return <IPOCard as={'li'} idea={idea} sx={{
+                return <IPOCard as={'li'} ipo={idea} sx={{
                   width: 'unset',
                   margin: 0,
                   padding: 0
