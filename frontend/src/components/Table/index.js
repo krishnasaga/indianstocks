@@ -87,7 +87,8 @@ const StickyColNumber = ({children}) => {
 }
 
 
-const StickyColName = ({children}) => {
+const StickyColName = ({children = ''}) => {
+  let name = children && children.toLowerCase().replace(' ltd', '').replace(' limited', '').replace(' ', '-')
   return (
     <Box as={'td'} sx={{
         position: 'sticky',
@@ -103,7 +104,7 @@ const StickyColName = ({children}) => {
         gridGap: '10px',
          '-webkit-font-smoothing': 'antialiased'
       }}>
-          <Image src={'/company-icons/tata.png'} width={'24px'} height={'24px'} sx={{
+          <Image src={`/company-icons/${name}.svg`} width={'24px'} height={'24px'} sx={{
               alignSelf: 'center',
               maxWidth: 'inherit',
               padding: '0',

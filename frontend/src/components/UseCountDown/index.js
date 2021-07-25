@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 function msToTime(duration) {
     let seconds = Math.floor((duration / 1000) % 60),
@@ -14,16 +14,28 @@ function msToTime(duration) {
     return [days, hours, minutes, seconds];
 }
 
+
+
 // 2021-07-21T12:24:31Z
 export const useCountDown = ({ targetDate }) => {
     let currentDate = Date.now(),
         tgtDate = Date.parse(targetDate),
         targetTimeInMs = tgtDate - currentDate
+    const [target, setTarget] = useState(targetTimeInMs)
+    useEffect(() => {
+        const interval = setInterval(function(){
+            setTarget(tar => tar - 1000)
+        }, 1000)
+        return (() => {
+            clearInterval(interval)
+        })
+    },[])
     if (targetTimeInMs && !isNaN(targetTimeInMs) && targetTimeInMs > 0) {
-        return msToTime(targetTimeInMs)
+        return msToTime(target)
     }
     return [
         '00', '00', '00', '00'
     ];
+
 }
 
