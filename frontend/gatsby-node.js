@@ -136,13 +136,17 @@ exports.createPages = async function ({actions, graphql}) {
   });
 
   await Promise.all(IPOs.data.map(async (edge) => {
-    const {id, name, displayName, intro, insights, backgroundImage} = edge;
+    const {id, name, displayName, intro, insights, backgroundImage,...remainingProps} = edge;
 
     const pages = [
       {
         path: `/ipos/${name.trim().toLowerCase().replace(/ /g, '-')}`,
         component: require.resolve(`./src/templates/ipo.js`),
-        context: {slug: `/ideas/${name.trim().toLowerCase().replace(/ /g, '-')}`,companies: []},
+        context: {
+          slug: `/ideas/${name.trim().toLowerCase().replace(/ /g, '-')}`,
+          ipo: remainingProps,
+          companies: []
+        },
 
       }
     ];

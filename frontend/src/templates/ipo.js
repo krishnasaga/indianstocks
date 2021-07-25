@@ -7,7 +7,7 @@ import { BiLink, BiLinkExternal, FcDocument } from "react-icons/all";
 import { useCountDown } from "../components/UseCountDown";
 
 export default ({
-  pageContext: { displayName, name, intro, insights = [], backgroundImage, companies },
+  pageContext: { displayName, name, intro, insights = [], backgroundImage, companies , ipo},
 }) => (
   <Box>
     <Helmet>
@@ -37,7 +37,7 @@ export default ({
                 </Grid>
               </Box>
               <Box>
-                <ShowCountDown targetDate="2021-08-28T16:20:32Z" />
+                <ShowCountDown targetDate={ipo.startDate} />
               </Box>
               <Box px={2}>
 
@@ -70,8 +70,8 @@ export default ({
                     alignItems: 'center'
                   }}
                 >
-                  <IpoDetailsItem text={'Bidding Start Date'} value={'14 Jul 2021'} />
-                  <IpoDetailsItem text={'Bidding End Date'} value={'14 Jul 2021'} />
+                  <IpoDetailsItem text={'Bidding Start Date'} value={format(new Date(ipo.startDate),'dd MMM yyyy')} />
+                  <IpoDetailsItem text={'Bidding End Date'} value={format(new Date(ipo.endDate),'dd MMM yyyy')}  />
                   <IpoDetailsItem text={'Lot Size'} value={'195'} />
                   <IpoDetailsItem text={'Price Range'} value={'72 - 76'} />
                   <IpoDetailsItem text={'Issue Size'} value={'9375 Cr'} />
