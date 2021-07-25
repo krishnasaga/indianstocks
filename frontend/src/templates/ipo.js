@@ -37,7 +37,7 @@ export default ({
                 </Grid>
               </Box>
               <Box>
-                <ShowCountDown targetDate="2021-07-20T16:20:32Z" />
+                <ShowCountDown targetDate="2021-08-28T16:20:32Z" />
               </Box>
               <Box px={2}>
 
