@@ -1,7 +1,7 @@
 import {Box, Grid, Image, Link, Text} from "theme-ui";
 import {Paper} from "../components/Paper";
 import React from "react";
-import { format } from 'date-fns'
+import {format} from 'date-fns'
 
 export const InfoText = ({text, value, valueSx, sx, ...remainingProps}) => {
   return <Box {...remainingProps} >
@@ -26,7 +26,7 @@ export const InfoText = ({text, value, valueSx, sx, ...remainingProps}) => {
 };
 
 
-export const IPOCard = ({ipo,sx, ...remainingProps}) => {
+export const IPOCard = ({ipo, sx, ...remainingProps}) => {
 
   const image = ipo.image || {
     url: "/information-technology.jpg.webp"
@@ -63,10 +63,12 @@ export const IPOCard = ({ipo,sx, ...remainingProps}) => {
         }}>{ipo.name}</Text>
 
         <Grid columns={[2]} mt={2}>
-          <InfoText text={'Start Date'} value={format(new Date(ipo.startDate),'dd MMM yyyy')} color={'green'}/>
-          <InfoText text={'Closing Date'} value={format(new Date(ipo.endDate),'dd MMM yyyy')} color={'red'}/>
-          <InfoText text={'Price range'} value={'$72 – $76'} color={'orange'}/>
-          <InfoText text={'Minimum order quantity'} value={'195'} color={'orange'}/>
+          <InfoText text={'Start Date'} value={format(new Date(ipo.startDate), 'dd MMM yyyy')} color={'green'}/>
+          <InfoText text={'Closing Date'} value={format(new Date(ipo.endDate), 'dd MMM yyyy')} color={'red'}/>
+          <InfoText text={'Price range'}
+                    value={`${ipo.minimumOrderQuantityBase || '-'} – ${ipo.minimumOrderQuantityMax || '-'}`}
+                    color={'orange'}/>
+          <InfoText text={'Minimum order quantity'} value={ipo.lotSize} color={'orange'}/>
         </Grid>
       </Text>
 
