@@ -120,7 +120,7 @@ const StickyColName = ({children = ''}) => {
               margin: '0',
               borderRadius: '24px',
               textAlign: 'center',
-
+              backgroundImage: 'url(Error.src)'
           }}/>
           <Box>
               <Box sx={{gridColumnStart: ['2', '1'], paddingRight: '10px',}} >
