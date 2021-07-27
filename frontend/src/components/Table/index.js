@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Box, Button, Grid, Image, Text} from 'theme-ui';
+import {Box, Button, Grid, Progress, Text} from 'theme-ui';
 import './index.css';
 import {AiOutlineStar} from 'react-icons/ai';
 import {Popover} from '../Popover';
@@ -67,9 +67,9 @@ const StickyColStar = () => {
   )
 }
 
-const StickyColNumber = ({children}) => {
+const StickyColNumber = ({children,sx}) => {
   return (
-    <Box as={'td'} sx={{position: 'sticky', left: "30px",display: ['none','block']}}>
+    <Box as={'td'} sx={{position: 'sticky', left: "30px",...sx}}>
       <Grid sx={{
         gridAutoFlow: "column",
         alignItems: "center",
@@ -94,83 +94,84 @@ const StickyColName = ({children = ''}) => {
     .replace(' ', '-')
   return (
     <Box as={'td'} sx={{
-        position: 'sticky',
-        left: "57px",
-        padding: [ "8px", "1.8rem 5px"],
+      position: 'sticky',
+      left: "57px",
+      padding: ["8px", "1.8rem 5px"],
     }}>
-      <Grid columns={[2, 1]} width={[ null, null,]} sx={{
+      <Grid columns={[2, 1]} width={[null, null,]} sx={{
         gridAutoFlow: "column",
         alignItems: "center",
         justifyContent: "start",
         fontWeight: "600",
         fontSmooth: 'always',
         gridGap: '10px',
-         '-webkit-font-smoothing': 'antialiased'
+        '-webkit-font-smoothing': 'antialiased'
       }}>
-          <Image
-            bg={'#e5e5e5'}
-            src={`/company-icons/${name}.svg`}
-            alt={name[0].toUpperCase()}
-            width={'24px'}
-            height={'24px'}
-            sx={{
-              alignSelf: 'center',
-              maxWidth: 'inherit',
-              padding: '0',
-              margin: '0',
-              borderRadius: '24px',
-              textAlign: 'center',
-              backgroundImage: 'url(Error.src)'
-          }}/>
-          <Box>
-              <Box sx={{gridColumnStart: ['2', '1'], paddingRight: '10px',}} >
-                  <Text
-                      color={'color7'}
-                      sx={{
-                          whiteSpace: ['break-spaces', 'nowrap'],
-                          fontSize: "14px",
-                          display: ['flex', 'inline'],
-                          textAlign: 'left',
+        <Box
+          as={'object'}
+          data={`/company-icons/${name}.svg`} type="image/svg+xml"
+          bg={'#e5e5e5'}
+          width={'24px'}
+          height={'24px'}
+          sx={{
+            alignSelf: 'center',
+            maxWidth: 'inherit',
+            padding: '0',
+            margin: '0',
+            borderRadius: '24px',
+            textAlign: 'center',
+          }}>
+          {name[0].toUpperCase()}
+        </Box>
+        <Box>
+          <Box sx={{gridColumnStart: ['2', '1'], paddingRight: '10px',}}>
+            <Text
+              color={'color7'}
+              sx={{
+                whiteSpace: ['break-spaces', 'nowrap'],
+                fontSize: "14px",
+                display: ['flex', 'inline'],
+                textAlign: 'left',
 
 
-                      }}>
-                      {children}
-                  </Text>
-                  <Text
-                      color={'#908A9D'}
-                      sx={{
-                          fontSize: '12px',
-                          padding: '0',
-                          paddingLeft: '5px',
-                          display: ['none', 'inline'],
-                      }}>
-                      TICKER
-                  </Text>
-              </Box>
-
-              <Box sx={{textAlign: 'left'}}>
-                  <Text p={'3px 6px 2px 6px'}
-                        bg={'#EFF2F5'}
-                        color={'#58667E'}
-                        sx={{
-                            fontSize: '12px',
-                            borderRadius: '4px',
-                            display: ['inline-block', 'none'],
-                        }}>
-                      7
-                  </Text>
-                  <Text
-                      color={'#908A9D'}
-                      sx={{
-                          fontSize: '12px',
-                          padding: '0',
-                          paddingLeft: '5px',
-                          display: ['inline-block', 'none']
-                      }}>
-                      TICKER
-                  </Text>
-              </Box>
+              }}>
+              {children}
+            </Text>
+            <Text
+              color={'#908A9D'}
+              sx={{
+                fontSize: '12px',
+                padding: '0',
+                paddingLeft: '5px',
+                display: ['none', 'inline'],
+              }}>
+              TICKER
+            </Text>
           </Box>
+
+          <Box sx={{textAlign: 'left'}}>
+            <Text p={'3px 6px 2px 6px'}
+                  bg={'#EFF2F5'}
+                  color={'#58667E'}
+                  sx={{
+                    fontSize: '12px',
+                    borderRadius: '4px',
+                    display: ['inline-block', 'none'],
+                  }}>
+              7
+            </Text>
+            <Text
+              color={'#908A9D'}
+              sx={{
+                fontSize: '12px',
+                padding: '0',
+                paddingLeft: '5px',
+                display: ['inline-block', 'none']
+              }}>
+              TICKER
+            </Text>
+          </Box>
+        </Box>
       </Grid>
     </Box>
   )
@@ -184,77 +185,117 @@ const TD = ({children, sx, ...props}) => {
     sx={{
       fontSize: '14px',
       fontWeight: '500',
-        backgroundColor: 'white',
-        ':hover': {
-            background: '#fafbfd'
-        },
+      backgroundColor: 'white',
+      ':hover': {
+        background: '#fafbfd'
+      },
       ...sx,
     }}{...props}>{children}</Box>;
 };
 
 const MarketCap = ({children, sx, ...props}) => {
   const [open, setOpen] = useState(false);
-  return <TD as={'td'}>{children}</TD>;
+  return <TD as={'td'}  sx={{ textAlign: 'right'}} >{children}</TD>;
 }
 
 const Revenue = ({children, sx, ...props}) => {
   const [open, setOpen] = useState(false);
-  return <TD as={'td'}>{children}</TD>;
+  return <TD as={'td'}  sx={{ textAlign: 'right'}} >{children}</TD>;
 }
 
 const PBRatio = ({children, sx, ...props}) => {
   const [open, setOpen] = useState(false);
-  return <TD as={'td'} color={'#EA3943'}>{children}</TD>;
+  return <TD as={'td'} sx={{ textAlign: 'right'}} sx={{ textAlign: 'right'}} color={'#EA3943'}>{children}</TD>;
 }
 
 const PERatio = ({children, sx, ...props}) => {
   const [open, setOpen] = useState(false);
-  return <TD as={'td'} color={'#16C784'}>{children}</TD>;
+  return <TD as={'td'} sx={{ textAlign: 'right'}} color={'#16C784'}>{children}</TD>;
 }
 
+const HeightLow52Week = (props) => {
+  return <Box {...props}  sx={{ textAlign: 'right'}} ><Progress max={1} value={1 / 2}>
+    50%
+  </Progress></Box>;
+}
 
 export const Table = ({data = []}) => {
   const [open, setOpen] = useState(false);
 
   return <Box>
-
     <div role="region" aria-labelledby="caption" tabIndex="0">
-      <Box as={'table'} sx={{borderCollapse: 'collapse', borderSpacing: 0}}>
+      <Box as={'table'} sx={{
+        width: ['auto','100%']
+      }}>
         <thead>
         <tr>
-          <th></th>
           <Box as={'th'} sx={{
-            display: ['none','block']
-          }}>#</Box>
-          <th p={'0px'}>Company Name</th>
-          <th p={'0px'}>Market Cap</th>
-          <th p={'0px'}>Revenue</th>
-          <th p={'0px'}>PE ratio</th>
-          <th p={'0px'}>PB ratio</th>
+            borderBottom: '1px solid #e5e5e5',
+            width: '60px',
+            textAlign: 'center',
+          }}
+          ></Box>
+          <Box as={'th'}
+               sx={{
+                 borderBottom: '1px solid #e5e5e5',
+                 width: '60px',
+                 textAlign: 'center',
+               }}
+          >
+            #
+          </Box>
+          <Box as={'th'}
+               sx={{
+                 width: '220px',
+                 borderBottom: '1px solid #e5e5e5',
+               }}>
+            Company Name
+          </Box>
+          <Box as={'th'} sx={{
+            borderBottom: '1px solid #e5e5e5',
+            textAlign: 'right',
+          }}>
+            Stock Price
+          </Box>
+          <Box as={'th'} sx={{
+            borderBottom: '1px solid #e5e5e5',
+            textAlign: 'right',
+          }}>1Y%</Box>
+          <Box as={'th'} sx={{
+            borderBottom: '1px solid #e5e5e5',
+            textAlign: 'right',
+          }}>5Y%</Box>
+          <Box as={'th'} sx={{
+            borderBottom: '1px solid #e5e5e5',
+            textAlign: 'right',
+          }}>Market Cap</Box>
+          <Box as={'th'} sx={{
+            borderBottom: '1px solid #e5e5e5',
+            textAlign: 'right',
+          }}>Revenue</Box>
+          <Box as={'th'} sx={{
+            borderBottom: '1px solid #e5e5e5',
+            textAlign: 'right',
+          }}>PE ratio</Box>
+          <Box as={'th'} sx={{
+            borderBottom: '1px solid #e5e5e5',
+            textAlign: 'right',
+          }}>PB ratio</Box>
         </tr>
         </thead>
         <tbody>
-        {/*Example code without components*/}
-        {/*<tr>*/}
-        {/*  <th>Star</th>*/}
-        {/*  <th>Number</th>*/}
-        {/*  <th>Name</th>*/}
-        {/*  <td>Hello</td>*/}
-        {/*  <td>Hello</td>*/}
-        {/*  <td>Hello</td>*/}
-        {/*  <td>Hello</td>*/}
-        {/*  <td>Hello</td>*/}
-        {/*</tr>*/}
-
         {
           data.map((value, index) => {
             return <tr key={index}>
               <StickyColStar>Star</StickyColStar>
               <StickyColNumber>6</StickyColNumber>
               <StickyColName>{value.name}</StickyColName>
-              <MarketCap as={'td'} color={'#000000'} >$32,569.21</MarketCap>
-              <Revenue as={'td'} color={'#000000'} >$32,569.21</Revenue>
-              <PERatio as={'td'} color={'#16C784'} >15.5</PERatio>
+              <MarketCap as={'td'} color={'#000000'}>₹{value.marketCap}</MarketCap>
+              <PERatio as={'td'} color={'#16C784'}>15.5</PERatio>
+              <PERatio as={'td'} color={'#16C784'}>15.5</PERatio>
+              <MarketCap as={'td'} color={'#000000'}>₹{value.marketCap}</MarketCap>
+              <HeightLow52Week as={'td'} color={'#000000'}>₹32,569.21</HeightLow52Week>
+              <PERatio as={'td'} color={'#16C784'}>15.5</PERatio>
               <PBRatio as={'td'} color={'#EA3943'} onClick={() => {
                 setOpen(true);
               }}>12 <Popover open={open}>

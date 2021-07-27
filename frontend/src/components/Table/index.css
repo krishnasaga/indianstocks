@@ -42,7 +42,7 @@ table thead th {
     background: white;
     font-size:0.8rem;
     color: #282c34;
-    border-bottom: 1px solid #F5F5F5;
+
     text-align: right;
 }
 
@@ -141,63 +141,9 @@ tr:hover {
 
 tr td {
     border-bottom: 1px solid #F5F5F5;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 0;
+    padding-right: 0;
     color: #222531FF;
     /*background: #47d3d9;*/
 }
-
-tr td:first-child {
-    /*width: 0.5vw;*/
-    /*background: #114bc1;*/
-    padding-left: 7px;
-    padding-right: 5px;
-    width: 20px;
-}
-
-tr td:nth-child(2) {
-    /*width: 0.5vw;*/
-    /*background: #a6a6a5;*/
-    padding-left: 9px;
-    padding-right: 15px;
-}
-
-tr td:nth-child(3) {
-    /*width: 25vw;*/
-    /*background: #a414af;*/
-    /*padding-left: 0.1rem;*/
-    padding-left: 0.1px;
-}
-/*CODE BELOW FIXES WIDTH OF STICKY COLS*/
-
-tr td:nth-child(4) {
-    width: 25vw;
-    padding: 0px;
-    padding-left: 30px;
-    padding-right: 10px;
-    background: white;
-}
-
-tr td:nth-child(5) {
-    width: 25vw;
-    padding: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background: white;
-}
-
-tr td:nth-child(6) {
-    width: 25vw;
-    padding: 5px;
-    padding-right: 10px;
-    background: white;
-}
-
-tr td:nth-child(7) {
-    width: 25vw;
-    padding: 5px;
-    padding-right: 10px;
-    background: white;
-}
-
 

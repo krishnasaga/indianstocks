@@ -12,7 +12,10 @@ import {GraphLine} from "../components/GraphLine";
 export default ({
                   pageContext: {displayName, name, intro, insights = [], backgroundImage, companies},
                 }) => (
-  <Box>
+  <Box sx={{
+  '-webkit-font-smoothing': 'antialiased',
+    '-moz-osx-font-smoothing': 'grayscale'
+  }}>
     <Helmet>
       <title> Top {displayName} companies in india by market capitalization | BigInvest </title>
     </Helmet>
@@ -80,6 +83,7 @@ export default ({
         boxShadow: "0 3px 20px 0 rgb(0 77 165 / 7%)",
       }}
     >
+
       <CompaniesTable
         columns={[{
           Header: "#",

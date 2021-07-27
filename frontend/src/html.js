@@ -19,8 +19,10 @@ export default function HTML(props) {
         rel="stylesheet"/>
       <script>
         {`html,body{
+        
         font-family: 'inter';
-        '-webkit-font-smoothing': 'antialiased';
+          -webkit-font-smoothing: antialiased !important;
+          -moz-osx-font-smoothing: grayscale !important;
       }`}
       </script>
       <style>
