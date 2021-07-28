@@ -47,7 +47,7 @@ export default ({
                 </Grid>
               </Box>
               <Box>
-                <ShowCountDown targetDate={ipo.startDate}/>
+                <ShowCountDownWrapper startDate={ipo.startDate} endDate={ipo.endDate}/>
               </Box>
               <Box px={2}>
 
@@ -114,6 +114,58 @@ export default ({
 )
 ;
 
+const ShowCountDownWrapper = ({ startDate = '', endDate= '' }) => {
+  let message = '',
+      date = '',
+      showtimer = true,
+      today = new Date().getTime();
+  if(new Date(startDate).getTime() > today) {
+    message = 'IPO starts in'
+    date = startDate
+    // ipo about to start
+  } else if(new Date(endDate) >= today) {
+    // ipo in progress
+    message = 'IPO ends in'
+    date = endDate
+  } else {
+    message = (startDate && endDate) ? 'CLOSED' : 'UNKNOWN' 
+    showtimer = false;
+  }
+  if(showtimer) {
+    return (
+      <>
+        <Grid columns={[1]} sx={{
+          textAlign: 'center',
+          fontSize: [2]
+        }}>
+          <Text sx={{
+            fontSize: [2]
+          }}>{message}</Text>
+        </Grid>
+        <ShowCountDown targetDate={date}/>
+      </>
+    )
+  } else {
+    return (<Box
+      sx={{
+      border: '8px solid red',
+      borderRadius: '10px',
+      fontSize: [5],
+      width: 'fit-content',
+      transform: 'rotateZ(348deg)',
+      opacity: '0.7',
+      fontWeight: 'bold',
+    }}>
+      <Text color={'red'}
+            sx={{
+        fontSize: [6]
+      }}>
+        {message}
+      </Text>
+    </Box>)
+  }
+}
+
 const ShowCountDown = ({targetDate = ''}) => {
   const [day, hours, minutes, seconds] = useCountDown({targetDate})
   return (
@@ -123,19 +175,19 @@ const ShowCountDown = ({targetDate = ''}) => {
       }}>
         <Text sx={{
           fontSize: [4],
-          fontWeight: 300
+          fontWeight: 700
         }}>{day}</Text>
         <Text sx={{
           fontSize: [4],
-          fontWeight: 300
+          fontWeight: 700
         }}>{hours}</Text>
         <Text sx={{
           fontSize: [4],
-          fontWeight: 300
+          fontWeight: 700
         }}>{minutes}</Text>
         <Text sx={{
           fontSize: [4],
-          fontWeight: 300
+          fontWeight: 700
         }}>{seconds}</Text>
       </Grid>
       <Grid columns={[4]} sx={{
