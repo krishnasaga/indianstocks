@@ -59,7 +59,7 @@ const getIpos = async ({id = 'all'} = {}) => {
   if (companiesResponse) {
     return companiesResponse;
   }
-  const response = await axios.get(`${API_ENDPOINT}/ipos`,{});
+  const response = await axios.get(`${API_ENDPOINT}/ipos?$sort[startDate]=-1`,{});
   companiesCacheInFileSystem.set(id+'192', response.data);
   return response.data;
 

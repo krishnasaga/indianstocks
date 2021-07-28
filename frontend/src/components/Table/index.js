@@ -45,7 +45,7 @@ function ToolTip({children, ...remainingProps}) {
 
 const StickyColStar = () => {
   return (
-    <Box as={'td'} sx={{position: 'sticky', left: 0}}>
+    <Box as={'td'} px={2} sx={{position: 'sticky', left: 0, width: '24px'}}>
       <Grid sx={{
         gridAutoFlow: "column",
         alignItems: "center",
@@ -69,7 +69,13 @@ const StickyColStar = () => {
 
 const StickyColNumber = ({children,sx}) => {
   return (
-    <Box as={'td'} sx={{position: 'sticky', left: "30px",...sx}}>
+    <Box as={'td'}
+         px={2}
+         sx={{
+           position: 'sticky',
+           left: "30px",
+           ...sx,
+           width: '24px'}}>
       <Grid sx={{
         gridAutoFlow: "column",
         alignItems: "center",
@@ -231,14 +237,14 @@ export const Table = ({data = []}) => {
         <tr>
           <Box as={'th'} sx={{
             borderBottom: '1px solid #e5e5e5',
-            width: '60px',
+            width: '24px',
             textAlign: 'center',
           }}
-          ></Box>
+          />
           <Box as={'th'}
                sx={{
                  borderBottom: '1px solid #e5e5e5',
-                 width: '60px',
+                 width: '24px',
                  textAlign: 'center',
                }}
           >
@@ -254,33 +260,40 @@ export const Table = ({data = []}) => {
           <Box as={'th'} sx={{
             borderBottom: '1px solid #e5e5e5',
             textAlign: 'right',
+            width: '60px',
           }}>
             Stock Price
           </Box>
           <Box as={'th'} sx={{
             borderBottom: '1px solid #e5e5e5',
             textAlign: 'right',
+            width: '60px',
           }}>1Y%</Box>
           <Box as={'th'} sx={{
             borderBottom: '1px solid #e5e5e5',
             textAlign: 'right',
+            width: '60px',
           }}>5Y%</Box>
           <Box as={'th'} sx={{
             borderBottom: '1px solid #e5e5e5',
             textAlign: 'right',
+            width: '120px',
           }}>Market Cap</Box>
           <Box as={'th'} sx={{
             borderBottom: '1px solid #e5e5e5',
             textAlign: 'right',
+            width: '120px',
           }}>Revenue</Box>
           <Box as={'th'} sx={{
             borderBottom: '1px solid #e5e5e5',
             textAlign: 'right',
+            width: '120px',
           }}>PE ratio</Box>
           <Box as={'th'} sx={{
             borderBottom: '1px solid #e5e5e5',
             textAlign: 'right',
-          }}>PB ratio</Box>
+            width: '60px',
+          }}>|</Box>
         </tr>
         </thead>
         <tbody>
@@ -290,15 +303,19 @@ export const Table = ({data = []}) => {
               <StickyColStar>Star</StickyColStar>
               <StickyColNumber>6</StickyColNumber>
               <StickyColName>{value.name}</StickyColName>
-              <MarketCap as={'td'} color={'#000000'}>₹{value.marketCap}</MarketCap>
-              <PERatio as={'td'} color={'#16C784'}>15.5</PERatio>
-              <PERatio as={'td'} color={'#16C784'}>15.5</PERatio>
-              <MarketCap as={'td'} color={'#000000'}>₹{value.marketCap}</MarketCap>
-              <HeightLow52Week as={'td'} color={'#000000'}>₹32,569.21</HeightLow52Week>
-              <PERatio as={'td'} color={'#16C784'}>15.5</PERatio>
-              <PBRatio as={'td'} color={'#EA3943'} onClick={() => {
+              <MarketCap as={'td'} color={'#000000'} px={[2]}>₹{value.marketCap}</MarketCap>
+              <PERatio as={'td'} color={'#16C784'} px={[2]} >15.5</PERatio>
+              <PERatio as={'td'} color={'#16C784'} px={[2]} >15.5</PERatio>
+              <MarketCap as={'td'} color={'#000000'} px={[2]} >₹{value.marketCap}</MarketCap>
+              <HeightLow52Week as={'td'} color={'#000000'} px={[2]} >₹32,569.21</HeightLow52Week>
+              <PERatio as={'td'} color={'#16C784'} px={[2]} sx={{
+                textAlign: 'center'
+              }}  >15</PERatio>
+              <PBRatio as={'td'} color={'#EA3943'} px={[2]} sx={{
+                textAlign: 'center'
+              }}onClick={() => {
                 setOpen(true);
-              }}>12 <Popover open={open}>
+              }} px={[2]} >: <Popover open={open}>
                 Hello
               </Popover></PBRatio>
             </tr>;
