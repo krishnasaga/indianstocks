@@ -26,7 +26,7 @@ export default function HTML(props) {
       }`}
       </script>
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`}></script>
+      <script async={true} src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`}></script>
       <script>
         {
           `window.dataLayer = window.dataLayer || [];
