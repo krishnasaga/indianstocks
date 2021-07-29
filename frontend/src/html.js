@@ -29,10 +29,10 @@ export default function HTML(props) {
       <script async={true} src={`https://www.googletagmanager.com/gtag/js?id=R6RT09T0ZX`}></script>
       <script>
         {
-          `window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'R6RT09T0ZX');
+          'window.dataLayer = window.dataLayer || [];'+
+        'function gtag(){dataLayer.push(arguments)}'+
+        'gtag(\'js\', new Date());'+
+        'gtag(\'config\', \'R6RT09T0ZX\')'
         `}
       </script>
       <style>
