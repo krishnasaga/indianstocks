@@ -62,9 +62,7 @@ export default ({
       <Box bg={"color5"}>
         <Container>
           <Box py={'4rem'} sx={{paddingLeft: '35px', paddingRight: '50px'}}>
-            <Cards items={sectors}
-
-            />
+            { /** <Cards items={sectors}  /> **/ }
           </Box>
         </Container>
       </Box>
