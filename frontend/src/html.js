@@ -25,6 +25,17 @@ export default function HTML(props) {
           -moz-osx-font-smoothing: grayscale !important;
       }`}
       </script>
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`}></script>
+      <script>
+        {
+          `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', ${process.env.GOOGLE_ANALYTICS_ID}');
+        `}
+      </script>
       <style>
         {`
           .react-vis-magic-css-import-rule {
