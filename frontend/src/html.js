@@ -26,7 +26,7 @@ export default function HTML(props) {
       }`}
       </style>
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-      <script async={true} src={`https://www.googletagmanager.com/gtag/js?id=R6RT09T0ZX`}></script>
+      <script async={true} src={`https://www.googletagmanager.com/gtag/js?id=G-R6RT09T0ZX`}></script>
 
       <script
         dangerouslySetInnerHTML={{
@@ -34,7 +34,7 @@ export default function HTML(props) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments)}
           gtag("js", new Date());
-          gtag("config", "R6RT09T0ZX")
+          gtag("config", "G-R6RT09T0ZX")
         `,
         }}
       />
