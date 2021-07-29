@@ -26,14 +26,13 @@ export default function HTML(props) {
       }`}
       </script>
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-      <script async={true} src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`}></script>
+      <script async={true} src={`https://www.googletagmanager.com/gtag/js?id=R6RT09T0ZX`}></script>
       <script>
         {
           `window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
-        gtag('config', ${process.env.GOOGLE_ANALYTICS_ID}');
+        gtag('config', 'R6RT09T0ZX');
         `}
       </script>
       <style>
