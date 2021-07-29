@@ -18,7 +18,7 @@ const FooterHeading = ({children}) => {
   );
 };
 
-const FooterLink = ({children}) => {
+const FooterLink = ({children,sx,...remainingProps}) => {
   return (
     <Link
       color={"rgb(255, 255, 255)"}
@@ -30,7 +30,9 @@ const FooterLink = ({children}) => {
         ':hover': {
           textDecoration: "underline",
         },
+        ...sx
       }}
+      {...remainingProps}
     >
       {children}
     </Link>
