@@ -17,24 +17,27 @@ export default function HTML(props) {
       <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet"/>
-      <script>
+      <style>
         {`html,body{
         
         font-family: 'inter';
           -webkit-font-smoothing: antialiased !important;
           -moz-osx-font-smoothing: grayscale !important;
       }`}
-      </script>
+      </style>
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
       <script async={true} src={`https://www.googletagmanager.com/gtag/js?id=R6RT09T0ZX`}></script>
-      <script>
-        {```
+
+      <script
+        dangerouslySetInnerHTML={{
+          __html:      `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments)}
-          gtag(""js", new Date());
+          gtag("js", new Date());
           gtag("config", "R6RT09T0ZX")
-        ```}
-      </script>
+        `,
+        }}
+      />
       <style>
         {`
           .react-vis-magic-css-import-rule {
