@@ -1,9 +1,8 @@
 const axios = require("axios");
-const {getSectors, getCompanies, getIdeas,getIpos} = require('./companies');
+const {getSectors, getCompanies, getIdeas, getIpos} = require('./companies');
 
 
 exports.createPages = async function ({actions, graphql}) {
-
 
 
   const sectors = await getSectors();
@@ -70,14 +69,14 @@ exports.createPages = async function ({actions, graphql}) {
 
   await Promise.all(ideas.data.map(async (edge) => {
     const {id, name, displayName, intro, insights, backgroundImage} = edge;
-    const data =  await getIdeas({id});
+    const data = await getIdeas({id});
     const companies = data.companies;
 
     const pages = [
       {
         path: `/ideas/${name.toLowerCase().replace(/ /g, '-')}`,
         component: require.resolve(`./src/templates/sectors-companies.js`),
-        context: {slug: `/ideas/${name.toLowerCase().replace(/ /g, '-')}`,companies},
+        context: {slug: `/ideas/${name.toLowerCase().replace(/ /g, '-')}`, companies},
 
       },
       {
@@ -136,7 +135,7 @@ exports.createPages = async function ({actions, graphql}) {
   });
 
   await Promise.all(IPOs.data.map(async (edge) => {
-    const {id, name, displayName, intro, insights, backgroundImage,...remainingProps} = edge;
+    const {id, name, displayName, intro, insights, backgroundImage, ...remainingProps} = edge;
 
     const pages = [
       {
@@ -163,7 +162,7 @@ exports.createPages = async function ({actions, graphql}) {
           intro: '',
           insights: [],
           backgroundImage: '',
-          companies:  []
+          companies: []
         },
       });
     });
@@ -180,6 +179,35 @@ exports.createPages = async function ({actions, graphql}) {
       sectors: sectors.data,
       neftySectorIndexes: neftySectorIndexes.data
     }
+  });
+
+  const footerLinks = [
+    "/open-source",
+    "/discord",
+    "/twitter",
+    "/company",
+    "/careers",
+    "/partners",
+    "/blog",
+    "/press",
+    "/contact-us",
+    "/data-analytics",
+    "/research",
+    "/data-platforms",
+    "/open-source",
+    "/create-a-profile",
+    "/features-lists-and-searches",
+    "/biginvest-difference",
+    "/knowledge",
+    "/privacy"
+  ].forEach((path)=>{
+    actions.createPage({
+      path: path,
+      component: require.resolve(`./src/templates/coming-soon.js`),
+      context: {
+
+      }
+    });
   });
 
 

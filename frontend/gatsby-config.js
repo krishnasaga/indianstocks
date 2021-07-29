@@ -74,3 +74,4 @@ module.exports = {
     `gatsby-plugin-netlify`,
   ].filter(Boolean),
 };
+
