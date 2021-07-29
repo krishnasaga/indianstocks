@@ -31,8 +31,8 @@ export default function HTML(props) {
         {
           'window.dataLayer = window.dataLayer || [];'+
         'function gtag(){dataLayer.push(arguments)}'+
-        'gtag(\'js\', new Date());'+
-        'gtag(\'config\', \'R6RT09T0ZX\')'
+        'gtag(""js", new Date());'+
+        'gtag("config", "R6RT09T0ZX")'
         `}
       </script>
       <style>
