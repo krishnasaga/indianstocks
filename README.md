@@ -19,4 +19,3 @@
 </p>
 
 ## Join this project discord with this link https://discord.gg/Kh3EsXaAx7
-
