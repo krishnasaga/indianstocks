@@ -59,13 +59,13 @@ export default ({
       <SectorsSlider ideas={neftySectorIndexes} title={'Nefty Indexes'}/>
 
 
-      <Box bg={"color5"}>
+      { /**  <Box bg={"color5"}>
         <Container>
           <Box py={'4rem'} sx={{paddingLeft: '35px', paddingRight: '50px'}}>
-            { /** <Cards items={sectors}  /> **/ }
+             <Cards items={sectors}  />
           </Box>
         </Container>
-      </Box>
+      </Box>**/ }
       <Footer/>
     </Box>
   );
