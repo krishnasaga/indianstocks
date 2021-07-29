@@ -3,7 +3,6 @@ import {Avatar, Box, Grid, IconButton, Link, Text} from 'theme-ui';
 import {FaFacebookF, FaLinkedinIn, FaTwitter} from 'react-icons/fa';
 import {ImInstagram} from 'react-icons/im'
 
-
 const FooterHeading = ({children}) => {
   return (
     <Text
@@ -81,8 +80,9 @@ export const Footer = () => {
           order: ['4', '4', '1']
         }}>
           <FooterHeading as='h4'>Stay Connected</FooterHeading>
-          <FooterLink>Crunchbase News</FooterLink>
-          <FooterLink>Subscribe to Crunchbase Daily</FooterLink>
+          <FooterLink  href={'/open-source'}  >BigInvest Open Source</FooterLink>
+          <FooterLink  href={'/discord'} >Discord Channel</FooterLink>
+          <FooterLink  href={'/twitter'} >Discord Channel</FooterLink>
           <Text sx={{color: 'color4'}}>
             <IconButton aria-label="Toggle dark mode">
               <svg
@@ -180,12 +180,12 @@ export const Footer = () => {
           order: ['1', '1', '2']
         }}>
           <FooterHeading as='h4'>Who We Are</FooterHeading>
-          <FooterLink>Company</FooterLink>
-          <FooterLink>Careers</FooterLink>
-          <FooterLink>Partners</FooterLink>
-          <FooterLink>Blog</FooterLink>
-          <FooterLink>Press</FooterLink>
-          <FooterLink>Contact Us</FooterLink>
+          <FooterLink href={'/company'} >Company</FooterLink>
+          <FooterLink href={'/careers'} >Careers</FooterLink>
+          <FooterLink href={'/partners'} >Partners</FooterLink>
+          <FooterLink href={'/blog'} >Blog</FooterLink>
+          <FooterLink  href={'/press'}  >Press</FooterLink>
+          <FooterLink  href={'/contact-us'}  >Contact Us</FooterLink>
         </Box>
         <Box sx={{
           display: 'flex',
@@ -194,12 +194,10 @@ export const Footer = () => {
           order: ['2', '2', '3']
         }}>
           <FooterHeading as='h4'>What We Do</FooterHeading>
-          <FooterLink>Pro Membership</FooterLink>
-          <FooterLink>Marketplace</FooterLink>
-          <FooterLink>BigInvest Enterprise</FooterLink>
-          <FooterLink>Data Licensing</FooterLink>
-          <FooterLink>Customer Stories</FooterLink>
-          <FooterLink>Pricing</FooterLink>
+          <FooterLink href={'/data-analytics'}  >Data Analytics</FooterLink>
+          <FooterLink href={'/research'}   >Research</FooterLink>
+          <FooterLink href={'/data-platforms'}  >Data Platforms</FooterLink>
+          <FooterLink href={'/open-source'}  >Open Source</FooterLink>
         </Box>
 
         <Box sx={{
@@ -209,12 +207,11 @@ export const Footer = () => {
           order: ['3', '3', '4']
         }}>
           <FooterHeading as='h4'>Helpful Links</FooterHeading>
-          <FooterLink>Create a Profile</FooterLink>
-          <FooterLink>Features Lists and Searches</FooterLink>
-          <FooterLink>The Crunchbase Difference</FooterLink>
-          <FooterLink>Knowledge Center</FooterLink>
-          <FooterLink>Privacy</FooterLink>
-          <FooterLink>Do not sell my info</FooterLink>
+          <FooterLink href={'/create-a-profile'} >Create a Profile</FooterLink>
+          <FooterLink href={'/features-lists-and-searches'}  >Features Lists and Searches</FooterLink>
+          <FooterLink href={'/biginvest-difference'}  >BigInvest Difference</FooterLink>
+          <FooterLink href={'/knowledge'} >Knowledge</FooterLink>
+          <FooterLink href={'/privacy'}>Privacy</FooterLink>
         </Box>
       </Grid>
     </Box>
