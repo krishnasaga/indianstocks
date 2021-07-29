@@ -45,8 +45,6 @@ export function TimeSeries({series, options}) {
       </XYPlot>
 
       <DiscreteColorLegend
-        height={50}
-        width={1000}
         orientation={'horizontal'}
         items={series.map(data => ({title: data.name, strokeWidth: 40}))}/>
     </div>

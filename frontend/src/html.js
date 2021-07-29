@@ -25,7 +25,7 @@ export default function HTML(props) {
           -moz-osx-font-smoothing: grayscale !important;
       }`}
       </script>
-      <!-- Global site tag (gtag.js) - Google Analytics -->
+      {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
       <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_ID}`}></script>
       <script>
         {
