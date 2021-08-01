@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Button, Container, Grid, Image, Text} from "theme-ui";
+import {Box, Button, Container, Grid, Text} from "theme-ui";
 import {TopNav} from "../components/TopNav";
 import {Footer} from "../components/Footer";
 import {Helmet} from 'react-helmet';
@@ -7,7 +7,8 @@ import {BiLink, BiLinkExternal, FcDocument} from "react-icons/all";
 import {useCountDown} from "../components/UseCountDown";
 import {format} from 'date-fns';
 import randomColor from 'randomcolor';
-
+import {Image} from "../components/Image";
+import {FakeLogo} from '../components/FakeLogo';
 export default ({
                   pageContext: {
                     displayName,
@@ -37,7 +38,7 @@ export default ({
                 <Grid columns={[1, '110px 1fr']} sx={{
                   alignItems: 'center'
                 }}>
-                  <Logo/>
+                  <Logo ipo={{name}}/>
                   <Text sx={{
                     fontSize: [5],
                     textAlign: ['center', 'left']
@@ -85,8 +86,8 @@ export default ({
                   <IpoDetailsItem text={'Lot Size'} value={ipo.lotSize}/>
                   <IpoDetailsItem text={'Price Range'} value={
                     ipo.minimumOrderQuantityBase
-                    ?  ` ${ipo.minimumOrderQuantityBase || '-'} – ${ipo.minimumOrderQuantityMax || '-'}`
-                    : 'Unknown'}/>
+                      ? ` ${ipo.minimumOrderQuantityBase || '-'} – ${ipo.minimumOrderQuantityMax || '-'}`
+                      : 'Unknown'}/>
                   <IpoDetailsItem text={'Issue Size'} value={'--'}/>
                   <IpoDetailsItem/>
                 </Grid>
@@ -128,7 +129,7 @@ const ShowCountDownWrapper = ({ startDate = '', endDate= '' }) => {
     message = 'IPO ends in'
     date = endDate
   } else {
-    message = (startDate && endDate) ? 'CLOSED' : 'UNKNOWN' 
+    message = (startDate && endDate) ? 'CLOSED' : 'UNKNOWN'
     showtimer = false;
   }
   if(showtimer) {
@@ -333,15 +334,26 @@ const DocLink = ({children, ...remainingProps}) => {
   </Button>
 }
 
-const Logo = () => {
+const Logo = ({ipo}) => {
   return <Box sx={{
     width: '100px',
     height: '100px',
-    borderRadius: '5px',
+    borderRadius: '10px',
     margin: ['0 auto', 'initial'],
-    background: randomColor(),
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    border: '1px solid #e5e5e5'
   }}>
-
+    <Image src={`/ipo-logos/${ipo.name.replace(/ /g, '-').toLowerCase()}.png`}
+           width={"100%"}
+           fallback={<FakeLogo
+             name={ipo.name}
+             p={2}
+             sx={{
+               height: 'inherit',
+               fontSize: [6],
+               textAlign: 'center'
+             }}
+           />}
+    />
   </Box>
 }

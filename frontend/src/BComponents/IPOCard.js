@@ -1,6 +1,7 @@
 import {Box, Grid, Link, Text} from "theme-ui";
 import {Paper} from "../components/Paper";
 import {Image} from "../components/Image";
+import {FakeLogo} from '../components/FakeLogo';
 import React from "react";
 import {format} from 'date-fns'
 
@@ -45,8 +46,8 @@ export const IPOCard = ({ipo, sx, ...remainingProps}) => {
   >
     {
       new Date(ipo.endDate) < Date.now()
-      ? <ClosedStamp/>
-      : null
+        ? <ClosedStamp/>
+        : null
     }
     <Link href={`/ipos/${ipo.name.trim().toLowerCase().replace(/ /g, '-')}`} sx={{
       whiteSpace: 'initial',
@@ -93,25 +94,20 @@ const Logo = ({ipo}) => {
     borderRadius: '20px',
     border: '1px solid #e5e5e5',
     margin: ['0 auto', 'initial'],
-    backgroundSize: 'cover'
+    backgroundSize: 'cover',
+    overflow: 'hidden',
   }}>
-    <Image src={`/ipo-logos/${ipo.name.replace(/ /g,'-').toLowerCase()}.png`}
+    <Image src={`/ipo-logos/${ipo.name.replace(/ /g, '-').toLowerCase()}.png`}
            width={"100%"}
-           fallback={<Box sx={{
-             width: '100%',
-             height: '100%',
-             textAlign: 'center',
-             verticalAlign: 'middle',
-           }}>
-             <Text
-               p={2}
-               sx={{
+           fallback={<FakeLogo
+             name={ipo.name}
+             p={2}
+             sx={{
+               height: 'inherit',
                fontSize: [6],
-               verticalAlign: 'middle',
-
-             }}>{ipo.name[0].toUpperCase()}</Text>
-           </Box>}
-
+               textAlign: 'center'
+             }}
+           />}
     />
   </Box>
 }
@@ -121,21 +117,21 @@ const ClosedStamp = () => {
 
     color={'red'}
     sx={{
-    position: 'absolute',
-    left: '50%',
-    top: '50%',
-    border: '8px solid red',
-    borderRadius: '10px',
-    transform: 'rotateZ(-45deg) translate(-50%,-50%)',
-    transformOrigin: '0% 0%',
-    fontSize: [6],
-    fontWeight: 'bold',
-    opacity: 0.5,
-  }}>
+      position: 'absolute',
+      left: '50%',
+      top: '50%',
+      border: '8px solid red',
+      borderRadius: '10px',
+      transform: 'rotateZ(-45deg) translate(-50%,-50%)',
+      transformOrigin: '0% 0%',
+      fontSize: [6],
+      fontWeight: 'bold',
+      opacity: 0.5,
+    }}>
     <Text color={'red'}
           sx={{
-      fontSize: [6]
-    }}>
+            fontSize: [6]
+          }}>
       CLOSED
     </Text>
   </Box>
