@@ -1,8 +1,8 @@
 import {Box, Grid, Link, Text} from "theme-ui";
 import {Paper} from "../components/Paper";
+import {Image} from "../components/Image";
 import React from "react";
 import {format} from 'date-fns'
-import randomColor from "randomcolor";
 
 export const InfoText = ({text, value, valueSx, sx, ...remainingProps}) => {
   return <Box {...remainingProps} >
@@ -60,7 +60,7 @@ export const IPOCard = ({ipo, sx, ...remainingProps}) => {
         fontSize: [1],
       }}>
         <Grid columns={'1fr 2fr'}>
-          <Logo/>
+          <Logo ipo={ipo}/>
           <Text sx={{
             fontSize: [2],
             fontWeight: "500",
@@ -86,16 +86,33 @@ export const IPOCard = ({ipo, sx, ...remainingProps}) => {
   </Paper>)
 }
 
-const Logo = () => {
+const Logo = ({ipo}) => {
   return <Box sx={{
     width: '100px',
     height: '100px',
-    borderRadius: '5px',
+    borderRadius: '20px',
+    border: '1px solid #e5e5e5',
     margin: ['0 auto', 'initial'],
-    background: randomColor(),
     backgroundSize: 'cover'
   }}>
+    <Image src={`/ipo-logos/${ipo.name.replace(/ /g,'-').toLowerCase()}.png`}
+           width={"100%"}
+           fallback={<Box sx={{
+             width: '100%',
+             height: '100%',
+             textAlign: 'center',
+             verticalAlign: 'middle',
+           }}>
+             <Text
+               p={2}
+               sx={{
+               fontSize: [6],
+               verticalAlign: 'middle',
 
+             }}>{ipo.name[0].toUpperCase()}</Text>
+           </Box>}
+
+    />
   </Box>
 }
 
