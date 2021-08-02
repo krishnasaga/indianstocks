@@ -29,6 +29,10 @@ module.exports = function (app) {
     lotSize: {
       type: DataTypes.INTEGER,
       allowNull: true
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: true
     }
 
   }, {
