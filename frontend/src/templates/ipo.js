@@ -211,7 +211,7 @@ const ShowCountDown = ({targetDate = ''}) => {
 }
 
 const Markets = () => {
-  return <Box>
+  return <Box my={20}>
     {[
       'zerodha',
       'angelbroking',
