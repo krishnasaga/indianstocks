@@ -86,7 +86,7 @@ export default ({
                     ipo.minimumOrderQuantityBase
                       ? ` ${ipo.minimumOrderQuantityBase || '-'} – ${ipo.minimumOrderQuantityCutoff || '-'}`
                       : 'Unknown'}/>
-                  <IpoDetailsItem text={'Issue Size'} value={'--'}/>
+                  <IpoDetailsItem text={'Issue Size'} value={ipo.issueSize + ' Cr'}/>
                   <IpoDetailsItem/>
                 </Grid>
               </Box>
