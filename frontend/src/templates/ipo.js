@@ -22,7 +22,8 @@ export default ({
                 }) => (
   <Box>
     <Helmet>
-      <title> Know about IPO of {name}, Price, Issue Date, minimum order quantity and subscribe for it |
+      <title> Know about {name} IPO , Price, Issue Date, and other latest updates |
+        Where to apply for {name} IPO ?
         BigInvest </title>
     </Helmet>
     <TopNav/>
