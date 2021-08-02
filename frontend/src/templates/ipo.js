@@ -84,7 +84,7 @@ export default ({
                   <IpoDetailsItem text={'Lot Size'} value={ipo.lotSize}/>
                   <IpoDetailsItem text={'Price Range'} value={
                     ipo.minimumOrderQuantityBase
-                      ? ` ${ipo.minimumOrderQuantityBase || '-'} – ${ipo.minimumOrderQuantityMax || '-'}`
+                      ? ` ${ipo.minimumOrderQuantityBase || '-'} – ${ipo.minimumOrderQuantityCutoff || '-'}`
                       : 'Unknown'}/>
                   <IpoDetailsItem text={'Issue Size'} value={'--'}/>
                   <IpoDetailsItem/>
