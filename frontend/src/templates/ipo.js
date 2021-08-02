@@ -6,9 +6,9 @@ import {Helmet} from 'react-helmet';
 import {BiLink, BiLinkExternal, FcDocument} from "react-icons/all";
 import {useCountDown} from "../components/UseCountDown";
 import {format} from 'date-fns';
-import randomColor from 'randomcolor';
 import {Image} from "../components/Image";
 import {FakeLogo} from '../components/FakeLogo';
+
 export default ({
                   pageContext: {
                     displayName,
@@ -27,7 +27,7 @@ export default ({
     </Helmet>
     <TopNav/>
     <Container>
-      <Box mt={100} >
+      <Box mt={100}>
 
         <Grid columns={[1]}>
           <Box>
@@ -55,11 +55,11 @@ export default ({
             <Grid columns={[1, '4fr 2fr 1fr']} mt={[5]}>
               <Box>
                 <Box sx={{textAlign: ['center', 'left']}}>
-                  <ExternalLink href={"https://www.zomato.com/"}>Website</ExternalLink>
-                  <ExternalLink href={"https://twitter.com/zomato"}>Twitter</ExternalLink>
-                  <ExternalLink href={'https://en.wikipedia.org/wiki/Zomato'}>Wikipedia</ExternalLink>
+                  <ExternalLink href={ipo.website}>Website</ExternalLink>
+                  <ExternalLink href={ipo.twitter}>Twitter</ExternalLink>
+                  <ExternalLink href={ipo.wikipedia}>Wikipedia</ExternalLink>
                   <DocLink
-                    href={'https://www.sebi.gov.in/filings/public-issues/apr-2021/zomato-limited-drhp_49956.html'}>
+                    href={ipo.DRHP}>
                     RHP PDF</DocLink>
                 </Box>
               </Box>
@@ -113,16 +113,16 @@ export default ({
 )
 ;
 
-const ShowCountDownWrapper = ({ startDate = '', endDate= '' }) => {
+const ShowCountDownWrapper = ({startDate = '', endDate = ''}) => {
   let message = '',
-      date = '',
-      showtimer = true,
-      today = new Date().getTime();
-  if(new Date(startDate).getTime() > today) {
+    date = '',
+    showtimer = true,
+    today = new Date().getTime();
+  if (new Date(startDate).getTime() > today) {
     message = 'IPO starts in'
     date = startDate
     // ipo about to start
-  } else if(new Date(endDate) >= today) {
+  } else if (new Date(endDate) >= today) {
     // ipo in progress
     message = 'IPO ends in'
     date = endDate
@@ -130,7 +130,7 @@ const ShowCountDownWrapper = ({ startDate = '', endDate= '' }) => {
     message = (startDate && endDate) ? 'CLOSED' : 'UNKNOWN'
     showtimer = false;
   }
-  if(showtimer) {
+  if (showtimer) {
     return (
       <>
         <Grid columns={[1]} sx={{
@@ -147,18 +147,18 @@ const ShowCountDownWrapper = ({ startDate = '', endDate= '' }) => {
   } else {
     return (<Box
       sx={{
-      border: '8px solid red',
-      borderRadius: '10px',
-      fontSize: [5],
-      width: 'fit-content',
-      transform: 'rotateZ(348deg)',
-      opacity: '0.7',
-      fontWeight: 'bold',
-    }}>
+        border: '8px solid red',
+        borderRadius: '10px',
+        fontSize: [5],
+        width: 'fit-content',
+        transform: 'rotateZ(348deg)',
+        opacity: '0.7',
+        fontWeight: 'bold',
+      }}>
       <Text color={'red'}
             sx={{
-        fontSize: [6]
-      }}>
+              fontSize: [6]
+            }}>
         {message}
       </Text>
     </Box>)
@@ -256,7 +256,7 @@ const Videos = () => {
   </Box>
 }
 
-const About = ({name, ipo,...props}) => {
+const About = ({name, ipo, ...props}) => {
   return <Box {...props}>
     <Text as={'h2'} sx={{
       fontSize: [3],
@@ -286,13 +286,23 @@ const IpoDetailsItem = ({text, value}) => {
 }
 
 
-const ExternalLink = ({children, ...remainingProps}) => {
+const ExternalLink = ({children, href, ...remainingProps}) => {
   return <Button as={'a'}
                  mr={[2]}
-                 px={[2]} py={[0.5]} m={[1]} bg={'#F0F2F5'} color={'black'} target={'_blank'} sx={{
-    fontSize: [1],
-    textAlign: 'left',
-  }} variant={'outline'} {...remainingProps}>
+                 px={[2]}
+                 py={[0.5]}
+                 m={[1]}
+                 bg={'#F0F2F5'}
+                 color={'black'}
+                 target={'_blank'}
+                 sx={{
+                   opacity: href ? 1 : 0.2,
+                   pointerEvents: !href
+                     ? 'none'
+                     : 'initial',
+                   fontSize: [1],
+                   textAlign: 'left',
+                 }} variant={'outline'} href={href} {...remainingProps}>
     <BiLink style={{
       verticalAlign: 'middle'
     }}
@@ -306,13 +316,17 @@ const ExternalLink = ({children, ...remainingProps}) => {
   </Button>
 }
 
-const DocLink = ({children, ...remainingProps}) => {
+const DocLink = ({children,href, ...remainingProps}) => {
   return <Button as={'a'}
                  mr={[2]}
                  px={[2]}
                  py={[0.5]}
                  m={[1]}
                  bg={'#F0F2F5'} color={'black'} target={'_blank'} sx={{
+    opacity: href ? 1 : 0.2,
+    pointerEvents: !href
+      ? 'none'
+      : 'initial',
     fontSize: [1],
     textAlign: 'left',
   }} variant={'outline'} {...remainingProps}>
