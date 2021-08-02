@@ -98,10 +98,15 @@ export const TopNav = () => {
             : ["1fr 64px"]}>
         <Box
           p={12}
+          sx={{
+            display: "flex",
+            alignItems: "center"
+          }}
         >
           <Link href={"/"} sx={{
             textDecoration: "none",
-            color: "black"
+            color: "black",
+            display: "inline-flex"
           }}>
 
             <Image sx={{

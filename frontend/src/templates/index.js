@@ -44,7 +44,7 @@ export default ({
           }`},
           ...data}
       })} title={<>
-        <Text as={'span'}>IPOs</Text> <Text as={'span'}
+        <Text as={'span'} sx={{fontSize: '24px', fontWeight: 400}}>IPOs</Text> <Text as={'span'}
                                             sx={{fontSize: [1]}}>Initial Public Offerings</Text></>} graphLine={false}/>
 
       <IdeasSlider ideas={ideas} title={'Big Ideas'}/>
