@@ -27,9 +27,7 @@ export default ({
     </Helmet>
     <TopNav/>
     <Container>
-      <Box mt={100} sx={{
-        height: '1000px'
-      }}>
+      <Box mt={100} >
 
         <Grid columns={[1]}>
           <Box>
@@ -93,7 +91,7 @@ export default ({
                 </Grid>
               </Box>
             </Box>
-            <About mt={10} sx={{}} name={name}/>
+            <About mt={10} sx={{}} name={name} ipo={ipo}/>
           </Box>
           <Box px={[2, 0]}>
             <Text as={'h2'} sx={{
@@ -258,7 +256,7 @@ const Videos = () => {
   </Box>
 }
 
-const About = ({name, ...props}) => {
+const About = ({name, ipo,...props}) => {
   return <Box {...props}>
     <Text as={'h2'} sx={{
       fontSize: [3],
@@ -270,10 +268,7 @@ const About = ({name, ...props}) => {
     <Box as={'p'} color={'black'} sx={{
       fontWeight: 300
     }}>
-      Zomato is an Indian multinational restaurant aggregator and food delivery company founded by Pankaj
-      Chaddah and Deepinder Goyal in 2008. Zomato provides information, menus and user-reviews of restaurants as
-      well as food delivery options from partner restaurants in select cities. As of 2019, the service is available
-      in 24 countries and in more than 10,000 cities.
+      {ipo.description ? ipo.description : ''}
     </Box>
   </Box>
 }
