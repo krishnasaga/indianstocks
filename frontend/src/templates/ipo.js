@@ -97,7 +97,7 @@ export default ({
             <Text as={'h2'} sx={{
               fontSize: [3],
               fontWeight: 500
-            }}>Apply with below platforms</Text>
+            }}>Apply {name} IPO with below platforms</Text>
             <Markets/>
           </Box>
         </Grid>
