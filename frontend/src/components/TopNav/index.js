@@ -35,7 +35,7 @@ const LinkDropdown = ({children}) => {
   return (
     <TextArrow
       as={Link}
-      color={"color2"}
+      color={"color4"}
       sx={{
         fontSize: ["0.9rem", "0.9rem"],
         fontWeight: "500",
@@ -486,8 +486,8 @@ function Dropdown({component}) {
           event.stopPropagation();
         }}
         p={20}
-        bg={"color4"}
-        color={"color2"}
+        bg={"white"}
+        color={"color4"}
         sx={{
           position: "fixed",
           left: "0",
@@ -512,7 +512,7 @@ function AnalyticsDropdown() {
         marginBottom: "20px",
       }}
     >
-      <Text pb={20} mx={10} color={"color2"} sx={{fontWeight: "bold"}}>Analytics</Text>
+      <Text pb={20} mx={10} color={"color4"} sx={{fontWeight: "bold"}}>Analytics</Text>
       <Grid columns={[4]}>
         <Box sx={{borderRight: "1px solid grey", display: "flex", flexDirection: "column"}}>
           <LinkDropdown> Electric two wheeler penetration
@@ -555,7 +555,7 @@ function DisruptionsDropdown() {
         marginBottom: '20px',
       }}
     >
-      <Text pb={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Disruptions</Text>
+      <Text pb={20} mx={10} color={'color4'} sx={{fontWeight: 'bold'}}>Disruptions</Text>
       <Grid columns={[4]}>
         <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
           <LinkDropdown> Electric Transport
@@ -597,7 +597,7 @@ function ResearchDropdown() {
         height: "200px",
       }}
     >
-      <Text py={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Research</Text>
+      <Text py={20} mx={10} color={'color4'} sx={{fontWeight: 'bold'}}>Research</Text>
 
     </Box>
   );
@@ -610,7 +610,7 @@ function SectorsDropdown() {
         height: "200px",
       }}
     >
-      <Text py={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Sectors</Text>
+      <Text py={20} mx={10} color={'color4'} sx={{fontWeight: 'bold'}}>Sectors</Text>
 
     </Box>
   );
