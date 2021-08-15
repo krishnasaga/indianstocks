@@ -1,7 +1,5 @@
 import React from 'react';
 import {Avatar, Box, Grid, IconButton, Link, Text} from 'theme-ui';
-import {FaFacebookF, FaLinkedinIn, FaTwitter} from 'react-icons/fa';
-import {ImInstagram} from 'react-icons/im';
 import { SocialIcon } from 'react-social-icons';
 
 const FooterHeading = ({children}) => {

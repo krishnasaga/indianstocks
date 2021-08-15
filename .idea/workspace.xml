@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TopNav/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,13 +112,6 @@
       <workItem from="1624901635800" duration="11491000" />
       <workItem from="1625070001876" duration="16500000" />
       <workItem from="1625387328614" duration="4786000" />
-    </task>
-    <task id="LOCAL-00013" summary="finish card overlay styling">
-      <created>1619624935829</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1619624935830</updated>
     </task>
     <task id="LOCAL-00014" summary="fix CardOverlayButton component">
       <created>1619710236419</created>
@@ -457,14 +449,20 @@
       <option name="project" value="LOCAL" />
       <updated>1629050022362</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="fix footer social icons and remover text decoration">
+      <created>1629052597343</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1629052597343</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add StickyColCell comp to table" />
     <MESSAGE value="add starter styles to sticky-table" />
     <MESSAGE value="fix zIndex on topNav Dropdown comp" />
     <MESSAGE value="add three sticky columns and stickyCell components in tbody" />
@@ -489,7 +487,8 @@
     <MESSAGE value="fix layout of cards in sectors-stats.js" />
     <MESSAGE value="add big_invest_comp.png in static" />
     <MESSAGE value="fix rename disruptions to big ideas" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix rename disruptions to big ideas" />
+    <MESSAGE value="fix footer social icons and remover text decoration" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix footer social icons and remover text decoration" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
