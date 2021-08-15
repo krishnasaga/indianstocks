@@ -94,7 +94,7 @@ function Introbanner() {
             > </Box>
             <Box>
               <Text as={'h1'} color={"text2"} sx={{fontSize: [4, "2rem"], fontWeight: 500}}>
-                Invest on Big Disruptions
+                Invest on Big Ideas
               </Text>
             </Box>
             <Box my={10}>

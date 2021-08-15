@@ -123,7 +123,7 @@ export const TopNav = () => {
             {" "}
             <Menu onClick={(event) => menuHandler(event, "disruptions")}>
               <DropdownMenuText>
-                Disruptions
+                Big Ideas
               </DropdownMenuText>
             </Menu>
             <Menu onClick={(event) => menuHandler(event, "research")}>
@@ -233,7 +233,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
           }}
         >
           <MdKeyboardArrowLeft color="black"/>
-          <Text ml={2}>Disruptions</Text>
+          <Text ml={2}>Big Ideas</Text>
         </Box>
 
         <Box
@@ -378,7 +378,7 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
         </Menu>
       ) : (
         <Box sx={styles} onClick={() => menuHandler("disruptions")}>
-          <Menu sx={menuStyles}> Disruptions </Menu>
+          <Menu sx={menuStyles}> Big Ideas </Menu>
           <RiArrowRightSLine
             color="black"
             style={{marginRight: "10px", height: "25px", width: "25px"}}
@@ -560,7 +560,7 @@ function DisruptionsDropdown() {
         marginBottom: '20px',
       }}
     >
-      <Text pb={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Disruptions</Text>
+      <Text pb={20} mx={10} color={'color2'} sx={{fontWeight: 'bold'}}>Big Ideas</Text>
       <Grid columns={[4]}>
         <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
           <LinkDropdown> Electric Transport
