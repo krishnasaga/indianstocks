@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TopNav/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,14 +113,10 @@
       <workItem from="1624695011431" duration="20031000" />
       <workItem from="1624901635800" duration="11491000" />
       <workItem from="1625070001876" duration="16500000" />
-      <workItem from="1625387328614" duration="4786000" />
-    </task>
-    <task id="LOCAL-00012" summary="start card overlay content">
-      <created>1619547479682</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1619547479683</updated>
+      <workItem from="1625387328614" duration="6167000" />
+      <workItem from="1625588341053" duration="2539000" />
+      <workItem from="1625928632783" duration="2207000" />
+      <workItem from="1629018780912" duration="9445000" />
     </task>
     <task id="LOCAL-00013" summary="finish card overlay styling">
       <created>1619624935829</created>
@@ -455,14 +454,20 @@
       <option name="project" value="LOCAL" />
       <updated>1625392543636</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="add big_invest_comp.png (compressed logo img - 10KB) in topnav.js">
+      <created>1625393055567</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1625393055567</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add code to new table component" />
     <MESSAGE value="add StickyColCell comp to table" />
     <MESSAGE value="add starter styles to sticky-table" />
     <MESSAGE value="fix zIndex on topNav Dropdown comp" />
@@ -487,7 +492,8 @@
     <MESSAGE value="add antialiased to ideas.js" />
     <MESSAGE value="fix layout of cards in sectors-stats.js" />
     <MESSAGE value="add big_invest_comp.png in static" />
-    <option name="LAST_COMMIT_MESSAGE" value="add big_invest_comp.png in static" />
+    <MESSAGE value="add big_invest_comp.png (compressed logo img - 10KB) in topnav.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="add big_invest_comp.png (compressed logo img - 10KB) in topnav.js" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

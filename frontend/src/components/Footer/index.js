@@ -1,7 +1,10 @@
 import React from 'react';
-import {Avatar, Box, Grid, IconButton, Link, Text} from 'theme-ui';
-import {FaFacebookF, FaLinkedinIn, FaTwitter} from 'react-icons/fa';
+import {Avatar, Box, Grid, IconButton, Link, Text, Button, Image} from 'theme-ui';
+import {FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagramSquare} from 'react-icons/fa';
 import {ImInstagram} from 'react-icons/im'
+import {SocialIcon} from "react-social-icons";
+
+
 
 
 const FooterHeading = ({children}) => {
@@ -28,9 +31,7 @@ const FooterLink = ({children}) => {
         fontWeight: "500",
         cursor: "pointer",
         lineHeight: "1.8",
-        ':hover': {
-          textDecoration: "underline",
-        },
+
       }}
     >
       {children}
@@ -83,93 +84,11 @@ export const Footer = () => {
           <FooterHeading as='h4'>Stay Connected</FooterHeading>
           <FooterLink>Crunchbase News</FooterLink>
           <FooterLink>Subscribe to Crunchbase Daily</FooterLink>
-          <Text sx={{color: 'color4'}}>
-            <IconButton aria-label="Toggle dark mode">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                fill="currentcolor"
-                cursor="pointer"
-                transform= 'translate(25%,25%)'>
-                <circle
-                  r={11}
-                  cx={12}
-                  cy={12}
-                  fill="white"
-                  stroke="none"
-                  strokeWidth={2}
-                />
-                <FaTwitter size={12} style={{
-                  position: 'relative',
-                  transform: 'translate(25%,25%)',
-                }}/>
-              </svg>
-            </IconButton>
-            <IconButton aria-label="Toggle dark mode" >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                fill="currentcolor"
-                cursor="pointer">
-                <circle
-                  r={11}
-                  cx={12}
-                  cy={12}
-                  fill="white"
-                  stroke="none"
-                  strokeWidth={2}
-                />
-                <FaFacebookF size={12} cursor={'pointer'} style={{
-                  transform: 'translate(25%,25%)'
-                }}/>
-              </svg>
-            </IconButton>
-            <IconButton aria-label="Toggle dark mode">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                fill="currentcolor"
-                cursor="pointer">
-                <circle
-                  r={11}
-                  cx={12}
-                  cy={12}
-                  fill="white"
-                  stroke="none"
-                  strokeWidth={2}
-                />
-                <FaLinkedinIn size={12} cursor={'pointer'} style={{
-                  transform: 'translate(25%,25%)',
-                }}/>
-              </svg>
-            </IconButton>
-            <IconButton aria-label="Toggle dark mode">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="24"
-                height="24"
-                fill="currentcolor"
-                cursor="pointer">
-                <circle
-                  r={11}
-                  cx={12}
-                  cy={12}
-                  fill="white"
-                  stroke="none"
-                  strokeWidth={2}
-                />
-                <ImInstagram size={12} cursor={'pointer'} style={{
-                  transform: 'translate(25%,25%)',
-                }}/>
-              </svg>
-            </IconButton>
+          <Text sx={{color: 'color4', cursor: "pointer"}}>
+            <SocialIcon network="twitter" bgColor="white" style={{ height: 24, width: 24 }} />
+            <SocialIcon network="facebook" bgColor="white" style={{ height: 24, width: 24, marginLeft: "8px" }} />
+            <SocialIcon network="linkedin" bgColor="white" style={{ height: 24, width: 24, marginLeft: "8px" }} />
+            <SocialIcon network="instagram" bgColor="white" style={{ height: 24, width: 24, marginLeft: "8px" }} />
           </Text>
         </Box>
 

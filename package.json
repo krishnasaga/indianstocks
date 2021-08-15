@@ -2,5 +2,6 @@
   "name": "indianstocks",
   "version": "1.0.0",
   "dependencies": {
+    "react-social-icons": "^5.5.1"
   }
 }
