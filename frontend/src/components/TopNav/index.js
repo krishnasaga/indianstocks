@@ -302,13 +302,34 @@ function DropdownMenu({MobileComponent, setMobileComponent}) {
           pb={2}
           onClick={() => menuHandler(null)}
           sx={{
-            display: "flex",
-            alignItems: "center",
+              display: "flex",
+              alignItems: "center",
+              paddingBottom: '25px',
+              borderBottom: '1px solid black'
           }}
         >
           <MdKeyboardArrowLeft color="black"/>
           <Text ml={2}> Sectors</Text>
         </Box>
+
+          <Box
+              sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  textAlign: "left",
+              }}
+          >
+              <LinkMobile color={"color1"}>Information Technology </LinkMobile>
+              <LinkMobile color={"color1"}>Customer Discretionary </LinkMobile>
+              <LinkMobile color={"color1"}>Communication Services</LinkMobile>
+              <LinkMobile color={"color1"}>Customer Staples</LinkMobile>
+              <LinkMobile color={"color1"}>Energy</LinkMobile>
+              <LinkMobile color={"color1"}>Financials</LinkMobile>
+              <LinkMobile color={"color1"}>Health Care</LinkMobile>
+              <LinkMobile color={"color1"}>Industrials</LinkMobile>
+              <LinkMobile color={"color1"}>Materials</LinkMobile>
+              <LinkMobile color={"color1"}>Real Estate</LinkMobile>
+          </Box>
       </Box>
     );
   }
@@ -604,6 +625,7 @@ function ResearchDropdown() {
     >
       <Text py={20} mx={10} color={'color4'} sx={{fontWeight: 'bold'}}>Research</Text>
 
+
     </Box>
   );
 }
@@ -616,6 +638,42 @@ function SectorsDropdown() {
       }}
     >
       <Text py={20} mx={10} color={'color4'} sx={{fontWeight: 'bold'}}>Sectors</Text>
+
+            <Grid columns={[4]}>
+                <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
+                    <LinkDropdown>Information Technology
+                    </LinkDropdown>
+                    <LinkDropdown>Customer Discretionary
+                    </LinkDropdown>
+                    <LinkDropdown>Communication Services
+                    </LinkDropdown>
+                </Box>
+                <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
+                    <LinkDropdown>Customer Staples
+                    </LinkDropdown>
+                    <LinkDropdown>Energy
+                    </LinkDropdown>
+                    <LinkDropdown>Financials
+                    </LinkDropdown>
+                </Box>
+                <Box sx={{borderRight: "1px solid grey", display: 'flex', flexDirection: 'column'}}>
+                    <LinkDropdown>Health Care
+                    </LinkDropdown>
+                    <LinkDropdown>Industrials
+                    </LinkDropdown>
+                    <LinkDropdown>Materials
+                    </LinkDropdown>
+                </Box>
+                <Box sx={{display: 'flex', flexDirection: 'column'}}>
+                    <LinkDropdown>Real Estate
+                    </LinkDropdown>
+                </Box>
+            </Grid>
+
+
+
+
+
 
     </Box>
   );

@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="19d14f4b-f362-4618-9e10-fb649d6766ac" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/TopNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/TopNav/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,13 +111,6 @@
       <workItem from="1624901635800" duration="11491000" />
       <workItem from="1625070001876" duration="16500000" />
       <workItem from="1625387328614" duration="4786000" />
-    </task>
-    <task id="LOCAL-00014" summary="fix CardOverlayButton component">
-      <created>1619710236419</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1619710236419</updated>
     </task>
     <task id="LOCAL-00015" summary="add starter code for loop in cards">
       <created>1619797310883</created>
@@ -456,15 +448,20 @@
       <option name="project" value="LOCAL" />
       <updated>1629052597343</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="fix white background to desktop dropdown">
+      <created>1629054653317</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1629054653317</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add starter styles to sticky-table" />
-    <MESSAGE value="fix zIndex on topNav Dropdown comp" />
     <MESSAGE value="add three sticky columns and stickyCell components in tbody" />
     <MESSAGE value="reduce width of first two sticky columns" />
     <MESSAGE value="add button and stars on col 1 in sticky table" />
@@ -488,7 +485,9 @@
     <MESSAGE value="add big_invest_comp.png in static" />
     <MESSAGE value="fix rename disruptions to big ideas" />
     <MESSAGE value="fix footer social icons and remover text decoration" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix footer social icons and remover text decoration" />
+    <MESSAGE value="fix white background to dropdown" />
+    <MESSAGE value="fix white background to desktop dropdown" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix white background to desktop dropdown" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
