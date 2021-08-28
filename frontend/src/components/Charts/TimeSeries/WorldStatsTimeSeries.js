@@ -1,11 +1,14 @@
-import React,{useState} from 'react';
-import {ResponsiveTimeSeries} from "./index";
+import React, {useState} from 'react';
+import {ResponsiveTimeSeries,ResponsiveCategoricalSeries} from "./index";
 import 'isomorphic-fetch';
 
 export const WorldStatsTimeSeries = (props) => {
-  const {data} = useWorldStatsChart({chartName: 'electricity/india-electricity-consumption-over-time'});
+  const {data} = useWorldStatsChart({
+    chartName: props.name
+      || 'electricity/india-electricity-consumption-over-time'
+  });
 
-  if(!data || !data.series) return JSON.stringify(data);
+  if (!data || !data.series) return JSON.stringify(data);
 
   const series = data.series;
 
@@ -13,16 +16,17 @@ export const WorldStatsTimeSeries = (props) => {
     {...props}
     series={series}
     options={{
-      height: 200
+      height: 200,
+      ...data.options
     }}
   />;
 };
 
 
-function useWorldStatsChart({chartName}){
-  const [data,setData] = useState({});
-  const [loading,setLoading] = useState(false);
-  const [error,setError] = useState(null);
+function useWorldStatsChart({chartName}) {
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   fetch(`https://worldstats.github.io/charts/${chartName}.json`)
     .then(response => response.json())
@@ -30,5 +34,5 @@ function useWorldStatsChart({chartName}){
       setData(data);
     });
 
-  return {data,loading,error};
+  return {data, loading, error};
 }

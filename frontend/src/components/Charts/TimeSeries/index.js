@@ -20,21 +20,23 @@ const SERIES_TYPES = {
 
 export function TimeSeries({series, options}) {
 
+  if(!series.length) return "Insufficient Data";
+
   return (
     <div>
-      <XYPlot {...options}>
+      <XYPlot {...options} >
         <VerticalGridLines/>
         <XAxis tickTotal={series[0].data.length}
-               tickFormat={v => `2${String(v).padStart(3, "0")}`}
-               tickLabelAngle={0}/>
+               tickFormat={v => `${v}`}
+               tickLabelAngle={0}
 
+        />
         {series.map((currentSeries, index) => {
           const {type, data, color, opacity} = currentSeries;
           if (!type || !data) return null;
           const Series = SERIES_TYPES[type];
           return (
             <Series
-              curve={'curveMonotoneX'}
               key={index}
               opacity={opacity}
               color={color}
@@ -64,5 +66,14 @@ export function ResponsiveTimeSeries(props) {
 
   return <div ref={div}><TimeSeries
     {...props}
-    options={{...props.options, width}}/></div>;
+    options={{...props.options, width: width || 10}}/></div>;
+}
+
+
+export function ResponsiveCategoricalSeries(props) {
+  return (
+    <div>
+
+    </div>
+  );
 }

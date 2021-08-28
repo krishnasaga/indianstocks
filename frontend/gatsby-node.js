@@ -87,6 +87,14 @@ exports.createPages = async function ({actions, graphql}) {
           companies
         },
       },
+      {
+        path: `/ideas/${name}/stats`,
+        component: require.resolve(`./src/templates/sectors-stats.js`),
+        context: {
+          slug: `/ideas/${name}/stats`,
+          companies
+        },
+      },
     ];
 
     pages.map((params) => {
