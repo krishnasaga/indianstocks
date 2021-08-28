@@ -20,6 +20,7 @@
 
 ## Join this project discord with this link https://discord.gg/Kh3EsXaAx7
 
+## TODO
 
 Big Ideas  (weighted stocks 5-10-20
 
