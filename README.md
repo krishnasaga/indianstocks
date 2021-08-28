@@ -19,3 +19,60 @@
 </p>
 
 ## Join this project discord with this link https://discord.gg/Kh3EsXaAx7
+
+
+Big Ideas  (weighted stocks 5-10-20
+
+Sectors (list of sectors)
+
+ETF
+
+Nifty Sectorsoral Indexes
+
+Nifty Indexes
+
+Footer
+   terms of use
+
+1. Create terms and condtion page and move the disclainer from home page body to Terma and condtion page.
+2. Refine the data in navbar (it should map with the body)
+3. Research , Analytics , Explore(yet to decide)
+4. Logo (need ot think on design)
+5. Scroll bar below each list in homepage ( number of list to show)
+6. view all should take to listing page of that catergory from home page
+7. Look and feel of each card on homepage 
+8. Create comming soon page
+9. create inline comming soon component.
+10. refine footer
+
+
+- [] IPOs
+  - [] IPO detail page
+          - []   - [] Countdown refined - UX / UI
+          - [] analysis
+         - []  description
+          - [] links
+         - []  make it function and refine UI of broker list
+
+ - [] Big Ideas
+      - [] Refine description
+      - [] Remove the graph for now can be added later
+      - [] companies
+      - [] Refine table 
+              - [] what coulmns to show
+      - [] stats
+       - [] add page`
+      - [] alerts
+       - [] add page
+      - [] stories
+       - [] add page
+      - [] knowledge
+       - [] add page
+
+
+
+- [] Data:
+ - [] data sources
+    - [] API
+    - [] jobs
+    - [] database
