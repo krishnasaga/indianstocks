@@ -22,58 +22,58 @@
 
 ## TODO
 
-Big Ideas  (weighted stocks 5-10-20
+- [ ] Big Ideas  (weighted stocks 5-10-20
 
-Sectors (list of sectors)
+- [ ] Sectors (list of sectors)
 
-ETF
+- [ ] ETF
 
-Nifty Sectorsoral Indexes
+- [ ] Nifty Sectorsoral Indexes
 
-Nifty Indexes
+- [ ] Nifty Indexes
 
 Footer
    terms of use
 
-1. Create terms and condtion page and move the disclainer from home page body to Terma and condtion page.
-2. Refine the data in navbar (it should map with the body)
-3. Research , Analytics , Explore(yet to decide)
-4. Logo (need ot think on design)
-5. Scroll bar below each list in homepage ( number of list to show)
-6. view all should take to listing page of that catergory from home page
-7. Look and feel of each card on homepage 
-8. Create comming soon page
-9. create inline comming soon component.
-10. refine footer
+- [ ] Create terms and condtion page and move the disclainer from home page body to Terma and condtion page.
+- [ ] Refine the data in navbar (it should map with the body)
+- [ ] Research , Analytics , Explore(yet to decide)
+- [ ] Logo (need ot think on design)
+- [ ] Scroll bar below each list in homepage ( number of list to show)
+- [ ] view all should take to listing page of that catergory from home page
+- [ ] Look and feel of each card on homepage 
+- [ ] Create comming soon page
+- [ ] create inline comming soon component.
+- [ ] refine footer
 
 
-- [] IPOs
-  - [] IPO detail page
-          - []   - [] Countdown refined - UX / UI
-          - [] analysis
-         - []  description
-          - [] links
-         - []  make it function and refine UI of broker list
+- [ ] IPOs
+  - [ ] IPO detail page
+          - [ ] Countdown refined - UX / UI
+          - [ ] analysis
+         -  []  description
+          - [ ] links
+         - [ ]  make it function and refine UI of broker list
 
- - [] Big Ideas
-      - [] Refine description
-      - [] Remove the graph for now can be added later
-      - [] companies
-      - [] Refine table 
+ - [ ] Big Ideas
+      - [ ] Refine description
+      - [ ] Remove the graph for now can be added later
+      - [ ] companies
+      - [ ] Refine table 
               - [] what coulmns to show
-      - [] stats
-       - [] add page`
-      - [] alerts
-       - [] add page
-      - [] stories
-       - [] add page
-      - [] knowledge
-       - [] add page
+      - [ ] stats
+       - [ ] add page`
+      - [ ] alerts
+       - [ ] add page
+      - [ ] stories
+       - [ ] add page
+      - [ ] knowledge
+       - [ ] add page
 
 
 
-- [] Data:
- - [] data sources
-    - [] API
-    - [] jobs
-    - [] database
+- [ ] Data:
+ - [ ] data sources
+    - [ ] API
+    - [ ] jobs
+    - [ ] database
