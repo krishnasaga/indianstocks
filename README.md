@@ -51,7 +51,7 @@ Footer
   - [ ] IPO detail page
           - [ ] Countdown refined - UX / UI
           - [ ] analysis
-         -  []  description
+         -  [ ]  description
           - [ ] links
          - [ ]  make it function and refine UI of broker list
 
@@ -60,7 +60,7 @@ Footer
       - [ ] Remove the graph for now can be added later
       - [ ] companies
       - [ ] Refine table 
-              - [] what coulmns to show
+              - [ ] what coulmns to show
       - [ ] stats
        - [ ] add page`
       - [ ] alerts
