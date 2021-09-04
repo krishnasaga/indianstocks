@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {Box, Grid, Text} from "theme-ui";
 import {TopNav} from "../components/TopNav";
 import {Footer} from "../components/Footer";
@@ -85,50 +85,7 @@ export default ({
         fontWeight: "600",
       }}
     >
-      {
-        [{
-          props: {
-            columns: [1,2]
-          },
-          children: [
-            {
-              props: {
-                name: 'electricity/produced-by-companies-in-india'
-              }
-            },{
-              props: {
-                name: 'electricity/india-electricity-consumption-over-time'
-              }
-            }
-          ]
-        },
-          {
-            props: {},
-            children: [
-              {
-                props: {
-                  name: 'electricity/produced-by-companies-in-india'
-                }
-              }
-            ]
-          },
-          {
-            props: {},
-            children: [
-              {
-                props: {
-                  name: 'electricity/produced-by-companies-in-india'
-                }
-              }
-            ]
-          }].map((data, index) => {
-          return <Grid key={index} {...data.props}>
-            {
-              data.children.map((data) => <Chart {...data.props} />)
-            }
-          </Grid>;
-        })
-      }
+      <StatsGrid name={name}/>
 
 
       {/*<CompaniesTable*/}
@@ -173,11 +130,45 @@ const Chart = (props) => {
     <Grid columns={[1]}>
       <Box p={3} sx={{}}>
         <Text p={3} pl={0}>{props.title}</Text>
-        <Paper>
+        <Box>
           <WorldStatsTimeSeries {...props} />
-        </Paper>
+        </Box>
       </Box>
 
     </Grid>
   </Box>;
 }
+
+function StatsGrid({name}) {
+  const {data, loading, error} = useStatsPage({
+    statsName: name
+      .toLowerCase()
+      .replace(/ /, '-')
+  });
+  return data ? data.grids.map((data, index) => {
+    return <Grid key={index} {...data.props}>
+      {
+        data.children.map((data) => <Chart {...data.props} />)
+      }
+    </Grid>
+  }) : null;
+}
+
+function useStatsPage({statsName}) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://krishnasaga.github.io/indianstocks_pages/idea-stats/${statsName}.json`)
+      .then(response => response.json())
+      .then(data => {
+        setData(data);
+      }).catch(data => {
+    });
+  }, [])
+
+
+  return {data, loading, error};
+}
+

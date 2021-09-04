@@ -2,9 +2,8 @@ import React, {useCallback, useState} from "react";
 import {
   AreaSeries,
   DiscreteColorLegend,
-  LineSeries,
+  HorizontalBarSeries,
   MarkSeries,
-  VerticalBarSeries,
   VerticalGridLines,
   XAxis,
   XYPlot
@@ -14,13 +13,13 @@ import {useWindowSize} from '@react-hook/window-size';
 import {Paper} from "../../Paper";
 
 const SERIES_TYPES = {
-  bar: VerticalBarSeries,
+  bar: HorizontalBarSeries,
   line: LineSeries,
   mark: MarkSeries,
   area: AreaSeries
 };
 
-function TimeSeries({units = null, series, options}) {
+export function TimeSeries({units = null, series, options}) {
 
   const [pointer, setPointer] = useState({
     0: {}
@@ -79,7 +78,7 @@ function TimeSeries({units = null, series, options}) {
         items={series.map(data => ({title: data.name, strokeWidth: 40}))}/>
       {focus
         ? <Tooltip
-          units={units}
+          units={options.units}
           series={series}
           pointer={pointer}
           onMouseEnter={() => {
@@ -94,7 +93,7 @@ function TimeSeries({units = null, series, options}) {
   );
 }
 
-export function Tooltip({units, pointer, series, ...remainingProps}) {
+export function Tooltip({units = null, pointer, series, ...remainingProps}) {
   return pointer[0].value ? <Paper bg={'white'} sx={{
     position: 'fixed',
     left: pointer[0].innerX,
@@ -150,6 +149,7 @@ export function ResponsiveTimeSeries(props) {
 }
 
 export { ResponsiveTimeSeries as default };
+
 
 export function ResponsiveCategoricalSeries(props) {
   return (

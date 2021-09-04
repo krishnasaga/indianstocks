@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
-import {ResponsiveTimeSeries,ResponsiveCategoricalSeries} from "./index";
+import React, {useEffect, useState} from 'react';
+import {ResponsiveTimeSeries} from "./index";
+import { AdaptiveChart } from "../AdaptiveChart";
 import 'isomorphic-fetch';
 
 export const WorldStatsTimeSeries = (props) => {
@@ -12,7 +13,9 @@ export const WorldStatsTimeSeries = (props) => {
 
   const series = data.series;
 
-  return <ResponsiveTimeSeries
+  const Chart = AdaptiveChart[props.type];
+
+  return <Chart
     {...props}
     series={series}
     options={{
@@ -28,11 +31,14 @@ function useWorldStatsChart({chartName}) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  fetch(`https://worldstats.github.io/charts/${chartName}.json`)
-    .then(response => response.json())
-    .then(data => {
-      setData(data);
-    });
+  useEffect(() => {
+    fetch(`https://worldstats.github.io/charts/${chartName}.json`)
+      .then(response => response.json())
+      .then(data => {
+        setData(data);
+      });
+  }, [])
+
 
   return {data, loading, error};
 }
