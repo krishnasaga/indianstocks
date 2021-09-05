@@ -6,6 +6,9 @@ const Pi = loadable(() => import('../Pi'));
 const Map = loadable(() => import('../Map'));
 const HorizontalCategorical = loadable(() => import('../HorizontalCategorical'));
 
+console.log(TimeSeries,HorizontalCategorical,Map,Pi);
+
+
 export const AdaptiveChart = {
   TimeSeries,
   HorizontalCategorical,

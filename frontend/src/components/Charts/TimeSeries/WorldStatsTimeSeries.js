@@ -15,11 +15,14 @@ export const WorldStatsTimeSeries = (props) => {
 
   const Chart = AdaptiveChart[props.type];
 
+  console.log('Hello',props.type);
+  console.log('Hello',Chart);
+
   return <Chart
     {...props}
     series={series}
     options={{
-      height: 200,
+      height: 400,
       ...data.options
     }}
   />;

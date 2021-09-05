@@ -171,8 +171,6 @@ export function usePointer() {
 
   return {
     pointer,
-    focus,
     container,
-    handlers
   }
 }
