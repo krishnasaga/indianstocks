@@ -11,7 +11,7 @@ import {WorldStatsTimeSeries} from '../components/Charts/TimeSeries/WorldStatsTi
 export default ({
                   pageContext: {displayName, name, intro, insights = [], backgroundImage, companies},
                 }) => (
-  <Box>
+  <Box bg={'#F5F5F5'}>
     <Helmet>
       <title> Top {displayName} companies in india by market capitalization | BigInvest </title>
     </Helmet>
@@ -26,7 +26,7 @@ export default ({
     <Grid
 
       columns={[1, 2]}
-      mt={'100px'}
+      pt={'100px'}
       mb={4}
       mx={[1, 1, 4, 4]}>
       <Box>

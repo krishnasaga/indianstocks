@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {ResponsiveTimeSeries} from "./index";
 import { AdaptiveChart } from "../AdaptiveChart";
+import { CHARTS_ROOT } from "gatsby-env-variables"
+import { Paper } from '../../Paper'
 import 'isomorphic-fetch';
 
 export const WorldStatsTimeSeries = (props) => {
@@ -13,19 +15,19 @@ export const WorldStatsTimeSeries = (props) => {
 
   const series = data.series;
 
-  const Chart = AdaptiveChart[props.type];
+  const Chart = AdaptiveChart[data.type];
 
   console.log('Hello',props.type);
   console.log('Hello',Chart);
 
-  return <Chart
+  return <Paper bg={'white'}><Chart
     {...props}
     series={series}
     options={{
       height: 400,
       ...data.options
     }}
-  />;
+  /></Paper>;
 };
 
 
@@ -35,7 +37,7 @@ function useWorldStatsChart({chartName}) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://worldstats.github.io/charts/${chartName}.json`)
+    fetch(`${CHARTS_ROOT}/${chartName}.json`)
       .then(response => response.json())
       .then(data => {
         setData(data);

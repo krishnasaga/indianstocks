@@ -8,7 +8,8 @@ const HorizontalBarChart = ({options, series}) => {
     labels: first.data.map((data) => data.x),
     datasets: [
       {
-        label: '# of Votes',
+        label: 'MWh',
+        backgroundColor: first.color,
         data: first.data.map((data) => data.y),
       },
     ],

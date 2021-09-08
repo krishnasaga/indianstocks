@@ -7511,6 +7511,11 @@ gatsby-core-utils@^2.9.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
+gatsby-env-variables@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/gatsby-env-variables/-/gatsby-env-variables-2.0.0.tgz#7ce2a0de6fe21fbfaf1a70afae9c7176178c01e9"
+  integrity sha512-j9VsPrhIk45Plg2lb8bjq8+mFyFl7tB+H187PTMhZpKNa+o+RRAKyZqDTT9trRBW/nDivnW0/fSGyFSsY4Iy+g==
+
 gatsby-graphiql-explorer@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-0.11.0.tgz#2fe20ddb756180cf3a86defb2f24326ba0c9b062"
