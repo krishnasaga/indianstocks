@@ -1,18 +1,18 @@
 import React from 'react';
 import {Bar} from 'react-chartjs-2';
+import {Paper} from "../../Paper";
+import { Box } from 'theme-ui';
 
 const HorizontalBarChart = ({options, series}) => {
   const [first = []] = series;
-
-  return <Bar data={{
+  const {units} = options;
+  return <Paper bg={'white'}><Bar data={{
     labels: first.data.map((data) => data.x),
-    datasets: [
-      {
-        label: 'MWh',
-        backgroundColor: first.color,
-        data: first.data.map((data) => data.y),
-      },
-    ],
+    datasets: series.map(data => ({
+      label: units,
+      backgroundColor: data.color,
+      data: data.data.map((data) => data.y),
+    }))
   }} options={{
     indexAxis: 'y',
     plugins: {
@@ -21,7 +21,7 @@ const HorizontalBarChart = ({options, series}) => {
       }
     }
   }}/>
-
+  </Paper>
 };
 
 export default HorizontalBarChart;

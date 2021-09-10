@@ -31,7 +31,7 @@ function TimeSeries({units = null, series, options}) {
   if (!series.length) return "Insufficient Data";
 
   return (
-    <Box sx={{
+    <Paper bg={'white'} sx={{
       position: 'relative'
     }}>
       <XYPlot
@@ -90,7 +90,7 @@ function TimeSeries({units = null, series, options}) {
           }}
         />
         : null}
-    </Box>
+    </Paper>
   );
 }
 

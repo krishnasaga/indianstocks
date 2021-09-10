@@ -4,6 +4,7 @@ import { AdaptiveChart } from "../AdaptiveChart";
 import { CHARTS_ROOT } from "gatsby-env-variables"
 import { Paper } from '../../Paper'
 import 'isomorphic-fetch';
+import { Box } from 'theme-ui';
 
 export const WorldStatsTimeSeries = (props) => {
   const {data} = useWorldStatsChart({
@@ -20,14 +21,14 @@ export const WorldStatsTimeSeries = (props) => {
   console.log('Hello',props.type);
   console.log('Hello',Chart);
 
-  return <Paper bg={'white'}><Chart
+  return <Box><Chart
     {...props}
     series={series}
     options={{
       height: 400,
       ...data.options
     }}
-  /></Paper>;
+  /></Box>;
 };
 
 

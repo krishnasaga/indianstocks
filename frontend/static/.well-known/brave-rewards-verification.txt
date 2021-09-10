@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: biginvest.in
+Token: 6dfd847369dbbbf455ea091ba0ad6ad06d83dfba6826b116898af18499e7a6d9
