@@ -54,7 +54,7 @@ function TimeSeries({units = null, series, options}) {
                tickLabelAngle={0}
         />
         {series.map((currentSeries, seriesIndex) => {
-          const {type, data, color, opacity} = currentSeries;
+          const {type, data, color, opacity,stack} = currentSeries;
           if (!type || !data) return null;
           const Series = SERIES_TYPES[type];
           return (
@@ -63,6 +63,7 @@ function TimeSeries({units = null, series, options}) {
               opacity={opacity}
               color={color}
               data={data}
+              stack={true}
               onNearestXY={(value, {event, innerX, innerY, index}) => {
                 setPointer((pointer) => Object.assign({}, pointer, {
                   [seriesIndex]: {
