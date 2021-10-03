@@ -20,15 +20,21 @@ const SERIES_TYPES = {
   area: AreaSeries
 };
 
+
+
+
 function TimeSeries({units = null, series, options}) {
+
 
   const [pointer, setPointer] = useState({
     0: {}
   });
 
+
   const [focus, setFocus] = useState(false);
 
   if (!series.length) return "Insufficient Data";
+
 
   return (
     <Paper bg={'white'} sx={{
@@ -144,6 +150,7 @@ export function ResponsiveTimeSeries(props) {
       setWidth(rect.width);
     }
   }, [windowWidth])
+
   return <div ref={div}><TimeSeries
     {...props}
     options={{...props.options, width: width || 10}}/></div>;

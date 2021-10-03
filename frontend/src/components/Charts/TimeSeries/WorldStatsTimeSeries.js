@@ -7,19 +7,25 @@ import 'isomorphic-fetch';
 import { Box } from 'theme-ui';
 
 export const WorldStatsTimeSeries = (props) => {
+
   const {data} = useWorldStatsChart({
     chartName: props.name
-      || 'electricity/india-electricity-consumption-over-time'
   });
 
   if (!data || !data.series) return JSON.stringify(data);
 
   const series = data.series;
 
+
   const Chart = AdaptiveChart[data.type];
 
-  console.log('Hello',props.type);
-  console.log('Hello',Chart);
+  if(!Chart) {
+      console.error(`
+          Chart Component not found \n
+          While rendering the chart ${props.name}
+      `,data.type);
+      return `Chart Component ${data.type} not found`;
+  }
 
   return <Box><Chart
     {...props}
@@ -30,7 +36,6 @@ export const WorldStatsTimeSeries = (props) => {
     }}
   /></Box>;
 };
-
 
 function useWorldStatsChart({chartName}) {
   const [data, setData] = useState({});
