@@ -25,7 +25,7 @@ export default ({options, series}) => {
           as={'span'}
 
         >
-          {` ${data.unit}`}
+          {options.units}
         </Text>
         <Text
           color={data.color}
