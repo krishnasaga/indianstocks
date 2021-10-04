@@ -7,6 +7,7 @@ import {Helmet} from 'react-helmet';
 import {Paper} from '../components/Paper';
 import {GraphLine} from "../components/GraphLine";
 import {WorldStatsTimeSeries} from '../components/Charts/TimeSeries/WorldStatsTimeSeries';
+import { CONTENT_ROOT } from "gatsby-env-variables"
 
 export default ({
                   pageContext: {displayName, name, intro, insights = [], backgroundImage, companies},
@@ -160,7 +161,7 @@ function useStatsPage({statsName}) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`https://krishnasaga.github.io/indianstocks_pages/idea-stats/${statsName}.json`)
+    fetch(`${CONTENT_ROOT}/content/idea-stats/${statsName}.json`)
       .then(response => response.json())
       .then(data => {
         setData(data);
