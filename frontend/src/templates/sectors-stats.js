@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {Box, Grid, Text} from "theme-ui";
-import {TopNav} from "../components/TopNav";
+import {TopNav2} from "../components/TopNav2";
 import {Footer} from "../components/Footer";
 import {SectorBanner} from "../components/Sector";
 import {Helmet} from 'react-helmet';
@@ -16,7 +16,7 @@ export default ({
     <Helmet>
       <title> Stats of {displayName || "electricity"} of india | BigInvest </title>
     </Helmet>
-   {  false ? <TopNav/> : null }
+   {  true ? <TopNav2/> : null }
     {0 ? <SectorBanner
       name={displayName}
       intro={intro}
