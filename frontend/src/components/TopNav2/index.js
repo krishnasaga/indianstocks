@@ -15,7 +15,7 @@ export const TopNav2 = ({}) => {
            <Box>
 
            </Box>
-           <Box>
+           <Box p={2} >
                <Button> Login </Button>
            </Box>
         </Grid>
