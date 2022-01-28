@@ -14,7 +14,7 @@ export default ({
                 }) => (
   <Box bg={'#F5F5F5'}>
     <Helmet>
-      <title> Stats of {displayName} in india | BigInvest </title>
+      <title> Stats of {displayName || "electricity"} of india | BigInvest </title>
     </Helmet>
    {  false ? <TopNav/> : null }
     {0 ? <SectorBanner
