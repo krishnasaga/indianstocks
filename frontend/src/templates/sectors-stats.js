@@ -35,10 +35,7 @@ export default ({
           Stats of electricity and it's equity market in India
         </Text>
         <Text as={'p'} sx={{fontSize: [2]}}>
-          Listed below are the top {displayName} companies in india. They are listed in size by market capitalization.
-          To
-          reorder the list, simply click on one of the options - such as 24h or 7d - to see the sector from a different
-          perspective.
+           These are the stats of electricity generation and it's corelation with equity market in India
         </Text>
       </Box>
       <Box sx={{
