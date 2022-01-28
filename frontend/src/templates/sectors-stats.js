@@ -31,14 +31,9 @@ export default ({
       mb={4}
       mx={[1, 1, 4, 4]}>
       <Box>
-        <Text as={'h1'} sx={{fontSize: [3]}}>
-          Top {displayName} companies in india by Market Capitalization
-        </Text>
+
         <Text as={'p'} sx={{fontSize: [2]}}>
-          Listed below are the top {displayName} companies in india. They are listed in size by market capitalization.
-          To
-          reorder the list, simply click on one of the options - such as 24h or 7d - to see the sector from a different
-          perspective.
+          These are stats of electricity generation corelaten with equity market in india
         </Text>
       </Box>
       <Box sx={{
