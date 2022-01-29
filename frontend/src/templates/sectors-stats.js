@@ -32,7 +32,7 @@ export default ({
       mx={[1, 1, 4, 4]}>
       <Box>
         <Text as={'h1'} sx={{fontSize: [3]}}>
-          Stats of electricity and it's equity market in India
+          Electricity generation and equity market in India
         </Text>
         <Text as={'p'} sx={{fontSize: [2]}}>
            These are the stats of electricity generation and it's corelation with equity market in India
