@@ -9,9 +9,20 @@ import {GraphLine} from "../components/GraphLine";
 import {WorldStatsTimeSeries} from '../components/Charts/TimeSeries/WorldStatsTimeSeries';
 import { CONTENT_ROOT } from "gatsby-env-variables"
 
+import { Auth0Provider } from "@auth0/auth0-react";
+
 export default ({
                   pageContext: {displayName, name, intro, insights = [], backgroundImage, companies},
-                }) => (
+                }) => {
+
+   const redirectUri = typeof window !== 'undefined' ? window.location.href : '';
+
+  return  (<Auth0Provider
+                  domain="cryptoriver.eu.auth0.com"
+                  clientId="Pcyl3hzYANUrdppCHwFdi4OJiBtEyhqK"
+                  redirectUri={redirectUri}
+                  cacheLocation="localstorage"
+                >
   <Box bg={'#F5F5F5'}>
     <Helmet>
       <title> Stats of {displayName || "electricity"} of india | BigInvest </title>
@@ -103,8 +114,9 @@ export default ({
     </Box>
     <Footer/>
   </Box>
-)
-;
+  </Auth0Provider>);
+
+}
 
 function ProductItem({name}) {
   return (

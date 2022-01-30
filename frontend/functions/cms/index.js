@@ -1,27 +1,30 @@
 const faunadb = require('faunadb');
-const {Get, Ref,Ref} = faunadb.query;
+const {Get, Ref,Collection} = faunadb.query;
 
 const client = new faunadb.Client({
-    secret: 'fnAEeNUaTOAAwpzVzt_Bpvi01MB9M7N3bm-5Rb0u',
-    domain: 'db.fauna.com',
+    secret: 'fnAEeNdS-TAAweTcm1mXhS_YM5Ndb3yvHGGTtyXz',
+    domain: 'db.eu.fauna.com',
     scheme: 'https',
   })
 
-module.exports = {
-    handler: async () => {
+const   handler = async () => {
 
-        const result = await client.query(
-            Get(
-                Ref(
-                    Ref('pages'),
-                    '322036800773161153'
-                )
+    const result = await client.query(
+        Get(
+            Ref(
+                Collection('pages'),
+                '322036800773161153'
             )
-        );
+        )
+    );
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify(result)
-        }
+    return {
+        statusCode: 200,
+        body: JSON.stringify(result)
     }
 };
+
+module.exports = {
+    handler
+};
+
