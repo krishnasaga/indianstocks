@@ -14,7 +14,7 @@ const   handler = async (event) => {
         Get(
          Match(
           Index("pages_by_its_path"), 
-          path
+          path.split('/cms/')[1]
          )
         )
        )
