@@ -1,5 +1,5 @@
 const faunadb = require('faunadb');
-const {Get, Ref,Collection} = faunadb.query;
+const {Get, Ref,Collection,Select,Match,Index} = faunadb.query;
 
 const client = new faunadb.Client({
     secret: 'fnAEeNdS-TAAweTcm1mXhS_YM5Ndb3yvHGGTtyXz',
@@ -7,15 +7,17 @@ const client = new faunadb.Client({
     scheme: 'https',
   })
 
-const   handler = async () => {
-
+const   handler = async (event) => {
+    const { path } = event;
     const result = await client.query(
+        Select( "data", 
         Get(
-            Ref(
-                Collection('pages'),
-                '322036800773161153'
-            )
+         Match(
+          Index("pages_by_its_path"), 
+          path
+         )
         )
+       )
     );
 
     return {
